@@ -2,6 +2,7 @@
 // Define target directory for file upload
 include "db.php";
 include "./CORS-setup.php";
+include "./SendEmail.php";
 session_start();
 
 $targetDir = "../useruploads/manuscripts/";
@@ -225,9 +226,14 @@ if ($uploadOk == 0) {
             if (!$stmt->execute()) {
                 throw new Exception("Failed to execute statement: " . $stmt->error);
             }
+         
+            if(SendEmail($correspondingAuthorsEmail, $manuscript, $articleID, $issue,$newFileName)){
 
             $response = array('status'=> 'success', 'message' => 'Manuscript Uploaded Successfully');
             echo json_encode($response);
+            }else{
+                echo json_encode(array("status" => "error", "message"=>"Paper was uploaded, but the server Could Not Send Email to the corresponding Author."));
+            }
         } catch (Exception $e) {
     
             $response = array('status'=> 'internalError', 'message' => "Error: " . $e->getMessage());
