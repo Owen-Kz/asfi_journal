@@ -15,8 +15,6 @@ function SendEmail($email, $manuscripTitle, $manuscriptId, $issueNumber, $fileNa
     <p>You can Find the Article here at https://asfirj.org/content?sid=$manuscriptId</p>
     <p>We are pleased to inform you that your paper is now published on online at ASFI Research Journal (ASFIRJ).</p>
 
-    <p>You can find the article here:</p>
-    <p>https://asfirj.org/content?sid=67ccd7b376335667a4f7.</p>
     <p> A complimentary PDF copy of the article is also attached to this email, which you can share with your co-authors.</p>
 
     <p>Thank you for publishing your paper with ASFIRJ and we look forward to future submissions from you.</p>
