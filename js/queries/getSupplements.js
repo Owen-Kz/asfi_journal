@@ -139,9 +139,11 @@ function getSupplement(articeID) {
 
                     // Parse the Quill content from the JSON data
                     const quillContent = JSON.parse(unstructuredAbstract);
+                    const quillContent2 = JSON.parse(AbstractDiscussoin)
 
                     // Create a Quill instance in "read-only" mode to render the content as HTML
                     const contentDiv = document.getElementById('content');
+                    // const abstractDIV = document.getElementById("abstract")
 
                     function renderQuillAsHTML(divId, deltaContent) {
                         // Create a Quill instance in a temporary div
@@ -157,13 +159,22 @@ function getSupplement(articeID) {
 
                         // Get the innerHTML from the Quill editor
                         const htmlContent = tempDiv.innerHTML;
+                        const toDisplay = document.getElementById(divId)
 
                         // Render the extracted HTML into the specified div
-                        contentDiv.innerHTML = htmlContent;
+                        toDisplay.innerHTML = htmlContent;
                     }
 
                     // Render the Quill content as HTML in the "content" div
                     renderQuillAsHTML('content', quillContent);
+                    const abstractHeader = document.getElementById("abstractHeader")
+                    abstractHeader.style.display = "none"
+
+                   
+                    if(quillContent2.length > 0){
+                    abstractHeader.style.display = "block"
+                    renderQuillAsHTML('abstract', quillContent2)
+                    }
 
                 } else {
                     alert("File Not found on server")

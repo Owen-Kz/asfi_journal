@@ -1066,11 +1066,11 @@
 				<div id="google_translate_element"></div>
 				<div class="copyright-wrap">
 					<p>&copy; <span id="currentYear"> </span> <a href="">ASFI Research Journal</a> All
-						Rights Reserved ||VO.</p>
+						Rights Reserved</p>
 				</div>
 				<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
 				<!--Start of Tawk.to Script-->
-				<script type="text/javascript">
+				<!-- <script type="text/javascript">
 					var Tawk_API = Tawk_API || {},
 						Tawk_LoadStart = new Date();
 					(function () {
@@ -1082,7 +1082,7 @@
 						s1.setAttribute('crossorigin', '*');
 						s0.parentNode.insertBefore(s1, s0);
 					})();
-				</script>
+				</script> -->
 				<!--End of Tawk.to Script-->
 			</div>
 		</div>

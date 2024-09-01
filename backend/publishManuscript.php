@@ -29,6 +29,7 @@ $dateAccepted = $_POST["date_accepted"];
 $datePublished = $_POST["date_published"];
 
 
+
 if(isset($_POST["editor-choice"])){
 $editorsChoice = $_POST["editor-choice"];
 }else{
@@ -66,8 +67,11 @@ if(isset($_POST["page_number"])){
 
 
 $quillContent = json_decode($_POST['article_content'], true);
+$abstractContentMain = json_decode($_POST['article_abstract'], true);
+
 
 $abstract = json_encode($quillContent);
+$abstractText = json_encode($abstractContentMain);
 $verifyCode = $_POST["verifyCode"];
 
 
@@ -215,13 +219,13 @@ if ($uploadOk == 0) {
         }
       
         try {
-            $stmt = $con->prepare("INSERT INTO `journals` (`article_type`, `manuscript_file`,  `manuscript_full_title`,`unstructured_abstract`,`manuscriptPhoto`,`corresponding_authors_email`, `buffer`,  `date_reviewed`, `date_submitted`, `date_accepted`, `date_published`, `is_editors_choice`, `hyperlink_to_others`, `is_open_access`, `is_publication`, `doi_number`, `page_number`, `issues_number` ) VALUES(?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?, ?,?,?,?)");
+            $stmt = $con->prepare("INSERT INTO `journals` (`article_type`, `manuscript_file`,  `manuscript_full_title`,`unstructured_abstract`,`abstract_discussion`,`manuscriptPhoto`,`corresponding_authors_email`, `buffer`,  `date_reviewed`, `date_submitted`, `date_accepted`, `date_published`, `is_editors_choice`, `hyperlink_to_others`, `is_open_access`, `is_publication`, `doi_number`, `page_number`, `issues_number` ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             $isPublication = "yes";
             if (!$stmt) {
                 throw new Exception("Failed to prepare statement: " . $con->error);
             }
         
-            $stmt->bind_param("ssssssssssssssssss", $articleType, $newFileName, $manuscript, $abstract, $coverImageName, $correspondingAuthorsEmail, $articleID, $dateReviewed, $dateSubmitted, $dateAccepted, $datePublished, $editorsChoice, $HyperLink, $openAccess, $isPublication, $doi, $issue, $page);
+            $stmt->bind_param("sssssssssssssssssss", $articleType, $newFileName, $manuscript, $abstract, $abstractText, $coverImageName, $correspondingAuthorsEmail, $articleID, $dateReviewed, $dateSubmitted, $dateAccepted, $datePublished, $editorsChoice, $HyperLink, $openAccess, $isPublication, $doi, $issue, $page);
         
             if (!$stmt->execute()) {
                 throw new Exception("Failed to execute statement: " . $stmt->error);

@@ -1,5 +1,5 @@
 import { EndPoint } from "../constants.js";
-import { quill } from "./quill.js";
+import { quill, quill2 } from "./quill.js";
 
 const uploadForm = document.getElementById("uploadArticle");
 const body = document.querySelector("body")
@@ -9,7 +9,7 @@ uploadForm.addEventListener("submit", function(e) {
     e.preventDefault();
     const formData = new FormData(uploadForm);
     formData.append('article_content', JSON.stringify(quill.getContents().ops));
-
+    formData.append('article_abstract', JSON.stringify(quill2.getContents().ops))
 
 
     body.removeAttribute("id")
