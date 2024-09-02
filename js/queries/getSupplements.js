@@ -50,12 +50,30 @@ function getSupplement(articeID) {
                     const Issue = Article[0].issues_number
                     const Page = Article[0].page_number
                     const Doi = Article[0].doi_number
-                    const DateUploaded = formatTimestamp(Article[0].date_uploaded)
-                    const SubmittedDate = formatTimestamp(Article[0].date_submitted)
-                    const ReviewedDate = formatTimestamp(Article[0].date_reviewed)
-                    const AcceptedDate = formatTimestamp(Article[0].date_accepted)
-                    const PublishedDate = formatTimestamp(Article[0].date_published)
-                    
+                    let DateUploaded = "N/A"
+                    let SubmittedDate = "N/A"
+                    let ReviewedDate = "N/A"
+                    let AcceptedDate = "N/A"
+                    let PublishedDate = "N/A"
+                    if(Article[0].date_uploaded != null){
+                    DateUploaded = formatTimestamp(Article[0].date_uploaded)
+                    }
+
+                    if(Article[0].date_submitted != null){
+                    SubmittedDate = formatTimestamp(Article[0].date_submitted)
+                    }
+
+                    if(Article[0].date_reviewed != null){
+                    ReviewedDate = formatTimestamp(Article[0].date_reviewed)
+                    }
+
+                    if(Article[0].date_accepted != null){
+                    AcceptedDate = formatTimestamp(Article[0].date_accepted)
+                    }
+
+                    if(Article[0].date_published != null){
+                   PublishedDate = formatTimestamp(Article[0].date_published)
+                    }
                     const buffer = Article[0].buffer
 
                     document.addEventListener("DOMContentLoaded", function () {

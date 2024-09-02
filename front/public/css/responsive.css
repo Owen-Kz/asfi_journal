@@ -1,7 +1,9 @@
 /*======================================================
     Media Query
 =======================================================*/
-
+.aboutDropDown{
+    width: max-content !important;
+}
 @media (min-width: 991px) {
     .article-info1 {
         height: 40%;
