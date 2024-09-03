@@ -125,8 +125,8 @@ function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
 						</ul>
 						<div class="content-item-format-links">
 							<ul class="rlist--inline separator">
-							<li><a href="../content?sid=${ArticleId}&title=${ArticleTitle}#content" title="Abstract" aria-label="Abstract for ${ArticleTitle}">Abstract</a></li>
-							<li><a href="../content?sid=${ArticleId}&title=${ArticleTitle}#fulltext" title="Full text" aria-label="Full text for ${ArticleTitle}">Full text</a></li>
+							<li><a href="../content?sid=${ArticleId}#content" title="Abstract" aria-label="Abstract for ${ArticleTitle}">Abstract</a></li>
+							<li><a href="../content?sid=${ArticleId}#fulltext" title="Full text" aria-label="Full text for ${ArticleTitle}">Full text</a></li>
 							<li><a href="../useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
 							<li><a href="" title="References" aria-label="References for ${ArticleTitle}">References</a></li>
                             <li title="Views" aria-label="Views for ${ArticleTitle}"><span>${viewsCount}</span> Views</li>
@@ -170,8 +170,8 @@ function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
 						</ul>
 						<div class="content-item-format-links">
 							<ul class="rlist--inline separator">
-							<li><a href="./content?sid=${ArticleId}&title=${ArticleTitle}#abstract" title="Abstract" aria-label="Abstract for ${ArticleTitle}">Abstract</a></li>
-							<li><a href="./content?sid=${ArticleId}&title=${ArticleTitle}#fulltext" title="Full text" aria-label="Full text for ${ArticleTitle}">Full text</a></li>
+							<li><a href="./content?sid=${ArticleId}#abstract" title="Abstract" aria-label="Abstract for ${ArticleTitle}">Abstract</a></li>
+							<li><a href="./content?sid=${ArticleId}#fulltext" title="Full text" aria-label="Full text for ${ArticleTitle}">Full text</a></li>
 							<li><a href="../useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
 							<li><a href="" title="References" aria-label="References for ${ArticleTitle}">References</a></li>
                             <li title="Views" aria-label="Views for ${ArticleTitle}"><span>${viewsCount}</span> Views</li>

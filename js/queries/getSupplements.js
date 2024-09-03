@@ -159,6 +159,8 @@ function getSupplement(articeID) {
                     const quillContent = JSON.parse(unstructuredAbstract);
                     const quillContent2 = JSON.parse(AbstractDiscussoin)
 
+                    console.log(AbstractDiscussoin)
+                    console.log(unstructuredAbstract)
                     // Create a Quill instance in "read-only" mode to render the content as HTML
                     const contentDiv = document.getElementById('content');
                     // const abstractDIV = document.getElementById("abstract")

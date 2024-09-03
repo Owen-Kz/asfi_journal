@@ -25,7 +25,7 @@ uploadForm.addEventListener("submit", function(e) {
         console.log(data); // Log server response
         if(data.status === "success"){
             alert("Upload Successful")
-            window.location.href = "../supplements.html#supplements"
+            window.location.href = "../issues"
         }else if(data.status === "error"){
             alert(data.message)
             body.setAttribute("id", "formNotSubmitted")
@@ -43,3 +43,43 @@ uploadForm.addEventListener("submit", function(e) {
     });
 });
 
+
+
+
+const qltoolbar = document.querySelectorAll(".ql-toolbar")
+
+qltoolbar[0].innerHTML += `  <button id="undo-button2" type="button" title="Undo"> <i class="bi bi-arrow-counterclockwise"></i>
+                                        </button>
+
+                                        <button id="redo-button2" type="button" title="Redo">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                          
+                                        </button>`
+qltoolbar[1].innerHTML += `  <button id="undo-button" type="button" title="Undo"> <i class="bi bi-arrow-counterclockwise"></i>
+                                        </button>
+
+                                        <button id="redo-button" type="button" title="Redo">
+                                            <i class="bi bi-arrow-clockwise"></i>
+                                          
+                                        </button>`
+
+
+    // Undo functionality
+    document.getElementById('undo-button').addEventListener('click', function() {
+        quill.history.undo();
+    });
+  
+    // Redo functionality
+    document.getElementById('redo-button').addEventListener('click', function() {
+        quill.history.redo();
+    });
+
+    // Undo functionality
+    document.getElementById('undo-button2').addEventListener('click', function() {
+        quill2.history.undo();
+    });
+  
+    // Redo functionality
+    document.getElementById('redo-button2').addEventListener('click', function() {
+        quill2.history.redo();
+    });
