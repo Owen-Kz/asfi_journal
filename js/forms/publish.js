@@ -14,7 +14,6 @@ uploadForm.addEventListener("submit", function(e) {
 
     body.removeAttribute("id")
     // formData.append('article_content', JSON.stringify(quill.getContents().ops));
-    // console.log(JSON.stringify(quill.getContents().ops))
 
     fetch(`${EndPoint}/publishManuscript.php`, {
         method: 'POST',
@@ -22,7 +21,6 @@ uploadForm.addEventListener("submit", function(e) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Log server response
         if(data.status === "success"){
             alert("Upload Successful")
             window.location.href = "../issues"
