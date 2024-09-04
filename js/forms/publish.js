@@ -46,20 +46,20 @@ uploadForm.addEventListener("submit", function(e) {
 
 const qltoolbar = document.querySelectorAll(".ql-toolbar")
 
-qltoolbar[0].innerHTML += `  <button id="undo-button2" type="button" title="Undo"> <i class="bi bi-arrow-counterclockwise"></i>
-                                        </button>
+// qltoolbar[0].innerHTML += `  <button id="undo-button2" type="button" title="Undo"> <i class="bi bi-arrow-counterclockwise"></i>
+//                                         </button>
 
-                                        <button id="redo-button2" type="button" title="Redo">
-                                            <i class="bi bi-arrow-clockwise"></i>
+//                                         <button id="redo-button2" type="button" title="Redo">
+//                                             <i class="bi bi-arrow-clockwise"></i>
                                           
-                                        </button>`
-qltoolbar[1].innerHTML += `  <button id="undo-button" type="button" title="Undo"> <i class="bi bi-arrow-counterclockwise"></i>
-                                        </button>
+//                                         </button>` 
+// qltoolbar[1].innerHTML += `  <button id="undo-button" type="button" title="Undo"> <i class="bi bi-arrow-counterclockwise"></i>
+//                                         </button>
 
-                                        <button id="redo-button" type="button" title="Redo">
-                                            <i class="bi bi-arrow-clockwise"></i>
+//                                         <button id="redo-button" type="button" title="Redo">
+//                                             <i class="bi bi-arrow-clockwise"></i>
                                           
-                                        </button>`
+//                                         </button>`
 
 
     // Undo functionality
