@@ -74,7 +74,6 @@ const quill = new Quill("#quilleditor", {
       [{ align: [] }],
       [{ script: "sub" }, { script: "super" }], // Subscript / Superscript
       [{ color: [] }, , { background: [] }], // add color picker
-      [{ font: [] }],
       [{ size: ["small", false, "large", "huge"] }], // Custom dropdown
       ["clean"],
       // Custom button for uppercase
@@ -114,7 +113,6 @@ if(secondQuill){
               [{ align: [] }],
               [{ script: "sub" }, { script: "super" }], // Subscript / Superscript
               [{ color: [] }, { background: [] }], // add color picker
-              [{ font: [] }],
               [{ size: ["small", false, "large", "huge"] }], // Custom dropdown
               ["clean"],
               [{ uppercase: "uppercase" }],
