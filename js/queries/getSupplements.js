@@ -50,11 +50,28 @@ function getSupplement(articeID) {
                     const Issue = Article[0].issues_number
                     const Page = Article[0].page_number
                     const Doi = Article[0].doi_number
+                    const coverPhoto = Article[0].manuscriptPhoto 
+                    console.log(coverPhoto)
+                    let mainCoverImage = ""
+
+
+                    const previewHead = document.getElementById("previewHead")
+                    // if(coverPhoto !== "cover.jpg"){
+                    //     mainCoverImage = `../useruploads/article_images/${coverPhoto}`
+                    // }else{
+                    //     mainCoverImage = `../images/articleImages/8.jpg`
+                    // }
+                    mainCoverImage = `../images/articleImages/8.jpg`
+
+
+                    previewHead.setAttribute("style", `background-image: url(${mainCoverImage}); background-size: cover; background-repeat: no-repeat;`)
                     let DateUploaded = "N/A"
                     let SubmittedDate = "N/A"
                     let ReviewedDate = "N/A"
                     let AcceptedDate = "N/A"
                     let PublishedDate = "N/A"
+
+                    
                     if(Article[0].date_uploaded != null){
                     DateUploaded = formatTimestamp(Article[0].date_uploaded)
                     }
@@ -159,8 +176,6 @@ function getSupplement(articeID) {
                     const quillContent = JSON.parse(unstructuredAbstract);
                     const quillContent2 = JSON.parse(AbstractDiscussoin)
 
-                    console.log(AbstractDiscussoin)
-                    console.log(unstructuredAbstract)
                     // Create a Quill instance in "read-only" mode to render the content as HTML
                     const contentDiv = document.getElementById('content');
                     // const abstractDIV = document.getElementById("abstract")
