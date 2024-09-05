@@ -16,8 +16,8 @@ if($count > 0){
         $ArticleId = $row['buffer'];
         $ArticleDate =  $row['date_uploaded'];
         echo "
-                <div class='item' style='background-image: url(./useruploads/article_images/$ArticlePhoto); background-size:cover;'>
-                <div class='carousel-caption article-info1'>
+              <div class='item' style='background-image: url(./useruploads/article_images/$ArticlePhoto'); background-size:cover;'>
+    <div class='carousel-caption article-info1'>
                     <span class='articleDateContainer'>
                     <input type='hidden'  value='$ArticleDate'>
                     $ArticleDate</span>
