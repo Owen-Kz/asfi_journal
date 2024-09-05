@@ -34,7 +34,7 @@ $Buffer = bin2hex(random_bytes(10)); // 10 bytes = 20 characters in hexadecimal 
 $articleID = $Buffer;
 // Generate a new unique filename (e.g., using timestamp)
 $newFileName = time() . '_' . $manuscriptFile;
-$newFileNameImage = time() . '_' . $manuscriptFileImage;
+$newFileNameImage = time() . '_' . urlencode($manuscriptFileImage);
 
 
 
