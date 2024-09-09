@@ -2,7 +2,9 @@
 
 include "../../backend/db.php";
 
-$article_id = $_POST["article_id"];
+$data = json_decode(file_get_contents("php://input"), true);
+
+$article_id = $data["article_id"];
 
 if($article_id){
     try{
@@ -28,7 +30,7 @@ if($article_id){
             
             $response = array("status" => 'success', "message" => "Item Deleted Successfully");
             echo Json_encode($response);
-            header("Location:https://asfirj.org/manuscriptPortal/manage");
+            // header("Location:https://asfirj.org/manuscriptPortal/manage");
         }
     }
  catch (Exception $e) {

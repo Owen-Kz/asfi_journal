@@ -106,7 +106,7 @@ function UpdateManageArticles(ArticleLst) {
                     <div style="display:flex; width 50%; justify-content:space-between; bakground:red;">
                         <a href="?edit=${ArticleTitle}&a_id=${ArticleId}" class="btn btn-warning">Edit</a>
                         
-                        <form action="../../actions/deleteArticle/" method="POST">
+                        <form action="../../actions/deleteArticle/verify/?del=${ArticleTitle}&a_id=${ArticleId}" method="POST">
                         <input value="${ArticleId}" name="article_id" type='hidden'/>
                         <button class="btn btn-danger" style="margin-left:10px;">Delete</button>
                         </form>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Item</title>
+</head>
+<body>
+    
+    <script>
+        function GetParameters(href){
+    // Get the URL string
+    const urlString = href;
+    
+    // Create a URL object
+    const url = new URL(urlString);
+    
+    // Get the search parameters from the URL
+    const searchParams = new URLSearchParams(url.search);
+    return searchParams
+    
+    }
+
+    const title = GetParameters(window.location.href).get("del")
+    const id = GetParameters(window.location.href).get("a_id")
+    const verifyCode = prompt(`Type "${title}" To Delete`)
+    const data ={
+        article_id: id
+    }
+
+    if(verifyCode != "" && verifyCode === title){
+        console.log(data)
+        fetch(`../../deleteArticle/index.php`, {
+            method:"POST",
+            body: JSON.stringify(data),
+        }).then(res => res.json())
+        .then(data=>{
+            if(data.status === "success"){
+                window.location.href = `https://asfirj.org/manuscriptPortal/manage`
+            }else{
+                alert(data.message)
+            }
+        })
+    }
+    </script>
+</body>
+</html>
