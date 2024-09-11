@@ -116,7 +116,12 @@ function getSupplement(articeID) {
                     correspondingAuthorsEmailContainer.innerHTML += ` <a style="color:#333;" href="mailto:${correspondingAuthorsEmail}">${correspondingAuthorsEmail}</a>`
                     
                     const hyperlinkContainer = document.getElementById("hyperlink")
+                    if(hyperLink != null && hyperLink !== null && hyperLink !== "null"){
                     hyperlinkContainer.innerHTML += `<a style="color:#333;" href="${hyperLink}">${hyperLink}</a>`
+                    }else{
+                         hyperlinkContainer.style.display = "none"
+                    }
+                   
 
                     viewCountContainer.innerText = `${viewsCount} Views`
                     downloadsCountContainer.innerText = `${DownloadsCount} Downloads`
