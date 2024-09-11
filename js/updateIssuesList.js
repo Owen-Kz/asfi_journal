@@ -165,7 +165,7 @@ function UpdateIssues(ArticleLst, currentPage, totalPages) {
                         <div style="width: 120px; margin-right: 10px;
     border-radius: 10px;
     border: 2px solid #310357; background-image: url(./useruploads/article_images/${CoverPhoto}); background-size: cover;"></div>
-    <div>
+    <div style="width: 100%">
 				<div class="doi-access-wrapper"><span class="item-category">${ArticleType}</span>
                 <span class="articleSpan">${openAccessFOrFront} ${AddEditorsChoice}</span>
                 </div>
