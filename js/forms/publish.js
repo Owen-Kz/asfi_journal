@@ -4,6 +4,23 @@ import { quill, quill2 } from "./quill.js";
 const uploadForm = document.getElementById("uploadArticle");
 const body = document.querySelector("body")
 
+const articleTypeContainer = document.getElementById("articleTypeContainer")
+
+const articleType = document.querySelector('#article_type')
+articleType.addEventListener("change", function(){
+    
+    if(articleType.value == "other" || articleType.value == "Other"){
+        articleType.removeAttribute("name")
+        articleTypeContainer.innerHTML = `<input class='form-control' name="article_type" placeholder="Specify the manuscript type" required/>`
+    }else{
+        if(articleType.hasAttribute("name")){
+
+        }else{
+            articleType.setAttribute("name", "article_type")
+        }
+        articleTypeContainer.innerHTML = ""
+    }
+})
 
 uploadForm.addEventListener("submit", function(e) {
     e.preventDefault();
