@@ -22,13 +22,14 @@ authors.forEach(author =>{
 
 function UpdateIssues(ArticleLst, currentPage, totalPages) {
     if (ArticleListContainer) {
-        ArticleListContainer.innerHTML = ""
+        ArticleListContainer.innerHTML = " "
     }
 
     if (ArticleListFront) {
-        ArticleListFront.innerHTML = ""
+        ArticleListFront.innerHTML = " "
     }
     if (ArticleLst.length > 0) {
+        
         for(let b=0; b<ArticleLst.length; b++){
             const article = ArticleLst[b]
     
@@ -111,6 +112,7 @@ function UpdateIssues(ArticleLst, currentPage, totalPages) {
 
                         if (ArticleListContainer) {
 
+
                             ArticleListContainer.innerHTML += `
                             
                     <div class="issue-item wow fadeInLeft" data-wow-delay="200ms" style="display: flex;">
@@ -160,6 +162,7 @@ function UpdateIssues(ArticleLst, currentPage, totalPages) {
 
 
                         if (ArticleListFront) {
+                        
                             ArticleListFront.innerHTML += `
                         <div class="issue-item wow fadeInLeft" data-wow-delay="200ms" style="display: flex;">
                         <div style="width: 15%; margin-right: 10px;

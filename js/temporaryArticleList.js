@@ -22,11 +22,11 @@ authors.forEach(author =>{
 
 function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
     if (ArticleListContainer) {
-        ArticleListContainer.innerHTML = ""
+        ArticleListContainer.innerHTML = " "
     }
 
     if (ArticleListFront) {
-        ArticleListFront.innerHTML = ""
+        ArticleListFront.innerHTML = " "
     }
     if (ArticleLst.length > 0) {
         for(let b=0; b<ArticleLst.length; b++){

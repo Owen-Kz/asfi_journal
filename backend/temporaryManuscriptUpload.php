@@ -14,6 +14,7 @@ $targetFile = $targetDir . $manuscriptFile;
 
 $manuscriptFileImage = basename($_FILES["manuscriptCover"]["name"]);
 $targetFileImage = $targetDirImage . $manuscriptFileImage;
+$coverPhotoExtension = pathinfo($manuscriptFileImage, PATHINFO_EXTENSION);
 
 // Initialize variables
 $uploadOk = 1;
@@ -34,8 +35,7 @@ $Buffer = bin2hex(random_bytes(10)); // 10 bytes = 20 characters in hexadecimal 
 $articleID = $Buffer;
 // Generate a new unique filename (e.g., using timestamp)
 $newFileName = time() . '_' . $manuscriptFile;
-$newFileNameImage = time() . '_' . urlencode($manuscriptFileImage);
-
+$newFileNameImage = time() . '_coverImage.' .$coverPhotoExtension;
 
 
 // Check if file already exists

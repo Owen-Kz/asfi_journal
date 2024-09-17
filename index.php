@@ -1143,7 +1143,6 @@
 	<script type="module" src="./js/general.js"></script>
 	<script src="./js/queries/allItemsForHome.js" type="module"></script>
 
-	<!-- <script src="./js/queries/allIssues.js" type="module"></script> -->
 
 	<script src="./front/public/js/main.js"></script>
 	<script>

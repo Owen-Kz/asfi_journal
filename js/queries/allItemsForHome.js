@@ -2,11 +2,8 @@ import { EndPoint, GetParameters } from "../constants.js"
 import { formatTimestamp } from "../formatDate.js"
 import { getURL } from "../getURL.js"
 import { UpdateIssues } from "../updateIssuesList.js"
-// import { UpdateIssues } from "../temporaryArticleList.js"
-import { articlesNavigation } from "./articlesNavigation.js"
 
-const search = document.getElementById("search")
-const searchArticle = document.getElementById("searchArticle")
+import { articlesNavigation } from "./articlesNavigation.js"
 
 let Limit
 
@@ -37,7 +34,7 @@ function ArticlePage(page) {
                 const ArticleLst = data.articlesList
                 const currentPage = data.currentPage
                 const totalPages = data.totalPages
-                UpdateIssues(ArticleLst, currentPage, totalPages)
+                // UpdateIssues(ArticleLst, currentPage, totalPages)
                 articlesNavigation(new Number(totalPages), new Number(currentPage))
 
             } else {
@@ -48,7 +45,3 @@ function ArticlePage(page) {
 
 }
 
-
-export {
-    ArticlePage
-}
