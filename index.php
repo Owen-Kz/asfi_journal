@@ -285,6 +285,38 @@
 .shareButton{
 	cursor: pointer;
 }
+.editchoice{
+	margin-left: 50px;
+}
+.doi-access-wrapper .articleSpan{
+	margin-right: 20px;
+  }
+
+@media  screen and (max-width: 720px) {
+.doi-access-wrapper {
+	font-size: 12px;
+}
+  .doi-access-wrapper .articleSpan{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  }
+  .editchoice{
+	margin-left: 0px;
+}
+.issue-item__title {
+	font-size: 16px;
+}
+.comma p{
+	font-size: 12px;
+}
+.issue-item__details{
+	font-size: 14px;
+}
+.content-item-format-links .rlist--inline li{
+	font-size: 12px;
+}
+}
 	</style>
 </head>
 
@@ -988,7 +1020,7 @@
 							<h3>Author</h3>
 							<ul class="widget-links">
 								<!-- <li><i class="fas fa-square-full"></i><a href="./comingsoon.html" class='menu-item'>Submit Manuscript</a></li> -->
-								<li><i class="fas fa-square-full"></i><a href="" class='menu-item'>Print Request</a>
+								<li><i class="fas fa-square-full"></i><a href="./authors.html#ob" class='menu-item'>Submission Process</a>
 								</li>
 							</ul>
 						<a href=""><h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3></a>
