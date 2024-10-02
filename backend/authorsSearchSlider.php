@@ -25,14 +25,15 @@ try {
  
         $authorsList = array(); // Initialize an array to store all articles
         
-        // while () {
-            $row = $result->fetch_assoc();
+        // while ($row = $result->fetch_assoc()) {
             // Loop through each row in the result set and append it to the authorsList array
-            $authorsList[] = $row;
-            $authorsName = $row["authors_fullname"];
-            for($i = 1; $i <= count($authorsList); $i++){
-
-                if($i === count($authorsList)){
+            
+            for($i = 1; $i <= $result -> num_rows; $i++){
+                $row = $result->fetch_assoc();
+                $authorsList[] = $row;
+                $authorsName = $row["authors_fullname"];
+                
+                if($i === $result->num_rows){
                  echo "$authorsName";
 
                 }else{
