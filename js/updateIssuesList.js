@@ -115,7 +115,7 @@ function UpdateIssues(ArticleLst, currentPage, totalPages) {
 
                             ArticleListContainer.innerHTML += `
                             
-                    <div class="issue-item wow fadeInLeft" data-wow-delay="200ms" style="display: flex;">
+                    <div class="issue-item wow fadeInLeft" style="display: flex;">
                     <div style="width: 120px; margin-right: 10px;
     border-radius: 10px;
     border: 2px solid #310357; background-image: url(../useruploads/article_images/${CoverPhoto}); background-size: cover;"></div>
@@ -164,7 +164,7 @@ function UpdateIssues(ArticleLst, currentPage, totalPages) {
                         if (ArticleListFront) {
                         
                             ArticleListFront.innerHTML += `
-                        <div class="issue-item wow fadeInLeft" data-wow-delay="200ms" style="display: flex;">
+                        <div class="issue-item wow fadeInLeft" style="display: flex;">
                         <div style="width: 120px; margin-right: 10px;
     border-radius: 10px;
     border: 2px solid #310357; background-image: url(./useruploads/article_images/${CoverPhoto}); background-size: cover;"></div>
