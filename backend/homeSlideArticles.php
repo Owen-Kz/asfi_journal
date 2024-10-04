@@ -14,7 +14,14 @@ if($count > 0){
         $ArticleTitle = $row['manuscript_full_title'];
         $ArticlePhoto = $row['manuscriptPhoto'];
         $ArticleId = $row['buffer'];
-        $ArticleDate =  $row['date_uploaded'];
+        $ArticleDate =  "";
+        $MainPublishDate = $row["date_published"];
+       
+        if($MainPublishDate && $MainPublishDate != null && $MainPublishDate !== ""){
+            $ArticleDate = $MainPublishDate;
+        }else{
+            $ArticleDate = $row['date_uploaded'];
+        }
         echo "
               <div class='item' style='background-image: url(./useruploads/article_images/$ArticlePhoto'); background-size:cover;'>
     <div class='carousel-caption article-info1'>
