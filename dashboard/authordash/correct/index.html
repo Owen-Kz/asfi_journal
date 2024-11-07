@@ -305,6 +305,7 @@
                           <option value="Learning Corner">Learning Corner</option>
                           <option value="Field Story">Field Story</option>
                           <option value="Insight">Insight</option>
+                          <option value="Correspondence">Correspondence</option>
                         </select>
                         <label for="discipline">Discipline</label>
                         <select id="discipline" name="discipline" class="form-control">
@@ -335,6 +336,17 @@
                           <option value="Theology">Theology</option>
                           <option value="Other">Other (please specify)</option>
                         </select>
+
+                        
+                         <label for="">Has this manuscript been submitted previously to ASFIRJ?</label> <br>
+Yes <input type="radio" name="prevsub" id="prevsub_yes" onclick="toggleInputField()"> <br>
+No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField()"> <br>
+
+<div id="manuscriptIDField" style="display: none;">
+    <label for="">Please provide the manuscript ID</label>
+    <input type="text" name="previous_id" id="" class="form-control"> <br>
+</div> 
+
                         <div id="disciplineContainer"></div>
                         <button type="button" class="submit-next nextManuscript" onclick="showNext('upload-manuscript', 'article-type', 'article_type_nav', 'upload_manuscript_nav', 0, 1)" disabled>Save & Continue</button>
 
@@ -707,6 +719,15 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 
     <script type="module" src="../../../js/forms/quill.js"></script>
+     <script>
+function toggleInputField() {
+    var manuscriptIDField = document.getElementById("manuscriptIDField");
+    var isYesChecked = document.getElementById("prevsub_yes").checked;
+    
+    // Show the input field if "Yes" is selected, hide otherwise
+    manuscriptIDField.style.display = isYesChecked ? "block" : "none";
+}
+</script>
     <script>
       const authorsArray = document.getElementById("authorsArray")
       var app = new Vue({
