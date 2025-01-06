@@ -47,13 +47,36 @@ function getSupplement(articeID) {
                     const status = Article.status
                     const correspondingAuthorsEmail = Article.corresponding_authors_email
                     const DateUploaded = formatTimestamp(Article.date_submitted)
-                    
+                    let documentFile = ""
+                    let DOCUMENTFILE = ""
+                    let MANUSCRIPT_FILE = ""
+                    if(Article.date_submitted < "2025-01-07"){
+                     MANUSCRIPT_FILE = `https://cp.asfirj.org/uploadedFiles/${ManuscriptFile}`
+             
+                    if (Article.document_file !== "dummy.pdf") {
+                        documentFile = Article.document_file;
+                        DOCUMENTFILE = `<a href="https://cp.asfirj.org/uploadedFiles/${ManuscriptDocument}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript Document File</a>`;
+
+                    }
+                 }else{
+                     MANUSCRIPT_FILE = `
+                ${Article.manuscript_file}`
+                
+                     const filesArray = JSON.parse(Article.document_file)
+                     DOCUMENTFILE = "Original Document Files: "
+                     for(let i = 0; i< filesArray.length; i++){
+                         
+                         DOCUMENTFILE += `<a href="${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(78)}</a
+                         `
+                     }
+                 }
                     const ArticleID = Article.article_id
                     filesContainer.innerHTML += `<a href="https://cp.asfirj.org/uploadedFiles/${coverLetter}" style="color:#333; text-decoration: underline;" target=_blank>View Cover Letter</a>
                     <br>
-                            <b>Manuscript File </b><i>a combination of all files submitted in PDF format, (i.e tables, figues, supplementary materials)</i>: <a href="https://cp.asfirj.org/uploadedFiles/${ManuscriptFile}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript File</a>
+                            <b>Manuscript File </b><i>a combination of all files submitted in PDF format, (i.e tables, figues, supplementary materials)</i>: <a href="${MANUSCRIPT_FILE}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript File</a>
                             <br>
-                            <b>Manuscript Document</b><i>a combination of all files submitted i document format, (i.e tables, figues, supplementary materials)</i>: <a href="https://cp.asfirj.org/uploadedFiles/${ManuscriptDocument}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript Document File</a>`
+                            <b>Manuscript Documents</b><i>a combination of all files submitted i document format, (i.e tables, figues, supplementary materials)</i>: 
+                            ${DOCUMENTFILE}`
                     const correspondingAuthorsEmailContainer = document.getElementById("correspondingAuthorsEmail")
                     correspondingAuthorsEmailContainer.innerHTML +=  ` <a style="color:#333;" href="mailto:${correspondingAuthorsEmail}">${correspondingAuthorsEmail}</a>`
                     ArticleTypeContainer.innerText  = ArticleType
