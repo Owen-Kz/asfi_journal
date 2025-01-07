@@ -59,14 +59,13 @@ function getSupplement(articeID) {
 
                     }
                  }else{
-                     MANUSCRIPT_FILE = `
-                ${Article.manuscript_file}`
+                     MANUSCRIPT_FILE = `https://process.asfirj.org/file?url=${Article.manuscript_file}`
                 
                      const filesArray = JSON.parse(Article.document_file)
                      DOCUMENTFILE = "Original Document Files: "
                      for(let i = 0; i< filesArray.length; i++){
                          
-                         DOCUMENTFILE += `<br> <a href="${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(78)}</a>
+                         DOCUMENTFILE += `<br> <a href="${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(76)}</a>
                          `
                      }
                  }
