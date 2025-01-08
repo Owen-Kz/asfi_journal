@@ -142,8 +142,12 @@
   </style>
 </head>
 
-<body id="formNotSubmitted">
-
+<body id="formNotSubmitted" style="color:black;">
+  <style>
+    input {
+      color:black
+    }
+  </style>
   <div class="preloader">
     <div class="loader-p"></div>
   </div>
@@ -287,7 +291,7 @@
                         <input type="hidden" id="manuscript_id" name="manuscript_id">
                         <!-- End Manuscrupt Id  -->
                         <h3 class="manu_head">Article Type & Discipline</h3>
-                        <span class="manu_head">Choose Article Type:</span>
+                        <span class="manu_head"><span style="color: #e22424;">*</span>Choose Article Type:</span>
 
                         <select name="article_type" id="article_type" class="form-control">
                           <option value="">Select an Option</option>
@@ -306,7 +310,7 @@
                           <option value="Insight">Insight</option>
                           <option value="Correspondence">Correspondence</option>
                         </select>
-                        <label for="discipline">Discipline</label>
+                        <label for="discipline"><span style="color: #e22424;">*</span>Discipline</label>
                         <select id="discipline" name="discipline" class="form-control">
                           <option value="">Select a Discipline</option>
                           <option value="Agricultural sciences">Agricultural sciences</option>
@@ -336,7 +340,7 @@
                           <option value="Other">Other (please specify)</option>
                         </select>
 
-                         <label for="">Has this manuscript been submitted previously to ASFIRJ?</label> <br>
+                        <label for=""><span style="color: #e22424;">*</span>Has this manuscript been submitted previously to ASFIRJ?</label>  <br>
 Yes <input type="radio" name="prevsub" id="prevsub_yes" onclick="toggleInputField()"> <br>
 No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField()"> <br>
 
@@ -344,6 +348,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
     <label for="">Please provide the manuscript ID</label>
     <input type="text" name="previous_id" id="" class="form-control"> <br>
 </div> 
+<p style="color: #e22424;">* Indicates Mandatory Fields</p>
                         <div id="disciplineContainer"></div>
                         <button type="button" class="submit-next nextManuscript" onclick="showNext('upload-manuscript', 'article-type', 'article_type_nav', 'upload_manuscript_nav', 0, 1)" disabled>Save & Continue</button>
 
@@ -357,12 +362,12 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
 
                           <h3 class="manu_head">Upload Manuscript Files</h3> <br>
 
-                          <label for="">Main Manuscript File:</label>
+                          <label for=""><span style="color: #e22424;">*</span>Main Manuscript File:</label>
                           <input type="file" class="form-control" name="manuscript_file">
                         </div>
 
                         <div>
-                          <label for="">Cover Letter:</label>
+                          <label for=""><span style="color: #e22424;">*</span>Cover Letter:</label>
                           <input type="file" class="form-control" name="cover_letter">
                         </div>
 
@@ -388,16 +393,17 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                         <div>
                           <label for="">Main Manuscript File with Tracked Changes (for revised manuscripts):</label>
                           <input type="file" class="form-control" name="tracked_revisedmanuscript_file">
-                        </div> <br>
+                        </div> 
 
-
+                        <p style="color: #e22424;">* Indicates Mandatory Fields</p>
+                        <br>
                         <div style="display: flex; justify-content: space-around;">
                           <!-- back button  -->
                           <button type="button" class="submit-next" onclick="NavigationNext('article-type', 'article_type_nav','upload_manuscript_nav',0)">Back</button>
                           <!-- end back button  -->
                           
                           <!-- next button  -->
-                          <button type="button" class="submit-next nextManuscript" onclick="checkRequiredFiles()" disabled>Save & Continue</button>
+                          <button type="button" class="submit-next nextManuscript" onclick="checkRequiredFiles()">Save & Continue</button>
                           <!-- end next button  -->
                         </div>
 
@@ -406,8 +412,9 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
 
 
                       <div id="title" class="form-section hidden">
-                        <b style="text-align: center;">Manuscript Title</b>
-                        <input type="text" class="form-control" placeholder="Full Title" name="manuscript_full_title"> <br>
+                        <b style="text-align: center;"><span style="color: #e22424;">*</span>Manuscript Title</b>
+                        <input type="text" class="form-control" placeholder="Full Title" name="manuscript_full_title">
+                        <p style="color: #e22424;">* Indicates Mandatory Fields</p> <br>
 
                         <div style="display: flex; justify-content: space-around;">
                           <!-- back button  -->
@@ -425,14 +432,14 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                       <div id="abstract" class="form-section hidden">
                         <div>
 
-                          <h3 class="manu_head">Abstract</h3><br>
+                          <h3 class="manu_head"><span style="color: #e22424;">*</span>Abstract</h3><br>
 
                           <!-- Main toolbar -->
                           <div class="bg-body border rounded-bottom h-400px overflow-hidden quill-editor" id="quilleditor" style="height: 500px;">
                           </div>
                           <div id="word-count" class="wordCount"></div><span id="limit-exceed"> </span>
-                        </div> <br>
-
+                        </div> 
+                        <p style="color: #e22424;">* Indicates Mandatory Fields</p> <br>
 
 
                         <div style="display: flex; justify-content: space-around;">
@@ -447,7 +454,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                       </div>
 
                       <div id="keywords" class="form-section hidden">
-                        <h3 class="manu-head">Keywords</h3>
+                        <h3 class="manu-head"><span style="color: #e22424;">*</span>Keywords</h3>
                         <div>
                           <label for="">Keyword 1</label>
                           <input type="text" class="form-control keyword-input" name="keyword[]">
@@ -486,7 +493,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                           <!-- end back button  -->
 
                           <!-- next button  -->
-                          <button type="button" class="submit-next nextManuscript" id="nextButton" disabled>Save & Continue</button>
+                          <button type="button" class="submit-next nextManuscript" id="nextButton">Save & Continue</button>
                           <!-- end next button  -->
                         </div>
                     </div>
@@ -498,12 +505,12 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                         <div class="authorinfoContainer">
                           <div class="authorname">
                             <div style="margin-right: 10px;">
-                              <label for="prefix">Prefix:</label>
+                              <label for="prefix"><span style="color: #e22424;">*</span>Prefix:</label>
                               <input name="loggedIn_authors_prefix" class="form-control hd" id="author_information_prefix" readonly />
                             </div>
 
                             <div style="margin-right: 10px;">
-                              <label for="">First Name:</label>
+                              <label for=""><span style="color: #e22424;">*</span>First Name:</label>
                               <input type="text" class="form-control hd" placeholder="First Name..." name="loggedIn_authors_first_name" id="loggedIn_firstname" readonly>
                             </div>
                               <!-- <div style="display: flex;"> -->
@@ -513,7 +520,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                                     <!-- </div> -->
                             </div>
                             <div style="margin-right: 10px;">
-                                <label for="">Last Name:</label>
+                                <label for=""><span style="color: #e22424;">*</span>Last Name:</label>
                                 <input type="text" class="form-control hd" placeholder="Last Name..." name="loggedIn_authors_last_name" id="loggedIn_lastname" readonly>
                             </div>
                           </div>  
@@ -526,20 +533,20 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                         
 
                             <div style="margin-right: 10px;">
-                              <label for="">Affiliation(s):</label>
+                              <label for=""><span style="color: #e22424;">*</span>Affiliation(s):</label>
                               <input type="text" class="form-control hd" placeholder="Affiliation..." name="loggedIn_affiliation" id="loggedIn_affiliation" style="margin-right: 5px;" readonly>
                           </div>
                           <div style="margin-right: 10px;">
-                            <label for="">City:</label>
+                            <label for=""><span style="color: #e22424;">*</span>City:</label>
                             <input type="text" class="form-control hd" placeholder="City..." name="loggedIn_affiliation_city" id="loggedIn_affiliation_city" style="margin-right: 5px;" readonly>
                           </div>
                           <div style="margin-right: 10px;">
-                            <label for="">Country:</label>
+                            <label for=""><span style="color: #e22424;">*</span>Country:</label>
                             <input type="text" class="form-control" placeholder="Country..." name="loggedIn_affiliation_country" id="loggedIn_affiliation_country" style="margin-right: 5px;" readonly>
                           </div>
                         </div>
                         <div>
-                          <label for="">Email:</label>
+                          <label for=""><span style="color: #e22424;">*</span>Email:</label>
                           <input type="text" class="form-control hd" placeholder="Email..." name="loggedIn_author" id="logged_email" readonly>
                         </div>
                         <div>
@@ -547,7 +554,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                           <input type="text" class="form-control hd" placeholder="Membership ID..." name="membership_id[]" >
                         </div>
                           <div>
-                              <label for="">Corresponding Author's Email:</label>
+                              <label for=""><span style="color: #e22424;">*</span>Corresponding Author's Email:</label>
                               <input type="text" class="form-control hd" placeholder="Corresponding Author Email..." name="corresponding_author" id="loggedIn_email">
                           </div>
                         </div>
@@ -561,7 +568,8 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                             </button>
                           </div>
                        
-                         <br>
+                          <p style="color: #e22424;">* Indicates Mandatory Fields</p>
+                           <br>
 
                         <div style="display: flex; justify-content: space-around;">
                           <!-- back button  -->
@@ -696,7 +704,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
                         <!-- end back button  -->
 
                         <!-- next button  -->
-                        <button type="button" class="submit-next nextManuscript" id="suggestNextButton" disabled>Save & Continue</button>
+                        <button type="button" class="submit-next nextManuscript" id="suggestNextButton" >Save & Continue</button>
                         <!-- end next button  -->
                       </div>
 
