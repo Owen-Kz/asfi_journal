@@ -52,13 +52,20 @@ if(user){
                                     Submit Correction
                                 </a> `
                                 StatusMain = "Returned For Correction"
-                            }else if(ArticlesInfo.status === "submitted_for_review" || ArticlesInfo.status === "review_submitted" || ArticlesInfo.status === "revision_submitted"){
+                            }else if(ArticlesInfo.status === "submitted_for_review" || ArticlesInfo.status === "review_submitted" ){
                                 RevisionAction = ``
                                 StatusMain = "Under Review"
                                 viewSubmission = ` <a role="link" tabindex="0" href="../content?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
                                               View submission
                                           </a> `
-                            }else if(ArticlesInfo.status === "saved_for_later" || ArticlesInfo.status === "revision_saved"){
+                            }else if(ArticlesInfo.status === "revision_submitted"){
+                                RevisionAction = ``
+                                StatusMain = "Revision Submitted"
+                                viewSubmission = ` <a role="link" tabindex="0" href="../content?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
+                                              View submission
+                                          </a> `
+                            }
+                            else if(ArticlesInfo.status === "saved_for_later" || ArticlesInfo.status === "revision_saved"){
                                 RevisionAction = ` <br>
                                 <a role="link" tabindex="0" href="../edit?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
                                     Continue Submission
