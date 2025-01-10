@@ -9,32 +9,34 @@ const segments = pathname.split('/');
 
 const parentDIRName = segments[1];
 const domainName = window.location.origin
-let parentDirectoryName, EndPoint, submissionsEndpoint, editorsDomainEndpoint
-if(parentDIRName === "asfi_journal"){   
+let parentDirectoryName, EndPoint, submissionsEndpoint, editorsDomainEndpoint, processEndpoint
+if (parentDIRName === "asfi_journal") {
     parentDirectoryName = `/asfi_journal/`
     EndPoint = `/asfi_journal/backend`;
     submissionsEndpoint = 'http://localhost/asfirj_submission_controls'
     editorsDomainEndpoint = "http://localhost/asfirj_admin"
- 
-}else{
+    processEndpoint = "http://localhost:31000"
+
+} else {
     parentDirectoryName = "https://asfirj.org"
-    EndPoint = '/backend'   
+    EndPoint = '/backend'
     submissionsEndpoint = 'https://cp.asfirj.org'
     editorsDomainEndpoint = 'https://editors.asfirj.org'
+    processEndpoint = "https://process.asfirj.org"
 }
 
-function GetParameters(href){
+function GetParameters(href) {
     // Get the URL string
     const urlString = href;
-    
+
     // Create a URL object
     const url = new URL(urlString);
-    
+
     // Get the search parameters from the URL
     const searchParams = new URLSearchParams(url.search);
     return searchParams
-    
-    }
+
+}
 
 // console.log(parentDirectoryName)
 // Concatenate with the desired directory name
@@ -52,13 +54,14 @@ const searchParams = new URLSearchParams(url.search);
 // Get the value of the "man" parameter
 
 
-export { 
+export {
     EndPoint,
-    parentDirectoryName, 
+    parentDirectoryName,
     domainName,
     searchParams,
     GetParameters,
     submissionsEndpoint,
     url,
-    editorsDomainEndpoint
+    editorsDomainEndpoint,
+    processEndpoint
 };

@@ -1,19 +1,31 @@
 // import { GetParameters, submissionsEndpoint } from "../constants.js";
 
-import { GetParameters, submissionsEndpoint } from "../constants.js";
+import { GetParameters, processEndpoint, submissionsEndpoint } from "../constants.js";
 import { formatTimestamp } from "../formatDate.js";
 import { GetCookie } from "../setCookie.js";
-
+import { GetAttachments } from "./getAttachments.js";
+import { GetBCCEmails } from "./getBCCEmails.js";
+import { GetCCEmails } from "./getCCEmails.js";
 // import { GetCookie } from "../setCookie.js";
+
 const user = GetCookie("user")
 const contentDiv = document.getElementById('email-content');
+
+
+
+
 // Get the Email Containent 
-function GetEmailContent(emailID){
-    fetch(`${submissionsEndpoint}/backend/editors/emailContent.php?u_id=${user}&emailId=${emailID}`,{})
-    .then(res => res.json())
-    .then(data =>{
-        if(data.emails){
-            contentDiv.innerHTML = `<div>
+async function GetEmailContent(emailID) {
+    const BCCEMails = await GetBCCEmails(emailID);
+    const CCEmails = await GetCCEmails(emailID);
+    const Attachments = await GetAttachments(emailID)
+
+
+    fetch(`${submissionsEndpoint}/backend/editors/emailContent.php?u_id=${user}&emailId=${emailID}`, {})
+        .then(res => res.json())
+        .then(data => {
+            if (data.emails) {
+                contentDiv.innerHTML = `<div>
                 <p><b>${data.emails.subject}</b></p> 
                 <p>${data.emails.article_id}</p>
                 <p>From: ${data.emails.sender}</p>
@@ -21,41 +33,73 @@ function GetEmailContent(emailID){
                 <p>To: ${data.emails.recipient}</p>
                 <p>${formatTimestamp(data.emails.date_sent)}</p>
                                   </div>`
+                if (CCEmails.length > 0) {
+                    contentDiv.innerHTML += `<p><b>CC:</b></p>`
 
- 
-         // Parse the Quill content from the JSON data]
-         const quillContent = JSON.parse(data.emails.body);
+                    for (let i = 0; i < CCEmails.length; i++) {
+                        contentDiv.innerHTML += `<span>${CCEmails[i]}</span>, `
+                    }
+                }
 
-         // Create a Quill instance in "read-only" mode to render the content as HTML
+                if (BCCEMails.length > 0) {
+                    contentDiv.innerHTML += "<p><b>BCC</b></p>"
+                    for (let i = 0; i < BCCEMails.length; i++) {
+                        contentDiv.innerHTML += `<span class="other_emails">${BCCEMails[i]}</span>, `
+                    }
+                }
 
-         function renderQuillAsHTML(divId, deltaContent) {
-             // Create a Quill instance in a temporary div
-             const tempDiv = document.createElement('div');
-             const quill = new Quill(tempDiv, {
-                 theme: 'snow',
-                 modules: { toolbar: false },
-                 readOnly: true,
-             });
+                contentDiv.innerHTML += `<hr/>`
 
-             // Set the content as Quill Delta and extract the HTML
-             quill.setContents(deltaContent);
 
-             // Get the innerHTML from the Quill editor
-             const htmlContent = tempDiv.innerHTML;
 
-             // Render the extracted HTML into the specified div
-             contentDiv.innerHTML += htmlContent;
-         }
+                // Parse the Quill content from the JSON data]
+                const quillContent = JSON.parse(data.emails.body);
 
-         // Render the Quill content as HTML in the "content" div
-         renderQuillAsHTML('content', quillContent);
-        }else{
-            contentDiv.innerHTML = `   <div id="email1" class="email-details">
+                // Create a Quill instance in "read-only" mode to render the content as HTML
+
+                function renderQuillAsHTML(divId, deltaContent) {
+                    // Create a Quill instance in a temporary div
+                    const tempDiv = document.createElement('div');
+                    const quill = new Quill(tempDiv, {
+                        theme: 'snow',
+                        modules: { toolbar: false },
+                        readOnly: true,
+                    });
+
+                    // Set the content as Quill Delta and extract the HTML
+                    quill.setContents(deltaContent);
+
+                    // Get the innerHTML from the Quill editor
+                    const htmlContent = tempDiv.innerHTML;
+
+                    // Render the extracted HTML into the specified div
+                    contentDiv.innerHTML += htmlContent;
+                }
+
+                // Render the Quill content as HTML in the "content" div
+                renderQuillAsHTML('content', quillContent);
+
+
+
+                if (Attachments.length > 0) {
+                    contentDiv.innerHTML += `<hr/>`
+                    contentDiv.innerHTML += `<p><b>Attachments</b></p>`
+
+                    const attchmentList = document.createElement("ul")
+                    attchmentList.setAttribute("style", "list-style-type:disc !important; color:purple !important;")
+                    for (let i = 0; i < Attachments.length; i++) {
+                        attchmentList.innerHTML += `<li style="color:purple !important;"><a style="color:purple !important;" href="${processEndpoint}/item?url=${Attachments[i].file_path}" target=_blank>${Attachments[i].file_name}</a></li>`
+                    }
+                    contentDiv.appendChild(attchmentList)
+                }
+
+            } else {
+                contentDiv.innerHTML = `   <div id="email1" class="email-details">
                       <h4>Oops, Could Not Retrieve Email at this time</h4>
                       <p>Please try again...</p>
                     </div>`
-        }
-    })
+            }
+        })
 }
 
 export {
