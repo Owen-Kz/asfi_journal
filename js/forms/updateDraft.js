@@ -61,7 +61,7 @@ if (articleId) {
             if (data.success) {
                 const Article = data.articles
                 const ArticleStatus = Article.status
-                if (ArticleStatus === "saved_for_later" || ArticleStatus === "Saved" || ArticleStatus === "Drafted" || ArticleStatus === "returned_for_correction") {
+                if (ArticleStatus === "saved_for_later" || ArticleStatus === "Saved" || ArticleStatus === "Drafted" || ArticleStatus === "returned_for_correction" || ArticleStatus === "revision_saved") {
 
                     const articleType = Article.article_type
                     const abstract = Article.abstract
@@ -411,7 +411,7 @@ if (articleId) {
                     });
 
                 } else {
-                    alert("This Manuscript Has Already been sumitted")
+                    alert("This Manuscript Has Already been submitted")
                     window.location.href = "/dashboard/authordash/manuscripts"
                 }
             } else {
