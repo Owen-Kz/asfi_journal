@@ -1,3 +1,11 @@
+<?php
+
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
+?>
+
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -45,36 +53,36 @@
 	<meta name="twitter:card" content="summary_large_image">
 
 
-	<link rel="stylesheet" href="./front/public/css/fontawesome.min.css">
-	<link rel="stylesheet" href="./front/public/css/line-awesome.min.css">
-	<link rel="stylesheet" href="./front/public/css/business-icon.css">
-	<link rel="stylesheet" href="./front/public/css/animate.min.css">
-	<link rel="stylesheet" href="./front/public/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./front/public/css/slick.min.css">
-	<link rel="stylesheet" href="./front/public/css/venobox.min.css">
-	<link rel="stylesheet" href="./front/public/css/odometer.min.css">
-	<link rel="stylesheet" href="./front/public/css/nice-select.css">
-	<link rel="stylesheet" href="./front/public/css/splitting-cells.css">
-	<link rel="stylesheet" href="./front/public/css/splitting.css">
-	<link rel="stylesheet" href="./front/public/css/keyframe-animation.css">
-	<link rel="stylesheet" href="./front/public/css/slider.css">
-	<link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" href="./front/public/css/header.css">
-	<link rel="stylesheet" href="./front/public/css/footer.css">
+	<link rel="stylesheet" href="./front/public/css/fontawesome.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/line-awesome.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/business-icon.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/animate.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/bootstrap.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/slick.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/venobox.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/odometer.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/nice-select.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/splitting-cells.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/splitting.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/keyframe-animation.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/slider.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./css/style.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/header.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/footer.css?v=<?= time(); ?>">
 	<!-- Bootstrap core CSS -->
-	<link href="./front/public/css/carousel/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="./front/public/css/carousel/bootstrap.css?v=<?= time(); ?>" rel="stylesheet" type="text/css" />
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<link href="./front/public/css/carousel/ie10-viewport-bug-workaround.css" rel="stylesheet" type="text/css" />
+	<link href="./front/public/css/carousel/ie10-viewport-bug-workaround.css?v=<?= time(); ?>" rel="stylesheet" type="text/css" />
 	<!-- Carousel styles for this template -->
-	<link href="./front/public/css/carousel/carousel.css" rel="stylesheet" type="text/css" />
-	<link href="./front/public/css/carousel/jumbotron.css" rel="stylesheet" type="text/css" />
-	<link href="./front/public/css/carousel/custom-icons.css" rel="stylesheet" type="text/css" />
+	<link href="./front/public/css/carousel/carousel.css?v=<?= time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="./front/public/css/carousel/jumbotron.css?v=<?= time(); ?>" rel="stylesheet" type="text/css" />
+	<link href="./front/public/css/carousel/custom-icons.css?v=<?= time(); ?>" rel="stylesheet" type="text/css" />
 
-	<link rel="stylesheet" href="./front/public/css/main.css">
-	<link rel="stylesheet" href="./front/public/css/responsive.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css">
+	<link rel="stylesheet" href="./front/public/css/main.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="./front/public/css/responsive.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/brands.min.css?v=<?= time(); ?>">
 	<script src="./front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 	 <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -999,7 +1007,7 @@
 
 
 
-	<link rel="stylesheet" href="./assets/global/css/iziToast.min.css">
+	<link rel="stylesheet" href="./assets/global/css/iziToast.min.css?v=<?= time(); ?>">
 	<script src="./assets/global/js/iziToast.min.js"></script>
 
 
