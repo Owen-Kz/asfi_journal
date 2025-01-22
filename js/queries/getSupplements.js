@@ -72,23 +72,23 @@ function getSupplement(articeID) {
                     let PublishedDate = "N/A"
 
                     
-                    if(Article[0].date_uploaded != null){
+                if(Article[0].date_uploaded != null && Article[0].date_uploaded != "" && Article[0].date_uploaded){
                     DateUploaded = formatTimestamp(Article[0].date_uploaded)
                     }
 
-                    if(Article[0].date_submitted != null){
+                    if(Article[0].date_submitted != null && Article[0].date_submitted != "" && Article[0].date_submitted){
                     SubmittedDate = formatTimestamp(Article[0].date_submitted)
                     }
 
-                    if(Article[0].date_reviewed != null){
+                    if(Article[0].date_reviewed != null && Article[0].date_reviewed != "" && Article[0].date_reviewed){
                     ReviewedDate = formatTimestamp(Article[0].date_reviewed)
                     }
 
-                    if(Article[0].date_accepted != null){
+                    if(Article[0].date_accepted != null && Article[0].date_accepted != "" && Article[0].date_accepted){
                     AcceptedDate = formatTimestamp(Article[0].date_accepted)
                     }
 
-                    if(Article[0].date_published != null){
+                    if(Article[0].date_published != null && Article[0].date_published != "" && Article[0].date_published){
                    PublishedDate = formatTimestamp(Article[0].date_published)
                     }
                     const buffer = Article[0].buffer
