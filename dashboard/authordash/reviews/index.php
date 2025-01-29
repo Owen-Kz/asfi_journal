@@ -1,10 +1,3 @@
-<?php
-
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-?>
-
 <!doctype html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -12,53 +5,56 @@ header("Pragma: no-cache");
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Reviewer - Dashboard</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title> Author - Dashboard</title>
     <meta name="title" Content="Author - Dashboard">
 
     <meta name="description" content="asfiresearchjournal">
     <meta name="keywords" content="asfiresearchjournal">
-    <link rel="shortcut icon" href="../../assets/images/logoIcon/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../assets/images/logoIcon/favicon.png" type="image/x-icon">
 
     
-    <link rel="apple-touch-icon" href="../../assets/images/logoIcon/logo.png">
+    <link rel="apple-touch-icon" href="../../../assets/images/logoIcon/logo.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Author - Dashboard">
     
     <meta itemprop="name" content="Author - Dashboard">
     <meta itemprop="description" content="asfiresearchjournal">
-    <meta itemprop="image" content="../assets/images/seo/65be1258275121706955352.png">
+    <meta itemprop="image" content="../../../assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFIRJ">
     <meta property="og:description" content="asfiresearchjournal">
-    <meta property="og:image" content="../assets/images/seo/65be1258275121706955352.png"/>
+    <meta property="og:image" content="../../../assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
     <meta property="og:image:height" content="600" />
-    <meta property="og:url" content="/user/dashboard.html">
+    <meta property="og:url" content="../../../dashboard">
     
     <meta name="twitter:card" content="summary_large_image">
     <!-- Bootstrap CSS -->
-    <link href="../../assets/global/css/bootstrap.min.css?v=<?= time(); ?>" rel="stylesheet">
-    <!-- <link href="../../css/bootstrap.css?v=<?= time(); ?>" rel="stylesheet">
+    <link href="../../../assets/global/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../../css/bootstrap.css" rel="stylesheet">
       
-    <link href="../../css/bootstrap-responsive.css?v=<?= time(); ?>" rel="stylesheet"> -->
+    <link href="../../css/bootstrap-responsive.css" rel="stylesheet"> -->
 
-    <link href="../../assets/global/css/all.min.css?v=<?= time(); ?>" rel="stylesheet">
+    <link href="../../../assets/global/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../assets/global/css/line-awesome.min.css?v=<?= time(); ?>" />
+    <link rel="stylesheet" href="../../../assets/global/css/line-awesome.min.css" />
 
-    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/main.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/main.css">
 
-    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/custom.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="../../css/style.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/custom.css">
+    <link rel="stylesheet" href="../../../css/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     
     
-    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
-    <link rel="stylesheet" href="../../front/public/css/header.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
+    <link rel="stylesheet" href="../../../front/public/css/header.css">
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -87,7 +83,7 @@ header("Pragma: no-cache");
             <div class="dashboard-header__inner">
                 
                 <div class="dashboard-header__left">
-                    <a href="" class="sidebar-logo__link"> <img src="../../assets/images/logoIcon/logo.png" alt="site-logo"></a>
+                    <a href="" class="sidebar-logo__link"> <img src="../../../assets/images/logoIcon/logo.png" alt="site-logo"></a>
                 </div>
                 <div class="dashboard-header__right">
                     <div class="user-info">
@@ -95,10 +91,10 @@ header("Pragma: no-cache");
                             <div class="user-info__info">
                                 
                                 <span class="fw-bold user_fullnameContainer">
-                                  
+                                 
                                 </span>
         
-                                    <!-- <ul class="user-info-dropdown">
+                                <!-- <ul class="user-info-dropdown">
                                     <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
                                             href="../../user/profile-setting.html">Profile Setting</a></li>
                                     <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
@@ -120,19 +116,19 @@ header("Pragma: no-cache");
                 </div>
             </div>
             <div style="background-color: #310357;" id="navbarContainer">
-        
-        </div>
+             
+            </div>
         <div class="dashboard__inner">
             <div class="sidebar-menu" id="userMenu">
                 <div class="submission-header-dash" style="margin-top: 30px;">
-                    <div style="text-align: center; margin: 20px;"><span class="fw-bold" style="color: #404040;">Reviewer Dashboard</span></div>
+                    <div style="text-align: center;"><span class="fw-bold" style="color: #404040;">Author Dashboard</span></div>
                     
                     
                     <ul class="submit-nav">
-                        <a href=""><li style="background-color: #320359;"> <span class="reviewsCount">0</span> Review and Score</li></a>
-                        <a href="./submitted/"><li > <span class="submittedReviewsCount">0</span> Reviews Submitted</li></a>
-                        <!-- <a href=""><li>Submit New Manuscript</li></a> -->
-                        <!-- <a href="./invitations.html"><li> <span>0</span> Invitations</li></a> -->
+                        <a href=""><li style="background-color: #320359;">  <span class="newSubmissionsCount">0</span> Submiited Manuscripts</li></a>
+                        <a href="../coauth/"><li><span class="coAuhtoredCount">0</span> Manuscripts I Have Co-Authored</li></a>
+                        <a href="../submit/"><li>Submit New Manuscript</li></a>
+                        <a href="../inreview/"><li> <span class="inReviewCount">0</span> Manuscripts With Decisions</li></a>
                         <a href="../../../portal/logout/"><li>Logout</li></a>
                         
                     </ul>
@@ -147,63 +143,23 @@ header("Pragma: no-cache");
 </div>
                 <div class="dashboard-body">
                     <section class="mt-3 mb-60">
+        <div class="row justify-content-center mb-3">
+     
 
         <div class="row gy-2 justify-content-center">
-            <span style="font-size: 35px; color: #320359;">Review and Score</span>
+            <span style="font-size: 35px; color: #310357;">Manuscript Reviews For <span id="article_id_container"></span></span>
             <div class="table_container">
                 <table id="table-dash" class="">
                     <thead>
                         <tr class="section-title">
-                            <th>ACTION</th>
-                            <th>DUE DATE</th>
-                            <th>TYPE</th>
-                            <th>ID/TITLE</th>
-                            <th>STATUS</th>
+                            <th>Review Id</th>
+                            <th>Reviewed By</th>
+                            <th>Specific Section Score</th>
+                            <th>Overall Rating</th>
                         </tr>
                     </thead>
-                    <tbody >
-              
-    <?php
-    
-     $user = $_COOKIE["user"];
-    // $url = "http://localhost/asfirj_submission_controls/backend/reviewers/toReview.php?user=$user";
-
-    $url = "https://cp.asfirj.org/backend/reviewers/toReview.php?user=$user";
-    $content = file_get_contents($url);
-    if ($content !== false) {
-        echo $content;
-    } else {
-        echo 'Error fetching content from URL';
-    }
-    ?>
-
-
-                        <!-- <tr id="queue_0" name="queue_0" role="row" class="odd">         
-               <td data-label="status">              
-                        
-                        <form action="./score/" class="actionForm">
-                            <select name="action" id="" class="form-control action">
-                                <option value="">action</option>
-                                <option value="review">Review & Score</option>
-                            </select>
-                        </form>  
-                        
-                    </td>
-        
-                    <td data-label="ID">
-                        29-May-2024
-                    
-                    </td>
-                                          
-                    <td data-label="title" style="white-space:pre-wrap">Original Article
-             </td>
-                    <td class="whitespace-nowrap" data-label="submitted">
-                        <span>ASFIRJ-2024-215540.R2</span><br><br>
-                        Does use of hormonal contraceptives impact on severe exacerbation in women with asthma? A 17-year population-based cohort study
-                    </td>
-                    <td data-label="decisioned" class="whitespace-nowrap">PENDING</td>
-               </tr>
-   -->
+                    <tbody id="reviewsContainer">
+                                  
                     </tbody>
                     
                 </table>
@@ -222,14 +178,13 @@ header("Pragma: no-cache");
             </div>
         </div>
     </div>
-<div id="google_translate_element"></div>
+ <div id="google_translate_element"></div>
         
-    <script src="../../assets/global/js/jquery-3.6.0.min.js?v=<?= time(); ?>"></script>
-    <script src="../../assets/global/js/bootstrap.bundle.min.js?v=<?= time(); ?>"></script>
-    <script src="../../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
-    <script type="module" src="../../js/dashboards/author.js?v=<?= time(); ?>"></script>
-    <script type="module" src="../../js/dashboards/toReview.js?v=<?= time(); ?>"></script>
-
+    <script src="../../../assets/global/js/jquery-3.6.0.min.js?v=<?= time(); ?>"></script>
+    <script src="../../../assets/global/js/bootstrap.bundle.min.js?v=<?= time(); ?>"></script>
+    <script src="../../../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
+    <script type="module" src="../../../js/dashboards/author.js?v=<?= time(); ?>"></script>
+<script type="module" src="../../../js/dashboards/manuscriptReviews.js?v=<?= time(); ?>"></script>
             <script>
         'use strict';
         (function($) {
@@ -237,12 +192,12 @@ header("Pragma: no-cache");
     </script>
 
     
-    <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css?v=<?= time(); ?>">
-<script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
+    <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css">
+<script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
 
 
 
-    <script src="../../assets/global/js/firebase/firebase-8.3.2.js?v=<?= time(); ?>"></script>
+    <script src="../../../assets/global/js/firebase/firebase-8.3.2.js?v=<?= time(); ?>"></script>
 
 
     <script>
@@ -289,21 +244,8 @@ header("Pragma: no-cache");
 
         })(jQuery);
     </script>
-
-    <script>
-        const actionForm = document.querySelectorAll(".actionForm")
-
-        actionForm.forEach(form => {
-            const actionsDropdown = form.querySelectorAll(".action");
-        actionsDropdown.forEach(action =>{
-            action.addEventListener("change", function(){
-                form.submit()
-            })
-        })
-     
-        })
-    </script>
-    <script type="module" src="../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
+      <script type="module" src="../../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
+    
 </body>
 
 </html>

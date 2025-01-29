@@ -1,8 +1,3 @@
-<?php
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-?>
 <!doctype html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -10,7 +5,10 @@ header("Pragma: no-cache");
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title> Reviewer - Dashboard</title>
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+    <title> Inbox - Dashboard</title>
     <meta name="title" Content="Author - Dashboard">
 
     <meta name="description" content="asfiresearchjournal">
@@ -38,36 +36,40 @@ header("Pragma: no-cache");
     
     <meta name="twitter:card" content="summary_large_image">
     <!-- Bootstrap CSS -->
-    <link href="../../../assets/global/css/bootstrap.min.css?v=<?= time(); ?>" rel="stylesheet">
-    <!-- <link href="../../css/bootstrap.css?v=<?= time(); ?>" rel="stylesheet">
+    <link href="../../../assets/global/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../../css/bootstrap.css" rel="stylesheet">
       
-    <link href="../../css/bootstrap-responsive.css?v=<?= time(); ?>" rel="stylesheet"> -->
+    <link href="../../css/bootstrap-responsive.css" rel="stylesheet"> -->
 
-    <link href="../../../assets/global/css/all.min.css?v=<?= time(); ?>" rel="stylesheet">
+    <link href="../../../assets/global/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../../assets/global/css/line-awesome.min.css?v=<?= time(); ?>" />
+    <link rel="stylesheet" href="../../../assets/global/css/line-awesome.min.css" />
 
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/main.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/main.css">
 
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/custom.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="../../../css/style.css?v=<?= time(); ?>">
+    <!-- <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/custom.css"> -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/inbox.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    
-    
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
-    <link rel="stylesheet" href="../../../front/public/css/header.css?v=<?= time(); ?>">
-    <script type="text/javascript">
+    <!-- QUILL JS  -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js?v=<?= time(); ?>"></script>
+    <!-- END QUILL JS  -->
+     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    
+    
+    <!-- <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor="> -->
+    <link rel="stylesheet" href="../../../front/public/css/header.css">
 </head>
 
-<body>
+<body style="color: black;">
     
     <div class="preloader">
         <div class="loader-p"></div>
@@ -93,10 +95,10 @@ header("Pragma: no-cache");
                             <div class="user-info__info">
                                 
                                 <span class="fw-bold user_fullnameContainer">
-                                  
+                                 
                                 </span>
         
-                              <!-- <ul class="user-info-dropdown">
+                                <!-- <ul class="user-info-dropdown">
                                     <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
                                             href="../../user/profile-setting.html">Profile Setting</a></li>
                                     <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
@@ -118,22 +120,23 @@ header("Pragma: no-cache");
                 </div>
             </div>
             <div style="background-color: #310357;" id="navbarContainer">
-         
+             
             </div>
-        </div>
         <div class="dashboard__inner">
             <div class="sidebar-menu" id="userMenu">
                 <div class="submission-header-dash" style="margin-top: 30px;">
-                    <div style="text-align: center; margin: 20px;"><span class="fw-bold" style="color: #404040;">Reviewer Dashboard</span></div>
+                    <div style="text-align: center;"><span class="fw-bold" style="color: #404040;">Inbox</span></div>
                     
                     
                     <ul class="submit-nav">
-                        <a href="../"><li > <span class="reviewsCount">0</span> Review and Score</li></a>
-                        <a href=""><li style="background-color: #320359;" > <span class="submittedReviewsCount">0</span> Reviews Submitted</li></a>
-                        <!-- <a href=""><li>Submit New Manuscript</li></a> -->
-                        <!-- <a href="./invitations.html"><li> <span>0</span> Invitations</li></a> -->
-                        <a href="../../../portal/logout/"><li>Logout</li></a>
-                        
+
+                           <a href="../../authordash/">
+                            <li style="background-color: #320359;">  
+                             Author Dashboard</li></a>
+                           <a href="../../reviewerdash/">
+                            <li>                          
+                             Review Dashboard</li></a>
+                          <a href="../../../portal/logout/"><li>Logout</li></a>
                     </ul>
                 </div>
             </div>
@@ -144,44 +147,45 @@ header("Pragma: no-cache");
 <div class="dashboard-body__bar d-xl-none d-block mt-2 text-end">
     <span class="dashboard-body__bar-icon"><i class="las la-bars"></i></span>
 </div>
-                <div class="dashboard-body">
+                <div class="dashboard-body" >
                     <section class="mt-3 mb-60">
+        <div class="row justify-content-center mb-3">
+    
 
-        <div class="row gy-2 justify-content-center">
-            <span style="font-size: 35px; color: #320359;">Reviews Submitted</span>
-            <div class="table_container">
-                <table id="table-dash" class="">
-                    <thead>
-                        <tr class="section-title">
-                            <th>ACTION</th>
-                            <th>COMPLETED</th>
-                            <th>ID/TITLE</th>
-                            <th>STATUS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    $user = $_COOKIE["user"];
-    // $url = "http://localhost/asfirj_submission_controls/backend/reviewers/reviewsSubmitted.php?user=$user";
-              
-    $url = "https://cp.asfirj.org/backend/reviewers/reviewsSubmitted.php?user=$user";
-    $content = file_get_contents($url);
-    if ($content !== false) {
-        echo $content;
-    } else {
-        echo 'Error fetching content from URL';
-    }
-    ?>
-
+        <div class="row gy-2 justify-content-center" style="margin-top: 0px; height: 100vh;">
+            
+                <div class="d-md-flex mb-3" style="align-items: center; width: 100%; flex-direction: row; display: flex;">
+                    <div class="expand-forum"><i class="fa fa-bars"></i> </div>
+                    <span style="font-size: 35px; color: #310357;">
+                     Inbox</span>
+                    </div>
                
-                    </tbody>
+            <div class="table_container">
+         
+                <div class="container" style="margin-top: 0px; height: 100vh;">
+                    <div class="email-list" id="emailListContainer">
                     
-                </table>
+                      <!-- <div class="email-item" onclick="showEmailContent('email2')">
+                        <div class="email-subject">Subject of the email 2 (limited to 50 characters)</div>
+                        <div class="email-recipient">recipient2@example.com</div>
+                      </div> -->
+                      <!-- Add more email items as needed -->
+                    </div>
+                    <div class="email-content" id="email-content">
+                      <!-- Email content will be displayed here -->
+                      <div id="email1" class="email-details">
+                        <h4>Click On an Email To open</h4>
+                        <p>Email 1 content goes here...</p>
+                      </div>
+               
+                    </div>
+                  </div>
 
             </div>
             
 
         </div>
+         
 
        
         
@@ -198,8 +202,7 @@ header("Pragma: no-cache");
     <script src="../../../assets/global/js/bootstrap.bundle.min.js?v=<?= time(); ?>"></script>
     <script src="../../../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
     <script type="module" src="../../../js/dashboards/author.js?v=<?= time(); ?>"></script>
-
-    <script src="../../../js/dashboards/reviewsSubmitted.js?v=<?= time(); ?>" type="module"></script>
+<script type="module" src="../../../js/dashboards/getMails.js?v=<?= time(); ?>"></script>
             <script>
         'use strict';
         (function($) {
@@ -207,59 +210,15 @@ header("Pragma: no-cache");
     </script>
 
     
-    <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css">
 <script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
 
 
 
     <script src="../../../assets/global/js/firebase/firebase-8.3.2.js?v=<?= time(); ?>"></script>
 
+    <script type="module" src="../../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
 
-    <script>
-        (function($) {
-            "use strict";
-            $(".langSel").on("change", function() {
-                window.location.href = "../change/" + $(this).val();
-            });
-
-            $('.policy').on('click', function() {
-                $.get('../cookie/accept', function(response) {
-                    $('.cookies-card').addClass('d-none');
-                });
-            });
-
-            setTimeout(function() {
-                $('.cookies-card').removeClass('hide')
-            }, 2000);
-
-            var inputElements = $('[type=text],[type=password],[type=email],[type=number],select,textarea');
-            $.each(inputElements, function(index, element) {
-                element = $(element);
-                element.closest('.form-group').find('label').attr('for', element.attr('name'));
-                element.attr('id', element.attr('name'))
-            });
-
-            $.each($('input, select, textarea'), function(i, element) {
-                var elementType = $(element);
-                if (elementType.attr('type') != 'checkbox') {
-                    if (element.hasAttribute('required')) {
-                        $(element).closest('.form-group').find('label').addClass('required');
-                    }
-                }
-            });
-
-            Array.from(document.querySelectorAll('table')).forEach(table => {
-                let heading = table.querySelectorAll('thead tr th');
-                Array.from(table.querySelectorAll('tbody tr')).forEach((row) => {
-                    Array.from(row.querySelectorAll('td')).forEach((colum, i) => {
-                        colum.setAttribute('data-label', heading[i].innerText)
-                    });
-                });
-            });
-
-        })(jQuery);
-    </script>
-      <script type="module" src="../../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
     
 </body>
 

@@ -112,6 +112,8 @@ if(SubmissionSTatus.value === "submitted"){
                 NavigationNext('title', 'title_nav', 'abstract_nav', 2)
             }
         }else{
+            alert(data)
+            console.log(data)
             showErrorPopup("Internal Server Error")
             body.setAttribute("id", "formNotSubmitted")
         }

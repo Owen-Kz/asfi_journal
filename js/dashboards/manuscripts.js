@@ -52,6 +52,13 @@ if(user){
                                     Submit Correction
                                 </a> `
                                 StatusMain = "Returned For Correction"
+                            }else if(ArticlesInfo.status === "correction_saved"){
+                                viewSubmission = `  `
+                                RevisionAction = ` <br>
+                                <a role="link" tabindex="0" href="../correct?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
+                                    Continue Correction
+                                </a> `
+                                StatusMain = "Returned For Correction"
                             }else if(ArticlesInfo.status === "submitted_for_review" || ArticlesInfo.status === "review_submitted" ){
                                 RevisionAction = ``
                                 StatusMain = "Under Review"

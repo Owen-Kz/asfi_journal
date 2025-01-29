@@ -12,7 +12,7 @@ let processEndpoint = "https://process.asfirj.org/"
 const domainName = window.location.origin
 let parentDirectoryName, EndPoint, submissionsEndpoint, editorsDomainEndpoint 
 if(parentDIRName === "asfi_journal"){   
-    parentDirectoryName = `/asfi_journal/`
+    parentDirectoryName = `/asfi_journal`
     EndPoint = `/asfi_journal/backend`;
     submissionsEndpoint = "https://cp.asfirj.org";
     editorsDomainEndpoint = "https://editors.asfirj.org";
@@ -21,11 +21,10 @@ if(parentDIRName === "asfi_journal"){
     parentDirectoryName = "https://asfirj.org"
     EndPoint = '/backend'   
     submissionsEndpoint = "http://localhost/asfirj_submission_controls";
-    editorsDomainEndpoint = "http://localhost/asfirj_admin";
- 
-    
+    editorsDomainEndpoint = "http://localhost/asfirj_admin";    
 }
 
+// EndPoint = 'https://asfirj.org/backend'   
 function GetParameters(href) {
     // Get the URL string
     const urlString = href;
