@@ -8,6 +8,7 @@ const segments = pathname.split('/');
 // const parentDirectoryName = segments[segments.length - 1];
 
 const parentDIRName = segments[1];
+let processEndpoint = "https://process.asfirj.org/"
 const domainName = window.location.origin
 let parentDirectoryName, EndPoint, submissionsEndpoint, editorsDomainEndpoint 
 if(parentDIRName === "asfi_journal"){   
