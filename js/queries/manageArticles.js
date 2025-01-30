@@ -14,7 +14,7 @@ if(!manageData){
 const search = document.getElementById("search")
 const searchArticle = document.getElementById("searchArticle")
 
-let Limit = 10
+let Limit = 6
 
 
 function ArticlePageManagement(page){
@@ -23,10 +23,12 @@ function ArticlePageManagement(page){
     }).then(res => res.json())
     .then(data =>{
         if(data){
-            const { currentPage, totalPages } = data;
-        const ArticleLst = data.articlesList
+
+        const ArticleLst = data.articlesList;
+        const currentPage = data.currentPage
+        const totalPages = data.totalPages
         UpdateManageArticles(ArticleLst, currentPage, totalPages)
-        articlesNavigation(Number(totalPages), Number(currentPage));
+        articlesNavigation(new Number(totalPages), new Number(currentPage));
    
     }else{
         console.log("NO Data object")
