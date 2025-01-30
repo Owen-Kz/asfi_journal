@@ -34,6 +34,7 @@ function ArticlePage(page) {
     }).then(res => res.json())
         .then(data => {
             if (data) {
+                console.log(data)
                 const ArticleLst = data.articlesList
                 const currentPage = data.currentPage
                 const totalPages = data.totalPages
