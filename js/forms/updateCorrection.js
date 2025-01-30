@@ -297,9 +297,11 @@ const previous_id = document.getElementById("previous_id")
                     const KeywordsContainer = document.querySelectorAll('input[name="keyword[]"]')
 
                     // Update the value of the keyword fields  /
+                    if(Keywords.length > 0){
                     for(let i=0; i<Keywords.length; i++){
                         KeywordsContainer[i].value = Keywords[i].keyword
                     }
+                }
 
                     // Get the Suggested reviewers 
                     const SuggesteReviewers = await GetSuggestedReviewers(articleId);

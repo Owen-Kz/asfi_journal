@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </script>
 
     <script src="../../../js/forms/updateCorrection.js?v=<?= time(); ?>" type="module"></script>
-
+ 
     <script src="../../../js/forms/checkField.js?v=<?= time(); ?>" type="module"></script>
     <script type="module" src="../../../js/dashboards/author.js?v=<?= time(); ?>"></script>
     <script type="module" src="../../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>

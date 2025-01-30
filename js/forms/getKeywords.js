@@ -8,11 +8,17 @@ async function GetKeywords(articleID) {
 
     }).then(res=>res.json())
     .then(data=>{
+        console.log(data)
+        if(data){
         if(data.success){
             return data.keywords
         }else{
             return []
         }
+    }else{
+        console.warn("No data received.")
+        return []
+    }
     })
 }
 
