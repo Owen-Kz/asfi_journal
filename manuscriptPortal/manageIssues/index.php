@@ -539,12 +539,12 @@
 <script src="../../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
 <script src="../../js/queries/manageIssues.js?v=<?= time(); ?>" type="module"></script>
 
-<script src="https://cdn.quilljs.com/1.3.6/quill.js?v=<?= time(); ?>"></script>
+<script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 <script type="module" src="../../js/forms/issuesEdit.js?v=<?= time(); ?>"></script>
 
-<script type="module" src="../../js/forms/quill.js?v=<?= time(); ?>"></script>
+<script type="module" src="../../js/forms/quill.js"></script>
     <script>
         const authorsArray = document.getElementById("authorsArray")
         var app = new Vue({
