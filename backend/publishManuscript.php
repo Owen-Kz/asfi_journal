@@ -94,8 +94,8 @@ if (file_exists($targetFile)) {
 
 // Check file size (optional)
 if ($_FILES["manuscript_file"]["size"] > 50000000) {
-    $response = array('status'=> 'error', 'message' => 'Sorry, your file is too large. Choose a file less than 50MB');
-    echo json_encode($response);
+    // $response = array('status'=> 'error', 'message' => 'Sorry, your file is too large. Choose a file less than 50MB');
+    // echo json_encode($response);
     $uploadOk = 0;
 }
 

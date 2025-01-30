@@ -54,6 +54,7 @@ async function UpdateIssues(articleList) {
     let articlesHTML = "";
 
     articleList.forEach((article, index) => {
+  
         const {
             manuscript_full_title: articleTitle,
             manuscript_file: articleFile,
@@ -68,6 +69,8 @@ async function UpdateIssues(articleList) {
             is_open_access: isOpenAccess
         } = article;
 
+      let coverImage = `../useruploads/article_images/${coverPhoto}`? `../useruploads/article_images/${coverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
+
         const formattedDate = formatTimestamp(mainPublishDate || date_uploaded);
         const authorsName = authorsData[index];
 
@@ -81,7 +84,7 @@ async function UpdateIssues(articleList) {
 
         articlesHTML += `
             <div class="issue-item" style="display: flex;">
-                <div style="width: 120px; margin-right: 10px; border-radius: 10px; border: 2px solid #310357; background-image: url(../useruploads/article_images/${coverPhoto}); background-size: cover;"></div>
+                <div style="width: 120px; margin-right: 10px; border-radius: 10px; border: 2px solid #310357; background-image: url(${coverImage}); background-size: cover;"></div>
                 <div style="width: 100%;">
                     <div class="doi-access-wrapper">
                         <span class="item-category">${articleType}</span>

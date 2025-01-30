@@ -14,7 +14,7 @@ let parentDirectoryName, EndPoint, submissionsEndpoint, editorsDomainEndpoint
 if(parentDIRName === "asfi_journal"){   
 
     parentDirectoryName = "https://asfirj.org"
-    EndPoint = `/backend`;
+    EndPoint = `/asfi_journal/backend`;
 
     submissionsEndpoint = "http://localhost/asfirj_submission_controls";
     editorsDomainEndpoint = "http://localhost/asfirj_admin";  
@@ -25,7 +25,7 @@ if(parentDIRName === "asfi_journal"){
     editorsDomainEndpoint = "https://editors.asfirj.org";
 }
 
-EndPoint = 'https://asfirj.org/backend'   
+// EndPoint = 'https://asfirj.org/backend'   
 function GetParameters(href) {
     // Get the URL string
     const urlString = href;

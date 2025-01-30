@@ -1,55 +1,36 @@
-import { EndPoint, GetParameters } from "../constants.js"
-import { formatTimestamp } from "../formatDate.js"
-import { getURL } from "../getURL.js"
-import { UpdateIssues } from "../updateIssuesList.js"
-// import { UpdateIssues } from "../temporaryArticleList.js"
-import { articlesNavigation } from "./articlesNavigation.js"
+import { EndPoint, GetParameters } from "../constants.js";
+import { getURL } from "../getURL.js";
+import { UpdateIssues } from "../updateIssuesList.js";
+import { articlesNavigation } from "./articlesNavigation.js";
 
-const search = document.getElementById("search")
-const searchArticle = document.getElementById("searchArticle")
+const search = document.getElementById("search");
+const searchArticle = document.getElementById("searchArticle");
 
-let Limit
+const url = getURL();
+const Limit = (url === "/asfi_journal/" || url === "/") ? 3 : 6;
 
+const currentLocationURL = window.location.href;
+const newpage = GetParameters(currentLocationURL).get("page") || 1;
 
-const url = getURL()
+// Run the function immediately
+// ArticlePage(newpage);
 
-if (url == "/asfi_journal/" || url == "/") {
-    Limit = 3
-} else {
-    Limit = 6;
-}
-const currentLocationURL = window.location.href
+async function ArticlePage(page) {
+    try {
+        const response = await fetch(`${EndPoint}/forIssues/allIssues.php?page=${page}&limit=${Limit}`);
+        const data = await response.json();
 
-const newpage = GetParameters(currentLocationURL).get("page");
-
-if (newpage) {
-    ArticlePage(newpage)
-} else {
-    ArticlePage(1)
-}
- 
-function ArticlePage(page) {
-    fetch(`${EndPoint}/forIssues/allIssues.php?page=${page}&limit=${Limit}`, {
-        method: "GET"
-    }).then(res => res.json())
-        .then(data => {
-            if (data) {
-                console.log(data)
-                const ArticleLst = data.articlesList
-                const currentPage = data.currentPage
-                const totalPages = data.totalPages
-                UpdateIssues(ArticleLst, currentPage, totalPages)
-                articlesNavigation(new Number(totalPages), new Number(currentPage))
-
-            } else {
-                console.log("NO Data object")
-            }
-        })
-
-
+        if (data?.articlesList) {
+            console.log(data);
+            const { articlesList, currentPage, totalPages } = data;
+            UpdateIssues(articlesList, Number(currentPage), Number(totalPages));
+            articlesNavigation(Number(totalPages), Number(currentPage));
+        } else {
+            console.warn("No data received.");
+        }
+    } catch (error) {
+        console.error("Error fetching articles:", error);
+    }
 }
 
-
-export {
-    ArticlePage
-}
+export { ArticlePage };
