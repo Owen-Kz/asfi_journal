@@ -11,7 +11,7 @@ const searchField = document.getElementById("search")
 async function CreateAuthorsOptionsForIssues(){
 
     // Get all the authors on the system 
-  return  fetch(`${EndPoint}/authors.php`, {
+  return  fetch(`${EndPoint}/authors.php`, { 
         method:"POST"
     }).then(res => res.json())
     .then(data=>{

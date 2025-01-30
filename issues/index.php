@@ -607,5 +607,6 @@
 <script type="module" src="../js/general.js?v=<?= time(); ?>"></script>
 <script src="../js/queries/allIssues.js?v=<?= time(); ?>" type="module"></script>
 
+
 </body>
 </html>
