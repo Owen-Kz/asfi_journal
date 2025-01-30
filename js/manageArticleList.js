@@ -80,12 +80,13 @@ function UpdateManageArticles(ArticleLst) {
                   }
                 }
                 if (ArticleListContainer) {
+                        let coverImage = `https://asfirj.org/useruploads/article_images/${CoverPhoto}`? `../useruploads/article_images/${CoverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
                     ArticleListContainer.innerHTML += `
                   
                      <div class="issue-item wow fadeInLeft" data-wow-delay="200ms" style="display: flex;">
                      <div style="width: 120px; margin-right: 10px;
     border-radius: 10px;
-    border: 2px solid #310357; background-image: url(../useruploads/article_images/${CoverPhoto}); background-size: cover;"></div>
+    border: 2px solid #310357; background-image: url('${coverImage}'); background-size: cover;"></div>
     <div style="width: 100%;">
 				<div class="doi-access-wrapper"><span class="item-category">${ArticleType}</span><span class="articleSpan">${AddOpenAccess} ${AddEditorsChoice}</span></div>
 				<a href="../../content?sid=${ArticleId}" class="issue-item__title visitable">
