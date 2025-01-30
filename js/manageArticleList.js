@@ -15,7 +15,11 @@ function UpdateManageArticles(ArticleLst) {
 
 
     if (ArticleLst.length > 0) {
-        ArticleLst.forEach(article => {
+      for(let i= 0; i < ArticleLst.length; i++){
+        const article = ArticleLst[i];
+      
+        // ArticleLst.forEach(article => {
+          
           const ArticleTitle = article.manuscript_full_title;
           const RunningTitle = article.manuscript_running_title;
           const ArticleFile = article.manuscript_file;
@@ -139,7 +143,7 @@ function UpdateManageArticles(ArticleLst) {
                 console.log("Server Error");
               }
             });
-        });
+        };
     } else {
         if (ArticleListContainer) {
 
