@@ -87,9 +87,9 @@ $newFileNameImage = time() . '_coverImage.' . $coverPhotoExtension;
 
 // Check if file already exists
 if (file_exists($targetFile)) {
-    $response = array('status'=> 'error', 'message' => 'Sorry, file already exists.');
-    echo json_encode($response);
-    $uploadOk = 0;
+    // $response = array('status'=> 'error', 'message' => 'Sorry, file already exists.');
+    // echo json_encode($response);
+    // $uploadOk = 0;
 }
 
 // Check file size (optional)
