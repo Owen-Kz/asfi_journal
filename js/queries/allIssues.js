@@ -13,7 +13,7 @@ const currentLocationURL = window.location.href;
 const newpage = GetParameters(currentLocationURL).get("page") || 1;
 
 // Run the function immediately
-// ArticlePage(newpage);
+ArticlePage(newpage);
 
 async function ArticlePage(page) {
     try {
