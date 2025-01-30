@@ -53,7 +53,7 @@
 
     
     
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
+    <!-- <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor="> -->
     <link rel="stylesheet" href="../../../front/public/css/header.css">
     
     <!-- QUILL JS  -->

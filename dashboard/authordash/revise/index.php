@@ -51,7 +51,7 @@
 
 
 
-  <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
+  <!-- <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor="> -->
   <link rel="stylesheet" href="../../../front/public/css/header.css">
   <link rel="stylesheet" href="../../../front/public/css/loader.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js?v=<?= time(); ?>"></script>
@@ -828,7 +828,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
 
     <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css">
     <script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
-    <script src="https://cdn.quilljs.com/1.3.6/quill.js?v=<?= time(); ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
     <script>
 function toggleInputField() {
     var manuscriptIDField = document.getElementById("manuscriptIDField");
@@ -838,6 +838,8 @@ function toggleInputField() {
     manuscriptIDField.style.display = isYesChecked ? "block" : "none";
 }
 </script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+
     <script>
       const authorsArray = document.getElementById("authorsArray")
       var app = new Vue({
@@ -895,9 +897,8 @@ function closeModal() {
   closeModal();
     </script>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 
-    <script type="module" src="../../../js/forms/quill.js?v=<?= time(); ?>"></script>
+    <script type="module" src="../../../js/forms/quill.js"></script>
 
     <script src="../../../js/forms/checkField.js?v=<?= time(); ?>" type="module"></script>
     <script src="../../../js/forms/uploadRevision.js?v=<?= time(); ?>" type="module"></script>

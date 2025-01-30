@@ -212,6 +212,7 @@ const previous_id = document.getElementById("previous_id")
 
                     if (abstract && abstract != null && abstract != "") {
                         quill.setContents(JSON.parse(abstract))
+                        
                         const nextButton = Abstract.querySelector(".submit-next")
                         nextButton.removeAttribute("disabled")
                         abstract_nav.setAttribute("onclick", "NavigationNext('abstract', 'abstract_nav','author_information_nav', 3)")

@@ -13,7 +13,7 @@ const domainName = window.location.origin
 let parentDirectoryName, EndPoint, submissionsEndpoint, editorsDomainEndpoint 
 if(parentDIRName === "asfi_journal"){   
 
-    parentDirectoryName = "https://asfirj.org"
+    parentDirectoryName = "/asfi_journal"
     EndPoint = `/asfi_journal/backend`;
 
     submissionsEndpoint = "http://localhost/asfirj_submission_controls";

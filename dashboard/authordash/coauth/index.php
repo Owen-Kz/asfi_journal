@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title> Author - Dashboard</title>
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <meta name="title" Content="Author - Dashboard">
 
     <meta name="description" content="asfiresearchjournal">
@@ -53,7 +53,7 @@
 
     
     
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
+    <!-- <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor="> -->
     <link rel="stylesheet" href="../../../front/public/css/header.css">
     <script type="text/javascript">
         function googleTranslateElementInit() {
