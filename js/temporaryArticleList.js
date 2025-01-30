@@ -110,7 +110,7 @@ function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
                         // var AutthorsNameLimited  = 
 
                         if (ArticleListContainer) {
-      let coverImage = `https://asfirj.org/useruploads/article_images/${CoverPhoto}`? `../useruploads/article_images/${CoverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
+      let coverImage = `https://asfirj.org/useruploads/article_images/${CoverPhoto}`? `https://asfirj.org/useruploads/article_images/${CoverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
                             ArticleListContainer.innerHTML += `
                             
                     <div class="issue-item wow fadeInLeft" style="display: flex;">
@@ -131,7 +131,7 @@ function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
 							<ul class="rlist--inline separator">
 							<li><a href="../content?sid=${ArticleId}#content" title="Abstract" aria-label="Abstract for ${ArticleTitle}">Abstract</a></li>
 							<li><a href="../content?sid=${ArticleId}#fulltext" title="Full text" aria-label="Full text for ${ArticleTitle}">Full text</a></li>
-							<li><a href="../useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
+							<li><a href="https://asfirj.org/useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
 							<li><a href="" title="References" aria-label="References for ${ArticleTitle}">References</a></li>
                             <li title="Views" aria-label="Views for ${ArticleTitle}"><span>${viewsCount}</span> Views</li>
                             <li title="Downloads" aria-label="Downloads for ${ArticleTitle}"><span>${DownloadsCount}</span> Downloads</li>
@@ -164,7 +164,7 @@ function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
                         <div class="issue-item wow fadeInLeft" style="display: flex;">
                         <div style="width: 120px; margin-right: 10px;
     border-radius: 10px;
-    border: 2px solid #310357; background-image: url(../useruploads/article_images/${CoverPhoto}); background-size: cover;"></div>
+    border: 2px solid #310357; background-image: url(${coverImage}); background-size: cover;"></div>
     <div style="width: 100%;">
 				<div class="doi-access-wrapper"><span class="item-category">${ArticleType}</span>
                 <span class="articleSpan">${openAccessFOrFront} ${AddEditorsChoice}</span>
@@ -181,7 +181,7 @@ function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
 							<ul class="rlist--inline separator">
 							<li><a href="./content?sid=${ArticleId}#abstract" title="Abstract" aria-label="Abstract for ${ArticleTitle}">Abstract</a></li>
 							<li><a href="./content?sid=${ArticleId}#fulltext" title="Full text" aria-label="Full text for ${ArticleTitle}">Full text</a></li>
-							<li><a href="../useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
+							<li><a href="https://asfirj.org/useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
 							<li><a href="" title="References" aria-label="References for ${ArticleTitle}">References</a></li>
                             <li title="Views" aria-label="Views for ${ArticleTitle}"><span>${viewsCount}</span> Views</li>
                             <li title="Downloads" aria-label="Downloads for ${ArticleTitle}"><span>${DownloadsCount}</span> Downloads</li>
@@ -209,7 +209,7 @@ function UpdateTemporaryArticles(ArticleLst, currentPage, totalPages) {
                         }
                         // const downloadLinks = document.querySelectorAll(".downloadLink");
                         // downloadLinks.forEach(link =>{
-                        //     link.setAttribute("href", `../useruploads/manuscripts/${ArticleFile}`)
+                        //     link.setAttribute("href", `https://asfirj.org/useruploads/manuscripts/${ArticleFile}`)
                         //     link.setAttribute("download", `${ArticleTitle}.pdf`)
                         
                         //     link.addEventListener("click", function(){

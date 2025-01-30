@@ -80,7 +80,7 @@ function UpdateManageArticles(ArticleLst) {
                   }
                 }
                 if (ArticleListContainer) {
-                        let coverImage = `https://asfirj.org/useruploads/article_images/${CoverPhoto}`? `../useruploads/article_images/${CoverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
+                        let coverImage = `https://asfirj.org/useruploads/article_images/${CoverPhoto}`? `https://asfirj.org/useruploads/article_images/${CoverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
                     ArticleListContainer.innerHTML += `
                   
                      <div class="issue-item wow fadeInLeft" data-wow-delay="200ms" style="display: flex;">
@@ -101,7 +101,7 @@ function UpdateManageArticles(ArticleLst) {
 							<ul class="rlist--inline separator">
 							<li><a href="../../content?sid=${ArticleId}&title=${ArticleTitle}#content" title="Abstract" aria-label="Abstract for ${ArticleTitle}">Abstract</a></li>
 							<li><a href="../../content?sid=${ArticleId}&title=${ArticleTitle}#fulltext" title="Full text" aria-label="Full text for ${ArticleTitle}">Full text</a></li>
-							<li><a href="../../useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
+							<li><a href="https://asfirj.org/useruploads/manuscripts/${ArticleFile}" target="_blank" title="ePDF" class="downloadLink" aria-label="PDF for ${ArticleTitle}">PDF</a></li>
 							<li><a href="" title="References" aria-label="References for ${ArticleTitle}">References</a></li>
                             <li title="Views" aria-label="Views for ${ArticleTitle}"><span>${viewsCount}</span> Views</li>
                             <li title="Downloads" aria-label="Downloads for ${ArticleTitle}"><span>${DownloadsCount}</span> Downloads</li>

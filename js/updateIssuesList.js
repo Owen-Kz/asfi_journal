@@ -69,7 +69,7 @@ async function UpdateIssues(articleList) {
             is_open_access: isOpenAccess
         } = article;
 
-      let coverImage = `../useruploads/article_images/${coverPhoto}`? `../useruploads/article_images/${coverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
+      let coverImage = `https://asfirj.org/useruploads/article_images/${coverPhoto}`? `https://asfirj.org/useruploads/article_images/${coverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
 
         const formattedDate = formatTimestamp(mainPublishDate || date_uploaded);
         const authorsName = authorsData[index];
@@ -103,7 +103,7 @@ async function UpdateIssues(articleList) {
                         <ul class="rlist--inline separator">
                             <li><a href="../content?sid=${articleId}#content">Abstract</a></li>
                             <li><a href="../content?sid=${articleId}#fulltext">Full text</a></li>
-                            <li><a href="../useruploads/manuscripts/${articleFile}" target="_blank" class="downloadLink">PDF</a></li>
+                            <li><a href="https://asfirj.org/useruploads/manuscripts/${articleFile}" target="_blank" class="downloadLink">PDF</a></li>
                             <li><a href="">References</a></li>
                             <li><span>${viewsCount}</span> Views</li>
                             <li><span>${downloadsCount}</span> Downloads</li>
