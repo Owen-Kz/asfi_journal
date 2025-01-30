@@ -58,7 +58,7 @@
     
     <!-- QUILL JS  -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js?v=<?= time(); ?>"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <!-- END QUILL JS  -->
      <script type="text/javascript">
         function googleTranslateElementInit() {
