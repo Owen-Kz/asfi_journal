@@ -14,7 +14,7 @@ if(!manageData){
 const search = document.getElementById("search")
 const searchArticle = document.getElementById("searchArticle")
 
-let Limit = 50
+let Limit = 10
 
 
 function ArticlePageManagement(page){
