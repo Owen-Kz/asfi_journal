@@ -2,6 +2,7 @@ import { EndPoint } from "../constants.js"
 import { UpdateManageArticles } from "../manageArticleList.js"
 import { GetCookie } from "../setCookie.js"
 import { CreateAuthorsOptionsManagement, CreateTypeOptionsManagement } from "./filterManagement.js"
+import { articlesNavigation } from "./articlesNavigation.js";
 
 
 const manageData = GetCookie("manageData")
@@ -22,8 +23,10 @@ function ArticlePageManagement(page){
     }).then(res => res.json())
     .then(data =>{
         if(data){
+            const { currentPage, totalPages } = data;
         const ArticleLst = data.articlesList
-        UpdateManageArticles(ArticleLst)
+        UpdateManageArticles(ArticleLst, currentPage, totalPages)
+        articlesNavigation(Number(totalPages), Number(currentPage));
    
     }else{
         console.log("NO Data object")
