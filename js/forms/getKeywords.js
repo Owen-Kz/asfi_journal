@@ -8,7 +8,7 @@ async function GetKeywords(articleID) {
 
     }).then(res=>res.json())
     .then(data=>{
-        console.log(data)
+        console.log(data.keywords)
         if(data){
         if(data.success){
             return data.keywords
