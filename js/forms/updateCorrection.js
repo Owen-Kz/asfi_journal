@@ -297,7 +297,12 @@ const previous_id = document.getElementById("previous_id")
                     const KeywordsContainer = document.querySelectorAll('input[name="keyword[]"]')
 
                     // Update the value of the keyword fields  /
-                    if(Keywords.length > 0){
+                    if(Keywords.length > 8){
+                    
+                    for(let i=0; i<8; i++){
+                        KeywordsContainer[i].value = Keywords[i].keyword
+                    }
+                }else{
                     for(let i=0; i<Keywords.length; i++){
                         KeywordsContainer[i].value = Keywords[i].keyword
                     }

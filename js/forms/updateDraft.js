@@ -282,8 +282,15 @@ if (articleId) {
                     const KeywordsContainer = document.querySelectorAll('input[name="keyword[]"]')
 
                     // Update the value of the keyword fields  /
-                    for(let i=0; i<Keywords.length; i++){
-                        KeywordsContainer[i].value = Keywords[i].keyword
+                    if(Keywords.length > 8){
+                    
+                        for(let i=0; i<8; i++){
+                            KeywordsContainer[i].value = Keywords[i].keyword
+                        }
+                    }else{
+                        for(let i=0; i<Keywords.length; i++){
+                            KeywordsContainer[i].value = Keywords[i].keyword
+                        }
                     }
 
                     // Get the Suggested reviewers 
