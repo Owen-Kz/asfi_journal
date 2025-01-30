@@ -68,7 +68,7 @@ if (isset($_GET["k"])) {
     }
 
 } else {
-    $stmt= $con->prepare("SELECT * FROM `journals` WHERE `is_publication` = 'yes'");
+    $stmt= $con->prepare("SELECT * FROM `journals` WHERE `is_publication` = 'yes' ORDER BY `id` DESC");
     if (!$stmt) {
         throw new Exception("Failed to prepare Count statement: " . $con->error);
     } else {
