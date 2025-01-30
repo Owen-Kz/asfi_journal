@@ -717,7 +717,7 @@ No <input type="radio" name="prevsub" id="prevsub_no" onclick="toggleInputField(
 
     <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css">
     <script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js?v=<?= time(); ?>"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js?v=<?= time(); ?>"></script>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 
