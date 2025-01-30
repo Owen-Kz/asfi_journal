@@ -14,9 +14,9 @@ let Limit
 const url = getURL()
 
 if (url == "/asfi_journal/" || url == "/") {
-    Limit = 6
+    Limit = 3
 } else {
-    Limit = 10;
+    Limit = 6;
 }
 const currentLocationURL = window.location.href
 
