@@ -1,6 +1,6 @@
 import { EndPoint, searchParams } from "../constants.js";
 import { formatTimestamp } from "../formatDate.js";
-import { quill } from "./quill.js";
+import { quill, quill2 } from "./quill.js";
 
 const articleEdit = `<div id="editorModal1" class="modal"><div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
@@ -111,6 +111,7 @@ openModal()
                 const ArticleTitle = Article[0].manuscript_full_title
                 const ManuscriptFile = Article[0].manuscript_file
                 const unstructuredAbstract = Article[0].unstructured_abstract
+                const abstractDiscussion = Article[0].abstract_discussion
                 const correspondingAuthorsEmail = Article[0].corresponding_authors_email
                 const DateUploaded = formatTimestamp(Article[0].date_uploaded)
                 
@@ -147,14 +148,16 @@ openModal()
 
                 // Parse the Quill content from the JSON data
                 const quillContent = JSON.parse(unstructuredAbstract);
+                const quillContent2 = JSON.parse(abstractDiscussion);
 
-                function renderQuillAsHTML(deltaContent) {
-           
-                    quill.setContents(deltaContent)
+                function renderQuillAsHTML(deltaContent1, deltaContent2) {
+           console.log(`${deltaContent2} testing`)
+                    quill.setContents(deltaContent1)
+                    quill2.setContents(deltaContent2)
                 }
 
                 // Render the Quill content as HTML in the "content" div
-                renderQuillAsHTML(quillContent);
+                renderQuillAsHTML(quillContent, quillContent2);
 
             } else {
                 alert("File Not found on server")
