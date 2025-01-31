@@ -129,7 +129,7 @@ function getSupplement(articeID) {
                      pageNumber.innerText = `Page Number: ${Page}`
                      doiNumber.innerText = `DOI Number: ${Doi}`
                      dateSubmitted.innerText = `Date Submitted: ${SubmittedDate}`
-                     dateReviewed.innerText = `Date Reviewed: ${ReviewedDate}`
+                     dateReviewed.innerText = `Date Revised: ${ReviewedDate}`
                      dateAccepted.innerText = `Date Accepted: ${AcceptedDate}`
                      datePublished.innerText = `Date Published: ${PublishedDate}`
                     // Set the download links for the articles 

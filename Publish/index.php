@@ -325,7 +325,7 @@
                             <input type="date" class="form-control" name="date_submitted" id="date_submitted">
                         </div>
                         <div >
-                            <label for="">Date of Manuscript Reviewed:</label>
+                            <label for="">Date of Manuscript Revised:</label>
                             <input type="date" class="form-control" name="date_reviewed" id="date_reviewed">
                         </div>
                         <div >
