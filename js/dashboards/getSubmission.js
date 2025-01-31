@@ -62,7 +62,7 @@ function getSupplement(articeID) {
                    
                      
                      if(Article.manuscript_file.slice(0, 26) === 'https://res.cloudinary.com'){
-                        MANUSCRIPT_FILE = `https://process.asfirj.org/file?url=${Article.manuscript_file}`
+                        MANUSCRIPT_FILE = `https://process.asfirj.org/doc?url=${Article.manuscript_file}`
                         }else{
                              MANUSCRIPT_FILE = `${submissionsEndpoint}/uploadedFiles/${Article.manuscript_file}`
                         }
@@ -71,7 +71,7 @@ function getSupplement(articeID) {
                      DOCUMENTFILE = "Original Document Files: "
                      for(let i = 0; i< filesArray.length; i++){
                         if(filesArray[i].slice(0, 26) === 'https://res.cloudinary.com'){
-                             DOCUMENTFILE += `<br> <a href="${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(76)}</a>
+                             DOCUMENTFILE += `<br> <a href="https://process.asfirj.org/doc?url=${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(76)}</a>
                          `
                             }else{
                                 DOCUMENTFILE += `<br> <a href="${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(36)}</a>`
