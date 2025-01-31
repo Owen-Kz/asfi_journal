@@ -6,7 +6,7 @@ session_start();
 
 
 $page = $_GET["page"];
-$items_per_page = $_GET["limit"];
+$items_per_page = 6;
 
 $offset = ($page - 1) * $items_per_page;
 
