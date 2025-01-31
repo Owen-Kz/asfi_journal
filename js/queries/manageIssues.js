@@ -16,7 +16,7 @@ const searchArticle = document.getElementById("searchArticle")
 let Limit = 50
 
 
-function ArticlePageManagement(page){
+function IssuesPageManagement(page){
     fetch(`${EndPoint}/forIssues/allIssues.php?page=${page}&limit=${Limit}`,{
         method: "GET"
     }).then(res => res.json())
@@ -84,8 +84,8 @@ CreateTypeOptionsManagement()
 
 
 
-ArticlePageManagement(1) 
+IssuesPageManagement(1) 
 
 // export{
-//     ArticlePageManagement
+//     IssuesPageManagement
 // }
