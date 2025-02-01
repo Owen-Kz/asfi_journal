@@ -506,6 +506,15 @@
                         <input type="email" class="form-control" placeholder="" name="corresponding_author" id="corresponding_author">
                     </div>
           <br>
+          <div class="col-12">
+                                <label for="abstract">Abstract</label>
+                                <!-- Editor toolbar -->
+
+                                <!-- Main toolbar -->
+                                <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor2" style="height: 500px;">
+                                </div>
+                            </div> <br>
+
                 <!-- Course description -->
                             <div class="col-12">
                                 <label for="">Manuscript Contents</label>
