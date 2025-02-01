@@ -506,7 +506,7 @@
                         <input type="email" class="form-control" placeholder="" name="corresponding_author" id="corresponding_author">
                     </div>
           <br>
-          <div class="col-12">
+          <div class="col-12 hebrew">
                                 <label for="abstract">Abstract</label>
                                 <!-- Editor toolbar -->
 
@@ -546,7 +546,7 @@
 <script src="../../front/public/js/vendor/splitting.min.js?v=<?= time(); ?>"></script>
 <!-- <script src="../../front/public/js/vendor/jquery.nice-select.min.js?v=<?= time(); ?>"></script> -->
 <script src="../../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
-<script src="../../js/queries/manageIssues.js" type="module"></script>
+<script src="../../js/queries/manageIssues.js?v=<?= time(); ?>" type="module"></script>
  
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
