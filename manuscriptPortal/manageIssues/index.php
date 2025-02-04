@@ -506,6 +506,15 @@
                         <input type="email" class="form-control" placeholder="" name="corresponding_author" id="corresponding_author">
                     </div>
           <br>
+          <div class="col-12 hebrew">
+                                <label for="abstract">Abstract</label>
+                                <!-- Editor toolbar -->
+
+                                <!-- Main toolbar -->
+                                <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor2" style="height: 500px;">
+                                </div>
+                            </div> <br>
+
                 <!-- Course description -->
                             <div class="col-12">
                                 <label for="">Manuscript Contents</label>
@@ -537,9 +546,9 @@
 <script src="../../front/public/js/vendor/splitting.min.js?v=<?= time(); ?>"></script>
 <!-- <script src="../../front/public/js/vendor/jquery.nice-select.min.js?v=<?= time(); ?>"></script> -->
 <script src="../../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
-<script src="../../js/queries/manageIssues.js" type="module"></script>
+<script src="../../js/queries/manageIssues.js?v=<?= time(); ?>" type="module"></script>
  
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script> 
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
 <script type="module" src="../../js/forms/issuesEdit.js"></script>
