@@ -542,7 +542,7 @@ header("Pragma: no-cache");
 			
 
         
-        <div data-mathjax="" class="top-content" id="article_items_container">
+        <div data-mathjax="" class="top-content" id="articleListContainer">
 
 			</div>
 <a href="./issues" title="More articles" class="more-widget-link" style="display:flex; justify-content: flex-end; margin-bottom: 20px; margin-top: 6px; margin-right: 16px;">More articles</a>
@@ -1187,7 +1187,7 @@ header("Pragma: no-cache");
 	<script src="./front/public/js/vendor/wow.min.js"></script>
 
 	<script type="module" src="./js/general.js"></script>
-	<script src="./js/queries/allItemsForHome.js" type="module"></script>
+	<script src="./js/queries/allItemsForHome.js?v=<? time() ?>" type="module"></script>
 
 
 	<script src="./front/public/js/main.js"></script>
