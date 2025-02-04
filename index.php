@@ -533,7 +533,7 @@ header("Pragma: no-cache");
 				<div class="dropdown-content">
 					<a href="./issues">Issues</a>
 					<a href="./supplements">Supplements</a>
-				</div>
+				</div> 
 			</div>
 			<div class="tab__content"><div id="pane-01cbe741-499a-4611-874e-1061f1f4679e01" aria-labelledby="pane-01cbe741-499a-4611-874e-1061f1f4679e01con" role="tabpanel" class="tab__pane" aria-hidden="false">
 
