@@ -34,7 +34,7 @@ function ArticlePage(page) {
                 const ArticleLst = data.articlesList
                 const currentPage = data.currentPage
                 const totalPages = data.totalPages
-                // UpdateIssues(ArticleLst, currentPage, totalPages)
+                UpdateIssues(ArticleLst, currentPage, totalPages)
                 articlesNavigation(new Number(totalPages), new Number(currentPage))
 
             } else {
