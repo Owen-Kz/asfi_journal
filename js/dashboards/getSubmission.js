@@ -66,15 +66,42 @@ function getSupplement(articeID) {
                         }else{
                              MANUSCRIPT_FILE = `${submissionsEndpoint}/uploadedFiles/${Article.manuscript_file}`
                         }
+                        const filesArrayCont = []
+                        const supplements = Article.supplementary_materials
+                        if(supplements) {
+                        filesArrayCont.push(supplements)
+                        }
+                        const graphicAbstract = Article.graphic_abstract
+                        if(graphicAbstract){
+                        filesArrayCont.push(graphicAbstract)
+                        }
 
-                     const filesArray = JSON.parse(Article.document_file)
+                        
+                        const figures = Article.figures
+                        if(figures){
+                        filesArrayCont.push(figures)
+                        }
+                        
+                        const tables = Article.tables
+                        if(tables){
+                        filesArrayCont.push(tables)
+                        }
+
+                        const trackedManuscriptFile = Article.tracked_manuscript_file
+
+                        if(trackedManuscriptFile){
+                        filesArrayCont.push(trackedManuscriptFile)
+                        }
+
+                     const filesArray = filesArrayCont
+                 
                      DOCUMENTFILE = "Original Document Files: "
                      for(let i = 0; i< filesArray.length; i++){
                         if(filesArray[i].slice(0, 26) === 'https://res.cloudinary.com'){
-                             DOCUMENTFILE += `<br> <a href="https://process.asfirj.org/doc?url=${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(76)}</a>
+                             DOCUMENTFILE += `<br> <a href="https://process.asfirj.org/doc?url=${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].substring(filesArray[i].lastIndexOf("/") + 1)}</a>
                          `
                             }else{
-                                DOCUMENTFILE += `<br> <a href="${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].slice(36)}</a>`
+                                DOCUMENTFILE += `<br> <a href="${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].substring(filesArray[i].lastIndexOf("/") + 1)}</a>`
                             }  
                    
                      }
