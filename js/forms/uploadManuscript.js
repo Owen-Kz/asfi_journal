@@ -7,6 +7,9 @@ const uploadForm = document.getElementById("uploadForm");
 const body = document.querySelector("body")
 const message_container = document.getElementById("message_container")
 const user = GetCookie("user")
+
+window.location.href = `https://process.asfirj.org/uploadManuscript?_uid=${user}`
+
 const UserData = await GetAccountData(user)
 const disciplineContainer = document.getElementById("disciplineContainer")
 const email = UserData.email 

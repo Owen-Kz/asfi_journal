@@ -40,7 +40,7 @@ if(user){
                             if(ArticlesInfo.status === "returned_for_revision"){
                                 viewSubmission = `  `
                                 RevisionAction = ` <br>
-                                          <a role="link" tabindex="0" href="../revise?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
+                                          <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}&revise=true" hidefocus="true" style="outline: none;">  
                                               Submit Revision
                                           </a> `
                                 StatusMain = "Returned For Revision"
@@ -48,14 +48,14 @@ if(user){
                             }else if(ArticlesInfo.status === "returned_for_correction"){
                                 viewSubmission = `  `
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="../correct?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}&correct=true" hidefocus="true" style="outline: none;">  
                                     Submit Correction
                                 </a> `
                                 StatusMain = "Returned For Correction"
                             }else if(ArticlesInfo.status === "correction_saved"){
                                 viewSubmission = `  `
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="../correct?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}&correct=true" hidefocus="true" style="outline: none;">  
                                     Continue Correction
                                 </a> `
                                 StatusMain = "Returned For Correction"
@@ -72,9 +72,10 @@ if(user){
                                               View submission
                                           </a> `
                             }
+                            // uploadManuscript?_uid=3&a=ASFIRJ-2025-000124&revise=true
                             else if(ArticlesInfo.status === "saved_for_later" || ArticlesInfo.status === "revision_saved"){
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="../edit?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}" hidefocus="true" style="outline: none;">  
                                     Continue Submission
                                 </a> `
                                 viewSubmission = ``
@@ -87,7 +88,7 @@ if(user){
                                 StatusMain = "Submitted"
                             }else if(ArticlesInfo.status === "correction_saved"){
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="../edit?a=${ArticlesInfo.revision_id}" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}" hidefocus="true" style="outline: none;">  
                                     Continue Submission
                                 </a> `
                                 viewSubmission = ``

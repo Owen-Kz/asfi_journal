@@ -902,6 +902,8 @@ function closeModal() {
 
     <script src="../../../js/forms/checkField.js?v=<?= time(); ?>" type="module"></script>
     <script src="../../../js/forms/uploadManuscript.js?v=<?= time(); ?>" type="module"></script>
+
+    
     <script type="module" src="../../../js/dashboards/author.js?v=<?= time(); ?>"></script>
     <script type="module" src="../../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
 	<!-- <script src="https://asfirj.org/code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js?v=<?= time(); ?>" async></script> -->
