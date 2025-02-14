@@ -13,14 +13,16 @@ $author = $_GET["author"];
 if(isset($author)){
     
     try {
-        $stmt = $con->prepare("SELECT * FROM `authors` WHERE `authors_fullname` LIKE ? OR `authors_email` LIKE ?");
+        $stmt = $con->prepare("SELECT * FROM `authors` WHERE `authors_fullname` LIKE ? ");
 
     
         if (!$stmt) {
-            throw new Exception("Failed to prepare statement: " . $con->error);
+            // throw new Exception("Failed to prepare statement: " . $con->error);
+            $response = array('status'=> 'internalError', 'message' => "Error: " . $con->error, 'articlesList' => []);
+            echo json_encode($response);
         }
     
-        $stmt->bind_param("ss",$author, $author);
+        $stmt->bind_param("s",$author);
     
         if (!$stmt->execute()) {
             throw new Exception("Failed to execute statement: " . $stmt->error);
