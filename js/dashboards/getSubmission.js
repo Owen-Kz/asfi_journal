@@ -119,7 +119,7 @@ function getSupplement(articeID) {
                     <br>
                             <b>Manuscript File </b><i>a combination of all files submitted in PDF format, (i.e tables, figues, supplementary materials)</i>: <a href="${MANUSCRIPT_FILE}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript File</a>
                             <br>
-                            <b>Manuscript Documents </b><i>a combination of all files submitted i document format, (i.e tables, figues, supplementary materials)</i>: 
+                          
                             ${DOCUMENTFILE}`
                     const correspondingAuthorsEmailContainer = document.getElementById("correspondingAuthorsEmail")
                     correspondingAuthorsEmailContainer.innerHTML +=  ` <a style="color:#333;" href="mailto:${correspondingAuthorsEmail}">${correspondingAuthorsEmail}</a>`
