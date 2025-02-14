@@ -106,8 +106,16 @@ function getSupplement(articeID) {
                    
                      }
                  }
+                 let coverLetterMan = ""
+                 if(Article.cover_letter_file.slice(0, 26) === 'https://res.cloudinary.com'){
+                    coverLetterMan =  `<a href="https://process.asfirj.org/doc?url=${coverLetter}" style="color:#333; text-decoration: underline;" target=_blank>View Cover Letter</a>`
+                 }else{
+                    coverLetterMan = `<a href="https://cp.asfirj.org/uploadedFiles/${coverLetter}" style="color:#333; text-decoration: underline;" target=_blank>View Cover Letter</a>`
+                 }
+                //  
+                 
                     const ArticleID = Article.article_id
-                    filesContainer.innerHTML += `<a href="https://cp.asfirj.org/uploadedFiles/${coverLetter}" style="color:#333; text-decoration: underline;" target=_blank>View Cover Letter</a>
+                    filesContainer.innerHTML += `${coverLetterMan}
                     <br>
                             <b>Manuscript File </b><i>a combination of all files submitted in PDF format, (i.e tables, figues, supplementary materials)</i>: <a href="${MANUSCRIPT_FILE}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript File</a>
                             <br>
