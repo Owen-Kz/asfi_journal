@@ -95,7 +95,7 @@ function getSupplement(articeID) {
 
                      const filesArray = filesArrayCont
                  
-                     DOCUMENTFILE = "Original Document Files: "
+                      DOCUMENTFILE = "<b>Additional Document Files</b> (i.e supplementary materials, tables, figures, graphic abstract): "
                      for(let i = 0; i< filesArray.length; i++){
                         if(filesArray[i].slice(0, 26) === 'https://res.cloudinary.com'){
                              DOCUMENTFILE += `<br> <a href="https://process.asfirj.org/doc?url=${filesArray[i]}" style="color:#333; text-decoration: underline;" target=_blank>View ${filesArray[i].substring(filesArray[i].lastIndexOf("/") + 1)}</a>
