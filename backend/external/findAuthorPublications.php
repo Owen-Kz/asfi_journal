@@ -43,7 +43,7 @@ if(isset($author)){
             $articlesID= $row["article_id"];
 
             // Find Article related to search parameter 
-            $stmt = $con->prepare("SELECT * FROM `journals` WHERE `is_publication` = 'yes' AND `buffer` = ? ");
+            $stmt = $con->prepare("SELECT * FROM `journals` WHERE `buffer` = ? ");
  
     
             if (!$stmt) {
