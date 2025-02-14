@@ -67,7 +67,7 @@ function getSupplement(articeID) {
                              MANUSCRIPT_FILE = `${submissionsEndpoint}/uploadedFiles/${Article.manuscript_file}`
                         }
                         const filesArrayCont = []
-                        const supplements = Article.supplementary_materials
+                        const supplements = Article.supplementary_material
                         if(supplements) {
                         filesArrayCont.push(supplements)
                         }
