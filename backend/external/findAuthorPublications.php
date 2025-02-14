@@ -25,7 +25,10 @@ if(isset($author)){
         $stmt->bind_param("s",$author);
     
         if (!$stmt->execute()) {
-            throw new Exception("Failed to execute statement: " . $stmt->error);
+            // throw new Exception("Failed to execute statement: " . $stmt->error);
+               // throw new Exception("Failed to prepare statement: " . $con->error);
+               $response = array('status'=> 'internalError', 'message' => "Error: " . $stmt->error, 'articlesList' => []);
+               echo json_encode($response);
         }
         
         $result = $stmt->get_result();
@@ -44,13 +47,17 @@ if(isset($author)){
  
     
             if (!$stmt) {
-                throw new Exception("Failed to prepare statement: " . $con->error);
+                // throw new Exception("Failed to prepare statement: " . $con->error);
+                $response = array('status'=> 'internalError', 'message' => "Error: " . $con->error, 'articlesList' => []);
+                echo json_encode($response);
             }
         
             $stmt->bind_param("s",$articlesID);
         
             if (!$stmt->execute()) {
-                throw new Exception("Failed to execute statement: " . $stmt->error);
+                // throw new Exception("Failed to execute statement: " . $stmt->error);
+                $response = array('status'=> 'internalError', 'message' => "Error: " . $stmt->error, 'articlesList' => []);
+                echo json_encode($response);
             }
             
             $result = $stmt->get_result();
