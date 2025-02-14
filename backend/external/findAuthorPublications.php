@@ -13,7 +13,7 @@ $author = $_GET["author"];
 if(isset($author)){
     
     try {
-        $stmt = $con->prepare("SELECT * FROM `authors` WHERE `authors_fullname` = ? OR `authors_email` = ?");
+        $stmt = $con->prepare("SELECT * FROM `authors` WHERE `authors_fullname` LIKE ? OR `authors_email` LIKE ?");
 
     
         if (!$stmt) {
