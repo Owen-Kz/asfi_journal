@@ -60,12 +60,15 @@ function getSupplement(articeID) {
                     }
                  }else{
                    
-                     
+                    if(ArticleData.manuscript_file && ArticleData.manuscript_file !== null){
                      if(Article.manuscript_file.slice(0, 26) === 'https://res.cloudinary.com'){
                         MANUSCRIPT_FILE = `https://process.asfirj.org/doc?url=${Article.manuscript_file}`
                         }else{
                              MANUSCRIPT_FILE = `${submissionsEndpoint}/uploadedFiles/${Article.manuscript_file}`
                         }
+                    }else{
+                        MANUSCRIPT_FILE = "#"
+                    }
                         const filesArrayCont = []
                         const supplements = Article.supplementary_material
                         if(supplements) {
