@@ -6,12 +6,15 @@ import { GetAccountData } from "./accountData.js";
 
 
 const userID = GetCookie("user")
-const UserData = await GetAccountData(userID)
-const user = UserData.email
+
 
 const ArticlesContainer = document.getElementById("manuscriptsContainer")
 
-if(user){
+if(userID){
+    const UserData = await GetAccountData(userID)
+const user = UserData.email
+
+
     fetch(`${submissionsEndpoint}/backend/accounts/manuscripts.php`, {
         method:"POST",
         body:JSON.stringify({user:user}),

@@ -3,10 +3,12 @@ import { GetCookie } from "../setCookie.js";
 import { GetAccountData } from "./accountData.js";
 
 const user = GetCookie("user");
-const userData = await GetAccountData(user)
-const email = userData.email
+
 
 if(user){
+    const userData = await GetAccountData(user)
+const email = userData.email
+
 const userInfo = await GetAccountData(user)
 const navbarContainer = document.getElementById("navbarContainer")
 let homeActive, authorActive, reviewerActive, inboxActive = ""
