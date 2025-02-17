@@ -1,8 +1,14 @@
 import { submissionsEndpoint } from "../constants.js";
 import { formatTimestamp } from "../formatDate.js";
 import { GetCookie } from "../setCookie.js";
+import { GetAccountData } from "./accountData.js";
 
-const user = GetCookie("user")
+
+
+const userID = GetCookie("user")
+const UserData = await GetAccountData(userID)
+const user = UserData.email
+
 const ArticlesContainer = document.getElementById("manuscriptsContainer")
 
 if(user){

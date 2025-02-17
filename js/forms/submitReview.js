@@ -13,10 +13,12 @@ const id_container = document.getElementById("article_id")
 const reviewebyContaier = document.getElementById("reviewed_by")
 
 const articleId = GetParameters(window.location.href).get("a")
-const user = GetCookie("user")
+const userID = GetCookie("user")
+const UserData = await GetAccountData(userID)
+const user = UserData.email
 
 if(user && articleId){
-   const userData = await GetAccountData(user)
+   const userData = await GetAccountData(userID)
    const email = userData.email
 
    id_container.value = articleId

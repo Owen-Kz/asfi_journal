@@ -4,11 +4,14 @@
 
 import { GetParameters, parentDirectoryName, submissionsEndpoint } from "../constants.js"
 import { GetCookie } from "../setCookie.js"
+import { GetAccountData } from "./accountData.js"
 import { GetEmailContent } from "./getMailContent.js"
 
 // import { GetEmailContent } from "./getEmails.js"
 const emailListContainer = document.getElementById("emailListContainer")
-const user = GetCookie("user")
+const userID = GetCookie("user")
+const userData = await GetAccountData(userID)
+const user = userData.email
 const expandForum = document.querySelector(".expand-forum")
 const emailContentContainer = document.getElementById("email-content");
 

@@ -16,7 +16,6 @@ if(InvitationFor && email && ArticleId && (Accept || Reject)){
     }else if(Reject){
         Action = 'reject'
     }
-console.log(InvitationFor, email, ArticleId, Accept, Reject, Action)
     if(InvitationFor === "review"){
     fetch(`${submissionsEndpoint}/backend/reviewers/invitations.php?u_id=${email}&a_id=${ArticleId}&invite_for=${InvitationFor}&action=${Action}`, {
         method:"GET",

@@ -1,5 +1,6 @@
 import { submissionsEndpoint } from "../constants.js"
 import { GetCookie } from "../setCookie.js"
+import { GetAccountData } from "./accountData.js"
 
 const inReviewCount = document.querySelectorAll(".inReviewCount")
 const newSubmissionsCount = document.querySelectorAll(".newSubmissionsCount")
@@ -10,13 +11,16 @@ const coAuthoredCount = document.querySelectorAll(".coAuhtoredCount")
 const submittedReviewsCount = document.querySelectorAll(".submittedReviewsCount")
 const inboxCount = document.querySelectorAll(".inboxCount")
 
-const user = GetCookie("user")
+const userID = GetCookie("user")
+const UserData = await GetAccountData(userID)
+const user = UserData.email
+
 
 if(user){
     if(inboxCount){
         
         
-        fetch(`${submissionsEndpoint}/backend/accounts/emailList.php?u_id=${user}`, {
+        fetch(`${submissionsEndpoint}/backend/accounts/emailList.php?u_id=${UserData.email}`, {
 
         }).then(res=>res.json())
         .then(data=>{

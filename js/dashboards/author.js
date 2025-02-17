@@ -2,10 +2,12 @@ import { editorsDomainEndpoint, parentDirectoryName, submissionsEndpoint, url } 
 import { GetCookie } from "../setCookie.js";
 import { GetAccountData } from "./accountData.js";
 
-const email = GetCookie("user");
+const user = GetCookie("user");
+const userData = await GetAccountData(user)
+const email = userData.email
 
-if(email){
-const userInfo = await GetAccountData(email)
+if(user){
+const userInfo = await GetAccountData(user)
 const navbarContainer = document.getElementById("navbarContainer")
 let homeActive, authorActive, reviewerActive, inboxActive = ""
 const reviewerdashPattern = new RegExp(`^/dashboard/reviewerdash/.*$`);
@@ -63,7 +65,7 @@ const editorNavbar = `   <div style="display: flex;" class="dash-nav">
                     <a href="${parentDirectoryName}/dashboard/authordash" class="nav-active"><span class=" fw-bold" style="margin-left: 20px; margin-right: 20px;"> <i class='las la-home text--danger'></i>Home </span></a>
                     <a href="${parentDirectoryName}/dashboard/authordash/manuscripts" ><span class=" fw-bold" style="margin-left: 20px; margin-right: 20px;"> <i class='las la-pen text--danger'></i> Author </span></a>
                     <a href="${parentDirectoryName}/dashboard/reviewerdash" ><span class=" fw-bold" style="margin-left: 20px; margin-right: 20px;"> <i class='las la-bell text--danger'></i> Review </span></a>
-                    <a href="${editorsDomainEndpoint}?e=${email}" target=_blank><span class=" fw-bold" style="margin-left: 20px; margin-right: 20px;"> <i class='las la-edit text--danger'></i> Editorial Assignments </span></a>
+                    <a href="${editorsDomainEndpoint}?e=${user}" target=_blank><span class=" fw-bold" style="margin-left: 20px; margin-right: 20px;"> <i class='las la-edit text--danger'></i> Editorial Assignments </span></a>
                      <a href="${parentDirectoryName}/dashboard/mail/inbox" class="${inboxActive}"><span class=" fw-bold" style="margin-left: 20px; margin-right: 20px;"> <i class='fa fa-envelope text--danger'></i> Inbox</span></a>
                       <a href="${parentDirectoryName}/portal/settings" class="${inboxActive}"><span class=" fw-bold" style="margin-left: 20px; margin-right: 20px;"> <i class='fa fa-user text--danger'></i> Settings</span></a>
                 </div>
