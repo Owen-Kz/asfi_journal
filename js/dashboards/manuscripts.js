@@ -12,6 +12,7 @@ const ArticlesContainer = document.getElementById("manuscriptsContainer")
 
 if(userID){
     const UserData = await GetAccountData(userID)
+    
 const user = UserData.email
 
 
@@ -49,7 +50,7 @@ const user = UserData.email
                             if(ArticlesInfo.status === "returned_for_revision"){
                                 viewSubmission = `  `
                                 RevisionAction = ` <br>
-                                          <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}&revise=true" hidefocus="true" style="outline: none;">  
+                                          <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}&revise=true" hidefocus="true" style="outline: none;">  
                                               Submit Revision
                                           </a> `
                                 StatusMain = "Returned For Revision"
@@ -57,14 +58,14 @@ const user = UserData.email
                             }else if(ArticlesInfo.status === "returned_for_correction"){
                                 viewSubmission = `  `
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}&correct=true" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}&correct=true" hidefocus="true" style="outline: none;">  
                                     Submit Correction
                                 </a> `
                                 StatusMain = "Returned For Correction"
                             }else if(ArticlesInfo.status === "correction_saved"){
                                 viewSubmission = `  `
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}&correct=true" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}&correct=true" hidefocus="true" style="outline: none;">  
                                     Continue Correction
                                 </a> `
                                 StatusMain = "Returned For Correction"
@@ -84,7 +85,7 @@ const user = UserData.email
                             // uploadManuscript?_uid=3&a=ASFIRJ-2025-000124&revise=true
                             else if(ArticlesInfo.status === "saved_for_later" || ArticlesInfo.status === "revision_saved"){
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}" hidefocus="true" style="outline: none;">  
                                     Continue Submission
                                 </a> `
                                 viewSubmission = ``
@@ -97,7 +98,7 @@ const user = UserData.email
                                 StatusMain = "Submitted"
                             }else if(ArticlesInfo.status === "correction_saved"){
                                 RevisionAction = ` <br>
-                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${user}" hidefocus="true" style="outline: none;">  
+                                <a role="link" tabindex="0" href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}" hidefocus="true" style="outline: none;">  
                                     Continue Submission
                                 </a> `
                                 viewSubmission = ``
