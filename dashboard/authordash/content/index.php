@@ -225,7 +225,7 @@
         (function($) {
                     })(jQuery);
     </script>
-
+ 
     
     <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css">
 <script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>

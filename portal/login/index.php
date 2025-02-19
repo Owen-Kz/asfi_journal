@@ -473,4 +473,4 @@
 <script type="module" src="../../js/general.js?v=<?= time(); ?>"></script>
 <script type="module" src="../../js/forms/loginUser.js?v=<?= time(); ?>"></script>
 </body>
-</html>
+</html> 

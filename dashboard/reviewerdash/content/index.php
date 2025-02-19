@@ -14,7 +14,7 @@
     <meta name="description" content="asfiresearchjournal">
     <meta name="keywords" content="asfiresearchjournal">
     <link rel="shortcut icon" href="../../../assets/images/logoIcon/favicon.png" type="image/x-icon">
-
+ 
     
     <link rel="apple-touch-icon" href="../../../assets/images/logoIcon/logo.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
