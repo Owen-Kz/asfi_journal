@@ -6,6 +6,7 @@ const user = GetCookie("user")
 
 const accouuntType = await GetAccountData(user)
 
+
 const isReviewer = accouuntType.is_reviewer
 const reviewActions = document.querySelectorAll(".reviewAction")
 const ReviewForms = document.querySelectorAll(".actionForm")
