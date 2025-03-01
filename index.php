@@ -600,8 +600,10 @@ header("Pragma: no-cache");
         <div>
       <div>
 
-	  <div class="journal-side-section journal-actions-container"><a href="./callfor.html"><button
-							style="background-color: #80078b; color: white; height: 60px; width: 100%;  margin: auto; margin-top: 20px; font-size: 30px;"><i aria-hidden="true" class="fas fa-book"></i> Call For Papers</button></a></div> <br>
+	  <!-- <div class="journal-side-section journal-actions-container"><a href="./callfor.html"><button
+							style="background-color: #80078b; color: white; height: 60px; width: 100%;  margin: auto; margin-top: 20px; font-size: 30px;"><i aria-hidden="true" class="fas fa-book"></i> Call For Papers</button></a> -->
+							<a href=""><button
+							style="background-color: #80078b; color: white; height: 60px; width: 100%;  margin: auto; margin-top: 20px; font-size: 30px;"><i aria-hidden="true" class="fas fa-book"></i> Coming soon...</button></a></div> <br>
 
       
         <div id="etoc-signup" role="status" aria-atomic="true" class="alert-sign-up"><div class="alert-sign-up__box pb-0"><i aria-hidden="true" class="fas fa-envelope"></i><h3>Sign up for email alerts</h3></div>
