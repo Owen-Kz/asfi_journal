@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verrify Account</title>
+</head>
+<body>
+    <script>
+        function GetParameters(href) {
+    // Get the URL string
+    const urlString = href;
+
+    // Create a URL object
+    const url = new URL(urlString);
+
+    // Get the search parameters from the URL
+    const searchParams = new URLSearchParams(url.search);
+    return searchParams
+
+}
+const email = GetParameters(window.location.href).get("e") ? GetParameters(window.location.href).get("e") : GetParameters(window.location.href).get("a")
+
+window.location.href = `https://process.asfirj.org/verify?e=${email}`
+    </script>
+</body>
+</html>
