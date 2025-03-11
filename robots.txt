@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://asfirj.org/sitemap.xml
