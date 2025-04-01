@@ -32,7 +32,7 @@ uploadForm.addEventListener("submit", function(e) {
     body.removeAttribute("id")
     // formData.append('article_content', JSON.stringify(quill.getContents().ops));
 
-    fetch(`${EndPoint}/backend/publishManuscript.php`, {
+    fetch(`${EndPoint}/publishManuscript.php`, {
         method: 'POST',
         body: formData
     })
