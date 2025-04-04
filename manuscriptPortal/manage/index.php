@@ -506,6 +506,11 @@
                         <input type="email" class="form-control" placeholder="" name="corresponding_author" id="corresponding_author">
                     </div>
           <br>
+          <div >
+                        <label for="">Manuscript File:</label>
+                        <input type="file" class="form-control" accept=".pdf, .PDF" name="manuscript_file" id="manuscript_file">
+                    </div>
+          <br>
                 <!-- Course description -->
                 <div class="col-12">
                                 <label for="">Abstract Contents</label>

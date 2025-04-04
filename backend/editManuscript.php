@@ -12,14 +12,27 @@ $manuscript = $_POST["title"];
 $quillContent = json_decode($_POST['article_content'], true);
 
 
+
 $abstract = json_encode($quillContent);
+
+
+$targetDir = "../useruploads/manuscripts/";
+$targetDirImage = "../useruploads/article_images/";
+// Get the filename and append it to the target directory
+
+$manuscriptFile = basename($_FILES["manuscript_file"]["name"]);
+$targetFile = $targetDir . $manuscriptFile;
+$newFileName = time() . '_' . $manuscriptFile;
+// Initialize variables
+$uploadOk = 1;
+$fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
 $abstractDiscussion = "";
 if(isset($_POST["abstract_discussion"])){
 $abstractContent = json_decode($_POST["abstract_discussion"], true);
 $abstractDiscussion = json_encode($abstractContent);
 }
-
+ 
 // Get all Authors information 
 // Check if the file already exists 
 try {
@@ -88,7 +101,17 @@ try {
                      // Update the Article 
                      $update = $con->prepare("UPDATE `journals` SET `manuscript_full_title` = ?, `unstructured_abstract` =?,`abstract_discussion` =?, `corresponding_authors_email` =?  WHERE `buffer` =?");
                      $update->bind_param("sssss", $manuscript, $abstract, $abstractDiscussion, $correspondingAuthorsEmail, $token);
- 
+
+                     if($_FILES["manuscript_file"]["tmp_name"] != ""){
+                       
+                     if (move_uploaded_file($_FILES["manuscript_file"]["tmp_name"], $targetFile)) {
+                        // File uploaded successfully, now you can do something with the data
+                        rename($targetDir . $_FILES["manuscript_file"]["name"], $targetDir.$newFileName);
+                        $update = $con->prepare("UPDATE `journals` SET `manuscript_file` =?  WHERE `buffer` =?");
+                        $update->bind_param("ss", $newFileName, $token);
+                     }
+                    }
+                        
                      if($update->execute()){
                          $response = array("status" => "success", "message" => "ArticleUpdated ");
                          echo json_encode($response);
