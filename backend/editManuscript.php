@@ -107,6 +107,7 @@ try {
                      $update = $con->prepare("UPDATE `journals` SET `manuscript_full_title` = ?, `unstructured_abstract` =?,`abstract_discussion` =?, `corresponding_authors_email` =?  WHERE `buffer` =?");
                      $update->bind_param("sssss", $manuscript, $abstract, $abstractDiscussion, $correspondingAuthorsEmail, $token);
 
+                     if($_FILES["manuscript_file"]){
                      if($_FILES["manuscript_file"]["tmp_name"] != ""){
                        
                      if (move_uploaded_file($_FILES["manuscript_file"]["tmp_name"], $targetFile)) {
@@ -116,6 +117,7 @@ try {
                         $update->bind_param("ss", $newFileName, $token);
                      }
                     }
+                }
                         
                      if($update->execute()){
                          $response = array("status" => "success", "message" => "ArticleUpdated ");
