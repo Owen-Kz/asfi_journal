@@ -19,10 +19,15 @@ $abstract = json_encode($quillContent);
 $targetDir = "../useruploads/manuscripts/";
 $targetDirImage = "../useruploads/article_images/";
 // Get the filename and append it to the target directory
-
+$manuscriptFile = "";
+$targetFile = "";
+$newFileName = "";
+// Check if the file was uploaded
+if($_FILES["manuscript_file"]){
 $manuscriptFile = basename($_FILES["manuscript_file"]["name"]);
 $targetFile = $targetDir . $manuscriptFile;
 $newFileName = time() . '_' . $manuscriptFile;
+}
 // Initialize variables
 $uploadOk = 1;
 $fileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
