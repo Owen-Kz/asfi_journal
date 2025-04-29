@@ -8,15 +8,13 @@ $author = $_GET["author"];
 
 if (isset($author)) {
     try {
-        // Find all authors matching the search parameter
         $stmt = $con->prepare("SELECT article_id FROM `authors` WHERE `authors_fullname` LIKE ?");
-        
         if (!$stmt) {
             echo json_encode(['status' => 'internalError', 'message' => "Error: " . $con->error, 'articlesList' => []]);
             exit();
         }
 
-        $searchParam = "%" . $author . "%"; // Partial match
+        $searchParam = "%" . $author . "%";
         $stmt->bind_param("s", $searchParam);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -24,30 +22,39 @@ if (isset($author)) {
 
         if ($authorsCount > 0) {
             $articlesList = [];
-
-            // Collect all article IDs from matching authors
             $articleIDs = [];
+
             while ($row = $result->fetch_assoc()) {
                 $articleIDs[] = $row["article_id"];
             }
 
             if (!empty($articleIDs)) {
-                // Convert array to comma-separated values for SQL query
                 $placeholders = implode(',', array_fill(0, count($articleIDs), '?'));
-
-                // Prepare statement to find all related articles
                 $stmtArticles = $con->prepare("SELECT * FROM `journals` WHERE `buffer` IN ($placeholders)");
                 if (!$stmtArticles) {
                     echo json_encode(['status' => 'internalError', 'message' => "Error: " . $con->error, 'articlesList' => []]);
                     exit();
                 }
 
-                // Bind parameters dynamically
                 $stmtArticles->bind_param(str_repeat('s', count($articleIDs)), ...$articleIDs);
                 $stmtArticles->execute();
                 $articlesResult = $stmtArticles->get_result();
 
                 while ($article = $articlesResult->fetch_assoc()) {
+                    $articleID = $article['buffer'];
+
+                    // Fetch co-authors for this article
+                    $coAuthorsStmt = $con->prepare("SELECT authors_fullname FROM `authors` WHERE article_id = ?");
+                    $coAuthorsStmt->bind_param("s", $articleID);
+                    $coAuthorsStmt->execute();
+                    $coAuthorsResult = $coAuthorsStmt->get_result();
+
+                    $coAuthors = [];
+                    while ($coAuthorRow = $coAuthorsResult->fetch_assoc()) {
+                        $coAuthors[] = $coAuthorRow['authors_fullname'];
+                    }
+
+                    $article['co_authors'] = $coAuthors;
                     $articlesList[] = $article;
                 }
             }
