@@ -170,7 +170,7 @@
                             </div>
                         <div class="submit-body" style="display: flex; flex-direction: column; justify-content: space-around; padding: 12px; color: #333;">
                       <p><b>Article Type: </b> <span id="articleTypeContainer"></span>, <b>Discipline: </b> <span id="disciplineContainer"></span></p>
-                      <p><b>Date Submitted</b>: <span id="previous_manuscript_id "></span></p>
+                      <p><b>Previous ID</b>: <span id="previous_manuscript_id "></span></p>
 
                       <h4>Abstract</h4>
 
