@@ -25,6 +25,7 @@ if($count > 0){
         echo "
               <div class='item' style='background-image: url(./useruploads/article_images/$ArticlePhoto'); background-size:cover;'>
     <div class='carousel-caption article-info1'>
+    <div class='tag'>Recently Published</div>
                     <span class='articleDateContainer'>
                     <input type='hidden'  value='$ArticleDate'>
                     $ArticleDate</span>

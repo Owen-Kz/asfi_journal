@@ -119,8 +119,9 @@ header("Pragma: no-cache");
 }
 .issue-item{
 	margin-top: 10px;
-	border-bottom: 1px solid black;
-	padding-bottom: 20px;
+	/* border-bottom: 1px solid black; */
+	padding: 20px;
+	background-color: #f1f1f1;
 }
 .rlist--inline {
     list-style: none;
@@ -146,7 +147,8 @@ header("Pragma: no-cache");
 	margin-top: 10px;
 }
 .section__mainHeader--mid {
-	font-size: 40px;
+	margin-top:20px;
+	font-size: 20px;
 }
 @media (min-width: 768px) {
     .col-md-8 {
@@ -346,13 +348,13 @@ header("Pragma: no-cache");
 	<header class="header header-one">
 		<div class="primary-header-one primary-header">
 			<div class="container">
-				<div class="primary-header-inner">
-					<div class="header-logo">
+				<div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;" style="display:flex; flex-direction:column; align-items: start;">
+					<div class="header-logo" style="">
 						<a href="">
 							<img src="./assets/images/logoIcon/logo.png" alt="Logo" /></a>
 					</div><!-- /.header-logo -->
 
-					<div class="header-menu-wrap">
+					<div class="header-menu-wrap" style="width: 100%;" style="width: 100%;">
 						<ul class="dl-menu ">
 							<!-- Menu Item -->
 							<li><a href="./aboutus.html" class='menu-item dropdown'>About Us</a>
@@ -398,19 +400,16 @@ header("Pragma: no-cache");
 							</li>
 							<!-- <li><a href="./terms.html" class='menu-item'>Terms</a></li> -->
 							<li><a href="./contact.html" class='menu-item'>Contact Us</a></li>
-							<li class="header-right">
+							
+						</ul>
+						<div class="header-right">
 								<a class="header-btn" href="/portal">
 									<p>Submit Manuscript</p>
 								</a>
-							</li>
-						</ul>
+</div>
 					</div><!-- /.header-menu-wrap -->
 
-					<div class="header-right">
-						<!-- <a class='header-btn' href='user/register.html'>Create Account<span></span></a> -->
-						<a class="header-btn" href="/portal">
-							<p>Submit Manuscript</p>
-						</a>
+					
 						<!-- Burger menu -->
 						<div class="mobile-menu-icon">
 							<div class="burger-menu">
@@ -492,7 +491,7 @@ header("Pragma: no-cache");
 
 
         
-        <div class="gutterless--xs gutterless--sm gutterless--md main-content col-md-8">
+        <div class="gutterless--xs gutterless--sm gutterless--md main-content col-md-9">
 
 
 
@@ -592,7 +591,7 @@ header("Pragma: no-cache");
         </div>
     
 
-</div><div class="gutterless--xs gutterless--sm gutterless--md col-md-4">
+</div><div class="gutterless--xs gutterless--sm gutterless--md col-md-3">
 
 
         <div data-widget-def="ux3-layout-widget" data-widget-id="ee7a3430-1136-4dfb-922e-2ee614f121aa" class="journal-sidebar">
@@ -603,7 +602,8 @@ header("Pragma: no-cache");
 	  <!-- <div class="journal-side-section journal-actions-container"><a href="./callfor.html"><button
 							style="background-color: #80078b; color: white; height: 60px; width: 100%;  margin: auto; margin-top: 20px; font-size: 30px;"><i aria-hidden="true" class="fas fa-book"></i> Call For Papers</button></a> -->
 							<a href=""><button
-							style="background-color: #80078b; color: white; height: 60px; width: 100%;  margin: auto; margin-top: 20px; font-size: 30px;"><i aria-hidden="true" class="fas fa-book"></i> Coming soon...</button></a></div> <br>
+							style="background-color: #80078b; color: white; height: 50px; width: 100%;  margin: auto; margin-top: 20px; font-size: 15px;"><i aria-hidden="true" class="fas fa-bell"></i> Announcements</button></a> <br><br>
+						<p>Call for papers</p></div> <br>
 
       
         <div id="etoc-signup" role="status" aria-atomic="true" class="alert-sign-up"><div class="alert-sign-up__box pb-0"><i aria-hidden="true" class="fas fa-envelope"></i><h3>Sign up for email alerts</h3></div>

@@ -1,8 +1,11 @@
 .header{
-    background-color: #fff;
+    /* background-color: #fff; */
+    /* background-image: url(/assets/images/asfischolar.jpg); */
     width: 100%;
     height: auto;
     display: block;
+    padding-top: 30px;
+    border-bottom: 6px solid #80078b;
 }
 .header-logo img{ max-width: 100%; }
 .sub-head{
@@ -16,8 +19,10 @@
     top: 0;
     transform: translateY(-100%);
     z-index: 99;
+    border-bottom: 3px solid #80078b;
 }
 .sticky-header .primary-header{
+    padding-top: 30px;
     background-color: #fff;
     box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.1);
 }
@@ -105,7 +110,7 @@
     font-family: "Work Sans", sans-serif;
     font-size: 12px;
     letter-spacing: 0;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 600;
     color: #07122D;
     padding: 0 15px;
@@ -362,7 +367,7 @@
     margin-right: 0;
 }
 .header-right a.header-btn{
-    display: none;
+    display: flex;
     background: linear-gradient(to right, #80078b, #310357);
     color: #FFF;
     font-family: 'Work Sans', sans-serif;
@@ -392,7 +397,8 @@
     color: #80078b;
     padding: 4px;
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 9px;
+    text-transform: capitalize;
 }
 .header-menu-wrap .dl-menu .header-right a.header-btn {
     display: none;
@@ -443,7 +449,7 @@
 .primary-header .header-logo{
     max-width: 180px;
 }
-.viewport-lg .primary-header .header-menu-wrap{ display: block!important; }
+.viewport-lg .primary-header .header-menu-wrap{ display: flex!important; justify-content: space-between;}
 
 /* Top Bar */
 .top-bar{

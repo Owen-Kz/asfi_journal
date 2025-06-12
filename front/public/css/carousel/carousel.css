@@ -28,23 +28,34 @@
   opacity: 1;
 }
 .carousel-caption {
-  position: absolute;
-  text-align: left;
-  background-image: linear-gradient(to bottom, #80078b9a, #80078b);
-  color: #fff;
-  padding: 20px;
-  /* height: 40%; */
-  width: 100%;
-  box-sizing: border-box;
-  bottom: 0;
-  left: 0;
+  position: relative;
+    text-align: left;
+    background-image: linear-gradient(to right, #80078b, #80078b00);
+    color: #fff;
+    padding: 20px;
+    height: 100% !important;
+    width: 50%;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    font-size: 10px !important;
+}
+
+.tag{
+  font-size: 12px;
+  background-color: white;
+  color: #80078b;
+  padding: 2px 6px 2px 6px;
+  border-radius: 6px;
+  width: 30%;
+  margin-bottom: 40px;
 }
 
 .small .inner-layer p {
   margin-top: 10px;
   padding-top: 4px;
   width: fit-content;
-  border-top: 4px solid #fff;
+  border-top: 2px solid #fff;
 }
 
 
@@ -90,8 +101,9 @@
 
 /* Declare heights because of positioning of img element */
 .carousel .item {
-  height: 550px;
+  height: 400px;
   background-color: #777;
+  margin-top: 20px;
 }
 
 .carousel1 .item {
@@ -173,8 +185,12 @@
   /* Bump up size of carousel content */
   .carousel-caption p {
     margin-bottom: 20px;
-    font-size: 21px;
+    font-size: 12px;
     line-height: 1.4;
+  }
+
+  .carousel-caption .article-title{
+    font-size: 12px;
   }
 
   .featurette-heading {

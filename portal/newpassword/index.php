@@ -75,13 +75,13 @@
 	<header class="header header-one">
 		<div class="primary-header-one primary-header">
 			<div class="container">
-				<div class="primary-header-inner">
+				<div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;">
 					<div class="header-logo">
 						<a href="https://asfirj.org/">
 							<img src="../../assets/images/logoIcon/logo.png" alt="Logo" /></a>
 					</div><!-- /.header-logo -->
 
-					<div class="header-menu-wrap">
+					<div class="header-menu-wrap" style="width: 100%;">
 						<ul class="dl-menu">
 							<!-- Menu Item -->
 							<li><a href="../../aboutus.html" class='menu-item'>About Us</a></li>
@@ -104,15 +104,17 @@
 							</li>
 							<!-- <li><a href="./terms.html" class='menu-item'>Terms</a></li> -->
 							<li><a href="../../contact.html" class='menu-item'>Contact Us</a></li>
-							<li class="header-right">
-									<a class="header-btn" href=""><p>Submit Manuscript</p> </a>
-							</li>
+							
 						</ul>
+                        <div class="header-right">
+								<a class="header-btn" href="/portal">
+									<p>Submit Manuscript</p>
+								</a>
+</div>
 					</div><!-- /.header-menu-wrap -->
 
 					<div class="header-right">
-						<!-- <a class='header-btn' href='user/register.html'>Create Account<span></span></a> -->
-							<a class="header-btn" href=""><p>Submit Manuscript</p> </a>
+						
 						<!-- Burger menu -->
 						<div class="mobile-menu-icon">
 							<div class="burger-menu">
