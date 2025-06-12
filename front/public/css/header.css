@@ -280,7 +280,10 @@
     .dropdown-plus.dropdown-open:after {
         display: none;
     }
-    .mobile-menu-icon{ display: block; }
+    .mobile-menu-icon{ display: block; margin-top: 20px;}
+    .tag{
+        width: 50% !important;
+    }
     .header-menu-wrap{
         display: none;
         background-color: #fff;
