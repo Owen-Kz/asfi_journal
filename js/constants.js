@@ -22,7 +22,7 @@ if(parentDIRName === "asfi_journal"){
     parentDirectoryName = "https://asfirj.org"
     EndPoint = '/backend'    
     submissionsEndpoint = "https://cp.asfirj.org";
-    editorsDomainEndpoint = "https://editors.asfirj.org";
+    editorsDomainEndpoint = "https://process.asfirj.org/editors/dashboard";
 }
 
 // EndPoint = 'https://asfirj.org/backend'   
