@@ -27,7 +27,7 @@ loginForm.addEventListener("submit", function(e) {
         pass:pass.value
     }
 
-    fetch(`${submissionsEndpoint}/backend/accounts/login.php`, {
+    fetch(`${submissionsEndpoint}/backend/accounts/login.php?v=${new Date()}`, {
         method:"POST",
         body:JSON.stringify(formdata),
         headers:{
