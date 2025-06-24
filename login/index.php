@@ -63,7 +63,7 @@
 	<link rel="stylesheet" href="../front/public/css/footer.css">
 	<link rel="stylesheet" href="../front/public/css/main.css">
 	<link rel="stylesheet" href="../front/public/css/responsive.css">
-	<script src="../front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<script src="../front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js?v=<?= time(); ?>"></script>
 </head>
 
 <body class="header-1 business">
@@ -261,12 +261,12 @@
         </div> -->
     </main>
          <!-- Main js -->
-    <script src="../assets/templates/metro_hyip/js/main.js"></script>
+    <script src="../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
 
         
     
     <link rel="stylesheet" href="../assets/global/css/iziToast.min.css">
-<script src="../assets/global/js/iziToast.min.js"></script>
+<script src="../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
    
     
     
@@ -381,7 +381,7 @@
 		<div class="copyright-wrap">
 			<p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
 		</div>
-		<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+		<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js?v=<?= time(); ?>" async></script> -->
 		<!--Start of Tawk.to Script-->
 <!-- <script type="text/javascript">
 	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -405,22 +405,22 @@
 </div>
 
 <!-- jQuery Lib -->
-<script src="../front/public/js/vendor/jquery-1.12.4.min.js"></script>
-<script src="../front/public/js/vendor/popper.min.js"></script>
-<script src="../front/public/js/vendor/bootstrap.min.js"></script>
-<script src="../front/public/js/vendor/waypoints.min.js"></script>
-<script src="../front/public/js/vendor/slick.min.js"></script>
-<script src="../front/public/js/vendor/jquery.ajaxchimp.min.js"></script>
-<script src="../front/public/js/vendor/odometer.min.js"></script>
-<script src="../front/public/js/vendor/jquery.isotope.v3.0.2.js"></script>
-<script src="../front/public/js/vendor/imagesloaded.pkgd.min.js"></script>
-<script src="../front/public/js/vendor/venobox.min.js"></script>
-<script src="../front/public/js/vendor/jquery.hoverdir.js"></script>
-<script src="../front/public/js/vendor/splitting.min.js"></script>
-<script src="../front/public/js/vendor/jquery.nice-select.min.js"></script>
-<script src="../front/public/js/vendor/wow.min.js"></script>
-<script src="../front/public/js/main.js"></script>
-<script type="module" src="../js/general.js"></script>
+<script src="../front/public/js/vendor/jquery-1.12.4.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/popper.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/bootstrap.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/waypoints.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/slick.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/jquery.ajaxchimp.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/odometer.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/jquery.isotope.v3.0.2.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/imagesloaded.pkgd.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/venobox.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/jquery.hoverdir.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/splitting.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/jquery.nice-select.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
+<script src="../front/public/js/main.js?v=<?= time(); ?>"></script>
+<script type="module" src="../js/general.js?v=<?= time(); ?>"></script>
 
 </body>
 </html>
