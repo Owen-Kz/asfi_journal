@@ -27,7 +27,7 @@ function showEmailContent(emailId) {
     emailContentContainer.innerHTML = ``
     GetEmailContent(emailId)
       // Set Email Status to read 
-      fetch(`${submissionsEndpoint}/backend/email/setStatus/index.php?e_id=${emailId}`, {
+      fetch(`https://test.asfirj.org/backend/email/setStatus/index.php?e_id=${emailId}`, {
 
         
       }).then(res=>res.json())
@@ -43,7 +43,7 @@ function showEmailContent(emailId) {
 
 }
 // Get Emails Related to the user 
-fetch(`${submissionsEndpoint}/backend/accounts/emailList.php?u_id=${user}`, {
+fetch(`https://test.asfirj.org/backend/accounts/emailList.php?u_id=${user}`, {
 
 }).then(res=>res.json())
 .then(data=>{

@@ -8,7 +8,7 @@ import { quill } from "./quill.js";
 // Function to Add new file fields or links if the file exists 
 // Teh array to contain fiels has been created in submissionHeader.js 
 function fetchFile(fileName, fieldName) {
-    fetch(`${submissionsEndpoint}/selectFile/?file=${encodeURIComponent(fileName)}`)
+    fetch(`https://test.asfirj.org/selectFile/?file=${encodeURIComponent(fileName)}`)
         .then(response => response.blob())
         .then(blob => {
             const file = new File([blob], fileName, { type: blob.type });
@@ -27,7 +27,7 @@ function AddFileField(fieldName, filename, fieldContainerId, label) {
     fileContainer.setAttribute("style", "color:black; display:flex; align-items:center; padding:10px")
     if (filename != null) {
         fileContainer.innerHTML = ` <label for="${fieldName}">${label}:  </label>
-                                <a href="${submissionsEndpoint}/uploadedFiles/${filename}" style="margin-left:10px;" target=_blank > ${filename}</a> <button type="button" class="text-danger" style="margin-left:10px;"  onClick="removeFile('${fieldName}', '${fieldContainerId}', '${label}')"><i class="fa fa-trash"></i></button>`
+                                <a href="https://test.asfirj.org/uploadedFiles/${filename}" style="margin-left:10px;" target=_blank > ${filename}</a> <button type="button" class="text-danger" style="margin-left:10px;"  onClick="removeFile('${fieldName}', '${fieldContainerId}', '${label}')"><i class="fa fa-trash"></i></button>`
         fetchFile(filename, fieldName)
         fileContainer.querySelector("a").setAttribute("style", "color:purple; text-decoration:underline;")
     } else {
@@ -50,7 +50,7 @@ const authorsContainer = document.getElementById("addAuthor")
 const articleId = GetParameters(window.location.href).get("a");
 if (articleId) {
     // Check the database if the article has been returned for revision 
-    fetch(`${submissionsEndpoint}/backend/accounts/getArticleInfo.php`, {
+    fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
         method: "POST",
         body: JSON.stringify({ id: articleId }),
         headers: {
@@ -75,7 +75,7 @@ if (articleId) {
                     const graphicAbstract = Article.graphic_abstract
 
                     // gEt the authors 
-                    fetch(`${submissionsEndpoint}/backend/accounts/articleAuthors.php?articleID=${articleId}`, {
+                    fetch(`https://test.asfirj.org/backend/accounts/articleAuthors.php?articleID=${articleId}`, {
                         method: "GET"
                     }).then(res => res.json())
                         .then(data => {
@@ -384,7 +384,7 @@ if (articleId) {
                             body.setAttribute("id", "formNotSubmitted")
                         } 
 
-                        fetch(`${submissionsEndpoint}/draft/`, {
+                        fetch(`https://test.asfirj.org/draft/`, {
                             method: 'POST',
                             body: formData
                         })

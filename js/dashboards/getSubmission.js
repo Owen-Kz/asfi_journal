@@ -21,7 +21,7 @@ if(ArticleIdQuery){
 
 
 function getSupplement(articeID) {
-    fetch(`${submissionsEndpoint}/backend/accounts/getArticleInfo.php`, {
+    fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
         method:"POST",
         body:JSON.stringify({id:articeID}),
         headers:{
@@ -64,7 +64,7 @@ function getSupplement(articeID) {
                      if(Article.manuscript_file.slice(0, 26) === 'https://res.cloudinary.com'){
                         MANUSCRIPT_FILE = `https://process.asfirj.org/doc?url=${Article.manuscript_file}`
                         }else{
-                             MANUSCRIPT_FILE = `${submissionsEndpoint}/uploadedFiles/${Article.manuscript_file}`
+                             MANUSCRIPT_FILE = `https://test.asfirj.org/uploadedFiles/${Article.manuscript_file}`
                         }
                     }else{
                         MANUSCRIPT_FILE = "#"
@@ -173,7 +173,7 @@ function getSupplement(articeID) {
                     }
                  
                     // gEt the authors 
-                    fetch(`${submissionsEndpoint}/backend/accounts/articleAuthors.php?articleID=${ArticleID}`, {
+                    fetch(`https://test.asfirj.org/backend/accounts/articleAuthors.php?articleID=${ArticleID}`, {
                         method: "GET"
                     }).then(res => res.json())
                         .then(data => {

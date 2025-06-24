@@ -17,7 +17,7 @@ if(InvitationFor && email && ArticleId && (Accept || Reject)){
         Action = 'reject'
     }
     if(InvitationFor === "review"){
-    fetch(`${submissionsEndpoint}/backend/reviewers/invitations.php?u_id=${email}&a_id=${ArticleId}&invite_for=${InvitationFor}&action=${Action}`, {
+    fetch(`https://test.asfirj.org/backend/reviewers/invitations.php?u_id=${email}&a_id=${ArticleId}&invite_for=${InvitationFor}&action=${Action}`, {
         method:"GET",
     }).then(res=>res.json())
     .then(data=>{
@@ -39,7 +39,7 @@ if(InvitationFor && email && ArticleId && (Accept || Reject)){
             invite_for: InvitationFor,
             action:Action,
         }
-        fetch(`${submissionsEndpoint}/backend/editors/invitations.php`, {
+        fetch(`https://test.asfirj.org/backend/editors/invitations.php`, {
             method:"POST",
             body:JSON.stringify(Formbody),
             headers:{

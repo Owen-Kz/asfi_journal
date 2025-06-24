@@ -9,7 +9,7 @@ import { quill } from "./quill.js";
 // Teh array to contain fiels has been created in submissionHeader.js 
 function fetchFile(fileName, fieldName) {
     // console.log(fileName, fieldName)
-    fetch(`${submissionsEndpoint}/selectFile/?file=${encodeURIComponent(fileName)}`)
+    fetch(`https://test.asfirj.org/selectFile/?file=${encodeURIComponent(fileName)}`)
         .then(response => response.blob())
         .then(blob => {
             const file = new File([blob], fileName, { type: blob.type });
@@ -32,7 +32,7 @@ function AddFileField(fieldName, filename, fieldContainerId, label) {
 if (filename.startsWith("https://")) {
     url = `${filename}`
 } else {
-    url = `${submissionsEndpoint}/uploadedFiles/${filename}`
+    url = `https://test.asfirj.org/uploadedFiles/${filename}`
 }
 
         fileContainer.innerHTML = ` <label for="${fieldName}">${label}:  </label>
@@ -61,7 +61,7 @@ const articleId = GetParameters(window.location.href).get("a");
 if (articleId) {
 const previous_id = document.getElementById("previous_id")
     // Check the database if the article has been returned for revision 
-    fetch(`${submissionsEndpoint}/backend/accounts/getArticleInfo.php`, {
+    fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
         method: "POST",
         body: JSON.stringify({ id: articleId }),
         headers: {
@@ -90,7 +90,7 @@ const previous_id = document.getElementById("previous_id")
                     const graphicAbstract = Article.graphic_abstract
 
                     // gEt the authors 
-                    fetch(`${submissionsEndpoint}/backend/accounts/articleAuthors.php?articleID=${articleId}`, {
+                    fetch(`https://test.asfirj.org/backend/accounts/articleAuthors.php?articleID=${articleId}`, {
                         method: "GET"
                     }).then(res => res.json())
                         .then(data => {
@@ -400,7 +400,7 @@ const previous_id = document.getElementById("previous_id")
                             body.setAttribute("id", "formNotSubmitted")
                         } 
 
-                        fetch(`${submissionsEndpoint}/correction/`, {
+                        fetch(`https://test.asfirj.org/correction/`, {
                             method: 'POST',
                             body: formData
                         })

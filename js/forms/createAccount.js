@@ -78,7 +78,7 @@ const availableForReview = document.querySelector('input[name="review"]:checked'
 body.removeAttribute("id")
 
 
-        fetch(`${submissionsEndpoint}/backend/accounts/signup.php`, {
+        fetch(`https://test.asfirj.org/backend/accounts/signup.php`, {
             method:"POST",
             body:JSON.stringify(formData),
             headers:{

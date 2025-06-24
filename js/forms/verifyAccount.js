@@ -3,7 +3,7 @@ import { GetParameters, parentDirectoryName, submissionsEndpoint } from "../cons
 const email = GetParameters(window.location.href).get("a")
 
 if(email){
-    fetch(`${submissionsEndpoint}/backend/accounts/verifyaccount.php?e=${email}`, {
+    fetch(`https://test.asfirj.org/backend/accounts/verifyaccount.php?e=${email}`, {
         method:"GET"
     }).then(res=>res.json())
     .then(data=>{

@@ -8,7 +8,7 @@ const resetPassForm = document.getElementById("resetPassForm")
         const formData = {
             email: resetEmail.value
         }
-        fetch(`${submissionsEndpoint}/backend/accounts/forgotPassword.php`,{
+        fetch(`https://test.asfirj.org/backend/accounts/forgotPassword.php`,{
             method:"POST",
             body:JSON.stringify(formData),
             headers:{

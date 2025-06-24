@@ -88,7 +88,7 @@ registerForm.addEventListener("submit", function(e){
 body.removeAttribute("id")
 
 
-        fetch(`${submissionsEndpoint}/backend/editors/createeditorAccount.php`, {
+        fetch(`https://test.asfirj.org/backend/editors/createeditorAccount.php`, {
             method:"POST",
             body:JSON.stringify(formData),
             headers:{

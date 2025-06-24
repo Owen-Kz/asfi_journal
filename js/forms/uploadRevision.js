@@ -7,7 +7,7 @@ import { quill } from "./quill.js";
 const articleId = GetParameters(window.location.href).get("a");
 if(articleId){
 // Check the database if the article has been returned for revision 
-fetch(`${submissionsEndpoint}/backend/accounts/getArticleInfo.php`, {
+fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
     method:"POST",
     body: JSON.stringify({id:articleId}),
     headers:{
@@ -96,7 +96,7 @@ uploadForm.addEventListener("submit", function(e) {
     }else{
         body.setAttribute("id", "formNotSubmitted")
     }
-    fetch(`${submissionsEndpoint}/submitRevision/`, {
+    fetch(`https://test.asfirj.org/submitRevision/`, {
         method: 'POST',
         body: formData
     })

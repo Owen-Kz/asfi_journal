@@ -3,7 +3,7 @@ const reviewsContainer = document.getElementById("reviewsContainer")
 const ArticlesId = GetParameters(window.location.href).get("a")
 
 // Fetch Reviews 
-fetch(`${submissionsEndpoint}/backend/accounts/manuscriptReviews.php`, {
+fetch(`https://test.asfirj.org/backend/accounts/manuscriptReviews.php`, {
     method:"POST",
     body:JSON.stringify({id:ArticlesId}),
     headers:{

@@ -95,7 +95,7 @@ if(SubmissionSTatus.value === "submitted"){
     console.log("formSubmitted")
     body.setAttribute("id", "formNotSubmitted")
 }
-    fetch(`${submissionsEndpoint}/submit/`, {
+    fetch(`https://test.asfirj.org/submit/`, {
         method: 'POST',
         body: formData
     })

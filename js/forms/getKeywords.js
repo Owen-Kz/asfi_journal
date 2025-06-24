@@ -2,7 +2,7 @@ import { submissionsEndpoint } from "../constants.js";
 
 
 async function GetKeywords(articleID) {
-    return fetch(`${submissionsEndpoint}/backend/accounts/getKeywords.php`,{
+    return fetch(`https://test.asfirj.org/backend/accounts/getKeywords.php`,{
         method:"POST",
         body: JSON.stringify({article_id:articleID})
 

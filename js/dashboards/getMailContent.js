@@ -21,7 +21,7 @@ async function GetEmailContent(emailID) {
     const Attachments = await GetAttachments(emailID)
 
 
-    fetch(`${submissionsEndpoint}/backend/editors/emailContent.php?u_id=${user}&emailId=${emailID}`, {})
+    fetch(`https://test.asfirj.org/backend/editors/emailContent.php?u_id=${user}&emailId=${emailID}`, {})
         .then(res => res.json())
         .then(data => {
             if (data.emails) {

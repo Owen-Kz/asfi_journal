@@ -1,7 +1,7 @@
 import { submissionsEndpoint } from "../constants.js";
 
 async function CheckReviewerExists(email){
-  return  fetch(`${submissionsEndpoint}/backend/reviewers/validateAccountExists.php`, {
+  return  fetch(`https://test.asfirj.org/backend/reviewers/validateAccountExists.php`, {
         method:"POST",
         body: JSON.stringify({encrypted:email}),
         headers:{

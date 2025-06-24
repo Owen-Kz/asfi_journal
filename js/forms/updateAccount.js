@@ -77,7 +77,7 @@ registerForm.addEventListener("submit", function(e){
   body.removeAttribute("id");
 
     const myNewData = new FormData(registerForm);
-    fetch(`${submissionsEndpoint}/backend/accounts/updateAccount.php`, {
+    fetch(`https://test.asfirj.org/backend/accounts/updateAccount.php`, {
         method:"POST",
         body: myNewData,
     }).then(res=>res.json())
