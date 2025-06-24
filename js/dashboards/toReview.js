@@ -1,6 +1,6 @@
 import { parentDirectoryName, submissionsEndpoint } from "../constants.js";
 import { GetCookie } from "../setCookie.js";
-import { GetAccountData } from "./accountData.js";
+import { GetAccountData } from `./accountData.js?v=${new Date()}`;
 
 const user = GetCookie("user")
 

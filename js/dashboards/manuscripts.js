@@ -1,7 +1,7 @@
 import { submissionsEndpoint } from "../constants.js";
 import { formatTimestamp } from "../formatDate.js";
 import { GetCookie } from "../setCookie.js";
-import { GetAccountData } from "./accountData.js";
+import { GetAccountData } from `./accountData.js?v=${new Date()}`;
 
 
 

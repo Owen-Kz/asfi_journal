@@ -1,6 +1,6 @@
 import { submissionsEndpoint } from "../constants.js"
 import { GetCookie } from "../setCookie.js"
-import { GetAccountData } from "./accountData.js"
+import { GetAccountData } from `./accountData.js?v=${new Date()}`
 
 const inReviewCount = document.querySelectorAll(".inReviewCount")
 const newSubmissionsCount = document.querySelectorAll(".newSubmissionsCount")
