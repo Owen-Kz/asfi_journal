@@ -1122,7 +1122,9 @@ body{
 .article-side  {
     background-color: rgba(255, 255, 255, 0.918); 
     height: 400px; 
-    margin-right: 50px; 
+    margin: 20px; 
+    padding: 6px;
+    border-radius: 15px;
     width: 50%; 
     display: flex; 
     flex-direction: column; 

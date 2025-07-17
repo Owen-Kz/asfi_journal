@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel - Journal Announcements</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen flex">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-white shadow-md hidden md:block">
+    <div class="p-6 border-b">
+      <h1 class="text-xl font-bold text-purple-600">Announcements</h1>
+    </div>
+    <nav class="p-4 space-y-2">
+      <a href="#" class="block text-purple-600 font-medium">Manage Announcements</a>
+      <a href="#" class="block text-gray-600 hover:text-purple-600">Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-6 overflow-auto">
+    <h2 class="text-2xl font-semibold mb-6">Publish Announcement</h2>
+
+    <!-- Announcement Form -->
+    <div class="bg-white rounded-xl shadow p-6 max-w-3xl mx-auto">
+      <form id="announcementForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium">Title</label>
+          <input id="titleInput" type="text" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring focus:border-purple-300" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium">Message</label>
+          <textarea id="messageInput" rows="4" class="w-full mt-1 p-2 border rounded-md focus:outline-none focus:ring focus:border-purple-300" required></textarea>
+        </div>
+        <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700">Publish</button>
+      </form>
+    </div>
+
+    <!-- Announcements Preview -->
+    <section class="mt-10 max-w-4xl mx-auto">
+      <h3 class="text-xl font-semibold mb-4">Published Announcements</h3>
+      <div id="announcementsList" class="space-y-4">
+        <!-- Dynamic entries will appear here -->
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('announcementForm');
+    const titleInput = document.getElementById('titleInput');
+    const messageInput = document.getElementById('messageInput');
+    const announcementsList = document.getElementById('announcementsList');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const title = titleInput.value.trim();
+      const message = messageInput.value.trim();
+      if (!title || !message) return;
+
+      const announcement = document.createElement('div');
+      announcement.className = 'bg-white p-4 rounded-md shadow border-l-4 border-purple-500 relative';
+      announcement.innerHTML = `
+        <h4 class="text-lg font-bold">${title}</h4>
+        <p class="text-gray-700 mt-1">${message}</p>
+        <button class="absolute top-2 right-2 text-red-500 hover:text-red-700" onclick="this.parentElement.remove()">✕</button>
+      `;
+
+      announcementsList.prepend(announcement);
+
+      // Clear form
+      form.reset();
+    });
+  </script>
+</body>
+</html>
