@@ -91,6 +91,7 @@ header("Pragma: no-cache");
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
 	<style>
 		.footer-section a {
 			color: #dbdadaa9;
@@ -327,6 +328,16 @@ header("Pragma: no-cache");
 	font-size: 12px;
 }
 }
+
+.footer-widget p {
+    font-size: 1.3rem;
+}
+.widget-links a {
+    font-size: 1.3rem;
+}
+.widget-links .fa-square-full {
+	display: none;
+}
 	</style>
 </head>
 
@@ -546,6 +557,95 @@ header("Pragma: no-cache");
 			</div>
 <a href="./issues" title="More articles" class="more-widget-link" style="display:flex; justify-content: flex-end; margin-bottom: 20px; margin-top: 6px; margin-right: 16px;">More articles</a>
 </div>
+<section class="about-section bd-bottom padding article-bottom" style="
+		display: flex; 
+		flex-direction: row;
+		margin-top:90px;
+	">
+			<div class="container" style="width: 100%;">
+				<div class="row titleBar">
+					<div class="wow fadeInLeft text-center" data-wow-delay="200ms">
+						<div class="section-heading">
+							<h2>Welcome to ASFI Research Journal</h2>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					
+
+					<div class="wow fadeInLeft" data-wow-delay="200ms" style="text-align: start; padding:10px;">
+						<div class='content'>
+							<p>
+								The official journal of the African Science Frontiers Initiatives (ASFI). ASFIRJ stands
+								as an online-only, open-access multidisciplinary journal, dedicated to advancing,
+								impacting, and communicating research from all disciplines, encompassing both basic and
+								applied studies.
+
+								Within the African scientific community, ASFIRJ endeavors to provide an unparalleled
+								platform, offering an author-friendly approach to scientific publishing from manuscript
+								submission through publication. Our overarching ambition is to emerge as one of Africa's
+								leading research journals, globally competitive, and unwaveringly focused on delivering
+								quality research with significant impact.
+							</p>
+
+							<p>
+								ASFIRJ welcomes contributions from across the globe, ensuring an international
+								perspective in its content. We publish a diverse range of materials including original
+								papers, expert reviews, systematic reviews and meta-analyses, position papers,
+								guidelines, protocols, data, editorials, news, and commentaries. Articles featured in
+								ASFIRJ are selected based solely on their scientific merit and quality.
+
+
+							</p>
+
+							<p>
+								Join us in our mission to foster collaboration, innovation, and excellence in research.
+								Together, let's explore new frontiers and make a lasting impact on the scientific
+								landscape.
+							</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="article-side">
+				<div style="display: flex; flex-direction: column;">
+					<a href="/portal"><button
+							style="background-color: #80078b; color: white; height: 60px; width: 90%;  margin: auto; margin-top: 20px;">Submit
+							Manuscript</button></a>
+					<a href="#news"><button
+							style="background-color: #80078b; color: white; height: 60px; width: 90%; margin: 0 auto; margin-top: 20px;">Subscribe
+							To Our Newsletter</button></a>
+				</div>
+				<div style="display: flex; justify-content: space-around; margin-bottom: 20px; font-size: 15px;">
+					<a href="https://chat.whatsapp.com/L8o0N0pUieOGIUHJ1hjSG3 " target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 100 100" id="whatsapp"><path d="M53,26.22a22.79,22.79,0,0,0-18.5,36.11,2.4,2.4,0,0,1,.24,2.41l-2.63,5.8,7.55-2.08a2.8,2.8,0,0,1,.64-.08,2.38,2.38,0,0,1,1.22.33A22.79,22.79,0,1,0,53,26.22ZM66.51,57.85a6.82,6.82,0,0,1-5.09,3.79c-2,.39-3.73-.26-5.62-.89A23.92,23.92,0,0,1,51,58.46a27.56,27.56,0,0,1-7.73-7.18,30.35,30.35,0,0,1-1.79-2.72,14.58,14.58,0,0,1-1.7-3.93,7.62,7.62,0,0,1-.23-1.78A7.1,7.1,0,0,1,42,37.24a3.2,3.2,0,0,1,3.49-.52c1.18.67,1.79,2.35,2.34,3.53a5.86,5.86,0,0,1,.74,3.18,6.2,6.2,0,0,1-1.65,2.68,1.11,1.11,0,0,0-.14,1.52,18.25,18.25,0,0,0,9.09,7.8,1,1,0,0,0,1.3-.28c.68-.84,1.35-2.48,2.39-2.9,1.36-.56,2.87.21,4,.9s2.87,1.44,3.16,2.77A3.3,3.3,0,0,1,66.51,57.85ZM53,26.22a22.79,22.79,0,0,0-18.5,36.11,2.4,2.4,0,0,1,.24,2.41l-2.63,5.8,7.55-2.08a2.8,2.8,0,0,1,.64-.08,2.38,2.38,0,0,1,1.22.33A22.79,22.79,0,1,0,53,26.22ZM66.51,57.85a6.82,6.82,0,0,1-5.09,3.79c-2,.39-3.73-.26-5.62-.89A23.92,23.92,0,0,1,51,58.46a27.56,27.56,0,0,1-7.73-7.18,30.35,30.35,0,0,1-1.79-2.72,14.58,14.58,0,0,1-1.7-3.93,7.62,7.62,0,0,1-.23-1.78A7.1,7.1,0,0,1,42,37.24a3.2,3.2,0,0,1,3.49-.52c1.18.67,1.79,2.35,2.34,3.53a5.86,5.86,0,0,1,.74,3.18,6.2,6.2,0,0,1-1.65,2.68,1.11,1.11,0,0,0-.14,1.52,18.25,18.25,0,0,0,9.09,7.8,1,1,0,0,0,1.3-.28c.68-.84,1.35-2.48,2.39-2.9,1.36-.56,2.87.21,4,.9s2.87,1.44,3.16,2.77A3.3,3.3,0,0,1,66.51,57.85ZM50.8,5.43A45.75,45.75,0,1,0,96.54,51.17,45.8,45.8,0,0,0,50.8,5.43ZM53,76.64a27.64,27.64,0,0,1-13-3.26L28.39,76.55a2.35,2.35,0,0,1-.64.09,2.41,2.41,0,0,1-2.2-3.41L29.75,64A27.62,27.62,0,1,1,53,76.64Zm0-50.42a22.79,22.79,0,0,0-18.5,36.11,2.4,2.4,0,0,1,.24,2.41l-2.63,5.8,7.55-2.08a2.8,2.8,0,0,1,.64-.08,2.38,2.38,0,0,1,1.22.33A22.79,22.79,0,1,0,53,26.22ZM66.51,57.85a6.82,6.82,0,0,1-5.09,3.79c-2,.39-3.73-.26-5.62-.89A23.92,23.92,0,0,1,51,58.46a27.56,27.56,0,0,1-7.73-7.18,30.35,30.35,0,0,1-1.79-2.72,14.58,14.58,0,0,1-1.7-3.93,7.62,7.62,0,0,1-.23-1.78A7.1,7.1,0,0,1,42,37.24a3.2,3.2,0,0,1,3.49-.52c1.18.67,1.79,2.35,2.34,3.53a5.86,5.86,0,0,1,.74,3.18,6.2,6.2,0,0,1-1.65,2.68,1.11,1.11,0,0,0-.14,1.52,18.25,18.25,0,0,0,9.09,7.8,1,1,0,0,0,1.3-.28c.68-.84,1.35-2.48,2.39-2.9,1.36-.56,2.87.21,4,.9s2.87,1.44,3.16,2.77A3.3,3.3,0,0,1,66.51,57.85Z"></path></svg></a>
+					<a href="https://www.linkedin.com/in/asfi-research-journal-1b9929309/"
+ target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px"
+							y="0px" width="40" height="40" viewBox="0 0 50 50">
+							<path
+								d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z">
+							</path>
+						</svg></a>
+					<a href="https://www.instagram.com/asfirj1/
+" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px"
+							y="0px" width="40" height="40" viewBox="0 0 50 50">
+							<path
+								d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z">
+							</path>
+						</svg></a>
+					<a href="https://twitter.com/asfirj1
+" target="_blank">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
+							viewBox="0 0 50 50">
+							<path
+								d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z">
+							</path>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</section>
 </div></div>
 
         </div>
@@ -603,7 +703,14 @@ header("Pragma: no-cache");
 							style="background-color: #80078b; color: white; height: 60px; width: 100%;  margin: auto; margin-top: 20px; font-size: 30px;"><i aria-hidden="true" class="fas fa-book"></i> Call For Papers</button></a> -->
 							<a href=""><button
 							style="background-color: #80078b; color: white; height: 50px; width: 100%;  margin: auto; margin-top: 20px; font-size: 15px;"><i aria-hidden="true" class="fas fa-bell"></i> Announcements</button></a> <br><br>
-						<p>Call for papers</p></div> <br>
+						<!-- Announcement Card -->
+<a href="/announcement/123" class="block group max-w-xl mx-auto bg-white-200 p-5 rounded-xl shadow-sm hover:shadow-sm transition">
+  <h3 class="text-lg font-semibold text-purple-700 group-hover:underline">Important Update on Publication Deadlines</h3>
+  <p class="text-gray-600 mt-2 line-clamp-3">
+    Due to unforeseen circumstances, the submission deadlines for Volume 8, Issue 3 have been extended by two weeks. Authors are advised to check the new dates...
+  </p>
+  <div class="mt-4 text-md text-purple-500 group-hover:underline">Read more →</div>
+</a></div> <br>
 
       
         <div id="etoc-signup" role="status" aria-atomic="true" class="alert-sign-up"><div class="alert-sign-up__box pb-0"><i aria-hidden="true" class="fas fa-envelope"></i><h3>Sign up for email alerts</h3></div>
@@ -721,100 +828,7 @@ header("Pragma: no-cache");
 </div></div></div>
 
 
-		<section class="about-section bd-bottom padding article-bottom" style="
-		display: flex; 
-		flex-direction: row;
-	">
-			<div class="container" style="width: 100%;">
-				<div class="row titleBar">
-					<div class="col-md-12 wow fadeInLeft text-center" data-wow-delay="200ms">
-						<div class="section-heading">
-							<h2>Welcome to ASFI Research Journal</h2>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<!-- <div class="col-md-6">
-					<div style="height:551px; background-color: transparent; overflow:hidden; box-sizing: border-box; border: 1px solid #80078b; border-radius: 4px; text-align: right; line-height:14px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #80078b; padding: 0px; margin: 0px; width: 100%;">
-						<div style="height:531px; padding:0px; margin:0px; width: 100%;">
-							<img width="100%" height="527px" marginwidth="0" marginheight="0"  style="border:0;margin:0;padding:0;" src="https://images.unsplash.com/reserve/LJIZlzHgQ7WPSh5KVTCB_Typewriter.jpg?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Sm91cm5hbCUyMFB1Ymxpc2hpbmd8ZW58MHx8MHx8fDA%3D" alt="" srcset="">
-						</div><div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;"><a href="" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px"></a>&nbsp;</div></div>
-					<div class="dot-pattern"></div>
-				</div> -->
-
-					<div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms" style="text-align: start; padding-left:30px;">
-						<div class='content'>
-							<p>
-								The official journal of the African Science Frontiers Initiatives (ASFI). ASFIRJ stands
-								as an online-only, open-access multidisciplinary journal, dedicated to advancing,
-								impacting, and communicating research from all disciplines, encompassing both basic and
-								applied studies.
-
-								Within the African scientific community, ASFIRJ endeavors to provide an unparalleled
-								platform, offering an author-friendly approach to scientific publishing from manuscript
-								submission through publication. Our overarching ambition is to emerge as one of Africa's
-								leading research journals, globally competitive, and unwaveringly focused on delivering
-								quality research with significant impact.
-							</p>
-
-							<p>
-								ASFIRJ welcomes contributions from across the globe, ensuring an international
-								perspective in its content. We publish a diverse range of materials including original
-								papers, expert reviews, systematic reviews and meta-analyses, position papers,
-								guidelines, protocols, data, editorials, news, and commentaries. Articles featured in
-								ASFIRJ are selected based solely on their scientific merit and quality.
-
-
-							</p>
-
-							<p>
-								Join us in our mission to foster collaboration, innovation, and excellence in research.
-								Together, let's explore new frontiers and make a lasting impact on the scientific
-								landscape.
-							</p>
-
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="article-side">
-				<div style="display: flex; flex-direction: column;">
-					<a href="/portal"><button
-							style="background-color: #80078b; color: white; height: 60px; width: 90%;  margin: auto; margin-top: 20px;">Submit
-							Manuscript</button></a>
-					<a href="#news"><button
-							style="background-color: #80078b; color: white; height: 60px; width: 90%; margin: 0 auto; margin-top: 20px;">Subscribe
-							To Our Newsletter</button></a>
-				</div>
-				<div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
-					<a href="https://chat.whatsapp.com/L8o0N0pUieOGIUHJ1hjSG3 " target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 100 100" id="whatsapp"><path d="M53,26.22a22.79,22.79,0,0,0-18.5,36.11,2.4,2.4,0,0,1,.24,2.41l-2.63,5.8,7.55-2.08a2.8,2.8,0,0,1,.64-.08,2.38,2.38,0,0,1,1.22.33A22.79,22.79,0,1,0,53,26.22ZM66.51,57.85a6.82,6.82,0,0,1-5.09,3.79c-2,.39-3.73-.26-5.62-.89A23.92,23.92,0,0,1,51,58.46a27.56,27.56,0,0,1-7.73-7.18,30.35,30.35,0,0,1-1.79-2.72,14.58,14.58,0,0,1-1.7-3.93,7.62,7.62,0,0,1-.23-1.78A7.1,7.1,0,0,1,42,37.24a3.2,3.2,0,0,1,3.49-.52c1.18.67,1.79,2.35,2.34,3.53a5.86,5.86,0,0,1,.74,3.18,6.2,6.2,0,0,1-1.65,2.68,1.11,1.11,0,0,0-.14,1.52,18.25,18.25,0,0,0,9.09,7.8,1,1,0,0,0,1.3-.28c.68-.84,1.35-2.48,2.39-2.9,1.36-.56,2.87.21,4,.9s2.87,1.44,3.16,2.77A3.3,3.3,0,0,1,66.51,57.85ZM53,26.22a22.79,22.79,0,0,0-18.5,36.11,2.4,2.4,0,0,1,.24,2.41l-2.63,5.8,7.55-2.08a2.8,2.8,0,0,1,.64-.08,2.38,2.38,0,0,1,1.22.33A22.79,22.79,0,1,0,53,26.22ZM66.51,57.85a6.82,6.82,0,0,1-5.09,3.79c-2,.39-3.73-.26-5.62-.89A23.92,23.92,0,0,1,51,58.46a27.56,27.56,0,0,1-7.73-7.18,30.35,30.35,0,0,1-1.79-2.72,14.58,14.58,0,0,1-1.7-3.93,7.62,7.62,0,0,1-.23-1.78A7.1,7.1,0,0,1,42,37.24a3.2,3.2,0,0,1,3.49-.52c1.18.67,1.79,2.35,2.34,3.53a5.86,5.86,0,0,1,.74,3.18,6.2,6.2,0,0,1-1.65,2.68,1.11,1.11,0,0,0-.14,1.52,18.25,18.25,0,0,0,9.09,7.8,1,1,0,0,0,1.3-.28c.68-.84,1.35-2.48,2.39-2.9,1.36-.56,2.87.21,4,.9s2.87,1.44,3.16,2.77A3.3,3.3,0,0,1,66.51,57.85ZM50.8,5.43A45.75,45.75,0,1,0,96.54,51.17,45.8,45.8,0,0,0,50.8,5.43ZM53,76.64a27.64,27.64,0,0,1-13-3.26L28.39,76.55a2.35,2.35,0,0,1-.64.09,2.41,2.41,0,0,1-2.2-3.41L29.75,64A27.62,27.62,0,1,1,53,76.64Zm0-50.42a22.79,22.79,0,0,0-18.5,36.11,2.4,2.4,0,0,1,.24,2.41l-2.63,5.8,7.55-2.08a2.8,2.8,0,0,1,.64-.08,2.38,2.38,0,0,1,1.22.33A22.79,22.79,0,1,0,53,26.22ZM66.51,57.85a6.82,6.82,0,0,1-5.09,3.79c-2,.39-3.73-.26-5.62-.89A23.92,23.92,0,0,1,51,58.46a27.56,27.56,0,0,1-7.73-7.18,30.35,30.35,0,0,1-1.79-2.72,14.58,14.58,0,0,1-1.7-3.93,7.62,7.62,0,0,1-.23-1.78A7.1,7.1,0,0,1,42,37.24a3.2,3.2,0,0,1,3.49-.52c1.18.67,1.79,2.35,2.34,3.53a5.86,5.86,0,0,1,.74,3.18,6.2,6.2,0,0,1-1.65,2.68,1.11,1.11,0,0,0-.14,1.52,18.25,18.25,0,0,0,9.09,7.8,1,1,0,0,0,1.3-.28c.68-.84,1.35-2.48,2.39-2.9,1.36-.56,2.87.21,4,.9s2.87,1.44,3.16,2.77A3.3,3.3,0,0,1,66.51,57.85Z"></path></svg>WhatsApp</a>
-					<a href="https://www.linkedin.com/in/asfi-research-journal-1b9929309/"
- target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px"
-							y="0px" width="40" height="40" viewBox="0 0 50 50">
-							<path
-								d="M41,4H9C6.24,4,4,6.24,4,9v32c0,2.76,2.24,5,5,5h32c2.76,0,5-2.24,5-5V9C46,6.24,43.76,4,41,4z M17,20v19h-6V20H17z M11,14.47c0-1.4,1.2-2.47,3-2.47s2.93,1.07,3,2.47c0,1.4-1.12,2.53-3,2.53C12.2,17,11,15.87,11,14.47z M39,39h-6c0,0,0-9.26,0-10 c0-2-1-4-3.5-4.04h-0.08C27,24.96,26,27.02,26,29c0,0.91,0,10,0,10h-6V20h6v2.56c0,0,1.93-2.56,5.81-2.56 c3.97,0,7.19,2.73,7.19,8.26V39z">
-							</path>
-						</svg>linkedin</a>
-					<a href="https://www.instagram.com/asfirj1/
-" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" x="0px"
-							y="0px" width="40" height="40" viewBox="0 0 50 50">
-							<path
-								d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z">
-							</path>
-						</svg>instagram</a>
-					<a href="https://twitter.com/asfirj1
-" target="_blank">
-						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40"
-							viewBox="0 0 50 50">
-							<path
-								d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z">
-							</path>
-						</svg> X
-					</a>
-				</div>
-			</div>
-		</section>
+		
 
 
 
@@ -1159,6 +1173,13 @@ header("Pragma: no-cache");
 		</div>
 	</section>
 	<script src="./front/public/js/slider.js" type="module"></script>
+
+
+<script>
+  tailwind.config = {
+    plugins: [tailwind.plugins.lineClamp],
+  }
+</script>
 
 
 	<!--/. footer-section -->
