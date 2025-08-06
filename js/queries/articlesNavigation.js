@@ -46,7 +46,7 @@ if(pagination_container){
                 EndPage = `<li class="page-item mb-0"><a class="page-link" href="#">..</a></li>`;
             }
             TotalPagesCount = `
-        <li class="page-item mb-0"><a class="page-link" href="?page=${totalPagesBooks}">${totalPagesBooks}</a></li>`;
+        <li class="page-item mb-0"><a class="page-link" href="?page=${Math.floor(totalPagesBooks)}">${Math.floor(totalPagesBooks)}</a></li>`;
         }
 
         if (currentpages < totalPagesBooks) {
@@ -68,7 +68,7 @@ if(pagination_container){
         ${nextPageContainer}
        </ul>
    <br/>
-      <span id="bookPageInfo">Page ${currentpages} of ${totalPagesBooks}</span>`;
+      <span id="bookPageInfo">Page ${currentpages} of ${Math.floor(totalPagesBooks) < 1 ? 1 : Math.floor(totalPagesBooks)}</span>`;
 }
 }
 export {
