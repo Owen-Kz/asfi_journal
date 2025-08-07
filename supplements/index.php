@@ -421,13 +421,15 @@
 							<a href=""><button
 							style="background-color: #80078b; color: white; height: 50px; width: 100%;  margin: auto; margin-top: 20px; font-size: 15px;"><i aria-hidden="true" class="fas fa-bell"></i> Announcements</button></a> <br><br>
 						<!-- Announcement Card -->
-<a href="./announcement/" class="block group max-w-xl mx-auto bg-white-200 p-5 rounded-xl shadow-sm hover:shadow-sm transition">
+                         		<div id="announcement-container"></div>
+<!-- <a href="./announcement/" class="block group max-w-xl mx-auto bg-white-200 p-5 rounded-xl shadow-sm hover:shadow-sm transition">
   <h3 class="text-lg font-semibold text-purple-700 group-hover:underline">Important Update on Publication Deadlines</h3>
   <p class="text-gray-600 mt-2 line-clamp-3">
     Due to unforeseen circumstances, the submission deadlines for Volume 8, Issue 3 have been extended by two weeks. Authors are advised to check the new dates...
   </p>
   <div class="mt-4 text-md text-purple-500 group-hover:underline">Read more →</div>
-</a></div> <br>
+</a> -->
+</div> <br>
 
       
         <div id="etoc-signup" role="status" aria-atomic="true" class="alert-sign-up"><div class="alert-sign-up__box pb-0"><i aria-hidden="true" class="fas fa-envelope"></i><h3>Sign up for email alerts</h3></div>
@@ -761,6 +763,7 @@
 <script src="../front/public/js/main.js?v=<?= time(); ?>"></script>
 <script type="module" src="../js/general.js?v=<?= time(); ?>"></script>
 <script src="../js/queries/allArticles.js?v=<?= time(); ?>" type="module"></script>
+<script src="./js/announcements/getPriority.js"></script>
 
 </body>
 </html>
