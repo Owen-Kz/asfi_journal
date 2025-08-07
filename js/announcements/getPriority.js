@@ -26,4 +26,6 @@ const announcementContainer = document.getElementById('announcement-container');
                 console.error('Error fetching priority announcements:', error);
                 announcementContainer.innerHTML = '<p>Error loading announcements.</p>';
             });
+    }else{
+        console.log("no container")
     }

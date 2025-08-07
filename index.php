@@ -945,7 +945,7 @@ header("Pragma: no-cache");
 
 
 	<!-- Main js -->
-	<script src="./assets/templates/metro_hyip/js/main.js"></script>
+	<!-- <script src="./assets/templates/metro_hyip/js/main.js"></script> -->
 
 
 
