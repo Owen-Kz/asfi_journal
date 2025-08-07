@@ -761,7 +761,7 @@
 <script src="../front/public/js/main.js?v=<?= time(); ?>"></script>
 <script type="module" src="../js/general.js?v=<?= time(); ?>"></script>
 <script src="../js/queries/allIssues.js?v=<?= time(); ?>" type="module"></script>
-<script src="./js/announcements/getPriority.js"></script>
+<script src="../js/announcements/getPriority.js"></script>
 
 
 </body>
