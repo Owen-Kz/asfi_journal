@@ -1,6 +1,6 @@
 const announcementContainer = document.getElementById('announcement-container');
     if (announcementContainer) {
-        fetch('/backend/announcement/retrieve.php?priority=1')
+        fetch('https://asfirj.org/backend/announcement/retrieve.php?priority=1')
             .then(response => response.json())
             .then(data => { 
                 if (data && data.length > 0) {
