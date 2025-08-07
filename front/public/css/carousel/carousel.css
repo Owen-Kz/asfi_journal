@@ -33,6 +33,7 @@
     background-image: linear-gradient(to right, #80078b, #80078b00);
     color: #fff;
     padding: 20px;
+    padding-left: 5%;
     height: 100% !important;
     width: 50%;
     box-sizing: border-box;
@@ -103,7 +104,7 @@
 .carousel .item {
   height: 400px;
   background-color: #777;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .carousel1 .item {

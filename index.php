@@ -118,12 +118,7 @@ header("Pragma: no-cache");
     justify-content: space-between;
     /* width: 80%; */
 }
-.issue-item{
-	margin-top: 10px;
-	/* border-bottom: 1px solid black; */
-	padding: 20px;
-	background-color: #f1f1f1;
-}
+
 .rlist--inline {
     list-style: none;
     padding: 0;
@@ -296,9 +291,7 @@ header("Pragma: no-cache");
 .shareButton{
 	cursor: pointer;
 }
-.editchoice{
-	margin-left: 50px;
-}
+
 .doi-access-wrapper .articleSpan{
 	margin-right: 20px;
   }
@@ -356,84 +349,21 @@ header("Pragma: no-cache");
 	  <div id="successPopup" class="successpopup hidden">
 
 	  </div>
-	<header class="header header-one">
-		<div class="primary-header-one primary-header">
-			<div class="container">
-				<div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;" style="display:flex; flex-direction:column; align-items: start;">
-					<div class="header-logo" style="">
-						<a href="">
-							<img src="./assets/images/logoIcon/logo.png" alt="Logo" /></a>
-					</div><!-- /.header-logo -->
 
-					<div class="header-menu-wrap" style="width: 100%;" style="width: 100%;">
-						<ul class="dl-menu ">
-							<!-- Menu Item -->
-							<li><a href="./aboutus.html" class='menu-item dropdown'>About Us</a>
-                                <ul class="dropdown-menu aboutDropDown">
-								<li><a href="./aboutus.html#ASFI" class='menu-item'>
-								African Science Frontiers Initiatives</a>
-								</li>
-								<li><a href="./aboutus.html#aims" class='menu-item'>
-								ASFIRJ's AIMS & SCOPE</a>
-								</li>
-								<li><a href="./aboutus.html#values" class='menu-item'>
-									ASFIRJ Values</a>
-								</li>
-								<li><a href="./aboutus.html#prompt" class='menu-item'>
-									Prompt Decisions and Rapid Publication Timelines</a>
-								</li>
-								<li><a href="./aboutus.html#why-section" class='menu-item'>
-									Why Publish in ASFIRJ?</a>
-								</li>
-                                <li><a href="./aboutus.html#open-access" class='menu-item'>
-									Open Access and Author Licensing</a>
-								</li>
-								<li><a href="./aboutus.html#fees" class='menu-item'>Article Publication Fee</a>
-							</li>
-                                </ul>
-                            </li>
-							<li class="dropdown">
-								<a href="#" class='menu-item'>Browse Issues</a>
-								<ul class="dropdown-menu">
-									<li><a href="./issues" class='menu-item'>Issues</a></li>
-									<li><a href="./supplements" class='menu-item'>Supplements</a></li>
-								</ul>
-							</li>
-							<li><a href="./editors.html" class='menu-item'>Meet The Editors</a></li>
-							<li class="dropdown">
-								<a href="#" class="menu-item">Authors / Reviewers</a>
-								<ul class="dropdown-menu">
+<div id="header-placeholder"></div>
 
+<script>
+  fetch('header.html')
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('header-placeholder').innerHTML = data;
+    });
+</script>	
 
-									<li><a href="./authors.html" class='menu-item'>For Authors</a></li>
-									<li><a href="./reviewers.html" class='menu-item'>For Reviewers</a></li>
-								</ul>
-							</li>
-							<!-- <li><a href="./terms.html" class='menu-item'>Terms</a></li> -->
-							<li><a href="./contact.html" class='menu-item'>Contact Us</a></li>
-							
-						</ul>
-						<div class="header-right">
-								<a class="header-btn" href="/portal">
-									<p>Submit Manuscript</p>
-								</a>
-</div>
-					</div><!-- /.header-menu-wrap -->
-
-					
-						<!-- Burger menu -->
-						<div class="mobile-menu-icon">
-							<div class="burger-menu">
-								<div class="line-menu line-half first-line"></div>
-								<div class="line-menu"></div>
-								<div class="line-menu line-half last-line"></div>
-							</div>
-						</div>
-					</div><!-- /.header-right -->
-				</div><!-- /.primary-header-one-inner -->
-			</div>
-		</div><!-- /.primary-header-one -->
-	</header><!-- /.header-one -->
+	<div class="right-search-submit">
+          <input type="text" placeholder="Search articles within this journal" />
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
 
 
 
@@ -555,6 +485,7 @@ header("Pragma: no-cache");
         <div data-mathjax="" class="top-content" id="articleListContainer">
 
 			</div>
+
 <a href="./issues" title="More articles" class="more-widget-link" style="display:flex; justify-content: flex-end; margin-bottom: 20px; margin-top: 6px; margin-right: 16px;">More articles</a>
 </div>
 <section class="about-section bd-bottom padding article-bottom" style="
@@ -562,7 +493,7 @@ header("Pragma: no-cache");
 		flex-direction: row;
 		margin-top:90px;
 	">
-			<div class="container" style="width: 100%;">
+			<div class="container" style="width: 100%; padding-bottom: 150px;">
 				<div class="row titleBar">
 					<div class="wow fadeInLeft text-center" data-wow-delay="200ms">
 						<div class="section-heading">
@@ -577,32 +508,18 @@ header("Pragma: no-cache");
 					<div class="wow fadeInLeft" data-wow-delay="200ms" style="text-align: start; padding:10px;">
 						<div class='content'>
 							<p>
-								The official journal of the African Science Frontiers Initiatives (ASFI). ASFIRJ stands
-								as an online-only, open-access multidisciplinary journal, dedicated to advancing,
-								impacting, and communicating research from all disciplines, encompassing both basic and
-								applied studies.
-
-								Within the African scientific community, ASFIRJ endeavors to provide an unparalleled
-								platform, offering an author-friendly approach to scientific publishing from manuscript
-								submission through publication. Our overarching ambition is to emerge as one of Africa's
-								leading research journals, globally competitive, and unwaveringly focused on delivering
-								quality research with significant impact.
-							</p>
+								The official journal of the African Science Frontiers Initiatives (ASFI). ASFIRJ is an online-only, open-access multidisciplinary journal, dedicated to advancing, impacting, and communicating research from all disciplines, encompassing both basic and applied studies. Within the African scientific community, ASFIRJ endeavors to provide an unparalleled platform, offering an author-friendly approach to scientific publishing from manuscript submission through publication. Our overarching ambition is to emerge as one of Africa's leading research journals, globally competitive, and unwaveringly focused on delivering quality research with significant impact.
+							</p> <br> <br>
 
 							<p>
-								ASFIRJ welcomes contributions from across the globe, ensuring an international
-								perspective in its content. We publish a diverse range of materials including original
-								papers, expert reviews, systematic reviews and meta-analyses, position papers,
-								guidelines, protocols, data, editorials, news, and commentaries. Articles featured in
-								ASFIRJ are selected based solely on their scientific merit and quality.
+								ASFIRJ welcomes contributions from across the globe, ensuring an international perspective in its content. We publish a diverse range of materials including original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news, and commentaries. Articles featured in ASFIRJ are selected based solely on their scientific merit and quality.
 
 
-							</p>
+							</p> <br> <br>
+
 
 							<p>
-								Join us in our mission to foster collaboration, innovation, and excellence in research.
-								Together, let's explore new frontiers and make a lasting impact on the scientific
-								landscape.
+								Join us in our mission to foster collaboration, innovation, and excellence in research. Together, let's explore new frontiers and make a lasting impact on the scientific landscape.
 							</p>
 
 						</div>
@@ -691,20 +608,22 @@ header("Pragma: no-cache");
         </div>
     
 
-</div><div class="gutterless--xs gutterless--sm gutterless--md col-md-3">
+</div>
+
+<div class="gutterless--xs gutterless--sm gutterless--md col-md-3">
 
 
         <div data-widget-def="ux3-layout-widget" data-widget-id="ee7a3430-1136-4dfb-922e-2ee614f121aa" class="journal-sidebar">
     
         <div>
-      <div>
+<div>
 
 	  <!-- <div class="journal-side-section journal-actions-container"><a href="./callfor.html"><button
 							style="background-color: #80078b; color: white; height: 60px; width: 100%;  margin: auto; margin-top: 20px; font-size: 30px;"><i aria-hidden="true" class="fas fa-book"></i> Call For Papers</button></a> -->
 							<a href=""><button
 							style="background-color: #80078b; color: white; height: 50px; width: 100%;  margin: auto; margin-top: 20px; font-size: 15px;"><i aria-hidden="true" class="fas fa-bell"></i> Announcements</button></a> <br><br>
 						<!-- Announcement Card -->
-<a href="/announcement/123" class="block group max-w-xl mx-auto bg-white-200 p-5 rounded-xl shadow-sm hover:shadow-sm transition">
+<a href="./announcement" class="block group max-w-xl mx-auto bg-white-200 p-5 rounded-xl shadow-sm hover:shadow-sm transition">
   <h3 class="text-lg font-semibold text-purple-700 group-hover:underline">Important Update on Publication Deadlines</h3>
   <p class="text-gray-600 mt-2 line-clamp-3">
     Due to unforeseen circumstances, the submission deadlines for Volume 8, Issue 3 have been extended by two weeks. Authors are advised to check the new dates...
@@ -1218,7 +1137,7 @@ header("Pragma: no-cache");
 document.addEventListener('DOMContentLoaded', function() {
   // Event delegation for Share button
   document.body.addEventListener('click', function(event) {
-    if (event.target && event.target.classList.contains('shareButton')) {
+    if (event.target && event.target.classList.contains('share-btn')) {
       // Toggle the display of the share options
       const shareOptions = event.target.closest('.issue-item').querySelector('.share-options');
       if (shareOptions) {

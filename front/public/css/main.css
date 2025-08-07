@@ -2581,7 +2581,7 @@ a,a:hover, img, .form-control,  .form-control:hover, button{
     background-position: center center;
     background-size: cover;
     width: 100%;
-    height: 400px;
+    height: 300px;
     display: flex;
     align-items: center;
     position: relative;

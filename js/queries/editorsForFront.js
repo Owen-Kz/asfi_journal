@@ -37,7 +37,7 @@ function GetEditors() {
                                         const disciplineContainer = document.createElement('div');
                                         disciplineContainer.classList.add('edit-subject');
                                         // disciplineContainer.setAttribute("style", "display:flex; flex-wrap:wrap;")
-                                        mainSectionContainer.setAttribute("style", "display:flex; flex-wrap:wrap;")
+                                        mainSectionContainer.setAttribute("style", "display:flex; flex-wrap:wrap; justify-content: center;")
 
                                         // disciplineContainer.innerHTML = `<h3>${discipline.discipline}</h3>`;
                                         mainSectionContainer.appendChild(disciplineContainer);

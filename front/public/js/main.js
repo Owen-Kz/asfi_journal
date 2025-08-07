@@ -3,6 +3,12 @@
  * JS Script
  * @ThemeEaster
  */
+
+document.getElementById("topMenuToggle").addEventListener("click", function () {
+    const topLinks = document.getElementById("topLinks");
+    topLinks.classList.toggle("activemenu");
+  });
+
 (function($) {
     "use strict";
 
@@ -27,8 +33,10 @@
             yOffset = $(window).scrollTop();
             if (yOffset >= triggerPoint) {
                 $('.sticky-header').addClass('sticky-fixed-top');
+                $('.header-logo').removeClass('show-logo');
             } else {
                 $('.sticky-header').removeClass('sticky-fixed-top');
+                $('.header-logo').addClass('show-logo');
             }
         });
 

@@ -1096,11 +1096,13 @@ body{
     display: flex;
     flex-direction: column;
     padding: 50px;
-    background-color: #efedf0a8;
-
+    /* margin-left: 20%; */
     justify-content: space-between;
     padding-top: 220px;
+}
 
+.sup-article-section #articleListContainer{
+    width: 80%;
 }
 .sup-article-section nav ul {
     margin: 0 auto;
@@ -1411,6 +1413,9 @@ body{
     overflow-y: auto;
 }
 .edit-head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 30px;
 }
 
@@ -1818,6 +1823,10 @@ form div .add-author-btn {
     color: #eeeeeed3;
 }
 
+.submit-nav a{
+    color: #310357 !important;
+}
+
 .foot-useful-links {
     display: flex;
     flex-direction: column;
@@ -1985,7 +1994,7 @@ table tr:nth-child(even) {
     #showNavButton {
         position: fixed;
         right: 0;
-        top: 20px;
+        top: 20%;
         z-index: 22599986;
         background-color: blueviolet;
         border: none;
@@ -2738,4 +2747,298 @@ body{
     width: 4px;
     height: 100%;
     background-color: white;
+}
+
+
+
+
+@media screen and (max-width: 720px) {
+  .submission-header {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    max-width: 300px;
+    z-index: 99999;
+    height: 100vh;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  }
+
+  .submission-header.open {
+    overflow-y: scroll;
+    left: 0;
+  }
+
+ 
+}
+
+
+
+
+.top-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        /* padding: 20px; */
+    }
+
+    .issue-item {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ddd;
+        /* border-radius: 10px; */
+        overflow: hidden;
+        /* box-shadow: 0 2px 8px rgba(0,0,0,0.08); */
+        /* background: #fff; */
+        transition: transform 0.2s;
+        margin-bottom: 60px;
+    }
+
+    .issue-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .issue-image {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        border-bottom: 2px solid #310357;
+    }
+    
+
+.issue-image.no-image {
+  height: 0;
+  background: none;
+}
+
+    .issue-content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .item-category {
+        font-weight: bold;
+        color: #310357;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .articleSpan {
+        font-size: 13px;
+    color: #555;
+    display: flex
+;
+    gap: 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+
+    .articleSpan img {
+        width: 10px;
+    }
+
+    .editchoice svg {
+        width: 16px;
+        vertical-align: middle;
+    }
+
+    .issue-item__title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #80078b;
+        margin: 10px 0 5px;
+        text-decoration: none;
+    }
+
+    .issue-item__title.visitable:hover{
+        text-decoration: underline;
+        color: #80078b;
+    }
+
+    .article-authors {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    .issue-item__details {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 10px;
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .issue-item__details label {
+        font-weight: bold;
+    }
+
+    .content-item-format-links {
+  background-color: #f9f9fb;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+}
+
+.format-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.format-links li {
+  color: #310357;
+}
+
+.format-links a,
+.format-links .share-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background-color: #f0eaff;
+  color: #310357;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.format-links a:hover,
+.format-links .share-btn:hover {
+  background-color: #d9cfff;
+  text-decoration: none;
+}
+
+.download-link::after {
+  content: " ⬇";
+  font-size: 12px;
+  color: #555;
+}
+
+.share-btn {
+  border: none;
+  cursor: pointer;
+}
+
+.stats {
+  background: #f1f1f1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .format-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .format-links a,
+  .format-links .share-btn,
+  .stats {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+    @media (max-width: 600px) {
+        .issue-item {
+            margin-bottom: 20px;
+        }
+    }
+
+    .doi-access-wrapper {
+    padding-bottom: 15px;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: space-between;
+    /* width: 80%; */
+}
+
+.editchoice {
+    display: flex;
+}
+
+
+.share-options {
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.share-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.shareOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.shareOption:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.shareOption img,
+.shareOption svg {
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.shareOption span {
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .shareOption {
+    flex: 1 1 calc(50% - 1rem);
+    justify-content: flex-start;
+  }
+
+  .share-list {
+    gap: 0.5rem;
+  }
+}
+
+.issueslay{
+    display: flex;
+}
+
+.issueslay .gutterless--md a{
+    color: #80078b !important;
 }
