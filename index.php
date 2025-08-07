@@ -352,14 +352,126 @@ header("Pragma: no-cache");
 
 <div id="header-placeholder"></div>
 
-<script>
+<!-- <script>
   fetch('header.html')
     .then(res => res.text())
     .then(data => {
       document.getElementById('header-placeholder').innerHTML = data;
     });
-</script>	
+</script>	 -->
+	 <!-- Top Dark Navbar -->
+<div class="top-navbar">
+  <div class="top-nav-inner">
+    <div class="logo-section">
+      <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
+    </div>
 
+    <!-- Mobile Menu Toggle -->
+    <button class="top-menu-toggle" id="topMenuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="top-links" id="topLinks">
+      <a href="#">Explore asfirj</a>
+      <a href="#">Get published</a>
+      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
+      <a href="https://asfirj.org/portal/login/">Login</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Journal Banner -->
+<div class="journal-banner">
+  <div class="container banner-inner">
+    <div class="journal-title">
+      <h1>ASFI Research Journal</h1>
+    </div>
+  </div>
+</div>
+ 
+	<header class="header header-one">
+		<div class="primary-header-one primary-header">
+			<div class="container">
+				<div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;" style="display:flex; flex-direction:column; align-items: start;">
+					<div class="header-logo show-logo">
+						<a href="https://asfirj.org/">
+							<img src="./assets/images/logoIcon/logo.png" alt="Logo" /></a>
+					</div><!-- /.header-logo -->
+					
+
+					<div class="header-menu-wrap" style="width: 100%;" style="width: 100%;">
+						<ul class="dl-menu ">
+							<!-- Menu Item -->
+							 <li><a href="./" class='menu-item'>Home</a></li>
+							<li><a href="./aboutus.html" class='menu-item dropdown'>About</a>
+                                <ul class="dropdown-menu aboutDropDown">
+								<li><a href="./aboutus.html#ASFI" class='menu-item'>
+								African Science Frontiers Initiatives</a>
+								</li>
+								<li><a href="./aboutus.html#aims" class='menu-item'>
+								ASFIRJ's AIMS & SCOPE</a>
+								</li>
+								<li><a href="./aboutus.html#values" class='menu-item'>
+									ASFIRJ Values</a>
+								</li>
+								<li><a href="./aboutus.html#prompt" class='menu-item'>
+									Prompt Decisions and Rapid Publication Timelines</a>
+								</li>
+								<li><a href="./aboutus.html#why-section" class='menu-item'>
+									Why Publish in ASFIRJ?</a>
+								</li>
+                                <li><a href="./aboutus.html#open-access" class='menu-item'>
+									Open Access and Author Licensing</a>
+								</li>
+								<li><a href="./aboutus.html#fees" class='menu-item'>Article Publication Fee</a>
+							</li>
+                                </ul>
+                            </li>
+							<li class="dropdown">
+								<a href="#" class='menu-item'>Browse Issues</a>
+								<ul class="dropdown-menu">
+									<li><a href="./issues" class='menu-item'>Issues</a></li>
+									<li><a href="./supplements" class='menu-item'>Supplements</a></li>
+								</ul>
+							</li>
+							<li><a href="./editors.html" class='menu-item'>Meet The Editors</a></li>
+							<li class="dropdown">
+								<a href="#" class="menu-item">Authors / Reviewers</a>
+								<ul class="dropdown-menu">
+
+
+									<li><a href="./authors.html" class='menu-item'>For Authors</a></li>
+									<li><a href="./reviewers.html" class='menu-item'>For Reviewers</a></li>
+								</ul>
+							</li>
+							<!-- <li><a href="./terms.html" class='menu-item'>Terms</a></li> -->
+							<li><a href="./contact.html" class='menu-item'>Contact Us</a></li>
+							
+						</ul>
+						<div class="header-right">
+								<a class="header-btn" href="/portal">
+									<p>Submit Manuscript</p>
+								</a>
+</div>
+					</div><!-- /.header-menu-wrap -->
+
+					
+						<!-- Burger menu -->
+						<div class="mobile-menu-icon">
+							<div class="burger-menu">
+								<div class="line-menu line-half first-line"></div>
+								<div class="line-menu"></div>
+								<div class="line-menu line-half last-line"></div>
+							</div>
+						</div>
+					</div><!-- /.header-right -->
+				</div><!-- /.primary-header-one-inner -->
+			</div>
+		</div><!-- /.primary-header-one -->
+	</header><!-- /.header-one -->
+
+	
 	<div class="right-search-submit">
           <input type="text" placeholder="Search articles within this journal" />
           <button class="search-btn"><i class="fas fa-search"></i></button>
@@ -945,7 +1057,7 @@ header("Pragma: no-cache");
 
 
 	<!-- Main js -->
-	<!-- <script src="./assets/templates/metro_hyip/js/main.js"></script> -->
+	<script src="./assets/templates/metro_hyip/js/main.js"></script>
 
 
 
@@ -1139,7 +1251,7 @@ header("Pragma: no-cache");
 	<script src="./js/queries/allItemsForHome.js?v=<? time() ?>" type="module"></script>
 
 
-	<script src="./front/public/js/main.js"></script>
+	<script src="./front/public/js/main.js?v=<? time() ?>"></script>
 	<script>
 document.addEventListener('DOMContentLoaded', function() {
   // Event delegation for Share button
