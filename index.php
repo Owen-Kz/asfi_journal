@@ -363,7 +363,9 @@ header("Pragma: no-cache");
 <div class="top-navbar">
   <div class="top-nav-inner">
     <div class="logo-section">
+		<a href="https://asfirj.org/">
       <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
+</a>
     </div>
 
     <!-- Mobile Menu Toggle -->
@@ -372,8 +374,9 @@ header("Pragma: no-cache");
     </button>
 
     <div class="top-links" id="topLinks">
-      <a href="#">Explore asfirj</a>
-      <a href="#">Get published</a>
+      <a href="https://asfirj.org/issues">Explore asfirj</a>
+      <a href="https://asfirj.org/authors.html#ob">Get published</a>
+	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
       <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
       <a href="https://asfirj.org/portal/login/">Login</a>
     </div>

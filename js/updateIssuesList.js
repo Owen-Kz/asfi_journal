@@ -79,7 +79,7 @@ async function UpdateIssues(articleList) {
             : "";
 
         const openAccessBadge = isOpenAccess === "yes"
-            ? `<span><img src="../images/20181007070735!Open_Access_logo_PLoS_white.svg" style="width:10px;" alt=""> Open Access</span>`
+            ? `<span class="openaccess"><img src="../images/20181007070735!Open_Access_logo_PLoS_white.svg" style="width:10px;" alt=""> <span>Open Access</span></span>`
             : "";
 
         articlesHTML += `

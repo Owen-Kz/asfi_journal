@@ -198,6 +198,18 @@
 
 <body class="header-1 business">
 
+<div class="site-preloader-wrap">
+		<div class="spinner"></div>
+	</div><!-- /.site-preloader-wrap -->
+	<div class="preloader" id="preloader">
+		<div class="loader"></div>
+	  </div>
+	  <div id="errorPopup" class="errorpopup hidden">
+  
+	  </div>
+	  <div id="successPopup" class="successpopup hidden">
+
+	  </div>
 
 
 	<div>
@@ -205,7 +217,9 @@
 <div class="top-navbar">
   <div class="top-nav-inner">
     <div class="logo-section">
+		<a href="https://asfirj.org/">
       <img src="../assets/images/logoIcon/logo.png" alt="Logo" />
+</a>
     </div>
 
     <!-- Mobile Menu Toggle -->
@@ -214,8 +228,9 @@
     </button>
 
     <div class="top-links" id="topLinks">
-      <a href="#">Explore asfirj</a>
-      <a href="#">Get published</a>
+      <a href="https://asfirj.org/issues">Explore asfirj</a>
+      <a href="https://asfirj.org/authors.html#ob">Get published</a>
+	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
       <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
       <a href="https://asfirj.org/portal/login/">Login</a>
     </div>
