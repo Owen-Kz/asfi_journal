@@ -38,25 +38,25 @@ header("Pragma: no-cache");
     
     <meta name="twitter:card" content="summary_large_image">
     <!-- Bootstrap CSS -->
-    <link href="../../../assets/global/css/bootstrap.min.css?v=<?= time(); ?>" rel="stylesheet">
-    <!-- <link href="../../css/bootstrap.css?v=<?= time(); ?>" rel="stylesheet">
+    <link href="../../../assets/global/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>" rel="stylesheet">
+    <!-- <link href="../../css/bootstrap.css?v=<?= time(); ?><?= time(); ?>" rel="stylesheet">
       
-    <link href="../../css/bootstrap-responsive.css?v=<?= time(); ?>" rel="stylesheet"> -->
+    <link href="../../css/bootstrap-responsive.css?v=<?= time(); ?><?= time(); ?>" rel="stylesheet"> -->
 
-    <link href="../../../assets/global/css/all.min.css?v=<?= time(); ?>" rel="stylesheet">
+    <link href="../../../assets/global/css/all.min.css?v=<?= time(); ?><?= time(); ?>" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../../assets/global/css/line-awesome.min.css?v=<?= time(); ?>" />
+    <link rel="stylesheet" href="../../../assets/global/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>" />
 
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/main.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/main.css?v=<?= time(); ?><?= time(); ?>">
 
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/custom.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="../../../css/style.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/custom.css?v=<?= time(); ?><?= time(); ?>">
+    <link rel="stylesheet" href="../../../css/style.css?v=<?= time(); ?><?= time(); ?>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     
     
     <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
-    <link rel="stylesheet" href="../../../front/public/css/header.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../front/public/css/header.css?v=<?= time(); ?><?= time(); ?>">
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -207,7 +207,7 @@ header("Pragma: no-cache");
     </script>
 
     
-    <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
 <script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
 
 

@@ -45,25 +45,25 @@
     <meta name="twitter:card" content="summary_large_image">
 
 
-	<link rel="stylesheet" href="../front/public/css/fontawesome.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/business-icon.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/animate.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/bootstrap.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/slick.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/venobox.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/odometer.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/nice-select.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/splitting-cells.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/splitting.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/keyframe-animation.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/slider.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../css/style.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/header.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/footer.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/main.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/responsive.css?v=<?= time(); ?>">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css?v=<?= time(); ?>" rel="stylesheet">
+	<link rel="stylesheet" href="../front/public/css/fontawesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/nice-select.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/splitting-cells.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/splitting.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/keyframe-animation.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/slider.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../css/style.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/header.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/footer.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css?v=<?= time(); ?><?= time(); ?>" rel="stylesheet">
 	<script src="../front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js?v=<?= time(); ?>"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
@@ -84,7 +84,7 @@
 }
 
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css?v=<?= time(); ?><?= time(); ?>">
 </head>
 
 <body class="header-1 business" id="formNotSubmitted">
@@ -382,7 +382,7 @@
 
         
     
-    <link rel="stylesheet" href="https://asfirj.org/assets/global/css/iziToast.min.css?v=<?= time(); ?>">
+    <link rel="stylesheet" href="https://asfirj.org/assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
 <script src="https://asfirj.org/assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
    
     

@@ -45,25 +45,25 @@
     <meta name="twitter:card" content="summary_large_image">
 
 
-	<link rel="stylesheet" href="../../front/public/css/fontawesome.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/line-awesome.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/business-icon.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/animate.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/bootstrap.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/slick.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/venobox.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/odometer.min.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/nice-select.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/splitting-cells.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/splitting.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/keyframe-animation.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/slider.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../css/style.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/header.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/footer.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/main.css?v=<?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/responsive.css?v=<?= time(); ?>">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css?v=<?= time(); ?>" rel="stylesheet">
+	<link rel="stylesheet" href="../../front/public/css/fontawesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/nice-select.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/splitting-cells.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/splitting.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/keyframe-animation.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/slider.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../css/style.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/header.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/footer.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="../../front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css?v=<?= time(); ?><?= time(); ?>" rel="stylesheet">
 	<script src="../../front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js?v=<?= time(); ?>"></script>
      <style>
 		.footer-section a {
@@ -338,7 +338,7 @@
 
         
     
-   <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css?v=<?= time(); ?>">
+   <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
 <script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
   
    
