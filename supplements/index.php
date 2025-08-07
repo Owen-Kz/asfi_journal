@@ -377,12 +377,12 @@
                 </div>
             </div>
         </section>
-<div style="display: flex;">
-    <div style="background-color: rgba(128, 128, 128, 0.089); border-radius: 8px; width: 20%; text-align: center; margin-left: 20px; margin-bottom: 10px; padding: 6px;">
+<div style="display: flex; justify-content: space-between;">
+    <div style="background-color: rgba(128, 128, 128, 0.089); border-radius: 8px; width: 50%; text-align: center; margin-left: 20px; margin-bottom: 10px; padding: 6px;">
         <a href="../issues#issues/" style="color: rgb(85, 84, 84);" >Issues</a>
         <a href="" style="background-color: blueviolet;padding: 2% 10% 2% 10%; margin-left: 0; color: whitesmoke; border-radius: 8px;">Supplements</a>
     </div>
-    <span style="margin-left: 10px;">
+    <span style="margin-right: 50px;">
         <select class="form--control " name="year">
             <option value="">Select Year</option>
             <option value="2023" >2023</option>

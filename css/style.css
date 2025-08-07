@@ -2920,6 +2920,40 @@ body{
   text-decoration: none;
 }
 
+/* Default: show everything */
+.format-links {
+    display: flex;
+}
+
+.toggle-format-links-btn.show-toggle {
+    display: none;
+}
+
+/* On small screens: hide the dropdown and show the toggle */
+@media (max-width: 768px) {
+    .toggle-format-links-btn.show-toggle {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        background: #eee;
+        border: none;
+        padding: 8px 12px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .format-links {
+        display: none;
+    }
+
+    .format-links.active {
+        display: flex;
+    }
+}
+
+
+
 .download-link::after {
   content: " ⬇";
   font-size: 12px;
@@ -3041,4 +3075,14 @@ body{
 
 .issueslay .gutterless--md a{
     color: #80078b !important;
+}
+
+@media (max-width: 768px) {
+    .issueslay .gutterless--md{
+    display: none;
+}
+  .sup-article-section.col-9{
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
 }

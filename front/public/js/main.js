@@ -9,6 +9,14 @@ document.getElementById("topMenuToggle").addEventListener("click", function () {
     topLinks.classList.toggle("activemenu");
   });
 
+
+function toggleFormatLinks(button) {
+    const dropdown = button.nextElementSibling;
+    const isActive = dropdown.classList.contains('active');
+    dropdown.classList.toggle('active');
+    button.innerHTML = isActive ? 'Show Options ▼' : 'Hide Options ▲';
+}
+
 (function($) {
     "use strict";
 

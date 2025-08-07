@@ -100,6 +100,10 @@ async function UpdateIssues(articleList) {
                         <li><label>First Published:</label><span class="bold">&nbsp;${formattedDate}</span></li>
                     </ul>
                     <div class="content-item-format-links">
+                    <!-- Toggle button (visible on mobile) -->
+    <button class="toggle-format-links-btn show-toggle" onclick="toggleFormatLinks(this)">
+        Show Options ▼
+    </button>
                         <ul class="format-links">
                             <li><a href="../content?sid=${articleId}#content">Abstract</a></li>
                             <li><a href="../content?sid=${articleId}#fulltext">Full text</a></li>

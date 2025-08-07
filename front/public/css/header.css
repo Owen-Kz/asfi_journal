@@ -1154,6 +1154,22 @@ div::-webkit-scrollbar-thumb {
   .right-search-submit .search-btn {
     width: 100%;
   }
+  /* Journal Banner */
+.journal-banner {
+  background-image: url('https://imgs.search.brave.com/cUyDB5RbxDT6km2QpechP4jC8DWbOKLTT2KB1I0yDoU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTUz/NTAwMTcxL3Bob3Rv/L2pvdXJuYWwtd2l0/aC1wZW4tb24tdG9w/LW9mLWEtbGFwdG9w/LmpwZz9zPTYxMng2/MTImdz0wJms9MjAm/Yz1BdmZSSlhsaF9f/b0J6ZGhqSDNPZkR6/STRWOUpkYUhaU1BU/Z2w3YXRzU3N3PQ'); /* Use your abstract image */
+  background-size: cover;
+  background-position: center;
+  padding: 20px 0;
+  position: relative;
+}
+.journal-title h1 {
+  background-color: #80078b; /* match BMC green */
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
 }
 
 
