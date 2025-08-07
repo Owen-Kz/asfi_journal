@@ -57,8 +57,8 @@
 	<link rel="stylesheet" href="../front/public/css/splitting.css">
 	<link rel="stylesheet" href="../front/public/css/keyframe-animation.css">
 	<link rel="stylesheet" href="../front/public/css/slider.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="stylesheet" href="../front/public/css/header.css">
+	<link rel="stylesheet" href="../css/style.css?v=<?= time(); ?>">
+	<link rel="stylesheet" href="../front/public/css/header.css?v=<?= time(); ?>">
 	<link rel="stylesheet" href="../front/public/css/footer.css">
 	<link rel="stylesheet" href="../front/public/css/main.css">
 	<link rel="stylesheet" href="../front/public/css/responsive.css">
