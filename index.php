@@ -378,6 +378,7 @@ header("Pragma: no-cache");
       <a href="https://asfirj.org/authors.html#ob">Get published</a>
 	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
       <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
+      <a href="https://asfirj.org/events.html">Events</a>
       <a href="https://asfirj.org/portal/login/">Login</a>
     </div>
   </div>
@@ -795,7 +796,7 @@ header("Pragma: no-cache");
 
 
         
-        <div class="twitter-timeline twitter-timeline-rendered" style="display: flex; max-width: 100%; margin-top: 0px; margin-bottom: 0px;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" title="Twitter Timeline" style="position: static; visibility: visible; width: 320px; height: 415px; display: block; flex-grow: 1;" src="https://syndication.twitter.com/srv/timeline-profile/screen-name/asfirj1?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmlyZHdhdGNoX3Bpdm90c19lbmFibGVkIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19kdXBsaWNhdGVfc2NyaWJlc190b19zZXR0aW5ncyI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideBorder=false&amp;hideFooter=false&amp;hideHeader=false&amp;hideScrollBar=false&amp;lang=en&amp;maxHeight=550px&amp;origin=https%3A%2F%2Fonlinelibrary.wiley.com%2Fjournal%2F13989995&amp;sessionId=ef0850769e2f0cd384b358527ce42a35fe64c5e5&amp;showHeader=true&amp;showReplies=false&amp;theme=light&amp;transparent=false&amp;widgetsVersion=2615f7e52b7e0%3A1702314776716"></iframe></div> <script charset="utf-8" src="//platform.twitter.com/widgets.js" async=""></script>
+        <!-- <div class="twitter-timeline twitter-timeline-rendered" style="display: flex; max-width: 100%; margin-top: 0px; margin-bottom: 0px;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="" title="Twitter Timeline" style="position: static; visibility: visible; width: 320px; height: 415px; display: block; flex-grow: 1;" src="https://syndication.twitter.com/srv/timeline-profile/screen-name/asfirj1?dnt=false&amp;embedId=twitter-widget-0&amp;features=eyJ0ZndfdGltZWxpbmVfbGlzdCI6eyJidWNrZXQiOltdLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X2ZvbGxvd2VyX2NvdW50X3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9iYWNrZW5kIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19yZWZzcmNfc2Vzc2lvbiI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfZm9zbnJfc29mdF9pbnRlcnZlbnRpb25zX2VuYWJsZWQiOnsiYnVja2V0Ijoib24iLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X21peGVkX21lZGlhXzE1ODk3Ijp7ImJ1Y2tldCI6InRyZWF0bWVudCIsInZlcnNpb24iOm51bGx9LCJ0ZndfZXhwZXJpbWVudHNfY29va2llX2V4cGlyYXRpb24iOnsiYnVja2V0IjoxMjA5NjAwLCJ2ZXJzaW9uIjpudWxsfSwidGZ3X3Nob3dfYmlyZHdhdGNoX3Bpdm90c19lbmFibGVkIjp7ImJ1Y2tldCI6Im9uIiwidmVyc2lvbiI6bnVsbH0sInRmd19kdXBsaWNhdGVfc2NyaWJlc190b19zZXR0aW5ncyI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdXNlX3Byb2ZpbGVfaW1hZ2Vfc2hhcGVfZW5hYmxlZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9LCJ0ZndfdmlkZW9faGxzX2R5bmFtaWNfbWFuaWZlc3RzXzE1MDgyIjp7ImJ1Y2tldCI6InRydWVfYml0cmF0ZSIsInZlcnNpb24iOm51bGx9LCJ0ZndfbGVnYWN5X3RpbWVsaW5lX3N1bnNldCI6eyJidWNrZXQiOnRydWUsInZlcnNpb24iOm51bGx9LCJ0ZndfdHdlZXRfZWRpdF9mcm9udGVuZCI6eyJidWNrZXQiOiJvbiIsInZlcnNpb24iOm51bGx9fQ%3D%3D&amp;frame=false&amp;hideBorder=false&amp;hideFooter=false&amp;hideHeader=false&amp;hideScrollBar=false&amp;lang=en&amp;maxHeight=550px&amp;origin=https%3A%2F%2Fonlinelibrary.wiley.com%2Fjournal%2F13989995&amp;sessionId=ef0850769e2f0cd384b358527ce42a35fe64c5e5&amp;showHeader=true&amp;showReplies=false&amp;theme=light&amp;transparent=false&amp;widgetsVersion=2615f7e52b7e0%3A1702314776716"></iframe></div> <script charset="utf-8" src="//platform.twitter.com/widgets.js" async=""></script> -->
 
         <section data-widget-def="general-rich-text" data-widget-id="266c820e-8d8d-4461-b70a-ed001b1d9e7e" class="tabs--default-style">
         
@@ -835,8 +836,13 @@ header("Pragma: no-cache");
 	<li><a href="https://africansciencefrontiers.com/" target="_blank">African Science Frontiers
 	Initiatives</a></li>
 	<div class="DST-iframe-nojobs"> <iframe id="mdgxWidgetiFrame" style="height: 400px; width:100%; border-radius: 15px;" src="https://africansciencefrontiers.com/" frameborder="0"></iframe> </div>
-	<li><a href="./event2.html">ASFI 2024 Virtual Multidisciplinary Conference & Boot Camp</a></li>
-	<div class="DST-iframe-nojobs"> <img src="./images/event.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div>
+	<li><a href="./event2.html">3rd Annual ASFI Multidisciplinary Conference & Boot Camp</a></li>
+	<a href="./event2.html"><div class="DST-iframe-nojobs"> <img src="./images/event.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div></a>
+	<li><a href="./callfor.html">CALL FOR ABSTRACTS: 3rd Annual ASFI Multidisciplinary Conference & Boot Camp</a></li>
+	<a href="./callfor.html"><div class="DST-iframe-nojobs"> <img src="./images/callforabstracts.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div></a>
+	<li><a href="./special.html">ASFI 5-10 Program 2026: Research Capacity Building Program for African Universities</a></li>
+	<a href="./special.html"><div class="DST-iframe-nojobs"> <img src="./images/event2.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div></a>
+
 
 
 </div>

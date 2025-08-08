@@ -128,6 +128,7 @@
       <a href="https://asfirj.org/authors.html#ob">Get published</a>
 	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
       <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
+      <a href="https://asfirj.org/events.html">Events</a>
       <a href="https://asfirj.org/portal/login/">Login</a>
     </div>
   </div>
