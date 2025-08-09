@@ -12,7 +12,7 @@ const ArticlesContainer = document.getElementById("manuscriptsContainer")
 
 
 if(userId){
-fetch(`https://test.asfirj.org/backend/accounts/inReview.php`, {
+fetch(`https://greek.asfirj.org/backend/accounts/inReview.php`, {
     method:"POST",
     body:JSON.stringify({user:userId}),
     headers:{
@@ -26,7 +26,7 @@ fetch(`https://test.asfirj.org/backend/accounts/inReview.php`, {
 
         if(articlesList.length > 0){
             articlesList.forEach(article => {
-                fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
+                fetch(`https://greek.asfirj.org/backend/accounts/getArticleInfo.php`, {
                     method:"POST",
                     body:JSON.stringify({id:article.revision_id}),
                     headers:{

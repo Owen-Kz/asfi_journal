@@ -16,7 +16,7 @@ if(userID){
 const user = UserData.email
 
 
-    fetch(`https://test.asfirj.org/backend/accounts/manuscripts.php`, {
+    fetch(`https://greek.asfirj.org/backend/accounts/manuscripts.php`, {
         method:"POST",
         body:JSON.stringify({user:user}),
         headers:{
@@ -34,7 +34,7 @@ const user = UserData.email
             if(articlesList.length > 0){
                 for(let i=0; i<articlesList.length; i++){
                 // articlesList.forEach(article => {
-                    // fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
+                    // fetch(`https://greek.asfirj.org/backend/accounts/getArticleInfo.php`, {
                     //     method:"POST",
                     //     body:JSON.stringify({id:articlesList[i].revision_id}),
                     //     headers:{

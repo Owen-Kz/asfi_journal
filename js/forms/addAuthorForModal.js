@@ -375,7 +375,7 @@ async function fetchAuthorData() {
          loader.style.display = "none";
          searchBtn.disabled = false;
     }else{
-    fetch(`https://test.asfirj.org/backend/editors/authorProfileForSearch.php?&encrypted=${emailINSearch}`)
+    fetch(`https://greek.asfirj.org/backend/editors/authorProfileForSearch.php?&encrypted=${emailINSearch}`)
       .then(response => response.json())
       .then(data => {
        if(data.status === "success"){

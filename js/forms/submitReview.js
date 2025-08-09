@@ -33,7 +33,7 @@ uploadForm.addEventListener("submit", function(e) {
     // formData.append('article_content', JSON.stringify(quill.getContents().ops));
     // console.log(JSON.stringify(quill.getContents().ops))
 
-    fetch(`https://test.asfirj.org/review/`, {
+    fetch(`https://greek.asfirj.org/review/`, {
         method: 'POST',
         body: formData
     })

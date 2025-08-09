@@ -10,7 +10,7 @@ const user = UserData.email
 const ArticlesContainer = document.getElementById("manuscriptsContainer")
 
 if(user){
-    fetch(`https://test.asfirj.org/backend/accounts/manuscriptsCoAuthored.php`, {
+    fetch(`https://greek.asfirj.org/backend/accounts/manuscriptsCoAuthored.php`, {
         method:"POST",
         body:JSON.stringify({user:user}),
         headers:{
@@ -26,7 +26,7 @@ if(user){
 
             if(articlesList.length > 0){
                 articlesList.forEach(article => {
-                    // fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
+                    // fetch(`https://greek.asfirj.org/backend/accounts/getArticleInfo.php`, {
                     //     method:"POST",
                     //     body:JSON.stringify({id:article.article_id}),
                     //     headers:{

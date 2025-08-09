@@ -17,7 +17,7 @@ if(!StoredResetEmail){
             email:StoredResetEmail,
             token:resetCode.value
         }
-        fetch(`https://test.asfirj.org/backend/accounts/verifyResetToken.php`, {
+        fetch(`https://greek.asfirj.org/backend/accounts/verifyResetToken.php`, {
             method:"POST",
             body:JSON.stringify(formData),
             headers:{

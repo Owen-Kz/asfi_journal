@@ -7,7 +7,7 @@ function SendEmail($email, $manuscripTitle, $manuscriptId, $issueNumber, $fileNa
 
 
     // Online 
-    $url = "https://test.asfirj.org/backend/sendPublicationEmail.php";
+    $url = "https://greek.asfirj.org/backend/sendPublicationEmail.php";
     $subject = "Paper Published on ASFIRJ";
     $message = "
     <p> We are pleased to inform you that your paper is now published on online at ASFI Research Journal (ASFIRJ).</p>

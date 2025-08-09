@@ -88,7 +88,7 @@ registerForm.addEventListener("submit", function(e){
 body.removeAttribute("id")
 
 
-        fetch(`https://test.asfirj.org/backend/reviewers/createReviewerAccount.php`, {
+        fetch(`https://greek.asfirj.org/backend/reviewers/createReviewerAccount.php`, {
             method:"POST",
             body:JSON.stringify(formData),
             headers:{

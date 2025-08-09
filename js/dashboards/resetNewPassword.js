@@ -20,7 +20,7 @@ if(resetToken && emailToken){
                 resetToken: resetToken,
                 password: resetNewPassword1.value
             }
-            fetch(`https://test.asfirj.org/backend/accounts/newPassword.php`, {
+            fetch(`https://greek.asfirj.org/backend/accounts/newPassword.php`, {
                 method:"POST",
                 body:JSON.stringify(formData)
             }).then(res=>res.json())

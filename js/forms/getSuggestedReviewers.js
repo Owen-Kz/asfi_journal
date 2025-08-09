@@ -1,7 +1,7 @@
 import { submissionsEndpoint } from "../constants.js";
 
 async function GetSuggestedReviewers(articleId){
-    return fetch(`https://test.asfirj.org/backend/accounts/getSuggestedReviewers.php`, {
+    return fetch(`https://greek.asfirj.org/backend/accounts/getSuggestedReviewers.php`, {
         method:"POST",
         body:JSON.stringify({article_id:articleId})
     }).then(res=>res.json())

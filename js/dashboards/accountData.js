@@ -7,7 +7,7 @@ function GetAccountData(useremail){
     const formData = {
         encrypted:useremail
     }
-  return  fetch(`https://test.asfirj.org/backend/accounts/accountData.php`, {
+  return  fetch(`https://greek.asfirj.org/backend/accounts/accountData.php`, {
         method:"POST",
         body:JSON.stringify(formData),
         headers:{

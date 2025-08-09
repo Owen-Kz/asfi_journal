@@ -18,7 +18,7 @@ if(InvitationFor && email && ArticleId && (Accept || Reject)){
     }
     if(InvitationFor === "edit"){
 
-    fetch(`https://test.asfirj.org/backend/editors/invitations.php?u_id=${email}&a_id=${ArticleId}&invite_for=${InvitationFor}&action=${Action}`, {
+    fetch(`https://greek.asfirj.org/backend/editors/invitations.php?u_id=${email}&a_id=${ArticleId}&invite_for=${InvitationFor}&action=${Action}`, {
         method:"GET",
     }).then(res=>res.json())
     .then(data=>{

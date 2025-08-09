@@ -21,7 +21,7 @@ if(ArticleIdQuery){
 
 
 function getSupplement(articeID) {
-    fetch(`https://test.asfirj.org/backend/accounts/getArticleInfo.php`, {
+    fetch(`https://greek.asfirj.org/backend/accounts/getArticleInfo.php`, {
         method:"POST",
         body:JSON.stringify({id:articeID}),
         headers:{
@@ -51,11 +51,11 @@ function getSupplement(articeID) {
                     let DOCUMENTFILE = ""
                     let MANUSCRIPT_FILE = ""
                     if(Article.date_submitted < "2025-01-07"){
-                     MANUSCRIPT_FILE = `https://test.asfirj.org/uploadedFiles/${ManuscriptFile}`
+                     MANUSCRIPT_FILE = `https://greek.asfirj.org/uploadedFiles/${ManuscriptFile}`
              
                     if (Article.document_file !== "dummy.pdf") {
                         documentFile = Article.document_file;
-                        DOCUMENTFILE = `<a href="https://test.asfirj.org/uploadedFiles/${ManuscriptDocument}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript Document File</a>`;
+                        DOCUMENTFILE = `<a href="https://greek.asfirj.org/uploadedFiles/${ManuscriptDocument}" style="color:#333; text-decoration: underline;" target=_blank>View Manuscript Document File</a>`;
 
                     }
                  }else{
@@ -64,7 +64,7 @@ function getSupplement(articeID) {
                      if(Article.manuscript_file.slice(0, 26) === 'https://res.cloudinary.com'){
                         MANUSCRIPT_FILE = `https://process.asfirj.org/doc?url=${Article.manuscript_file}`
                         }else{
-                             MANUSCRIPT_FILE = `https://test.asfirj.org/uploadedFiles/${Article.manuscript_file}`
+                             MANUSCRIPT_FILE = `https://greek.asfirj.org/uploadedFiles/${Article.manuscript_file}`
                         }
                     }else{
                         MANUSCRIPT_FILE = "#"
@@ -113,7 +113,7 @@ function getSupplement(articeID) {
                  if(Article.cover_letter_file.slice(0, 26) === 'https://res.cloudinary.com'){
                     coverLetterMan =  `<a href="https://process.asfirj.org/doc?url=${coverLetter}" style="color:#333; text-decoration: underline;" target=_blank>View Cover Letter</a>`
                  }else{
-                    coverLetterMan = `<a href="https://test.asfirj.org/uploadedFiles/${coverLetter}" style="color:#333; text-decoration: underline;" target=_blank>View Cover Letter</a>`
+                    coverLetterMan = `<a href="https://greek.asfirj.org/uploadedFiles/${coverLetter}" style="color:#333; text-decoration: underline;" target=_blank>View Cover Letter</a>`
                  }
                 //  
                  
@@ -173,7 +173,7 @@ function getSupplement(articeID) {
                     }
                  
                     // gEt the authors 
-                    fetch(`https://test.asfirj.org/backend/accounts/articleAuthors.php?articleID=${ArticleID}`, {
+                    fetch(`https://greek.asfirj.org/backend/accounts/articleAuthors.php?articleID=${ArticleID}`, {
                         method: "GET"
                     }).then(res => res.json())
                         .then(data => {

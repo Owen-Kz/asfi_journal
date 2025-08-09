@@ -1,7 +1,7 @@
 import { submissionsEndpoint } from "../constants.js";
 
 async function CheckeditorExists(email){
-  return  fetch(`https://test.asfirj.org/backend/editors/validateAccountExists.php`, {
+  return  fetch(`https://greek.asfirj.org/backend/editors/validateAccountExists.php`, {
         method:"POST",
         body: JSON.stringify({encrypted:email}),
         headers:{

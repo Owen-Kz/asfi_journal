@@ -28,7 +28,7 @@ const already_known = document.getElementById("already_known")
 const accurate_summary = document.getElementById("accurate_summary")
 const originality = document.getElementById("originality")
 if(user){
-    fetch(`https://test.asfirj.org/backend/reviewers/viewReview.php?a_id=${submisionid}`, {
+    fetch(`https://greek.asfirj.org/backend/reviewers/viewReview.php?a_id=${submisionid}`, {
         method:"GET"
     }).then(res => res.json())
     .then(data => {
@@ -55,20 +55,20 @@ if(user){
             reviewIdContainer.innerText = reviewId
             one_paragraph_comment.innerText = oneParagraph
             if(oneParagraphFile !== "" && oneParagraphFile != ""){
-                one_paragraph_file_container.innerHTML += `<a style="color:#333; text-decoration:underline; "href=https://test.asfirj.org/uploads/reviews/${oneParagraphFile} target=_blank>Open File</a>`
+                one_paragraph_file_container.innerHTML += `<a style="color:#333; text-decoration:underline; "href=https://greek.asfirj.org/uploads/reviews/${oneParagraphFile} target=_blank>Open File</a>`
             }else{
                 one_paragraph_file_container.innerHTML = `<span>No Files attached</span>`
             }
 
             if(specificCommentFile !== "" && specificCommentFile !=""){
-                speicic_comment_container.innerHTML = `<a style="color:#333; text-decoration:underline; "href=https://test.asfirj.org/uploads/reviews/${specificCommentFile} target=_blank>Open File</a>`
+                speicic_comment_container.innerHTML = `<a style="color:#333; text-decoration:underline; "href=https://greek.asfirj.org/uploads/reviews/${specificCommentFile} target=_blank>Open File</a>`
             }else{
                 speicic_comment_container.innerHTML = `<span>No Files attached</span>`
 
             }
 
             if(generalCommentFile !== "" && generalCommentFile != ""){
-                general_comment_file_container.innerHTML += `<a style="color:#333; text-decoration:underline; "href=https://test.asfirj.org/uploads/reviews/${generalCommentFile} target=_blank>Open File</a>`
+                general_comment_file_container.innerHTML += `<a style="color:#333; text-decoration:underline; "href=https://greek.asfirj.org/uploads/reviews/${generalCommentFile} target=_blank>Open File</a>`
             }else{
                 general_comment_file_container.innerHTML = `<span>No Files attached</span>`
             }

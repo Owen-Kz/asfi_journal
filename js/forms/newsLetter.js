@@ -41,7 +41,7 @@ form.addEventListener("submit", function(e){
 
     const formData = new FormData(form);
 
-    fetch(`https://test.asfirj.org/backend/email/subscribeToNewsLetter/`, {
+    fetch(`https://greek.asfirj.org/backend/email/subscribeToNewsLetter/`, {
         method:"POST",
         body: JSON.stringify({email:subscribeEmail.value}),
         headers:{

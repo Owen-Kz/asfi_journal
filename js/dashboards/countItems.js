@@ -20,7 +20,7 @@ if(user){
     if(inboxCount){
         
         
-        fetch(`https://test.asfirj.org/backend/accounts/emailList.php?u_id=${UserData.email}`, {
+        fetch(`https://greek.asfirj.org/backend/accounts/emailList.php?u_id=${UserData.email}`, {
 
         }).then(res=>res.json())
         .then(data=>{
@@ -36,7 +36,7 @@ if(user){
     }
 if(inReviewCount){
     // GEt the REviesCount from database 
-    fetch(`https://test.asfirj.org/backend/accounts/InReviewCount.php?u_id=${user}`)
+    fetch(`https://greek.asfirj.org/backend/accounts/InReviewCount.php?u_id=${user}`)
     .then(res=>res.json())
     .then(data=> {
         inReviewCount.forEach(count =>{
@@ -46,7 +46,7 @@ if(inReviewCount){
 }
 
 if(newSubmissionsCount){
-    fetch(`https://test.asfirj.org/backend/accounts/newSubmissionsCount.php?u_id=${user}`)
+    fetch(`https://greek.asfirj.org/backend/accounts/newSubmissionsCount.php?u_id=${user}`)
     .then(res=>res.json())
     .then(data=>{
         newSubmissionsCount.forEach(count =>{
@@ -56,7 +56,7 @@ if(newSubmissionsCount){
 }
 
 if(acceptedCount){
-    fetch(`https://test.asfirj.org/backend/accounts/acceptedCount.php?u_id=${user}`)
+    fetch(`https://greek.asfirj.org/backend/accounts/acceptedCount.php?u_id=${user}`)
     .then(res=>res.json())
     .then(data=>{
         acceptedCount.forEach(count =>{
@@ -66,7 +66,7 @@ if(acceptedCount){
 }
 
 if(publishedCount){
-    fetch(`https://test.asfirj.org/backend/accounts/publishedCount.php?u_id=${user}`)
+    fetch(`https://greek.asfirj.org/backend/accounts/publishedCount.php?u_id=${user}`)
     .then(res=>res.json())
     .then(data=>{
         publishedCount.forEach(count =>{
@@ -76,7 +76,7 @@ if(publishedCount){
 }
 
 if(reviewsCount){
-    fetch(`https://test.asfirj.org/backend/accounts/reviewsCount.php?u_id=${user}`)
+    fetch(`https://greek.asfirj.org/backend/accounts/reviewsCount.php?u_id=${user}`)
     .then(res=>res.json())
     .then(data=>{
         reviewsCount.forEach(count =>{
@@ -86,7 +86,7 @@ if(reviewsCount){
 }
 
 if(coAuthoredCount){
-    fetch(`https://test.asfirj.org/backend/accounts/coAuthoredCount.php?u_id=${user}`)
+    fetch(`https://greek.asfirj.org/backend/accounts/coAuthoredCount.php?u_id=${user}`)
     .then(res=>res.json())
     .then(data=>{
         coAuthoredCount.forEach(count =>{
@@ -96,7 +96,7 @@ if(coAuthoredCount){
 }
 
 if(submittedReviewsCount){
-    fetch(`https://test.asfirj.org/backend/accounts/submittedReviewsCount.php?u_id=${user}`)
+    fetch(`https://greek.asfirj.org/backend/accounts/submittedReviewsCount.php?u_id=${user}`)
     .then(res=>res.json())
     .then(data=>{
         submittedReviewsCount.forEach(count =>{
