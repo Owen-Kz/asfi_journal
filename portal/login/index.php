@@ -139,11 +139,17 @@
 
 <body class="header-1 business">
 
-
-	
+<div class="preloader" id="preloader">
+		<div class="loader"></div>
+	  </div>
 	  <div id="errorPopup" class="errorpopup hidden">
   
 	  </div>
+	  <div id="successPopup" class="successpopup hidden">
+
+	  </div>
+	
+	  
 
 	<div>
  	 <!-- Top Dark Navbar -->

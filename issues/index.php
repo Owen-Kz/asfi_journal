@@ -528,7 +528,7 @@
 	Initiatives</a></li>
 	<div class="DST-iframe-nojobs"> <iframe id="mdgxWidgetiFrame" style="height: 400px; width:100%; border-radius: 15px;" src="https://africansciencefrontiers.com/" frameborder="0"></iframe> </div>
 	<li><a href="./event2.html">ASFI 2024 Virtual Multidisciplinary Conference & Boot Camp</a></li>
-	<div class="DST-iframe-nojobs"> <img src="./images/event.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div>
+	<div class="DST-iframe-nojobs"> <img src="./images/event2025.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div>
 
 
 </div>

@@ -837,7 +837,7 @@ header("Pragma: no-cache");
 	Initiatives</a></li>
 	<div class="DST-iframe-nojobs"> <iframe id="mdgxWidgetiFrame" style="height: 400px; width:100%; border-radius: 15px;" src="https://africansciencefrontiers.com/" frameborder="0"></iframe> </div>
 	<li><a href="./event2.html">3rd Annual ASFI Multidisciplinary Conference & Boot Camp</a></li>
-	<a href="./event2.html"><div class="DST-iframe-nojobs"> <img src="./images/event.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div></a>
+	<a href="./event2.html"><div class="DST-iframe-nojobs"> <img src="./images/event2025.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div></a>
 	<li><a href="./callfor.html">CALL FOR ABSTRACTS: 3rd Annual ASFI Multidisciplinary Conference & Boot Camp</a></li>
 	<a href="./callfor.html"><div class="DST-iframe-nojobs"> <img src="./images/callforabstracts.jpeg" alt="" style="width:100%; border-radius: 15px;"> </div></a>
 	<li><a href="./special.html">ASFI 5-10 Program 2026: Research Capacity Building Program for African Universities</a></li>
