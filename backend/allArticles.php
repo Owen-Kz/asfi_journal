@@ -3,127 +3,123 @@ include "./db.php";
 include "./CORS-setup.php";
 session_start();
 
-
-$page = $_GET["page"];
-$items_per_page = $_GET["limit"];
+// Validate and sanitize input
+$page = isset($_GET["page"]) ? (int)$_GET["page"] : 1;
+$items_per_page = isset($_GET["limit"]) ? (int)$_GET["limit"] : 6; // Default to 6 if not specified
 
 $offset = ($page - 1) * $items_per_page;
-
-
 
 if (isset($_GET["k"])) {
     $searchQuery = $_GET["k"];
 
     try {
-        $stmtCount = $con->prepare("SELECT COUNT(`id`) AS `totalJournals` FROM `journals` WHERE `is_publication` = 'no'");
+        // Count total matching journals for search (with is_publication = 'no' condition)
+        $stmtCount = $con->prepare("SELECT COUNT(`id`) AS `totalJournals` FROM `journals` 
+                                  WHERE `is_publication` = 'no' 
+                                  AND (LOWER(`manuscript_full_title`) LIKE CONCAT('%', LOWER(?), '%') 
+                                  OR LOWER(`manuscript_running_title`) LIKE CONCAT('%', LOWER(?), '%')) 
+                                  COLLATE utf8mb4_general_ci");
+        
         if (!$stmtCount) {
-            throw new Exception("Failed to prepare  Count statement: " . $con->error);
-        } else {
-            $resultC = $stmtCount->get_result();
-            $rowC = mysqli_fetch_assoc($resultC);
+            throw new Exception("Failed to prepare Count statement: " . $con->error);
+        }
+        
+        $stmtCount->bind_param("ss", $searchQuery, $searchQuery);
+        $stmtCount->execute();
+        $resultC = $stmtCount->get_result();
+        $rowC = mysqli_fetch_assoc($resultC);
+        $journalCount = $rowC["totalJournals"];
+        $totalPages = ceil($journalCount / $items_per_page);
 
-            $journalCount = $rowC["totalJournals"];
+        // Get paginated results
+        $stmt = $con->prepare("SELECT * FROM `journals` 
+                             WHERE `is_publication` = 'no' 
+                             AND (LOWER(`manuscript_full_title`) LIKE CONCAT('%', LOWER(?), '%') 
+                             OR LOWER(`manuscript_running_title`) LIKE CONCAT('%', LOWER(?), '%')) 
+                             COLLATE utf8mb4_general_ci 
+                             ORDER BY `id` DESC 
+                             LIMIT ? OFFSET ?");
 
-            $stmt = $con->prepare("SELECT * FROM `journals` WHERE LOWER(`manuscript_full_title`) LIKE CONCAT('%', LOWER(?), '%') COLLATE utf8mb4_general_ci OR LOWER(`manuscript_running_title`) LIKE CONCAT('%', LOWER(?), '%') COLLATE utf8mb4_general_ci AND `is_publication` = 'no' ORDER BY `id` DESC ");
-
-
-            if (!$stmt) {
-                throw new Exception("Failed to prepare statement: " . $con->error);
-            }
-
-            $stmt->bind_param("ss", $searchQuery, $searchQuery);
-
-            if (!$stmt->execute()) {
-                throw new Exception("Failed to execute statement: " . $stmt->error);
-            }
-
-            $result = $stmt->get_result();
-            // $run_query = mysqli_query($con,$sql);
-            $run_query = $result;
-            $count = mysqli_num_rows($run_query);
-
-            if ($count > 0) {
-                $totalPages = $journalCount / $items_per_page;
-
-                $articlesList = array(); // Initialize an array to store all articles
-
-                while ($row = $result->fetch_assoc()) {
-                    // Loop through each row in the result set and append it to the articlesList array
-                    $articlesList[] = $row;
-                }
-
-                $response = array('status' => 'success', 'articlesList' => $articlesList, 'totalPages' => $totalPages, 'currentPage' => $page);
-                echo json_encode($response);
-            } else {
-                $response = array('status' => 'success', 'articlesList' => [], 'totalPages' => $totalPages, 'currentPage' => $page);
-                echo json_encode($response);
-            }
+        if (!$stmt) {
+            throw new Exception("Failed to prepare statement: " . $con->error);
         }
 
-    } catch (Exception $e) {
+        $stmt->bind_param("ssii", $searchQuery, $searchQuery, $items_per_page, $offset);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $count = mysqli_num_rows($result);
 
-        $response = array('status' => 'internalError', 'message' => "Error: " . $e->getMessage(), 'articlesList' => [], 'totalPages' => 0, 'currentPage' => 0);
+        $articlesList = array();
+        while ($row = $result->fetch_assoc()) {
+            $articlesList[] = $row;
+        }
+
+        $response = array(
+            'status' => 'success', 
+            'articlesList' => $articlesList, 
+            'totalPages' => $totalPages, 
+            'currentPage' => $page
+        );
+        echo json_encode($response);
+
+    } catch (Exception $e) {
+        $response = array(
+            'status' => 'internalError', 
+            'message' => "Error: " . $e->getMessage(), 
+            'articlesList' => [], 
+            'totalPages' => 0, 
+            'currentPage' => 0
+        );
         echo json_encode($response);
     }
 
 } else {
-    $stmt= $con->prepare("SELECT * FROM `journals` WHERE `is_publication` = 'no'");
-    if (!$stmt) {
-        throw new Exception("Failed to prepare Count statement: " . $con->error);
-    } else {
-        if (!$stmt->execute()) {
-            throw new Exception("Failed to execute statement: " . $stmt->error);
-        }
-        $resultC = $stmt->get_result();
-
     try {
+        // Count total journals with is_publication = 'no'
+        $stmtCount = $con->prepare("SELECT COUNT(`id`) AS `totalJournals` FROM `journals` WHERE `is_publication` = 'no'");
+        if (!$stmtCount) {
+            throw new Exception("Failed to prepare Count statement: " . $con->error);
+        }
+        
+        $stmtCount->execute();
+        $resultC = $stmtCount->get_result();
+        $rowC = mysqli_fetch_assoc($resultC);
+        $journalCount = $rowC["totalJournals"];
+        $totalPages = ceil($journalCount / $items_per_page);
 
+        // Get paginated results
+        $stmt = $con->prepare("SELECT * FROM `journals` WHERE `is_publication` = 'no' ORDER BY `id` DESC LIMIT ? OFFSET ?");
 
-            $journalCount = mysqli_num_rows($resultC);
-            $stmt = $con->prepare("SELECT * FROM `journals` WHERE `is_publication` = 'no' ORDER BY `id` DESC LIMIT ? OFFSET ?");
+        if (!$stmt) {
+            throw new Exception("Failed to prepare statement: " . $con->error);
+        }
 
+        $stmt->bind_param("ii", $items_per_page, $offset);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $count = mysqli_num_rows($result);
 
-            if (!$stmt) {
-                throw new Exception("Failed to prepare statement: " . $con->error);
-            }
+        $articlesList = array();
+        while ($row = $result->fetch_assoc()) {
+            $articlesList[] = $row;
+        }
 
-            $stmt->bind_param("ss", $items_per_page, $offset);
+        $response = array(
+            'status' => 'success', 
+            'articlesList' => $articlesList, 
+            'totalPages' => $totalPages, 
+            'currentPage' => $page
+        );
+        echo json_encode($response);
 
-            if (!$stmt->execute()) {
-                throw new Exception("Failed to execute statement: " . $stmt->error);
-            }
-
-            $result = $stmt->get_result();
-            // $run_query = mysqli_query($con,$sql);
-            $run_query = $result;
-            $count = mysqli_num_rows($run_query);
-
-            if ($count > 0) {
-                $totalPages = $journalCount / $items_per_page;
-
-                $articlesList = array(); // Initialize an array to store all articles
-
-                while ($row = $result->fetch_assoc()) {
-                    // Loop through each row in the result set and append it to the articlesList array
-                    $articlesList[] = $row;
-                }
-
-                $response = array('status' => 'success', 'articlesList' => $articlesList, 'totalPages' => $totalPages, 'currentPage' => $page);
-                echo json_encode($response);
-            } else {
-                $response = array('status' => 'success', 'articlesList' => [], 'totalPages' => $totalPages, 'currentPage' => $page);
-                echo json_encode($response);
-            }
     } catch (Exception $e) {
-
-
-        $response = array('status' => 'internalServerError', 'message' => "Error: " . $e->getMessage(), 'articlesList' => [], 'totalPages' => 0, 'currentPage' => 0);
+        $response = array(
+            'status' => 'internalServerError', 
+            'message' => "Error: " . $e->getMessage(), 
+            'articlesList' => [], 
+            'totalPages' => 0, 
+            'currentPage' => 0
+        );
         echo json_encode($response);
     }
 }
-
-}
-
-
-
-?>
