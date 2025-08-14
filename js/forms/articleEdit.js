@@ -104,7 +104,7 @@ if(ArticleId && ArticleTitle){
 
                 // Display current cover image if exists
                 if (manuscriptPhoto && manuscriptPhoto !== "cover.jpg") {
-                    coverPreview.src = `../useruploads/article_images/${manuscriptPhoto}`;
+                    coverPreview.src = `https://asfirj.org/useruploads/article_images/${manuscriptPhoto}`;
                     coverPreview.style.display = 'block';
                 }
 
