@@ -314,7 +314,7 @@
                         </div>
                         
                         <div style="text-align: center;">
-                            <input type="submit" class="signin-btn" value="Sign Up">
+                            <button type="submit" class="signin-btn"> Sign Up </button>
                             <p style="margin: auto;">Already have an acount? Cick <a href="../login/" style="color: blueviolet;">here</a> to Sign In.</p>
       
                         </div>

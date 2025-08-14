@@ -603,7 +603,9 @@
         </div>
     </div>
 </div>
-
+    <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
+<script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
+   
 <style>
 .progress-steps {
     display: flex;

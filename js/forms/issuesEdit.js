@@ -156,14 +156,26 @@ if (ArticleId && ArticleTitle) {
                     quill2.setContents({ ops: [{ insert: "\n" }] });
                 }
             } else {
-                alert("Article not found on server");
+                // alert("Article not found on server");
+                iziToast.error({
+                    message:"Article not found on server",
+                    position:"topRight"
+                })
             }
         } else {
-            alert(data.message || "Error retrieving article data");
+            // alert(data.message || "Error retrieving article data");
+               iziToast.error({
+                    message:data.message || "Error retrieving article data",
+                    position:"topRight"
+                })
         }
     }).catch(error => {
         console.error("Fetch error:", error);
-        alert("Error connecting to server");
+            iziToast.error({
+                    message: "Error connecting to server",
+                    position:"topRight"
+                })
+        
     });
 }
 
@@ -180,7 +192,10 @@ if (EditArticleForm) {
             formData.append('abstract_discussion', JSON.stringify(quill2.getContents()));
         } catch (e) {
             console.error("Error getting Quill content:", e);
-            alert("Error preparing article content");
+                 iziToast.error({
+                    message: "Error preparing article content",
+                    position:"topRight"
+                })
             return;
         }
 
@@ -197,16 +212,27 @@ if (EditArticleForm) {
         })
         .then(data => {
             if (data.status === "success") {
-                alert("Article Edited Successfully");
-                window.location.href = "../manage";
+              iziToast.success({
+    message: "Article Edited Successfully",
+    position: "topRight",
+    onClosed: function() {
+        window.location.href = "../manage";
+    }
+});
             } else {
-                alert(data.message || "Error updating article");
+                        iziToast.error({
+                    message: data.message || "Error updating article",
+                    position:"topRight"
+                })
                 body.setAttribute("id", "formNotSubmitted");
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert("Network error occurred. Please try again.");
+                    iziToast.error({
+                    message: "Network error occurred. Please try again.",
+                    position:"topRight"
+                })
         });
     });
 }

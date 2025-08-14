@@ -28,7 +28,7 @@ function closeModal2() {
 }
 
 // Close the modal when the user clicks outside of it
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal1) {
         closeModal();
     }
@@ -63,11 +63,11 @@ if (manuscriptCoverInput) {
 
 // Handle cover image preview
 if (manuscriptCoverInput) {
-    manuscriptCoverInput.addEventListener('change', function(e) {
+    manuscriptCoverInput.addEventListener('change', function (e) {
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
-            reader.onload = function(event) {
+            reader.onload = function (event) {
                 coverPreview.src = event.target.result;
                 coverPreview.style.display = 'block';
             }
@@ -78,95 +78,104 @@ if (manuscriptCoverInput) {
     });
 }
 
-if(ArticleId && ArticleTitle){
+if (ArticleId && ArticleTitle) {
     openModal();
     // Find the Article to edit  
     fetch(`${EndPoint}/retrieveArticle.php?q=${ArticleId}&title=${ArticleTitle}`, {
         method: "GET"
     }).then(res => res.json())
-    .then(data => {
-        if (data.articleData) {
-            const Article = data.articleData;
+        .then(data => {
+            if (data.articleData) {
+                const Article = data.articleData;
 
-            if (Article.length > 0) {
-                const ArticleTitle = Article[0].manuscript_full_title;
-                const ManuscriptFile = Article[0].manuscript_file;
-                const unstructuredAbstract = Article[0].unstructured_abstract;
-                const abstractDiscussion = Article[0].abstract_discussion;
-                const correspondingAuthorsEmail = Article[0].corresponding_authors_email;
-                const manuscriptPhoto = Article[0].manuscriptPhoto;
-                const buffer = Article[0].buffer;
-                const DateUploaded = formatTimestamp(Article[0].date_uploaded);
-                
-                corresponsfinAuthor.value = correspondingAuthorsEmail;
-                title.value = ArticleTitle;
-                token.value = buffer;
+                if (Article.length > 0) {
+                    const ArticleTitle = Article[0].manuscript_full_title;
+                    const ManuscriptFile = Article[0].manuscript_file;
+                    const unstructuredAbstract = Article[0].unstructured_abstract;
+                    const abstractDiscussion = Article[0].abstract_discussion;
+                    const correspondingAuthorsEmail = Article[0].corresponding_authors_email;
+                    const manuscriptPhoto = Article[0].manuscriptPhoto;
+                    const buffer = Article[0].buffer;
+                    const DateUploaded = formatTimestamp(Article[0].date_uploaded);
 
-                // Display current cover image if exists
-                if (manuscriptPhoto && manuscriptPhoto !== "cover.jpg") {
-                    coverPreview.src = `https://asfirj.org/useruploads/article_images/${manuscriptPhoto}`;
-                    coverPreview.style.display = 'block';
+                    corresponsfinAuthor.value = correspondingAuthorsEmail;
+                    title.value = ArticleTitle;
+                    token.value = buffer;
+
+                    // Display current cover image if exists
+                    if (manuscriptPhoto && manuscriptPhoto !== "cover.jpg") {
+                        coverPreview.src = `https://asfirj.org/useruploads/article_images/${manuscriptPhoto}`;
+                        coverPreview.style.display = 'block';
+                    }
+
+                    // Get the authors 
+                    fetch(`${EndPoint}/allAuthors.php?articleID=${buffer}`, {
+                        method: "GET"
+                    }).then(res => res.json())
+                        .then(data => {
+                            if (data) {
+                                const AllAuthors = data.authorsList;
+                                let AuthorsName = "";
+
+                                AllAuthors.forEach(author => {
+                                    const AuthorsFullname = `${author.authors_fullname},`;
+                                    AuthorsName += AuthorsFullname;
+                                });
+
+                                AuthorsArray.value = AuthorsName;
+                            } else {
+                                console.log("Server Error");
+                            }
+                        });
+
+                    // Parse and set Quill content
+                    try {
+                        const quillContent = unstructuredAbstract ? JSON.parse(unstructuredAbstract) : { ops: [] };
+                        const quillContent2 = abstractDiscussion ? JSON.parse(abstractDiscussion) : { ops: [] };
+
+                        // Ensure Quill editors are ready
+                        const checkQuillReady = setInterval(() => {
+                            if (quill && quill2) {
+                                clearInterval(checkQuillReady);
+                                quill.setContents(quillContent);
+                                quill2.setContents(quillContent2);
+                            }
+                        }, 100);
+                    } catch (e) {
+                        console.error("Error parsing Quill content:", e);
+                        // Initialize with empty content if parsing fails
+                        quill && quill.setContents({ ops: [] });
+                        quill2 && quill2.setContents({ ops: [] });
+                    }
+
+                } else {
+                    iziToast.error({
+                        message: "File Not found on server",
+                        position: "topRight"
+                    })
                 }
-
-                // Get the authors 
-                fetch(`${EndPoint}/allAuthors.php?articleID=${buffer}`, {
-                    method: "GET"
-                }).then(res => res.json())
-                    .then(data => {
-                        if (data) {
-                            const AllAuthors = data.authorsList;
-                            let AuthorsName = "";
-
-                            AllAuthors.forEach(author => {
-                                const AuthorsFullname = `${author.authors_fullname},`;
-                                AuthorsName += AuthorsFullname;
-                            });
-
-                            AuthorsArray.value = AuthorsName;
-                        } else {
-                            console.log("Server Error");
-                        }
-                    });
-
-                // Parse and set Quill content
-                try {
-                    const quillContent = unstructuredAbstract ? JSON.parse(unstructuredAbstract) : { ops: [] };
-                    const quillContent2 = abstractDiscussion ? JSON.parse(abstractDiscussion) : { ops: [] };
-
-                    // Ensure Quill editors are ready
-                    const checkQuillReady = setInterval(() => {
-                        if (quill && quill2) {
-                            clearInterval(checkQuillReady);
-                            quill.setContents(quillContent);
-                            quill2.setContents(quillContent2);
-                        }
-                    }, 100);
-                } catch (e) {
-                    console.error("Error parsing Quill content:", e);
-                    // Initialize with empty content if parsing fails
-                    quill && quill.setContents({ ops: [] });
-                    quill2 && quill2.setContents({ ops: [] });
-                }
-
             } else {
-                alert("File Not found on server");
+                iziToast.error({
+                    message: data.message || "Error retrieving article data",
+                    position: "topRight"
+                })
             }
-        } else {
-            alert(data.message || "Error retrieving article data");
-        }
-    }).catch(error => {
-        console.error("Fetch error:", error);
-        alert("Error connecting to server");
-    });
+        }).catch(error => {
+            console.error("Fetch error:", error);
+            iziToast.error({
+                message: "Error connecting to server",
+                position: "topRight"
+            })
+        });
 }
 
 // Finally Submit and Edit the Article 
 const EditArticleForm = document.getElementById('editArticle');
 if (EditArticleForm) {
-    EditArticleForm.addEventListener("submit", function(e) {
+    EditArticleForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const formData = new FormData(EditArticleForm);
-        
+
         // Add Quill content to form data
         if (quill) {
             formData.append('article_content', JSON.stringify(quill.getContents()));
@@ -174,7 +183,7 @@ if (EditArticleForm) {
         if (quill2) {
             formData.append('article_abstract', JSON.stringify(quill2.getContents()));
         }
-        
+
         const body = document.querySelector("body");
         body.removeAttribute("id");
 
@@ -182,23 +191,38 @@ if (EditArticleForm) {
             method: 'POST',
             body: formData
         })
-        .then(response => response.json())
-        .then(data => {
-            if(data.status === "success"){
-                alert("Article Edited Successfully");
-                window.location.href = "../manage";
-            } else if(data.status === "error"){
-                alert(data.message);
-                body.setAttribute("id", "formNotSubmitted");
-            } else {
-                alert("Internal Server Error");
-                body.setAttribute("id", "formNotSubmitted");
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert("Network error occurred");
-        });
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "success") {
+                    iziToast.success({
+                        message: "Article Edited Successfully",
+                        position: "topRight",
+                        onClosed: function () {
+                            window.location.href = "../manage";
+                        }
+                    });
+                } else if (data.status === "error") {
+                    iziToast.error({
+                        message: data.message,
+                        position: "topRight"
+                    })
+                    body.setAttribute("id", "formNotSubmitted");
+                } else {
+                    iziToast.error({
+                        message: "Internal Server Error",
+                        position: "topRight"
+                    })
+                    body.setAttribute("id", "formNotSubmitted");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+
+                iziToast.error({
+                    message: "Network error occurred",
+                    position: "topRight"
+                })
+            });
     });
 }
 
