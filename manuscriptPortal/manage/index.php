@@ -518,32 +518,52 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <div class="editor-info">
+            <!-- Progress Steps -->
+            <div class="progress-steps">
+                <div class="step active" data-step="1">1. Basic Info</div>
+                <div class="step" data-step="2">2. Files</div>
+                <div class="step" data-step="3">3. Content</div>
+            </div>
+            
             <form id="editArticle" onsubmit="return false" enctype="multipart/form-data">
                 <input type="hidden" id="token" name="token">
-                <div>
-                    <label for="">Title:</label>
-                    <input type="text" class="form-control" placeholder="" name="title" id="title" required>
-                </div>
                 
-                <div>
-                    <label for="">Author(s):</label>
-                </div>
-                <div class="group" id="app_2">	
-                    <div id="app">
-                        <input type="text" id="authorsArray" name="authorsArray" class="form-control" v-model="saisie" placeholder="" required/>                                
-                        <div class="keywords">
-                            <div class="keyword" v-for="(k, i) in keywords">
-                                {{ k }}
-                                <span v-on:click="removeFromArray(i, k)"><i class="fas fa-times"></i></span>
-                            </div>		
+                <!-- Step 1: Basic Information -->
+                <div class="form-step active" data-step="1">
+                    <h3>Basic Information</h3>
+                    <div>
+                        <label for="">Title:</label>
+                        <input type="text" class="form-control" placeholder="" name="title" id="title" required>
+                    </div>
+                    
+                    <div>
+                        <label for="">Author(s):</label>
+                    </div>
+                    <div class="group" id="app_2">	
+                        <div id="app">
+                            <input type="text" id="authorsArray" name="authorsArray" class="form-control" v-model="saisie" placeholder="" required/>                                
+                            <div class="keywords">
+                                <div class="keyword" v-for="(k, i) in keywords">
+                                    {{ k }}
+                                    <span v-on:click="removeFromArray(i, k)"><i class="fas fa-times"></i></span>
+                                </div>		
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="">Corresponding Authors Email:</label>
+                            <input type="email" class="form-control" placeholder="" name="corresponding_author" id="corresponding_author" required>
                         </div>
                     </div>
-
-                    <div>
-                        <label for="">Corresponding Authors Email:</label>
-                        <input type="email" class="form-control" placeholder="" name="corresponding_author" id="corresponding_author">
+                    
+                    <div class="step-buttons">
+                        <button type="button" class="btn-next" onclick="nextStep(1)">Next</button>
                     </div>
-                    <br>
+                </div>
+                
+                <!-- Step 2: Files -->
+                <div class="form-step" data-step="2">
+                    <h3>Upload Files</h3>
                     <div>
                         <label for="">Manuscript File (PDF only):</label>
                         <input type="file" class="form-control" accept=".pdf, .PDF" name="manuscript_file" id="manuscript_file">
@@ -554,7 +574,16 @@
                         <input type="file" class="form-control" accept="image/*" name="manuscriptCover" id="manuscriptCover">
                         <small class="text-muted">Recommended size: 1200x630 pixels</small>
                     </div>
-                    <br>
+                    
+                    <div class="step-buttons">
+                        <button type="button" class="btn-prev" onclick="prevStep(2)">Previous</button>
+                        <button type="button" class="btn-next" onclick="nextStep(2)">Next</button>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Content -->
+                <div class="form-step" data-step="3">
+                    <h3>Article Content</h3>
                     <div class="col-12">
                         <label for="">Abstract Contents</label>
                         <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor2" style="height: 500px;"></div>
@@ -563,13 +592,131 @@
                     <div class="col-12">
                         <label for="">Manuscript Contents</label>
                         <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor" style="height: 500px;"></div>
-                    </div> 
-                    <br>
-                    <input type="submit" class="signin-btn" value="Submit" id="submitButton">
-                </form>
+                    </div>
+                    
+                    <div class="step-buttons">
+                        <button type="button" class="btn-prev" onclick="prevStep(3)">Previous</button>
+                        <input type="submit" class="signin-btn" value="Submit" id="submitButton">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
+<style>
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.progress-steps .step {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    color: #999;
+    position: relative;
+}
+
+.progress-steps .step.active {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.progress-steps .step:not(:last-child):after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 20px;
+    height: 1px;
+    background: #ddd;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.step-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-prev, .btn-next {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-prev {
+    background: #f0f0f0;
+}
+
+.btn-next {
+    background: #0066cc;
+    color: white;
+}
+</style>
+
+<script>
+// Navigation functions
+function nextStep(currentStep) {
+    // Validate current step before proceeding
+    if (validateStep(currentStep)) {
+        document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+        document.querySelector(`.progress-steps .step[data-step="${currentStep}"]`).classList.remove('active');
+        
+        document.querySelector(`.form-step[data-step="${currentStep + 1}"]`).classList.add('active');
+        document.querySelector(`.progress-steps .step[data-step="${currentStep + 1}"]`).classList.add('active');
+    }
+}
+
+function prevStep(currentStep) {
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+    document.querySelector(`.progress-steps .step[data-step="${currentStep}"]`).classList.remove('active');
+    
+    document.querySelector(`.form-step[data-step="${currentStep - 1}"]`).classList.add('active');
+    document.querySelector(`.progress-steps .step[data-step="${currentStep - 1}"]`).classList.add('active');
+}
+
+function validateStep(step) {
+    // Add validation logic for each step
+    if (step === 1) {
+        const title = document.getElementById('title').value;
+        const authors = document.getElementById('authorsArray').value;
+        const email = document.getElementById('corresponding_author').value;
+        
+        if (!title || !authors || !email) {
+            alert('Please fill in all required fields');
+            return false;
+        }
+        
+        // Simple email validation
+        if (!email.includes('@') || !email.includes('.')) {
+            alert('Please enter a valid email address');
+            return false;
+        }
+    }
+    
+    // Add validation for other steps if needed
+    return true;
+}
+
+// Initialize the form
+document.addEventListener('DOMContentLoaded', function() {
+    // Show first step by default
+    document.querySelector('.form-step[data-step="1"]').classList.add('active');
+});
+</script>
 <!-- jQuery Lib -->
 <script src="../../front/public/js/vendor/jquery-1.12.4.min.js?v=<?= time(); ?>"></script>
 <script src="../../front/public/js/vendor/popper.min.js?v=<?= time(); ?>"></script>
