@@ -518,10 +518,9 @@
     <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>
         <div class="editor-info">
-
             <form id="editArticle" onsubmit="return false" enctype="multipart/form-data">
                 <input type="hidden" id="token" name="token">
-                <div >
+                <div>
                     <label for="">Title:</label>
                     <input type="text" class="form-control" placeholder="" name="title" id="title" required>
                 </div>
@@ -530,50 +529,44 @@
                     <label for="">Author(s):</label>
                 </div>
                 <div class="group" id="app_2">	
-
-                    <div id="app" >
-        
-                        <input type="text" id="authorsArray"  name="authorsArray"  class="form-control" v-model="saisie" placeholder="" required/>                                
+                    <div id="app">
+                        <input type="text" id="authorsArray" name="authorsArray" class="form-control" v-model="saisie" placeholder="" required/>                                
                         <div class="keywords">
                             <div class="keyword" v-for="(k, i) in keywords">
                                 {{ k }}
                                 <span v-on:click="removeFromArray(i, k)"><i class="fas fa-times"></i></span>
                             </div>		
                         </div>
-                
                     </div>
 
-                    <div >
+                    <div>
                         <label for="">Corresponding Authors Email:</label>
                         <input type="email" class="form-control" placeholder="" name="corresponding_author" id="corresponding_author">
                     </div>
-          <br>
-          <div >
-                        <label for="">Manuscript File:</label>
+                    <br>
+                    <div>
+                        <label for="">Manuscript File (PDF only):</label>
                         <input type="file" class="form-control" accept=".pdf, .PDF" name="manuscript_file" id="manuscript_file">
                     </div>
-          <br>
-                <!-- Course description -->
-                <div class="col-12">
-                                <label for="">Abstract Contents</label>
-                                <!-- Editor toolbar -->
-
-                                <!-- Main toolbar -->
-                                <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor2" style="height: 500px;">
-                                </div>
-                </div> <br>
-                            <div class="col-12">
-                                <label for="">Manuscript Contents</label>
-                                <!-- Editor toolbar -->
-
-                                <!-- Main toolbar -->
-                                <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor" style="height: 500px;">
-                                </div>
-                            </div> <br>
-
-                <input type="submit" class="signin-btn" value="Submit" id="submitButton">
-                
-            </form>
+                    <br>
+                    <div>
+                        <label for="">Cover Image:</label>
+                        <input type="file" class="form-control" accept="image/*" name="manuscriptCover" id="manuscriptCover">
+                        <small class="text-muted">Recommended size: 1200x630 pixels</small>
+                    </div>
+                    <br>
+                    <div class="col-12">
+                        <label for="">Abstract Contents</label>
+                        <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor2" style="height: 500px;"></div>
+                    </div> 
+                    <br>
+                    <div class="col-12">
+                        <label for="">Manuscript Contents</label>
+                        <div class="bg-body border rounded-bottom h-400px overflow-hidden" id="quilleditor" style="height: 500px;"></div>
+                    </div> 
+                    <br>
+                    <input type="submit" class="signin-btn" value="Submit" id="submitButton">
+                </form>
         </div>
     </div>
 </div>

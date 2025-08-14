@@ -10,7 +10,7 @@ if (announcementContainer) {
         .then(response => response.json())
         .then(data => {
             if (data) {
-                console.log(data);
+               ;
                 announcementContainer.innerHTML = `
                 			
 				<div class="row titleBar">

@@ -117,7 +117,7 @@ EditAuthorForm.addEventListener("submit", function(e){
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Log server response
+       ; // Log server response
         if(data.success){
             alert("Author Edited Successfully")
             window.location.href = "../manageEditors.html"

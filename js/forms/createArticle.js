@@ -22,7 +22,7 @@ uploadForm.addEventListener("submit", function(e) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Log server response
+       ; // Log server response
         if(data.status === "success"){
             alert("Upload Successful")
             window.location.href = "../supplements.html#supplements"

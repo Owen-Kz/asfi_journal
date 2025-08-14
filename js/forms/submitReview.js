@@ -39,7 +39,7 @@ uploadForm.addEventListener("submit", function(e) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Log server response
+       ; // Log server response
         if(data.status === "success"){
         message_container.innerHTML =`<div class="alert-success">${data.message}</div>`
 

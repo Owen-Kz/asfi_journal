@@ -97,8 +97,10 @@ const AuthorsArray = document.getElementById("authorsArray")
 
 
 
+// ... (keep all your existing imports and modal functions)
+
 if(ArticleId && ArticleTitle){
-openModal()
+    openModal()
     // Find the Article to edit  
     fetch(`${EndPoint}/retrieveArticle.php?q=${ArticleId}&title=${ArticleTitle}`, {
         method: "GET"
@@ -113,15 +115,18 @@ openModal()
                 const unstructuredAbstract = Article[0].unstructured_abstract
                 const abstractDiscussion = Article[0].abstract_discussion
                 const correspondingAuthorsEmail = Article[0].corresponding_authors_email
+                const manuscriptPhoto = Article[0].manuscriptPhoto
                 const DateUploaded = formatTimestamp(Article[0].date_uploaded)
                 
-            
-                const buffer = Article[0].buffer
-
                 corresponsfinAuthor.value = correspondingAuthorsEmail
                 title.value = ArticleTitle
                 token.value = buffer
-        
+
+                // You might want to display the current cover image here
+                // For example:
+                // const coverPreview = document.createElement('img');
+                // coverPreview.src = `../useruploads/article_images/${manuscriptPhoto}`;
+                // document.querySelector('label[for="manuscriptCover"]').after(coverPreview);
 
                 // gEt the authors 
                 fetch(`${EndPoint}/allAuthors.php?articleID=${buffer}`, {
@@ -133,14 +138,11 @@ openModal()
                             let AuthorsName = ""
 
                             AllAuthors.forEach(author => {
-                                // const AuthorsFullname = `${author.authors_prefix} ${author.authors_firstname} ${author.authors_middlename} ${author.authors_lastname}, `
                                 const AuthorsFullname = `${author.authors_fullname},`
                                 AuthorsName += AuthorsFullname
-
                             })
 
-                           AuthorsArray.value = AuthorsName
-
+                            AuthorsArray.value = AuthorsName
                         } else {
                             console.log("Server Error")
                         }
@@ -151,38 +153,32 @@ openModal()
                 const quillContent2 = JSON.parse(abstractDiscussion);
 
                 function renderQuillAsHTML(deltaContent1, deltaContent2) {
-           console.log(`${deltaContent2} testing`)
                     quill.setContents(deltaContent1)
                     quill2.setContents(deltaContent2)
                 }
 
-                // Render the Quill content as HTML in the "content" div
                 renderQuillAsHTML(quillContent, quillContent2);
-
             } else {
                 alert("File Not found on server")
             }
-        
-        }else{
+        } else {
             alert(data.message)
         }
     })
 }
-
-
 
 // Finally Submit and Edit the Article 
 const EditArticleForm = document.getElementById('editArticle')
 EditArticleForm.addEventListener("submit", function(e){
     e.preventDefault()
     const formData = new FormData(EditArticleForm);
+    
+    // Add Quill content to form data
     formData.append('article_content', JSON.stringify(quill.getContents().ops));
-
+    formData.append('article_abstract', JSON.stringify(quill2.getContents().ops));
+    
     const body = document.querySelector("body")
-
     body.removeAttribute("id")
-    // formData.append('article_content', JSON.stringify(quill.getContents().ops));
-    // console.log(JSON.stringify(quill.getContents().ops))
 
     fetch(`${EndPoint}/editManuscript.php`, {
         method: 'POST',
@@ -190,18 +186,17 @@ EditArticleForm.addEventListener("submit", function(e){
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Log server response
+       ;
         if(data.status === "success"){
             alert("Article Edited Successfully")
             window.location.href = "../manage"
-        }else if(data.status === "error"){
+        } else if(data.status === "error"){
             alert(data.message)
             body.setAttribute("id", "formNotSubmitted")
-        }else{
+        } else {
             alert("Internal Server Error")
             body.setAttribute("id", "formNotSubmitted")
         }
-
     })
     .catch(error => {
         console.error('Error:', error);

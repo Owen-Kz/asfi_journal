@@ -21,7 +21,7 @@ async function ArticlePage(page) {
         const data = await response.json();
 
         if (data?.articlesList) {
-            console.log(data);
+           ;
             const { articlesList, currentPage, totalPages } = data;
             UpdateIssues(articlesList, Number(currentPage), Number(totalPages));
             articlesNavigation(Number(totalPages), Number(currentPage));

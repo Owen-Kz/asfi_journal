@@ -391,7 +391,7 @@ if (articleId) {
                             .then(response => response.json())
                             .then(data => {
                                 if(data){
-                                console.log(data); // Log server response
+                               ; // Log server response
                                 if (data.status === "success") {
                                     if(SubmissionSTatus.value === "submitted"){
                                         alert("Manuscript Updated Successfully")

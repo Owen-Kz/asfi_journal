@@ -102,7 +102,7 @@ uploadForm.addEventListener("submit", function(e) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log(data); // Log server response
+       ; // Log server response
         if(data.status === "success"){
             if(SubmissionSTatus.value === "revision_submitted"){
             alert("Manuscript Submitted Successfully")

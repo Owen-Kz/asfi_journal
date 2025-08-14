@@ -8,7 +8,7 @@ import { DeleteCookie } from "./setCookie.js"
         method:"GET"
     }).then(res =>  res.json())
     .then(data =>{
-        console.log(data)
+       
         if(data.message === "logout"){
             DeleteCookie("username_logged")
             DeleteCookie("accountType")

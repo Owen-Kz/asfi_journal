@@ -116,7 +116,7 @@ if(SubmissionSTatus.value === "submitted"){
             }
         }else{
             alert(data)
-            console.log(data)
+           
             showErrorPopup("Internal Server Error")
             body.setAttribute("id", "formNotSubmitted")
         }
