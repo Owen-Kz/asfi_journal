@@ -1,23 +1,45 @@
 <?php 
 
-function SendEmail($email, $manuscripTitle, $manuscriptId, $issueNumber, $fileName){
-        // Submissions Endpoint for emails 
-        // Offline 
-        // $url = "http://localhost/asfirj_submission_controls/backend/sendPublicationEmail.php";
-
-
-    // Online 
+function SendEmail($email, $manuscripTitle, $manuscriptId, $issueNumber, $fileName, $authorName = "") {
+    // Online endpoint
     $url = "https://greek.asfirj.org/backend/sendPublicationEmail.php";
-    $subject = "Paper Published on ASFIRJ";
-    $message = "
-    <p> We are pleased to inform you that your paper is now published on online at ASFI Research Journal (ASFIRJ).</p>
     
-    <p>You can Find the Article here at https://asfirj.org/content?sid=$manuscriptId</p>
-    <p>We are pleased to inform you that your paper is now published on online at ASFI Research Journal (ASFIRJ).</p>
-
-    <p> A complimentary PDF copy of the article is also attached to this email, which you can share with your co-authors.</p>
-
-    <p>Thank you for publishing your paper with ASFIRJ and we look forward to future submissions from you.</p>
+    // Personalized subject line
+    $subject = "Your Paper \"$manuscripTitle\" Has Been Published in ASFIRJ (Issue $issueNumber)";
+    
+    // Clean and personalize the manuscript title for the URL
+    $cleanTitle = urlencode(strtolower(str_replace(' ', '-', $manuscripTitle)));
+    $articleUrl = "https://asfirj.org/content?sid=$manuscriptId&title=$cleanTitle";
+    
+    // Modern, personalized email template
+    $message = "
+    <html>
+    <body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;'>
+        <div style='background-color: #f8f9fa; padding: 20px; border-radius: 5px;'>
+            <h2 style='color: #2c3e50;'>Congratulations, " . ($authorName ? htmlspecialchars($authorName) : "Author") . "!</h2>
+            
+            <p>Your paper, <strong>\"$manuscripTitle\"</strong>, has now been officially published in <em>ASFI Research Journal</em>, Issue $issueNumber.</p>
+            
+            <p style='margin: 20px 0;'>
+                <a href='$articleUrl' style='background-color: #3498db; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px;'>View Your Published Paper</a>
+            </p>
+            
+            <p>We've attached a complimentary PDF copy for your records and to share with co-authors.</p>
+            
+            <p>This publication contributes to our shared mission of advancing research in your field. We're honored to have your work in ASFIRJ.</p>
+            
+            <div style='margin-top: 30px; font-size: 0.9em; color: #7f8c8d; border-top: 1px solid #eee; padding-top: 15px;'>
+                <p>ASFI Research Journal Editorial Team<br>
+                <a href='https://asfirj.org' style='color: #3498db;'>asfirj.org</a></p>
+                
+                <p style='font-size: 0.8em;'>
+                    <a href='https://asfirj.org/unsubscribe?email=$email' style='color: #7f8c8d;'>Unsubscribe</a> | 
+                    <a href='https://asfirj.org/contact' style='color: #7f8c8d;'>Contact Us</a>
+                </p>
+            </div>
+        </div>
+    </body>
+    </html>
     ";
     
     // Email details
@@ -28,38 +50,25 @@ function SendEmail($email, $manuscripTitle, $manuscriptId, $issueNumber, $fileNa
         'fileName' => $fileName,
     );
 
-    // Path to the downloaded certificate bundle
-    $cacert = "/var/www/html/cacert.pem";
-
-    // Initialize cURL session
+    // Initialize cURL with proper SSL verification
     $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => json_encode($emailData),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+        CURLOPT_SSL_VERIFYPEER => true, // Always verify SSL in production
+        CURLOPT_SSL_VERIFYHOST => 2,
+    ]);
 
-    // Set cURL options
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($emailData));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-        'Content-Type: application/json'
-    ));
-    // curl_setopt($ch, CURLOPT_CAINFO, $cacert); // Set the path to the certificate bundle
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Disable SSL verification
-
-    // Execute cURL request and get the response
     $response = curl_exec($ch);
-
-    // Check for errors
+    
     if (curl_errno($ch)) {
-        echo json_encode(array("status" => "error", "message" => 'cURL error: ' . curl_error($ch)));
+        error_log('Email sending error: ' . curl_error($ch));
+        curl_close($ch);
         return false;
-    } else {
-        // echo json_encode(array("status" => "emailSent", "message" => 'Response: ' . $response));
-        
     }
 
-    // Close cURL session
     curl_close($ch);
     return true;
-   
-
-
 }
