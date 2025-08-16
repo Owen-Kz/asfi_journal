@@ -125,7 +125,7 @@
                     
                     
                     <ul class="submit-nav">
-                        <a href=""><li style="background-color: #320359;">  <span class="newSubmissionsCount">0</span> Submiited Manuscripts</li></a>
+                        <a href=""><li style="background-color: #320359; color: #fff;">  <span class="newSubmissionsCount">0</span> Submiited Manuscripts</li></a>
                         <a href="../coauth/"><li><span class="coAuhtoredCount">0</span> Manuscripts I Have Co-Authored</li></a>
                         <a href="../submit/"><li>Submit New Manuscript</li></a>
                         <a href="../inreview/"><li> <span class="inReviewCount">0</span> Manuscripts With Decisions</li></a>

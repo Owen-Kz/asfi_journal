@@ -128,7 +128,7 @@
                         <a href="../manuscripts/"><li>   <span class="newSubmissionsCount">0</span> Submitted Manuscripts</li></a>
                         <a href="../coauth/"><li> <span class="coAuhtoredCount">0</span> Manuscripts I Have Co-Authored</li></a>
                         <a href="../submit/"><li>Submit New Manuscript</li></a>
-                        <a href="" ><li style="background-color: #320359;"> <span class="inReviewCount">0</span> Manuscripts With Decisions</li></a>
+                        <a href="" ><li style="background-color: #320359; color: #fff;"> <span class="inReviewCount">0</span> Manuscripts With Decisions</li></a>
                         <a href="../../../portal/logout/"><li>Logout</li></a>
                         
                     </ul>
