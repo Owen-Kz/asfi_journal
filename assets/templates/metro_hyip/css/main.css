@@ -4637,6 +4637,9 @@ select option {
     background-color: whitesmoke;
     color: rgb(37, 37, 37);
 }
+.nav-active:hover {
+    color: #310357 !important;
+}
 
 .dashboard-fluid .sidebar-menu::-webkit-scrollbar {
     width: 3px;

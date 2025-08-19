@@ -134,7 +134,7 @@
                         <a href="../"><li> <span>0</span> Review and Score</li></a>
                         <a href="../sumitted/"><li> <span>0</span> Scores Submitted</li></a>
                         <!-- <a href=""><li>Submit New Manuscript</li></a> -->
-                        <a href=""><li style="background-color: #320359;"> <span>0</span> Invitations</li></a>
+                        <a href=""><li style="background-color: #320359; color: #fff;"> <span>0</span> Invitations</li></a>
                         <a href="../../../portal/logout/"><li>Logout</li></a>
                         
                     </ul>
