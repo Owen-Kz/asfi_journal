@@ -734,7 +734,7 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="../../front/public/js/vendor/splitting.min.js?v=<?= time(); ?>"></script>
 <!-- <script src="../../front/public/js/vendor/jquery.nice-select.min.js?v=<?= time(); ?>"></script> -->
 <script src="../../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
-<script src="../../js/queries/manageArticles.js?v=<?= time(); ?>" type="module"></script>
+<script src="../../js/queries/manageArticles.js?v=<?= time(); ?>-<?= uniqid(); ?>" type="module"></script>
 
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 
