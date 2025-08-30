@@ -16,51 +16,92 @@ const articleId = GetParameters(window.location.href).get("a")
 const userID = GetCookie("user")
 const UserData = await GetAccountData(userID)
 const user = UserData.email
+            const overlayX = document.querySelector('.overlayX');
 
-if(user && articleId){
-   const userData = await GetAccountData(userID)
-   const email = userData.email
+if (user && articleId) {
+    const userData = await GetAccountData(userID)
+    const email = userData.email
 
-   id_container.value = articleId
-   reviewebyContaier.value = email
+    id_container.value = articleId
+    reviewebyContaier.value = email
 
 
-uploadForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const formData = new FormData(uploadForm);
+    uploadForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const formData = new FormData(uploadForm);
+                    overlayX.style.display = 'flex';
 
-    body.removeAttribute("id")
-    // formData.append('article_content', JSON.stringify(quill.getContents().ops));
-    // console.log(JSON.stringify(quill.getContents().ops))
 
-    fetch(`https://greek.asfirj.org/review/`, {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-       ; // Log server response
-        if(data.status === "success"){
-        message_container.innerHTML =`<div class="alert-success">${data.message}</div>`
+        // formData.append('article_content', JSON.stringify(quill.getContents().ops));
+        // console.log(JSON.stringify(quill.getContents().ops))
 
-            alert("Review Submitted Successfully")
-            window.location.href = "/dashboard/reviewerdash"
-        }else if(data.status === "error"){
-        message_container.innerHTML =`<div class="alert-danger">${data.message}</div>`
+        fetch(`https://greek.asfirj.org/review/`, {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                ; // Log server response
+                if(!data){
+                     message_container.innerHTML = `<div class="alert-success">Internal Server Error</div>`
 
-            body.setAttribute("id", "formNotSubmitted")
-        }else{
-        message_container.innerHTML =`<div class="alert-danger">Internal Server Error</div>`
+                    overlayX.style.display = 'none';
 
-            body.setAttribute("id", "formNotSubmitted")
-        }
+                    // Simulate form submission
+               return   setTimeout(function () {
+                        overlayX.style.display = 'none';
+                        document.getElementById('message_container').classList.remove('hidden');
 
-    })
-    .catch(error => {
-        console.error('Error:', error);
+                        // Scroll to message
+                        document.getElementById('message_container').scrollIntoView({ behavior: 'smooth' });
+                    }, 3000);
+                    // window.
+                }
+                if (data.status === "success") {
+                    message_container.innerHTML = `<div class="alert-success">${data.message}</div>`
+
+                    overlayX.style.display = 'none';
+
+                    // Simulate form submission
+                    setTimeout(function () {
+                        overlayX.style.display = 'none';
+                        document.getElementById('message_container').classList.remove('hidden');
+
+                        // Scroll to message
+                        document.getElementById('message_container').scrollIntoView({ behavior: 'smooth' });
+                    }, 3000);
+                    // window.location.href = "/dashboard/reviewerdash"
+                } else if (data.status === "error") {
+                    message_container.innerHTML = `<div class="alert-danger">${data.message}</div>`
+
+                    overlayX.style.display = 'none';
+                    setTimeout(function () {
+                        overlayX.style.display = 'none';
+                        document.getElementById('message_container').classList.remove('hidden');
+
+                        // Scroll to message
+                        document.getElementById('message_container').scrollIntoView({ behavior: 'smooth' });
+                    }, 3000);
+                } else {
+                    message_container.innerHTML = `<div class="alert-danger">Internal Server Error</div>`
+
+                    overlayX.style.display = 'none';
+                    setTimeout(function () {
+                        overlayX.style.display = 'none';
+                        document.getElementById('message_container').classList.remove('hidden');
+
+                        // Scroll to message
+                        document.getElementById('message_container').scrollIntoView({ behavior: 'smooth' });
+                    }, 3000);
+
+                }
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     });
-});
 
-}else{
+} else {
     window.location.href = `${parentDirectoryName}/dashboard/reviewerdash`
 }

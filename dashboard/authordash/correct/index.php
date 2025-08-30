@@ -213,7 +213,7 @@
       <div class="dashboard__inner">
         <div class="sidebar-menu" id="userMenu">
           <div class="submission-header-dash" style="margin-top: 30px;">
-            <div style="text-align: center;"><span class="fw-bold" style="color: #404040;">Author Dashboard</span></div>
+            <div style="text-align: center;"><span class="fw-bold" style="color: #404040;">Authors Dashboard</span></div>
 
 
             <ul class="submit-nav">

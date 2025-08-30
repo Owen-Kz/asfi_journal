@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" class="h-full">
 
 <head>
     <!-- Required meta tags -->
@@ -35,37 +35,102 @@
     <meta property="og:url" content="../../../dashboard">
     
     <meta name="twitter:card" content="summary_large_image">
-    <!-- Bootstrap CSS -->
-    <link href="../../../assets/global/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link href="../../css/bootstrap.css" rel="stylesheet">
-      
-    <link href="../../css/bootstrap-responsive.css" rel="stylesheet"> -->
-
-    <link href="../../../assets/global/css/all.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../../assets/global/css/line-awesome.min.css" />
-
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/main.css">
-
-    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/custom.css">
-    <link rel="stylesheet" href="../../../css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     
-    
-    <!-- <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor="> -->
-    <link rel="stylesheet" href="../../../front/public/css/header.css">
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#310357',
+                        secondary: '#EB4830',
+                        accent: '#320359',
+                        light: '#f8f9fa',
+                        dark: '#404040',
+                    }
+                }
+            }
         }
     </script>
-
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="../../../assets/global/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/global/css/line-awesome.min.css" />
+    <link rel="stylesheet" href="../../../assets/templates/metro_hyip/css/custom.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .sidebar-menu-item {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .sidebar-menu-item:hover {
+            padding-left: 1.5rem;
+            transform: translateX(5px);
+        }
+        .sidebar-menu-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #310357;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .sidebar-menu-item:hover::before {
+            opacity: 1;
+        }
+        .active-menu-item {
+            background: linear-gradient(90deg, rgba(49, 3, 87, 0.1) 0%, rgba(49, 3, 87, 0.05) 100%);
+            padding-left: 1.5rem;
+            border-left: 4px solid #310357;
+        }
+        .active-menu-item::before {
+            opacity: 1;
+        }
+        .notification-badge {
+            position: relative;
+        }
+        .notification-badge::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 12px;
+            height: 12px;
+            background-color: #EB4830;
+            border-radius: 50%;
+            border: 2px solid white;
+            display: none;
+        }
+        .notification-badge.has-notification::after {
+            display: block;
+        }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #310357 0%, #6B21A8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
-<body>
+<body class="h-full bg-gray-50">
     
     <div class="preloader">
         <div class="loader-p"></div>
@@ -75,181 +140,208 @@
 
     <div class="sidebar-overlay"></div>
 
-    <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a>
+    <!-- <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a> -->
 
-    <div class="dashboard-fluid position-relative">
-        <div class="dashboard-header">
+    <div class="min-h-screen flex flex-col">
+    <?php include_once("../../partials/navbar.php"); ?>
 
-            <div class="dashboard-header__inner">
-                
-                <div class="dashboard-header__left">
-                    <a href="" class="sidebar-logo__link"> <img src="../../../assets/images/logoIcon/logo.png" alt="site-logo"></a>
-                </div>
-                <div class="dashboard-header__right">
-                    <div class="user-info">
-                        <div class="user-info__button">
-                            <div class="user-info__info">
-                                
-                                <span class="fw-bold user_fullnameContainer">
-                                 
-                                </span>
-        
-                                <!-- <ul class="user-info-dropdown">
-                                    <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                            href="../../user/profile-setting.html">Profile Setting</a></li>
-                                    <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                            href="../../user/change-password.html">Change Password</a></li>
-                                                                <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                            href="../../user/logout">Logout</a></li>
-                                </ul>
-                                <div class="user-info__content">
-                                    <div class="d-flex justify-content-around">
-                                        <span class="user-info__name" id="user_fullnameContainer"></span>
-                                        <span><i class="las la-angle-down"></i></span>
-                                    </div>
-                                    <span class="user-info__link" id="user_emailContainer"> </span>
-                                </div> -->
-        
+        <!-- Main Content -->
+        <div class="flex flex-1">
+            <!-- Sidebar -->
+            <?php include_once("../../partials/author_sidebar.php"); ?>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 p-6 overflow-auto">
+                <!-- Content remains the same as before -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <!-- Welcome Alert -->
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="las la-info-circle text-purple-600 text-xl"></i>
+                            </div>
+                            <div class="ml-3">
+                                <h3 class="text-sm font-medium text-purple-800">
+                                    Welcome, <span class="user_fullnameContainer font-bold"></span>
+                                </h3>
+                                <div class="mt-1 text-sm text-purple-700">
+                                    <p>Kindly use the navigations on the left side.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div style="background-color: #310357;" id="navbarContainer">
-             
-            </div>
-        <div class="dashboard__inner">
-            <div class="sidebar-menu" id="userMenu">
-                <div class="submission-header-dash" style="margin-top: 30px;">
-                    <div style="text-align: center;"><span class="fw-bold" style="color: #404040;">Author Dashboard</span></div>
-                    
-                    
-                    <ul class="submit-nav">
-                        <a href=""><li style="background-color: #320359; color: #fff;">
-                            <span class="newSubmissionsCount">0</span> Submitted Manuscripts</li></a>
-                        <a href="../coauth/"><li> <span class="coAuhtoredCount">0</span> Manuscripts I Have Co-Authored</li></a>
-                        <a href="../submit/"><li>Submit New Manuscript</li></a>
-                        <a href="../inreview/"><li> <span class="inReviewCount">0</span> Manuscripts With Decisions</li></a>
-                        <a href="../../../portal/logout/"><li>Logout</li></a>
-                        
-                    </ul>
-                </div>
-            </div>
-            <!-- ========= Sidebar Menu End ================ -->
-            <div class="dashboard__right">
-                
 
-<div class="dashboard-body__bar d-xl-none d-block mt-2 text-end">
-    <span class="dashboard-body__bar-icon"><i class="las la-bars"></i></span>
-</div>
-                <div class="dashboard-body">
-                    <section class="mt-3 mb-60">
-        <div class="row justify-content-center mb-3">
-            <div class="col-md-12">
-                                    <div class="alert border border--danger" role="alert">
-                        <div class="d-flex align-items-center text--white alert-box">
-                            <div class="alert-box__content" style="color: rgb(54, 54, 54);">
-                                <span class="fw-bold">Welcome, <span class="user_fullnameContainer"></span></span><br>
-                                <p class="alert__message">
-                                    <small>
-                                        <i>Kindly use the navigations on the left side.</i>
-                                    </small>
-                                </p>
-                            </div>
+                    <!-- Manuscripts Section -->
+                    <div class="mb-4">
+                        <h1 class="text-1xl font-bold text-primary">Manuscripts</h1>
+                    </div>
+
+                    <!-- Table -->
+                    <div class="overflow-x-auto rounded-lg shadow">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-primary">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Status</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">ID</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Title</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Last Modified</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Submission Process Started</th>
+                                </tr>
+                            </thead>
+                            <tbody id="manuscriptsContainer" class="bg-white divide-y divide-gray-200">
+                                <!-- Manuscripts will be inserted here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="emptyState" class="hidden text-center py-12">
+                        <i class="las la-file-alt text-4xl text-gray-300 mb-4"></i>
+                        <h3 class="text-lg font-medium text-gray-700">No manuscripts yet</h3>
+                        <p class="text-gray-500 mt-1">Get started by submitting your first manuscript.</p>
+                        <a href="../submit/" class="mt-4 inline-flex items-center px-4 py-2 bg-primary border border-transparent rounded-md font-semibold text-white hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                            Submit New Manuscript
+                        </a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden fixed bottom-4 right-4 z-50">
+        <button id="mobileMenuButton" class="p-3 bg-primary text-white rounded-full shadow-lg">
+            <i class="las la-bars text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobileSidebar" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
+        <div class="relative flex flex-col w-full max-w-xs bg-white h-full">
+            <div class="p-4 border-b">
+                <div class="text-center">
+                    <h2 class="text-1xl font-bold text-gray-800 flex items-center justify-center">
+                        <i class="bi bi-journal-text mr-2 text-primary"></i> Authors Dashboard
+                    </h2>
+                </div>
+                <button id="closeMobileMenu" class="absolute top-4 right-4 text-gray-500">
+                    <i class="las la-times text-1xl"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto py-2 px-2">
+                <ul class="space-y-3">
+                    <li>
+                        <a href="" class="flex items-center py-2 px-2 text-white bg-gradient-to-r from-accent to-purple-800 rounded-lg">
+                            <span class="newSubmissionsCount mr-3 bg-white text-accent rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
+                        
+                            Submitted Manuscripts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../coauth/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg">
+                            <span class="coAuhtoredCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
+                            <i class="bi bi-people-fill mr-3"></i>
+                            Co-Authored Manuscripts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../submit/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg">
+                            <span class="w-6 h-6 flex items-center justify-center mr-3">
+                                <i class="bi bi-plus-circle-fill text-green-500"></i>
+                            </span>
+                            <i class="bi bi-file-earmark-plus mr-3"></i>
+                            Submit New Manuscript
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../inreview/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg">
+                            <span class="inReviewCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
+                            <i class="bi bi-clipboard-check mr-3"></i>
+                            Manuscripts With Decisions
+                        </a>
+                    </li>
+                    <li class="pt-4 mt-4 border-t border-gray-100">
+                        <a href="../../../portal/logout/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-red-50 rounded-lg">
+                            <span class="w-6 h-6 flex items-center justify-center mr-3">
+                                <i class="bi bi-box-arrow-right text-red-500"></i>
+                            </span>
+                            <i class="bi bi-box-arrow-right mr-3"></i>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+                
+                <!-- Quick Stats for Mobile -->
+                <div class="mt-8 p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
+                        <i class="bi bi-graph-up mr-2"></i> Quick Stats
+                    </h3>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-xs">
+                            <span class="text-gray-600">Submitted</span>
+                            <span class="font-medium newSubmissionsCount">0</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-gray-600">In Review</span>
+                            <span class="font-medium inReviewCount">0</span>
+                        </div>
+                        <div class="flex justify-between text-xs">
+                            <span class="text-gray-600">Co-Authored</span>
+                            <span class="font-medium coAuhtoredCount">0</span>
                         </div>
                     </div>
-        </div>
-
-        <div class="row gy-2 justify-content-center">
-            <span style="font-size: 35px; color: #310357;">Manuscripts</span>
-            <div class="table_container">
-                <table id="table-dash" class="">
-                    <thead>
-                        <tr class="section-title">
-                            <th>Status</th>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Last Modified</th>
-                            <th>Submission Process Started</th>
-
-                        </tr>
-                    </thead>
-                    <tbody id="manuscriptsContainer">
-                        <!-- <tr id="queue_0" name="queue_0" role="row" class="odd">
-                          <td id="action">
-                            <br>            
-                        </td>          
-               <td data-label="status">              
-                        <div>
-                            <p>
-                                <a role="link" tabindex="0" data-title="test" id="contactJournalLnk" data-abstract="test" data-id="xik_HqzhLis2ey4NyZxowgCdfEwB7DoB64Umc9Bp7CgUjXzc" data-documentno="thoraxjnl-2020-215540.R2" data-toggle="modal" href="#contactJournal" onclick="" data-inviteemail="0" hidefocus="true" style="outline: none;"><i class="fa fa-envelope-o"></i> Contact Journal</a>
-                            </p>
-                        </div>
-                        <ul>
-                            <li>EPA: Bright Nwaru, Eman Soph</li>
-                            <li>Minor revision (11-Sep-2024)</li>
-                            <li>a revision has been submitted</li>
-                            <li><i>Archiving completed on 10-Oct-2024</i></li>
-                        </ul>
-              
-                      <br>
-                         <a role="link" tabindex="0" href="" hidefocus="true" style="outline: none;">  
-                             view decision letter
-                         </a>    
-                        
-                    </td>
-        
-                    <td data-label="ID">ASFIRJ-2024-215540.R2
-                    
-                    </td>
-                                          
-                    <td data-label="title" style="white-space:pre-wrap">Does use of hormonal contraceptives impact on severe exacerbation in women with asthma? A 17-year population-based cohort study<br><em>Files Archived</em> <i class="fa fa-question-circle" data-content="The Journal has elected to delete the files associated with the draft revision/resubmission of this manuscript. In order to continue, you must click the &quot;create revision/resubmission&quot;" data-original-title="Files Archived" data-toggle="popover" style="font-size:small; vertical-align:middle;"></i>
-                   
-             </td>
-                    <td class="whitespace-nowrap" data-label="submitted">21-Sep-2024
-                    </td>
-                    <td data-label="decisioned" class="whitespace-nowrap">25-Sep-2024</td>
-               </tr> -->
-            
-                    </tbody>
-                    
-                </table>
-
-            </div>
-            
-
-        </div>
-
-       
-        
-
-        
-    </section>
                 </div>
             </div>
         </div>
     </div>
-<div id="google_translate_element"></div>
+
+    <div id="google_translate_element" class="fixed bottom-2 left-2 z-50 bg-white p-2 rounded shadow"></div>
         
     <script src="../../../assets/global/js/jquery-3.6.0.min.js?v=<?= time(); ?>"></script>
     <script src="../../../assets/global/js/bootstrap.bundle.min.js?v=<?= time(); ?>"></script>
     <script src="../../../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
     <script type="module" src="../../../js/dashboards/author.js?v=<?= time(); ?>"></script>
-<script type="module" src="../../../js/dashboards/manuscripts.js?v=<?= time(); ?>"></script>
-            <script>
+    <script type="module" src="../../../js/dashboards/manuscripts.js?v=<?= time(); ?>"></script>
+    
+    <script>
         'use strict';
         (function($) {
-                    })(jQuery);
+            // Mobile menu functionality
+            $('#mobileMenuButton').on('click', function() {
+                $('#mobileSidebar').removeClass('translate-x-full');
+            });
+            
+            $('#closeMobileMenu').on('click', function() {
+                $('#mobileSidebar').addClass('translate-x-full');
+            });
+            
+            // Close mobile menu when clicking outside
+            $('#mobileSidebar > div:first-child').on('click', function() {
+                $('#mobileSidebar').addClass('translate-x-full');
+            });
+            
+            // Set user initials for avatar
+            const userFullname = $('.user_fullnameContainer').text().trim();
+            if (userFullname) {
+                const names = userFullname.split(' ');
+                let initials = '';
+                if (names.length > 0) {
+                    initials += names[0].charAt(0);
+                }
+                if (names.length > 1) {
+                    initials += names[names.length - 1].charAt(0);
+                }
+                $('#userInitials').text(initials.toUpperCase());
+            }
+        })(jQuery);
     </script>
  
     
     <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css">
-<script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
-
-
+    <script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
 
     <script src="../../../assets/global/js/firebase/firebase-8.3.2.js?v=<?= time(); ?>"></script>
-
 
     <script>
         (function($) {

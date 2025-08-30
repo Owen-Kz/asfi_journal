@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" class="h-full">
 
 <head>
     <!-- Required meta tags -->
@@ -8,14 +8,13 @@
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title> Author - Dashboard</title>
+    <title>Author - Dashboard</title>
     <meta name="title" Content="Author - Dashboard">
 
     <meta name="description" content="asfiresearchjournal">
     <meta name="keywords" content="asfiresearchjournal">
     <link rel="shortcut icon" href="../../assets/images/logoIcon/favicon.png" type="image/x-icon">
 
-     
     <link rel="apple-touch-icon" href="../../assets/images/logoIcon/logo.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -35,23 +34,78 @@
     <meta property="og:url" content="/user/dashboard.html">
     
     <meta name="twitter:card" content="summary_large_image">
-    <!-- Bootstrap CSS -->
-    <link href="../../assets/global/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="../../assets/global/css/all.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="../../assets/global/css/line-awesome.min.css" />
-
-    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/main.css">
-
-    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/custom.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#310357',
+                        secondary: '#EB4830',
+                        accent: '#320359',
+                        light: '#f8f9fa',
+                        dark: '#404040',
+                    }
+                }
+            }
+        }
+    </script>
     
-    <link rel="stylesheet" href="../../assets/templates/metro_hyip/css/color.php?color=EB4830&secondColor=">
-    <link rel="stylesheet" href="../../front/public/css/header.css">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .dashboard-card {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #310357, #6B21A8);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .dashboard-card:hover::before {
+            opacity: 1;
+        }
+        .help-box {
+            transition: all 0.3s ease;
+        }
+        .help-box:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #310357 0%, #6B21A8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-active {
+            border-bottom: 3px solid #EB4830;
+        }
+    </style>
+    
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
@@ -61,9 +115,8 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </head>
-</head>
 
-<body>
+<body class="h-full bg-gray-50">
     
     <div class="preloader">
         <div class="loader-p"></div>
@@ -75,234 +128,322 @@
 
     <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a>
 
-    <div class="dashboard-fluid position-relative">
-        <div class="dashboard-header">
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+   <?php include_once("../partials/navbar.php"); ?>
 
-            <div class="dashboard-header__inner">
-                
-                <div class="dashboard-header__left">
-                    <a href="" class="sidebar-logo__link"> <img src="../../assets/images/logoIcon/logo.png" alt="site-logo"></a>
+        <!-- Main Content -->
+        <div class="flex flex-1">
+            <!-- Sidebar -->
+            <aside class="w-64 bg-white shadow-lg hidden md:block border-r border-gray-100">
+                <div class="p-6">
+                    <!-- Help Box -->
+                    <div class="help-box bg-white border border-gray-200 rounded-xl p-5 mb-8">
+                        <h3 class="font-bold text-gray-800 text-lg mb-4 flex items-center">
+                            <i class="bi bi-question-circle mr-2 text-primary"></i> Help
+                        </h3>
+                        <ul class="space-y-3">
+                            <li>
+                                <a href="https://asfirj.org/authors.html" target="_blank" class="flex items-center text-purple-700 hover:text-purple-900 transition-colors">
+                                    <i class="bi bi-journal-text mr-2"></i>
+                                    Author Instructions
+                                    <i class="bi bi-box-arrow-up-right ml-2 text-xs"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://asfirj.org" target="_blank" class="flex items-center text-purple-700 hover:text-purple-900 transition-colors">
+                                    <i class="bi bi-globe mr-2"></i>
+                                    Journal Website
+                                    <i class="bi bi-box-arrow-up-right ml-2 text-xs"></i>
+                                </a>
+                            </li>
+                            <li class="pt-3 mt-3 border-t border-gray-100">
+                                <a href="../../portal/logout/" class="flex items-center text-red-600 hover:text-red-800 transition-colors">
+                                    <i class="bi bi-box-arrow-right mr-2"></i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="bg-gray-50 rounded-xl p-5">
+                        <h3 class="text-sm font-semibold text-gray-700 mb-4 flex items-center">
+                            <i class="bi bi-graph-up mr-2"></i> Quick Stats
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 text-sm">Submitted</span>
+                                <span class="font-medium text-primary newSubmissionsCount">0</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 text-sm">In Review</span>
+                                <span class="font-medium text-primary inReviewCount">0</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 text-sm">Co-Authored</span>
+                                <span class="font-medium text-primary coAuhtoredCount">0</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-600 text-sm">Inbox</span>
+                                <span class="font-medium text-primary inboxCount">0</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="dashboard-header__right">
-                    <div class="user-info">
-                        <div class="user-info__button">
-                            <div class="user-info__info">
-                                
-                                <span class="fw-bold user_fullnameContainer">
-                                   
-                                </span>
-        
-                            <!-- <ul class="user-info-dropdown">
-                                    <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                            href="../../user/profile-setting.html">Profile Setting</a></li>
-                                    <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                            href="../../user/change-password.html">Change Password</a></li>
-                                                                <li class="user-info-dropdown__item"><a class="user-info-dropdown__link"
-                                            href="../../user/logout">Logout</a></li>
-                                </ul>
-                                <div class="user-info__content">
-                                    <div class="d-flex justify-content-around">
-                                        <span class="user-info__name" id="user_fullnameContainer"></span>
-                                        <span><i class="las la-angle-down"></i></span>
+            </aside>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 p-6 overflow-auto">
+                <div class="max-w-7xl mx-auto">
+                    <!-- Editorial Office Notice -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-info-circle text-blue-500 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-blue-800 flex items-center">
+                                    Editorial Office <i class="bi bi-pencil-square ml-2 text-blue-600"></i>
+                                </h3>
+                                <p class="mt-1 text-blue-700">
+                                    For assistance, please contact <a href="mailto:submissions@asfirj.org" class="text-blue-600 hover:text-blue-800 font-medium">submissions@asfirj.org</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Welcome Alert -->
+                    <div class="bg-purple-50 border border-purple-200 rounded-xl p-5 mb-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="bi bi-info-circle text-purple-500 text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-lg font-medium text-purple-800">
+                                    AUTHORS
+                                </h3>
+                                <p class="mt-1 text-purple-700">
+                                    Click on Author in the navigation bar above to access your Authors Dashboard.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- New Submission Card -->
+                        <a href="../authordash/manuscripts/">
+                            <div class="dashboard-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-purple-100 p-3 rounded-lg">
+                                        <i class="bi bi-pencil-square text-purple-600 text-2xl"></i>
                                     </div>
-                                    <span class="user-info__link" id="user_emailContainer"> </span>
-                                </div> -->
-        
+                                    <div class="ml-4">
+                                        <h6 class="text-sm font-semibold text-gray-700 uppercase tracking-wider">NEW SUBMISSION</h6>
+                                        <span class="text-2xl font-bold text-primary newSubmissionsCount">0</span>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
+
+                        <!-- Manuscripts with Decisions Card -->
+                        <a href="../authordash/inreview/">
+                            <div class="dashboard-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-blue-100 p-3 rounded-lg">
+                                        <i class="bi bi-journal-text text-blue-600 text-2xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h6 class="text-sm font-semibold text-gray-700 uppercase tracking-wider">MANUSCRIPTS WITH DECISIONS</h6>
+                                        <span class="text-2xl font-bold text-primary inReviewCount">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Manuscripts Co-Authored Card -->
+                        <a href="../authordash/coauth/">
+                            <div class="dashboard-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-green-100 p-3 rounded-lg">
+                                        <i class="bi bi-people-fill text-green-600 text-2xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h6 class="text-sm font-semibold text-gray-700 uppercase tracking-wider">MANUSCRIPTS CO-AUTHORED</h6>
+                                        <span class="text-2xl font-bold text-primary coAuhtoredCount">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Returned Manuscripts Card -->
+                        <a href="../authordash/inreview/">
+                            <div class="dashboard-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-yellow-100 p-3 rounded-lg">
+                                        <i class="bi bi-arrow-return-left text-yellow-600 text-2xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h6 class="text-sm font-semibold text-gray-700 uppercase tracking-wider">RETURNED MANUSCRIPTS</h6>
+                                        <span class="text-2xl font-bold text-primary">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Inbox Card -->
+                        <a href="../mail/inbox/">
+                            <div class="dashboard-card bg-white rounded-xl shadow-md p-6 border border-gray-100">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-red-100 p-3 rounded-lg">
+                                        <i class="bi bi-inbox text-red-600 text-2xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h6 class="text-sm font-semibold text-gray-700 uppercase tracking-wider">INBOX</h6>
+                                        <span class="text-2xl font-bold text-primary inboxCount">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div style="background-color: #310357;" id="navbarContainer">
-             
+            </main>
         </div>
-        <div class="dashboard__inner">
-            <div class="sidebar-menu" id="userMenu">
-                <div style="height: 30%; width: 250px; border: 1px solid rgb(182, 182, 182); border-radius: 10px; margin: 0 auto; margin-top: 20px; margin-left: 20px;">
-                  <span class=" fw-bold" style="margin-left: 20px; margin-top: 30px; color: rgb(54, 54, 54);">Help</span>
-                  <ul style="padding-left: 30px; margin-top: 10px;">
-                    <li><a href="https://asfirj.org/authors.html" style=" color: blueviolet;" target="_blank">Author Instructions <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
-                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M94,114h-60c-11.05,0 -20,-8.95 -20,-20v-60c0,-11.05 8.95,-20 20,-20h60c11.05,0 20,8.95 20,20v60c0,11.05 -8.95,20 -20,20z" fill="#ffffff"></path><path d="M94,117h-60c-12.68,0 -23,-10.32 -23,-23v-60c0,-12.68 10.32,-23 23,-23h50c1.66,0 3,1.34 3,3c0,1.66 -1.34,3 -3,3h-50c-9.37,0 -17,7.63 -17,17v60c0,9.37 7.63,17 17,17h60c9.37,0 17,-7.63 17,-17v-50c0,-1.66 1.34,-3 3,-3c1.66,0 3,1.34 3,3v50c0,12.68 -10.32,23 -23,23z" fill="#444b54"></path><path d="M64,67c-0.77,0 -1.54,-0.29 -2.12,-0.88c-1.17,-1.17 -1.17,-3.07 0,-4.24l60,-60c1.17,-1.17 3.07,-1.17 4.24,0c1.17,1.17 1.17,3.07 0,4.24l-60,60c-0.58,0.59 -1.35,0.88 -2.12,0.88z" fill="#8571ff"></path></g></g>
-                        </svg></a></li>
-                    <li><a href="https://asfirj.org" style=" color: blueviolet;" target="_blank">Journal website <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
-                        <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M94,114h-60c-11.05,0 -20,-8.95 -20,-20v-60c0,-11.05 8.95,-20 20,-20h60c11.05,0 20,8.95 20,20v60c0,11.05 -8.95,20 -20,20z" fill="#ffffff"></path><path d="M94,117h-60c-12.68,0 -23,-10.32 -23,-23v-60c0,-12.68 10.32,-23 23,-23h50c1.66,0 3,1.34 3,3c0,1.66 -1.34,3 -3,3h-50c-9.37,0 -17,7.63 -17,17v60c0,9.37 7.63,17 17,17h60c9.37,0 17,-7.63 17,-17v-50c0,-1.66 1.34,-3 3,-3c1.66,0 3,1.34 3,3v50c0,12.68 -10.32,23 -23,23z" fill="#444b54"></path><path d="M64,67c-0.77,0 -1.54,-0.29 -2.12,-0.88c-1.17,-1.17 -1.17,-3.07 0,-4.24l60,-60c1.17,-1.17 3.07,-1.17 4.24,0c1.17,1.17 1.17,3.07 0,4.24l-60,60c-0.58,0.59 -1.35,0.88 -2.12,0.88z" fill="#8571ff"></path></g></g>
-                        </svg></a></li>
-                        <li style=" margin-top: 10%;">
-                            <a href="../../portal/logout/" style=" color: blueviolet;">Logout</a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden fixed bottom-4 right-4 z-50">
+        <button id="mobileMenuButton" class="p-3 bg-primary text-white rounded-full shadow-lg">
+            <i class="bi bi-list text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Sidebar -->
+    <div id="mobileSidebar" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
+        <div class="relative flex flex-col w-full max-w-xs bg-white h-full">
+            <div class="p-4 border-b">
+                <div class="text-center">
+                    <h2 class="text-xl font-bold text-gray-800">ASFIRJ Portal</h2>
+                </div>
+                <button id="closeMobileMenu" class="absolute top-4 right-4 text-gray-500">
+                    <i class="bi bi-x-lg text-xl"></i>
+                </button>
+            </div>
+            <div class="flex-1 overflow-y-auto py-4 px-4">
+                <!-- Help Box for Mobile -->
+                <div class="help-box bg-white border border-gray-200 rounded-xl p-5 mb-6">
+                    <h3 class="font-bold text-gray-800 text-lg mb-4 flex items-center">
+                        <i class="bi bi-question-circle mr-2 text-primary"></i> Help
+                    </h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="https://asfirj.org/authors.html" target="_blank" class="flex items-center text-purple-700 hover:text-purple-900 transition-colors">
+                                <i class="bi bi-journal-text mr-2"></i>
+                                Author Instructions
+                                <i class="bi bi-box-arrow-up-right ml-2 text-xs"></i>
+                            </a>
                         </li>
-                  </ul>
-                     
+                        <li>
+                            <a href="https://asfirj.org" target="_blank" class="flex items-center text-purple-700 hover:text-purple-900 transition-colors">
+                                <i class="bi bi-globe mr-2"></i>
+                                Journal Website
+                                <i class="bi bi-box-arrow-up-right ml-2 text-xs"></i>
+                            </a>
+                        </li>
+                        <li class="pt-3 mt-3 border-t border-gray-100">
+                            <a href="../../portal/logout/" class="flex items-center text-red-600 hover:text-red-800 transition-colors">
+                                <i class="bi bi-box-arrow-right mr-2"></i>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <!-- ========= Sidebar Menu End ================ -->
-            <div class="dashboard__right">
                 
-
-<div class="dashboard-body__bar d-xl-none d-block mt-2 text-end">
-    <span class="dashboard-body__bar-icon"><i class="las la-bars"></i></span>
-</div>
-                <div class="dashboard-body">
-                    <section class="mt-3 mb-60">
-        <div class="row notice">
-            <div class="col-lg-12">
-                <div class="custom--card mb-4">
-                    <div class="card-header justify-content-between d-flex flex-wrap notice_notify">
-                        <h5 class="alert-heading">Editorial Office <i class='las la-edit text--danger'></i></h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="mb-0 small">For assistance, please contact <a href="mailto:submissions@asfirj.org" class='text--danger'>submissions@asfirj.org</a></p>
-                    </div>
-                </div> 
-            </div>
-        </div>
-        <div class="row justify-content-center mb-3">
-            <div class="col-md-12">
-                                    <div class="alert border border--primary" role="alert" id="emptyBalance">
-                        <div class="d-flex align-items-center text--white alert-box">
-                            <div class="alert-box__content" style="color: rgb(54, 54, 54);">
-                                <span class="fw-bold">AUTHORS</span><br>
-                                <p class="alert__message">
-                                    <small>
-                                        <i>Click on Author in the navigation bar above to access your Author Dashboard.</i>
-                                    </small>
-                                </p>
-                            </div>
+                <!-- Quick Stats for Mobile -->
+                <div class="bg-gray-50 rounded-xl p-5">
+                    <h3 class="text-sm font-semibold text-gray-700 mb-4 flex items-center">
+                        <i class="bi bi-graph-up mr-2"></i> Quick Stats
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 text-sm">Submitted</span>
+                            <span class="font-medium text-primary newSubmissionsCount">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 text-sm">In Review</span>
+                            <span class="font-medium text-primary inReviewCount">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 text-sm">Co-Authored</span>
+                            <span class="font-medium text-primary coAuhtoredCount">0</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 text-sm">Inbox</span>
+                            <span class="font-medium text-primary inboxCount">0</span>
                         </div>
                     </div>
-                    <!-- <div class="alert border border--warning" role="alert">
-                        <div class="d-flex align-items-center alert-box">
-                            <span class="icon"> <i class="fas fa-user-lock text--warning"></i> </span>
-                            <div class="alert-box__content">
-                                <span class="fw-bold">2FA Authentication</span><br>
-                                <p class="alert__message">
-                                    <small><i>To keep safe your account, Please enable <a href="../user/twofactor" class="text--base-two">2FA</a> security.</i>
-                                        It will make secure your account and balance.</small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                                                                    <div class="alert border border--info" role="alert">
-                        <div class="d-flex align-items-center"><i class="fas fa-file-signature text--info"></i>
-                            <span class="fw-bold mx-3">KYC Verification Required</span><br>
-                        </div>
-                        <p>
-                            <small><i>Please submit the required KYC information to verify yourself. Otherwise, you couldn't make any withdrawal requests to the system. <a href="../user/kyc-form" class="text--base-two">Click here</a> to submit KYC information.</i></small>
-                        </p>
-                    </div>
-                            </div> -->
-        </div>
-
-        <div class="row gy-4 justify-content-center">
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-               <a href="../authordash/manuscripts/"><div class="dashboard-card">
-                <!-- <div class="dashboard-card__shape"></div> -->
-                <div class="dashboard-card__header">
-                    <span class="dashboard-card__header-icon">
-                        <i class="fas fa-edit"></i>
-                    </span>
-                    <div class="dashboard-card__header-content">
-                        <h6 class="dashboard-card__header-title"> NEW SUBMISSION </h6>
-                        <span class="dashboard-card__header-currency newSubmissionsCount" > 0 </span>
-                    </div>
-                </div>
-            </div></a> 
-            </div>
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-               <a href="../authordash/inreview/"><div class="dashboard-card">
-                <!-- <div class="dashboard-card__shape"></div> -->
-                <div class="dashboard-card__header">
-                    <span class="dashboard-card__header-icon">
-                        <i class="fas fa-book"></i>
-                    </span>
-                    <div class="dashboard-card__header-content">
-                        <h6 class="dashboard-card__header-title"> MANUSCRIPTS WITH DECISIONS </h6>
-                        <span class="dashboard-card__header-currency inReviewCount">0 </span>
-                    </div>
-                </div>
-               
-            </div></a> 
-            </div>
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-               <a href="../authordash/coauth/"><div class="dashboard-card">
-                <!-- <div class="dashboard-card__shape"></div> -->
-                <div class="dashboard-card__header">
-                    <span class="dashboard-card__header-icon">
-                        <i class="fas fa-stamp"></i>
-                    </span>
-                    <div class="dashboard-card__header-content">
-                        <h6 class="dashboard-card__header-title"> MANUSCRIPTS CO-AUTHORED </h6>
-                        <span class="dashboard-card__header-currency coAuhtoredCount" > 0 </span>
-                    </div>
-                </div>
-            </div></a> 
-            </div>
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-                <a href="../authordash/inreview/">
-                    <div class="dashboard-card">
-                        <!-- <div class="dashboard-card__shape"></div> -->
-                        <div class="dashboard-card__header">
-                            <span class="dashboard-card__header-icon">
-                                <i class="fas fa-edit"></i>
-                            </span>
-                            <div class="dashboard-card__header-content">
-                                <h6 class="dashboard-card__header-title"> RETURNED MANUSCRIPTS </h6>
-                                <span class="dashboard-card__header-currency"> 0 </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-xxl-4 col-xl-6 col-sm-6">
-               <a href="../mail/inbox/"><div class="dashboard-card">
-                <!-- <div class="dashboard-card__shape"></div> -->
-                <div class="dashboard-card__header">
-                    <span class="dashboard-card__header-icon">
-                        <i class="fas fa-link"></i>
-                    </span>
-                    <div class="dashboard-card__header-content">
-                        <h6 class="dashboard-card__header-title"> INBOX </h6>
-                        <span class="dashboard-card__header-currency inboxCount" > 0 </span>
-                    </div>
-                </div>
-            </div></a> 
-            </div>
-
-        </div>
-
-        
-    </section>
                 </div>
             </div>
         </div>
     </div>
-<div id="google_translate_element"></div>
+
+    <div id="google_translate_element" class="fixed bottom-2 left-2 z-50 bg-white p-2 rounded shadow"></div>
         
     <script src="../../assets/global/js/jquery-3.6.0.min.js?v=<?= time(); ?>"></script>
     <script src="../../assets/global/js/bootstrap.bundle.min.js?v=<?= time(); ?>"></script>
     <script src="../../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
 
-            <script>
+    <script>
         'use strict';
         (function($) {
-                    })(jQuery);
+            // Mobile menu functionality
+            $('#mobileMenuButton').on('click', function() {
+                $('#mobileSidebar').removeClass('translate-x-full');
+            });
+            
+            $('#closeMobileMenu').on('click', function() {
+                $('#mobileSidebar').addClass('translate-x-full');
+            });
+            
+            // Close mobile menu when clicking outside
+            $('#mobileSidebar > div:first-child').on('click', function() {
+                $('#mobileSidebar').addClass('translate-x-full');
+            });
+            
+            // Set user initials for avatar
+            const userFullname = $('.user_fullnameContainer').text().trim();
+            if (userFullname) {
+                const names = userFullname.split(' ');
+                let initials = '';
+                if (names.length > 0) {
+                    initials += names[0].charAt(0);
+                }
+                if (names.length > 1) {
+                    initials += names[names.length - 1].charAt(0);
+                }
+                $('#userInitials').text(initials.toUpperCase());
+            }
+        })(jQuery);
     </script>
 
     
     <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css">
-<script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
-<script type="module" src="../../js/dashboards/author.js?v=<?= time(); ?>"></script>
-<script type="module" src="../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
+    <script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
+    <script type="module" src="../../js/dashboards/author.js?v=<?= time(); ?>"></script>
+    <script type="module" src="../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
     <!--End of Tawk.to Script-->
 
