@@ -205,7 +205,7 @@ tr.hover\\:bg-gray-50:hover {
 
     <div class="sidebar-overlay"></div>
 
-    <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a>
+    <!-- <a class="scroll-top"><i class="fas fa-angle-double-up"></i></a> -->
 
     <div class="min-h-screen flex flex-col">
         <!-- Header -->

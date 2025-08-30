@@ -19,22 +19,22 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Author - Dashboard">
-    
+
     <meta itemprop="name" content="Author - Dashboard">
     <meta itemprop="description" content="asfiresearchjournal">
     <meta itemprop="image" content="../../../assets/images/seo/65be1258275121706955352.png">
-    
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFIRJ">
     <meta property="og:description" content="asfiresearchjournal">
-    <meta property="og:image" content="../../../assets/images/seo/65be1258275121706955352.png"/>
-    <meta property="og:image:type" content="png"/>
+    <meta property="og:image" content="../../../assets/images/seo/65be1258275121706955352.png" />
+    <meta property="og:image:type" content="png" />
     <meta property="og:image:width" content="1180" />
     <meta property="og:image:height" content="600" />
     <meta property="og:url" content="../../dashboard">
-    
+
     <meta name="twitter:card" content="summary_large_image">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -52,23 +52,26 @@
             }
         }
     </script>
-    
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    
+
     <style>
         body {
             font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         .sidebar-menu-item {
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
+
         .sidebar-menu-item:hover {
             padding-left: 1.5rem;
             transform: translateX(5px);
         }
+
         .sidebar-menu-item::before {
             content: '';
             position: absolute;
@@ -80,17 +83,21 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
+
         .sidebar-menu-item:hover::before {
             opacity: 1;
         }
+
         .active-menu-item {
             background: linear-gradient(90deg, rgba(49, 3, 87, 0.1) 0%, rgba(49, 3, 87, 0.05) 100%);
             padding-left: 1.5rem;
             border-left: 4px solid #310357;
         }
+
         .active-menu-item::before {
             opacity: 1;
         }
+
         .user-avatar {
             width: 40px;
             height: 40px;
@@ -102,12 +109,15 @@
             color: white;
             font-weight: bold;
         }
+
         .nav-active {
             border-bottom: 3px solid #EB4830;
         }
+
         .table-row-hover:hover {
             background-color: #f9f5ff;
         }
+
         .status-badge {
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
@@ -115,18 +125,19 @@
             font-weight: 600;
         }
     </style>
-    
+
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
         }
     </script>
 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <body class="h-full bg-gray-50">
-    
+
     <div class="preloader">
         <div class="loader-p"></div>
     </div>
@@ -139,80 +150,12 @@
 
     <div class="min-h-screen flex flex-col">
         <!-- Header -->
-    <?php include_once("../../partials/navbar.php"); ?>
+        <?php include_once("../../partials/navbar.php"); ?>
 
         <!-- Main Content -->
         <div class="flex flex-1">
             <!-- Sidebar -->
-            <aside class="w-64 bg-white shadow-lg hidden md:block border-r border-gray-100">
-                <div class="p-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-1xl font-bold text-gray-800 flex items-center justify-center">
-                            <i class="bi bi-journal-text mr-2 text-primary"></i> Authors Dashboard
-                        </h2>
-                    </div>
-                    
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="../manuscripts/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <span class="newSubmissionsCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                                <i class="bi bi-send-check mr-3"></i>
-                                Submitted Manuscripts
-                            </a>
-                        </li>
-                        <li>
-                            <a href="" class="flex items-center py-2 px-2 text-white bg-gradient-to-r from-accent to-purple-800 rounded-lg sidebar-menu-item active-menu-item shadow-sm">
-                                <span class="coAuhtoredCount mr-3 bg-white text-accent rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                                <i class="bi bi-people-fill mr-3"></i>
-                                Co-Authored Manuscripts
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../submit/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <span class="w-6 h-6 flex items-center justify-center mr-3">
-                                    <i class="bi bi-plus-circle-fill text-green-500"></i>
-                                </span>
-                                <i class="bi bi-file-earmark-plus mr-3"></i>
-                                Submit New Manuscript
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../inreview/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <span class="inReviewCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                                <i class="bi bi-clipboard-check mr-3"></i>
-                                Manuscripts With Decisions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../../../portal/logout/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <i class="bi bi-box-arrow-right mr-3"></i>
-                                Logout
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Quick Stats -->
-                    <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                        <h3 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                            <i class="bi bi-graph-up mr-2"></i> Quick Stats
-                        </h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
-                                <span class="text-gray-600">Submitted</span>
-                                <span class="font-medium newSubmissionsCount">0</span>
-                            </div>
-                            <div class="flex justify-between text-xs">
-                                <span class="text-gray-600">Co-Authored</span>
-                                <span class="font-medium coAuhtoredCount">0</span>
-                            </div>
-                            <div class="flex justify-between text-xs">
-                                <span class="text-gray-600">With Decisions</span>
-                                <span class="font-medium inReviewCount">0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+            <?php include_once("../../partials/author_sidebar.php"); ?>
 
             <!-- Main Content Area -->
             <main class="flex-1 p-6 overflow-auto">
@@ -232,11 +175,21 @@
                             <table class="min-w-full divide-y divide-gray-200">
                                 <thead class="bg-primary">
                                     <tr>
-                                        <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">Status</th>
-                                        <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">ID</th>
-                                        <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">Title</th>
-                                        <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">Corresponding Author</th>
-                                        <th scope="col" class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">Last Modified</th>
+                                        <th scope="col"
+                                            class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                            Status</th>
+                                        <th scope="col"
+                                            class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                            ID</th>
+                                        <th scope="col"
+                                            class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                            Title</th>
+                                        <th scope="col"
+                                            class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                            Corresponding Author</th>
+                                        <th scope="col"
+                                            class="px-6 py-4 text-left text-xs font-medium text-white uppercase tracking-wider">
+                                            Last Modified</th>
                                     </tr>
                                 </thead>
                                 <tbody id="manuscriptsContainer" class="bg-white divide-y divide-gray-200">
@@ -273,104 +226,31 @@
     </div>
 
     <!-- Mobile Sidebar -->
-    <div id="mobileSidebar" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
-        <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
-        <div class="relative flex flex-col w-full max-w-xs bg-white h-full">
-            <div class="p-4 border-b">
-                <div class="text-center">
-                    <h2 class="text-1xl font-bold text-gray-800">Authors Dashboard</h2>
-                </div>
-                <button id="closeMobileMenu" class="absolute top-4 right-4 text-gray-500">
-                    <i class="bi bi-x-lg text-1xl"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-y-auto py-4 px-4">
-                <ul class="space-y-2">
-                    <li>
-                        <a href="../manuscripts/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <span class="newSubmissionsCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                            <i class="bi bi-send-check mr-3"></i>
-                            Submitted Manuscripts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" class="flex items-center py-2 px-2 text-white bg-gradient-to-r from-accent to-purple-800 rounded-lg">
-                            <span class="coAuhtoredCount mr-3 bg-white text-accent rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                            <i class="bi bi-people-fill mr-3"></i>
-                            Co-Authored Manuscripts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../submit/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <span class="w-6 h-6 flex items-center justify-center mr-3">
-                                <i class="bi bi-plus-circle-fill text-green-500"></i>
-                            </span>
-                            <i class="bi bi-file-earmark-plus mr-3"></i>
-                            Submit New Manuscript
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../inreview/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <span class="inReviewCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                            <i class="bi bi-clipboard-check mr-3"></i>
-                            Manuscripts With Decisions
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../portal/logout/" class="flex items-center py-2 px-2 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <i class="bi bi-box-arrow-right mr-3"></i>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-                
-                <!-- Quick Stats for Mobile -->
-                <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                        <i class="bi bi-graph-up mr-2"></i> Quick Stats
-                    </h3>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-xs">
-                            <span class="text-gray-600">Submitted</span>
-                            <span class="font-medium newSubmissionsCount">0</span>
-                        </div>
-                        <div class="flex justify-between text-xs">
-                            <span class="text-gray-600">Co-Authored</span>
-                            <span class="font-medium coAuhtoredCount">0</span>
-                        </div>
-                        <div class="flex justify-between text-xs">
-                            <span class="text-gray-600">With Decisions</span>
-                            <span class="font-medium inReviewCount">0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   <?php include_once("../../partials/mobile_sidebar.php"); ?>
 
     <div id="google_translate_element" class="fixed bottom-2 left-2 z-50 bg-white p-2 rounded shadow"></div>
-        
+
     <script src="../../../assets/global/js/jquery-3.6.0.min.js?v=<?= time(); ?>"></script>
     <script src="../../../assets/global/js/bootstrap.bundle.min.js?v=<?= time(); ?>"></script>
     <script src="../../../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
 
     <script>
         'use strict';
-        (function($) {
+        (function ($) {
             // Mobile menu functionality
-            $('#mobileMenuButton').on('click', function() {
+            $('#mobileMenuButton').on('click', function () {
                 $('#mobileSidebar').removeClass('translate-x-full');
             });
-            
-            $('#closeMobileMenu').on('click', function() {
+
+            $('#closeMobileMenu').on('click', function () {
                 $('#mobileSidebar').addClass('translate-x-full');
             });
-            
+
             // Close mobile menu when clicking outside
-            $('#mobileSidebar > div:first-child').on('click', function() {
+            $('#mobileSidebar > div:first-child').on('click', function () {
                 $('#mobileSidebar').addClass('translate-x-full');
             });
-            
+
             // Set user initials for avatar
             const userFullname = $('.user_fullnameContainer').text().trim();
             if (userFullname) {
@@ -387,7 +267,7 @@
         })(jQuery);
     </script>
 
-    
+
     <link rel="stylesheet" href="../../../assets/global/css/iziToast.min.css">
     <script src="../../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
 
@@ -396,30 +276,30 @@
     <script type="module" src="../../../js/dashboards/manuscriptsCoAuthored.js?v=<?= time(); ?>"></script>
 
     <script>
-        (function($) {
+        (function ($) {
             "use strict";
-            $(".langSel").on("change", function() {
+            $(".langSel").on("change", function () {
                 window.location.href = "../change/" + $(this).val();
             });
 
-            $('.policy').on('click', function() {
-                $.get('../cookie/accept', function(response) {
+            $('.policy').on('click', function () {
+                $.get('../cookie/accept', function (response) {
                     $('.cookies-card').addClass('d-none');
                 });
             });
 
-            setTimeout(function() {
+            setTimeout(function () {
                 $('.cookies-card').removeClass('hide')
             }, 2000);
 
             var inputElements = $('[type=text],[type=password],[type=email],[type=number],select,textarea');
-            $.each(inputElements, function(index, element) {
+            $.each(inputElements, function (index, element) {
                 element = $(element);
                 element.closest('.form-group').find('label').attr('for', element.attr('name'));
                 element.attr('id', element.attr('name'))
             });
 
-            $.each($('input, select, textarea'), function(i, element) {
+            $.each($('input, select, textarea'), function (i, element) {
                 var elementType = $(element);
                 if (elementType.attr('type') != 'checkbox') {
                     if (element.hasAttribute('required')) {
@@ -440,7 +320,7 @@
         })(jQuery);
     </script>
     <script type="module" src="../../../js/dashboards/countItems.js?v=<?= time(); ?>"></script>
-    
+
 </body>
 
 </html>

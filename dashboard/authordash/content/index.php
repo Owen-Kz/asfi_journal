@@ -158,53 +158,7 @@
         <!-- Main Content -->
         <div class="flex flex-1">
             <!-- Sidebar -->
-            <aside class="w-64 bg-white shadow-lg hidden md:block border-r border-gray-100">
-                <div class="p-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-1xl font-bold text-gray-800 flex items-center justify-center">
-                            <i class="bi bi-journal-text mr-2 text-primary"></i> View Manuscript
-                        </h2>
-                    </div>
-                    
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="../../authordash/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <i class="bi bi-pencil-square mr-3"></i>
-                                Authors Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../../reviewerdash/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <i class="bi bi-clipboard-check mr-3"></i>
-                                Reviewers Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../../../portal/logout/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <i class="bi bi-box-arrow-right mr-3"></i>
-                                Logout
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Manuscript Info -->
-                    <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                        <h3 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                            <i class="bi bi-info-circle mr-2"></i> Manuscript Info
-                        </h3>
-                        <div class="space-y-2 text-xs">
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Status</span>
-                                <span class="font-medium" id="sidebarStatus">Loading...</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span class="text-gray-600">Article Type</span>
-                                <span class="font-medium" id="sidebarArticleType">Loading...</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+      <?php include_once("../../partials/author_sidebar.php"); ?>
 
             <!-- Main Content Area -->
             <main class="flex-1 p-6 overflow-auto">
@@ -334,59 +288,8 @@
     </div>
 
     <!-- Mobile Sidebar -->
-    <div id="mobileSidebar" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
-        <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
-        <div class="relative flex flex-col w-full max-w-xs bg-white h-full">
-            <div class="p-4 border-b">
-                <div class="text-center">
-                    <h2 class="text-xl font-bold text-gray-800">Navigation</h2>
-                </div>
-                <button id="closeMobileMenu" class="absolute top-4 right-4 text-gray-500">
-                    <i class="bi bi-x-lg text-xl"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-y-auto py-4 px-4">
-                <ul class="space-y-2">
-                    <li>
-                        <a href="../../authordash/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <i class="bi bi-pencil-square mr-3"></i>
-                            Authors Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../reviewerdash/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <i class="bi bi-clipboard-check mr-3"></i>
-                            Reviewers Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../portal/logout/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <i class="bi bi-box-arrow-right mr-3"></i>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-                
-                <!-- Manuscript Info for Mobile -->
-                <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                        <i class="bi bi-info-circle mr-2"></i> Manuscript Info
-                    </h3>
-                    <div class="space-y-2 text-xs">
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Status</span>
-                            <span class="font-medium" id="mobileStatus">Loading...</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-600">Article Type</span>
-                            <span class="font-medium" id="mobileArticleType">Loading...</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+     <!-- Header -->
+      <?php include_once("../../partials/mobile_sidebar.php"); ?>
     <div id="google_translate_element" class="fixed bottom-2 left-2 z-50 bg-white p-2 rounded shadow"></div>
         
     <script src="../../../assets/global/js/jquery-3.6.0.min.js?v=<?= time(); ?>"></script>

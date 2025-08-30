@@ -154,73 +154,7 @@
         <!-- Main Content -->
         <div class="flex flex-1">
             <!-- Sidebar -->
-            <aside class="w-64 bg-white shadow-lg hidden md:block border-r border-gray-100">
-                <div class="p-6">
-                    <div class="text-center mb-8">
-                        <h2 class="text-xl font-bold text-gray-800">Author Dashboard</h2>
-                    </div>
-                    
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="" class="flex items-center px-4 py-3 text-white bg-gradient-to-r from-accent to-purple-800 rounded-lg sidebar-menu-item active-menu-item shadow-sm">
-                                <span class="newSubmissionsCount mr-3 bg-white text-accent rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                                <i class="bi bi-send-check mr-3"></i>
-                                Submitted Manuscripts
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../coauth/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <span class="coAuhtoredCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                                <i class="bi bi-people-fill mr-3"></i>
-                                Co-Authored Manuscripts
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../submit/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <span class="w-6 h-6 flex items-center justify-center mr-3">
-                                    <i class="bi bi-plus-circle-fill text-green-500"></i>
-                                </span>
-                                <i class="bi bi-file-earmark-plus mr-3"></i>
-                                Submit New Manuscript
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../inreview/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <span class="inReviewCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                                <i class="bi bi-clipboard-check mr-3"></i>
-                                Manuscripts With Decisions
-                            </a>
-                        </li>
-                        <li>
-                            <a href="../../../portal/logout/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg sidebar-menu-item">
-                                <i class="bi bi-box-arrow-right mr-3"></i>
-                                Logout
-                            </a>
-                        </li>
-                    </ul>
-                    
-                    <!-- Quick Stats -->
-                    <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                        <h3 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                            <i class="bi bi-graph-up mr-2"></i> Quick Stats
-                        </h3>
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs">
-                                <span class="text-gray-600">Submitted</span>
-                                <span class="font-medium newSubmissionsCount">0</span>
-                            </div>
-                            <div class="flex justify-between text-xs">
-                                <span class="text-gray-600">With Decisions</span>
-                                <span class="font-medium inReviewCount">0</span>
-                            </div>
-                            <div class="flex justify-between text-xs">
-                                <span class="text-gray-600">Co-Authored</span>
-                                <span class="font-medium coAuhtoredCount">0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+     <?php include_once("../../partials/author_sidebar.php"); ?>
 
             <!-- Main Content Area -->
             <main class="flex-1 p-6 overflow-auto">
@@ -310,80 +244,7 @@
     </div>
 
     <!-- Mobile Sidebar -->
-    <div id="mobileSidebar" class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden">
-        <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
-        <div class="relative flex flex-col w-full max-w-xs bg-white h-full">
-            <div class="p-4 border-b">
-                <div class="text-center">
-                    <h2 class="text-xl font-bold text-gray-800">Author Dashboard</h2>
-                </div>
-                <button id="closeMobileMenu" class="absolute top-4 right-4 text-gray-500">
-                    <i class="bi bi-x-lg text-xl"></i>
-                </button>
-            </div>
-            <div class="flex-1 overflow-y-auto py-4 px-4">
-                <ul class="space-y-2">
-                    <li>
-                        <a href="" class="flex items-center px-4 py-3 text-white bg-gradient-to-r from-accent to-purple-800 rounded-lg">
-                            <span class="newSubmissionsCount mr-3 bg-white text-accent rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                            <i class="bi bi-send-check mr-3"></i>
-                            Submitted Manuscripts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../coauth/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <span class="coAuhtoredCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                            <i class="bi bi-people-fill mr-3"></i>
-                            Co-Authored Manuscripts
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../submit/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <span class="w-6 h-6 flex items-center justify-center mr-3">
-                                <i class="bi bi-plus-circle-fill text-green-500"></i>
-                            </span>
-                            <i class="bi bi-file-earmark-plus mr-3"></i>
-                            Submit New Manuscript
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../inreview/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <span class="inReviewCount mr-3 bg-gray-200 text-gray-700 rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold">0</span>
-                            <i class="bi bi-clipboard-check mr-3"></i>
-                            Manuscripts With Decisions
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../../../portal/logout/" class="flex items-center px-4 py-3 text-gray-700 hover:bg-purple-50 rounded-lg">
-                            <i class="bi bi-box-arrow-right mr-3"></i>
-                            Logout
-                        </a>
-                    </li>
-                </ul>
-                
-                <!-- Quick Stats for Mobile -->
-                <div class="mt-8 p-4 bg-gray-50 rounded-lg">
-                    <h3 class="text-sm font-semibold text-gray-700 mb-3 flex items-center">
-                        <i class="bi bi-graph-up mr-2"></i> Quick Stats
-                    </h3>
-                    <div class="space-y-2">
-                        <div class="flex justify-between text-xs">
-                            <span class="text-gray-600">Submitted</span>
-                            <span class="font-medium newSubmissionsCount">0</span>
-                        </div>
-                        <div class="flex justify-between text-xs">
-                            <span class="text-gray-600">With Decisions</span>
-                            <span class="font-medium inReviewCount">0</span>
-                        </div>
-                        <div class="flex justify-between text-xs">
-                            <span class="text-gray-600">Co-Authored</span>
-                            <span class="font-medium coAuhtoredCount">0</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<?php include_once("../../partials/mobile_sidebar.php"); ?>
 
     <div id="google_translate_element" class="fixed bottom-2 left-2 z-50 bg-white p-2 rounded shadow"></div>
         
