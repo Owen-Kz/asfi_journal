@@ -216,7 +216,7 @@
     </div>
 
     <!-- Mobile Sidebar -->
-   <?php include("../../../partials/mobile_sidebar.php"); ?>
+   <?php include("../../partials/mobile_sidebar.php"); ?>
     <div id="google_translate_element" class="fixed bottom-2 left-2 z-50 bg-white p-2 rounded shadow"></div>
         
     <script src="../../../assets/global/js/jquery-3.6.0.min.js?v=<?= time(); ?>"></script>
