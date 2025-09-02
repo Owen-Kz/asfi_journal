@@ -301,7 +301,7 @@ tr.hover\\:bg-gray-50:hover {
                                     $user = $_COOKIE["user"] ?? '';
                                     if ($user) {
                                         $url = "https://greek.asfirj.org/backend/reviewers/toReview.php?user=$user";
-                                        // $url = "http://localhost/asfirj_submission_controls/backend/reviewers/toReview.php?user=$user";
+                                        // $url = "https://greek.asfirj.org/backend/reviewers/toReview.php?user=$user";
 
                                         $content = @file_get_contents($url);
                                         if ($content !== false) {

@@ -238,7 +238,7 @@ header("Pragma: no-cache");
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     <?php
                                     $user = $_COOKIE["user"];
-                                    // $url = "http://localhost/asfirj_submission_controls/backend/reviewers/reviewsSubmitted.php?user=$user";
+                                    // $url = "https://greek.asfirj.org/backend/reviewers/reviewsSubmitted.php?user=$user";
                                               
                                     $url = "https://greek.asfirj.org/backend/reviewers/reviewsSubmitted.php?user=$user";
                                     $content = file_get_contents($url);

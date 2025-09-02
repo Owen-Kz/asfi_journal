@@ -110,10 +110,10 @@ async function getSupplement(articeID) {
 
 function updateSidebarInfo(Article) {
     const statusText = getStatusText(Article.status);
-    sidebarStatus.textContent = statusText;
-    mobileStatus.textContent = statusText;
-    sidebarArticleType.textContent = Article.article_type;
-    mobileArticleType.textContent = Article.article_type;
+    if(sidebarStatus) sidebarStatus.textContent = statusText;
+    if(mobileStatus) mobileStatus.textContent = statusText;
+    if(sidebarArticleType) sidebarArticleType.textContent = Article.article_type;
+    if(mobileArticleType) mobileArticleType.textContent = Article.article_type;
 }
 
 function setStatus(status) {
