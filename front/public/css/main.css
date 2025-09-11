@@ -3417,7 +3417,8 @@ select[aria-disabled=true] {
 }
 
 .titleBar {
-	margin-bottom:40px;
+	margin-bottom:20px;
+    justify-content: center;
 }
 
 .payment-wrapper{
