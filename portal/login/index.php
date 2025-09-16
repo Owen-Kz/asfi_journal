@@ -134,6 +134,21 @@
     animation: slideIn 0.3s forwards;
 }
 
+/* Password toggle styles */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6b7280;
+    z-index: 10;
+}
+
 	</style>
 </head>
 
@@ -299,9 +314,12 @@
                             <input type="text" class="form-control" placeholder="Enter Email..." name="email" id="email" required>
                         </div>
                         
-                        <div>
+                        <div class="password-container">
                             <label for="">Password:</label>
                             <input type="password" class="form-control" placeholder="Enter Password..." name="pass" id="pass" required>
+                            <span class="toggle-password" id="togglePassword">
+                                <i class="far fa-eye"></i>
+                            </span>
                         </div>
 
                         <input type="submit" class="signin-btn" value="Sign In">
@@ -396,7 +414,7 @@
 						<li><i class="fas fa-square-full"></i><a href="./submitManuscriptSignIn.html" class='menu-item'>Submit Manuscript</a></li>
 						<li><i class="fas fa-square-full"></i><a href="" class='menu-item'>Print Request</a></li>
 					</ul>
-				</div>
+				div>
 			</div>
 			<div class="col-lg-3 col-sm-6 sm-padding">
 				<div class="footer-widget link-widget">
@@ -534,9 +552,29 @@
 <script src="../../front/public/js/vendor/jquery.hoverdir.js?v=<?= time(); ?>"></script>
 <script src="../../front/public/js/vendor/splitting.min.js?v=<?= time(); ?>"></script>
 <script src="../../front/public/js/vendor/jquery.nice-select.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
+<script src="../../front/public/js/vendor wow.min.js?v=<?= time(); ?>"></script>
 <script src="../../front/public/js/main.js?v=<?= time(); ?>"></script>
 <script type="module" src="../../js/general.js?v=<?= time(); ?>"></script>
 <script type="module" src="../../js/forms/loginUser.js?v=<?= time(); ?>"></script>
+
+<script>
+    // Password toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('pass');
+        
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener('click', function() {
+                // Toggle the type attribute
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                
+                // Toggle the eye icon
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        }
+    });
+</script>
 </body>
-</html> 
+</html>
