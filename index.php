@@ -1173,7 +1173,7 @@ header("Pragma: no-cache");
 								<i class="far fa-envelope-open"></i>
 							</div>
 							<div class="footer-contact-menu__item-content">
-								<p>info@asfiresearchjournal.org </p>
+								<p>info@asfirj.org </p>
 							</div>
 							</p>
 							<p>
