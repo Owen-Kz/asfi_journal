@@ -1362,6 +1362,10 @@ body{
     color: whitesmoke;
 }
 
+.dashb {
+    width: 100%; 
+    padding-bottom: 150px;
+}
 .submit-nav .active li {
     background-color: #23033d;
 } 
@@ -3091,6 +3095,10 @@ body{
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
+  .dashb {
+    width: 100%; 
+    padding-bottom: 20px;
+}
 }
 
 .journal-side-section ul li {
