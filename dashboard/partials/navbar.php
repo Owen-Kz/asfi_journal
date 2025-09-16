@@ -75,10 +75,10 @@
 
                     <div class="flex items-center space-x-4 ml-4 pl-4 border-l border-purple-500">
                         <div class="user-avatar">
-                            <span id="userInitials">JD</span>
+                            <span id="userInitials"></span>
                         </div>
                         <div>
-                            <span class="fw-bold user_fullnameContainer">John Doe</span>
+                            <span class="fw-bold user_fullnameContainer"></span>
                         </div>
                     </div>
                 </div>
@@ -109,11 +109,11 @@
             <div class="p-4">
                 <div class="flex items-center space-x-4 mb-6 p-2 bg-purple-800 rounded-lg">
                     <div class="user-avatar">
-                        <span id="mobileUserInitials">JD</span>
+                        <span id="mobileUserInitials"></span>
                     </div>
                     <div>
-                        <div class="font-bold user_fullnameContainer">John Doe</div>
-                        <div class="text-sm text-purple-300" id="userEmail">john.doe@example.com</div>
+                        <div class="font-bold user_fullnameContainer"></div>
+                        <div class="text-sm text-purple-300" id="userEmail"></div>
                     </div>
                 </div>
                 
