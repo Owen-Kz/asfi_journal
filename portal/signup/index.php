@@ -568,7 +568,7 @@
 
     </script>
     <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
-    <script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>body>
+    <script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
     <script type="module" src="../../js/forms/createAccount.js?v=<?= time(); ?>"></script>
 </body>
 
