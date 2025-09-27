@@ -17,7 +17,10 @@ if (discipline) {
     discipline.addEventListener("change", function () {
         if (discipline.value == "other" || discipline.value == "Other") {
             discipline.removeAttribute("name")
-            disciplineContainer.innerHTML = `<input class='form-control discipline' name="discipline" placeholder="Specify Your discipline" required/>`
+            // disciplineContainer.innerHTML = `<input class='form-control discipline' name="discipline" placeholder="Specify Your discipline" required/>`
+                disciplineContainer.innerHTML = `
+                        <input type="text" name="discipline" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-asfi-blue focus:border-asfi-blue" placeholder="Please specify your discipline" required>
+                    `;
         } else {
             if (discipline.hasAttribute("name")) {
 

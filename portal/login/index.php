@@ -1,22 +1,14 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
-
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Secure and reliable investment project">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASFI Research Journal - Login</title>
+       <meta name="description" content="Secure and reliable investment project">
 	<meta name="author" content="Weperch LLC">
 	<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<title> ASFI Research Journal - Login</title>
     <meta name="title" Content="ASFI Research Journal - Reviewers">
 
     <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
@@ -43,538 +35,422 @@
     <meta property="og:url" content="reviewers.html">
     
     <meta name="twitter:card" content="summary_large_image">
-
-
-	<link rel="stylesheet" href="../../front/public/css/fontawesome.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/nice-select.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/splitting-cells.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/splitting.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/keyframe-animation.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/slider.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../css/style.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/header.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/footer.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../../front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
-	<script src="../../front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js?v=<?= time(); ?>"></script>
-	<style>
-		.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.5);
-  z-index: 9999;
-  display: none;
-}
-
-.loader {
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #9834db;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  margin: auto;
-  margin-top: 20%;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-.errorpopup {
-    position: fixed;
-    top: 30%; /* Adjust top spacing as needed */
-    right: 20px; /* Adjust right spacing as needed */
-    padding: 10px 20px;
-    background-color: #e22424;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    outline: none;
-    border: none;
-    z-index: 9999999;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.errorpopup.show {
-    opacity: 1;
-}
-
-.errorpopup.hidden {
-    display: none;
-}
-
-@keyframes slideIn {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
-
-.errorpopup.slide-in {
-    animation: slideIn 0.3s forwards;
-}
-
-/* Password toggle styles */
-.password-container {
-    position: relative;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #6b7280;
-    z-index: 10;
-}
-
-	</style>
-</head>
-
-<body class="header-1 business">
-
-<div class="preloader" id="preloader">
-		<div class="loader"></div>
-	  </div>
-	  <div id="errorPopup" class="errorpopup hidden">
-  
-	  </div>
-	  <div id="successPopup" class="successpopup hidden">
-
-	  </div>
-	
-	  
-
-	<div>
- 	 <!-- Top Dark Navbar -->
-<div class="top-navbar">
-  <div class="top-nav-inner">
-    <div class="logo-section">
-		<a href="https://asfirj.org/">
-      <img src="https://asfirj.org/assets/images/logoIcon/logo.png" alt="Logo" />
-</a>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <button class="top-menu-toggle" id="topMenuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="top-links" id="topLinks">
-      <a href="https://asfirj.org/issues">Explore asfirj</a>
-      <a href="https://asfirj.org/authors.html#ob">Get published</a>
-	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
-      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
-      <a href="https://asfirj.org/events.html">Events</a>
-      <a href="https://asfirj.org/portal/login/">Login</a>
-    </div>
-  </div>
-</div>
-
-
-<!-- Journal Banner -->
-<div class="journal-banner">
-  <div class="container banner-inner">
-    <div class="journal-title">
-      <h1>ASFI Research Journal</h1>
-    </div>
-  </div>
-</div>
- 
-	<header class="header header-one">
-		<div class="primary-header-one primary-header">
-			<div class="container">
-				<div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;" style="display:flex; flex-direction:column; align-items: start;">
-					<div class="header-logo show-logo">
-						<a href="https://asfirj.org/">
-							<img src="https://asfirj.org/assets/images/logoIcon/logo.png" alt="Logo" /></a>
-					</div><!-- /.header-logo -->
-					
-
-					<div class="header-menu-wrap" style="width: 100%;" style="width: 100%;">
-						<ul class="dl-menu ">
-							<!-- Menu Item -->
-							 <li><a href="https://asfirj.org/" class='menu-item'>Home</a></li>
-							<li><a href="https://asfirj.org/aboutus.html" class='menu-item dropdown'>About</a>
-                                <ul class="dropdown-menu aboutDropDown">
-								<li><a href="https://asfirj.org/aboutus.html#ASFI" class='menu-item'>
-								African Science Frontiers Initiatives</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#aims" class='menu-item'>
-								ASFIRJ's AIMS & SCOPE</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#values" class='menu-item'>
-									ASFIRJ Values</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#prompt" class='menu-item'>
-									Prompt Decisions and Rapid Publication Timelines</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#why-section" class='menu-item'>
-									Why Publish in ASFIRJ?</a>
-								</li>
-                                <li><a href="https://asfirj.org/aboutus.html#open-access" class='menu-item'>
-									Open Access and Author Licensing</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#fees" class='menu-item'>Article Publication Fee</a>
-							</li>
-                                </ul>
-                            </li>
-							<li class="dropdown">
-								<a href="#" class='menu-item'>Browse Issues</a>
-								<ul class="dropdown-menu">
-									<li><a href="https://asfirj.org/issues" class='menu-item'>Issues</a></li>
-									<li><a href="https://asfirj.org/supplements" class='menu-item'>Supplements</a></li>
-								</ul>
-							</li>
-							<li><a href="https://asfirj.org/editors.html" class='menu-item'>Meet The Editors</a></li>
-							<li class="dropdown">
-								<a href="#" class="menu-item">Authors / Reviewers</a>
-								<ul class="dropdown-menu">
-
-
-									<li><a href="https://asfirj.org/authors.html" class='menu-item'>For Authors</a></li>
-									<li><a href="https://asfirj.org/reviewers.html" class='menu-item'>For Reviewers</a></li>
-								</ul>
-							</li>
-							<!-- <li><a href="./terms.html" class='menu-item'>Terms</a></li> -->
-							<li><a href="https://asfirj.org/contact.html" class='menu-item'>Contact Us</a></li>
-							
-						</ul>
-						<div class="header-right">
-								<a class="header-btn" href="/portal">
-									<p>Submit Manuscript</p>
-								</a>
-</div>
-					</div><!-- /.header-menu-wrap -->
-
-					
-						<!-- Burger menu -->
-						<div class="mobile-menu-icon">
-							<div class="burger-menu">
-								<div class="line-menu line-half first-line"></div>
-								<div class="line-menu"></div>
-								<div class="line-menu line-half last-line"></div>
-							</div>
-						</div>
-					</div><!-- /.header-right -->
-				</div><!-- /.primary-header-one-inner -->
-			</div>
-		</div><!-- /.primary-header-one -->
-	</header><!-- /.header-one -->
-</div>	
-
+    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <main>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom styles for password toggle */
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6b7280;
+            z-index: 10;
+        }
+        
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        /* Custom gradient */
+        .gradient-bg {
+            background: linear-gradient(135deg, #250242 0%, #3730a3 100%);
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Sidebar styles */
+        .sidebar {
+            background: linear-gradient(to bottom, #250242, #550f4fff);
+            min-height: 100vh;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .sidebar-link {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left-color: #f59e0b;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-title {
+            padding: 10px 20px;
+            color: #df93fdff;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Top nav color */
+        .top-nav-custom {
+            background-color: #250242;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        /* Main navigation sticky */
+        .main-nav-sticky {
+            position: sticky;
+            top: 48px; /* Height of the top nav */
+            z-index: 999;
+            background-color: white;
+        }
+        
+        /* Dropdown styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1000;
+            border-radius: 4px;
+            padding: 8px 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 8px 16px;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Preloader styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 9999;
+            display: none;
+        }
 
-        <div class="main-submit-container">
-            <div class="submission-header">
-                <h3>Submission Portal</h3>
-                <ul class="submit-nav">
-                    <a href="https://asfirj.org/portal/signup/"><li>SignUp</li></a>
-                    <a href=""><li class="active">SignIn</li></a>
-                </ul>
-            </div>
-            <div class="submit-container">
-                <div class="submit-body">
-                    <form id="loginForm">
-                        <!-- <div class="login-type">
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #8a1e78ff;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            margin-top: 20%;
+            animation: spin 2s linear infinite;
+        }
 
-                            <ul>
-                                <a href=""><li class="login-active">Author</li></a>|
-                                <a href=""><li>Editor</li></a>|
-                                <a href=""><li>Reviewer</li></a>
-                            </ul>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
-                        </div> -->
-						<h3 style="text-align: center;">Sign In</h3> <br>
+        /* Error/Success popup styles */
+        .errorpopup {
+            position: fixed;
+            top: 30%;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #e22424;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            outline: none;
+            border: none;
+            z-index: 9999999;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-                        <div>
-                            <label for="">Email:</label>
-                            <input type="text" class="form-control" placeholder="Enter Email..." name="email" id="email" required>
-                        </div>
-                        
-                        <div class="password-container">
-                            <label for="">Password:</label>
-                            <input type="password" class="form-control" placeholder="Enter Password..." name="pass" id="pass" required>
-                            <span class="toggle-password" id="togglePassword">
-                                <i class="far fa-eye"></i>
-                            </span>
-                        </div>
+        .errorpopup.show {
+            opacity: 1;
+        }
 
-                        <input type="submit" class="signin-btn" value="Sign In">
-						<p style="margin: auto;">Cick <a href="https://asfirj.org/portal/signup/" style="color: blueviolet;">here</a> to create an account if you don't have one.</p>
-                        <p style="margin: auto;">Forgotten Password? Cick <a href="https://asfirj.org/portal/resetPassword/" style="color: blueviolet;">here</a> to retrieve.</p>                       
-                        
-                        
-                    </form>
+        .errorpopup.hidden {
+            display: none;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(0); }
+        }
+
+        .errorpopup.slide-in {
+            animation: slideIn 0.3s forwards;
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#c50ee9ff',
+                            600: '#b602c7ff',
+                            700: '#8703a1ff',
+                        },
+                        asfi: {
+                            blue: '#8a1e78ff',
+                            purple: '#250242',
+                            gold: '#f59e0b',
+                            dark: '#1e293b',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Preloader -->
+    <div id="preloader" class="preloader hidden">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Error/Success Popups -->
+    <div id="errorPopup" class="errorpopup hidden" style="z-index: 9999;">
+        <div class="flex items-center">
+            <i class="fas fa-exclamation-circle mr-2"></i>
+            <span id="errorMessage"></span>
+        </div>
+    </div>
+    
+    <div id="successPopup" class="fixed  top-4 right-4 bg-green-500 text-white p-4 rounded-lg shadow-lg z-50 hidden fade-in" style="z-index: 9999;">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle mr-2"></i>
+            <span id="successMessage"></span>
+        </div>
+    </div>
+<!--  -->
+    <!-- header   -->
+        <?php include '../partials/header.php'; ?>
+
+    <!-- Main Content -->
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar w-64 hidden lg:block">
+            <div class="p-6">
+                <h2 class="text-xl font-bold text-white mb-6">Submission Portal</h2>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Account</div>
+                    <a href="https://asfirj.org/portal/signup/" class="sidebar-link">
+                        <i class="fas fa-user-plus mr-2"></i> Sign Up
+                    </a>
+                    <a href="#" class="sidebar-link active">
+                        <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                    </a>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Resources</div>
+                    <a href="https://asfirj.org/authors.html" class="sidebar-link">
+                        <i class="fas fa-user-edit mr-2"></i> Author Guidelines
+                    </a>
+                    <a href="https://asfirj.org/reviewers.html" class="sidebar-link">
+                        <i class="fas fa-clipboard-check mr-2"></i> Reviewer Guidelines
+                    </a>
+                    <a href="https://asfirj.org/issues" class="sidebar-link">
+                        <i class="fas fa-book-open mr-2"></i> Browse Issues
+                    </a>
+                </div>
+                
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Support</div>
+                    <a href="https://asfirj.org/contact.html" class="sidebar-link">
+                        <i class="fas fa-envelope mr-2"></i> Contact Us
+                    </a>
+                    <a href="https://asfirj.org/faq.html" class="sidebar-link">
+                        <i class="fas fa-question-circle mr-2"></i> FAQ
+                    </a>
                 </div>
             </div>
-     
-
         </div>
 
-        <!-- <div class="main-section">
-            <div class="info-1">
-              <div class="info-img">
-                <img src="/public/images/user-avatar.png" alt="">
-              </div>
-              
-              <div class="info">
-                <h4>Benefits for Researchers</h4>
-                <ul>
-                    <li>All types of research can be published rapidly: articles, data
-                        sets, null results, protocols, case reports, incremental findings
-                        and more.
-                    </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="info-2">
-                <div class="info">
-                  <h4>Benefits for Research</h4>
-                  <ul>
-                      <li>Aims to shift the way research and researchers are evaluated.
-                      </li>
-                  </ul>
+        <!-- Login Form -->
+        <div class="flex-1 p-8">
+            <div class="max-w-2xl mx-auto">
+                <!-- Mobile Navigation Tabs -->
+                <div class="lg:hidden mb-6">
+                    <div class="bg-white rounded-lg shadow-sm p-1 flex">
+                        <a href="https://asfirj.org/portal/signup/" class="flex-1 text-center py-2 px-4 rounded-md text-gray-600 font-medium">
+                            Sign Up
+                        </a>
+                        <a href="#" class="flex-1 text-center py-2 px-4 rounded-md bg-asfi-blue text-white font-medium">
+                            Sign In
+                        </a>
+                    </div>
                 </div>
-                <div class="info-img">
-                    <img src="/public/images/user-avatar.png" alt="">
-                </div>
-                  
-            </div>
 
-            <div class="info-3">
-                <div class="info-img">
-                  <img src="/public/images/user-avatar.png" alt="">
-                </div>
-                
-                <div class="info">
-                  <h4>Benefits for Researchers</h4>
-                  <ul>
-                      <li>All types of research can be published rapidly: articles, data
-                          sets, null results, protocols, case reports, incremental findings
-                          and more.
-                      </li>
-                  </ul>
-                </div>
-            </div>
-        </div> -->
-    </main>
-         <!-- Main js -->
-    <script src="../../assets/templates/metro_hyip/js/main.js?v=<?= time(); ?>"></script>
-
-        
-    
-    <link rel="stylesheet" href="../../assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
-<script src="../../assets/global/js/iziToast.min.js?v=<?= time(); ?>"></script>
-   
-    
-    
-  <section class="footer-section info-active">
-	<div class="footer-top">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<a class="logo" href="https://asfirj.org/">
-						<img src="../../assets/images/logoIcon/logo.png" alt="logo">
-					</a>
-
-					<p>
-						At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Author</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="./submitManuscriptSignIn.html" class='menu-item'>Submit Manuscript</a></li>
-						<li><i class="fas fa-square-full"></i><a href="" class='menu-item'>Print Request</a></li>
-					</ul>
-				div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Editor</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="./editors.html" class='menu-item'>Editors</a></li>
-						</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>About</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About Us</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Useful Links</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="./events.html" class='menu-item'>Events</a></li>
-						<li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a></li>
-						<li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li>
-					</ul>
-				</div>
-			</div>
-			
-
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<h3>Newsletter Signup</h3>
-					<p>Signup today for hints, tips and the latest news and updates.</p>
-					<div class="subscribe-form">
-						<form action="" class="subscribe-form">
-							<input class="form-control" type="email" name="email" placeholder="Email *" required="">
-							<input type="hidden" name="action" value="mailchimpsubscribe">
-							<button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
-							<div class="clearfix"></div>
-						</form>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<h3>Contact Information</h3>
-					
-					                                     <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="las la-phone"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>+234(0)-701-436-3223 </p>
-                                        </div>
-                                    </p>
-                                                                    <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="far fa-envelope-open"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>info@asfirj.org </p>
-                                        </div>
-                                    </p>
-                                                                    <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="fas fa-map-marked-alt"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p>
-                                        </div>
-                                    </p>
+                <!-- Login Form -->
+                <div class="bg-white rounded-xl card-shadow overflow-hidden fade-in">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-center text-asfi-dark mb-6">Sign In to Your Account</h3>
+                        
+                        <form id="loginForm" class="space-y-6">
+                            <div class="message" id="message_container"></div>
+                            
+                            <!-- Email Field -->
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                <input type="email" name="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-asfi-blue focus:border-asfi-blue" placeholder="Enter your email" required>
+                            </div>
+                            
+                            <!-- Password Field -->
+                            <div class="password-container">
+                                <label for="pass" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                                <input type="password" name="pass" id="pass" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-asfi-blue focus:border-asfi-blue pr-10" placeholder="Enter your password" required>
+                                <button type="button" class="toggle-password" data-target="pass">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- Submit Button -->
+                            <div class="pt-4">
+                                <button type="submit" class="w-full bg-asfi-blue text-white py-3 px-4 rounded-md font-medium hover:bg-purple-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-asfi-blue">
+                                    Sign In
+                                </button>
                                 
-				<!--	<p>Phone: VIP-MEMBERS-ONLY</p>
-					<p>Email: <a href="./#" class="__cf_email__" >[email&#160;protected]</a></p>
-					<p>Address: Bochum Pkwy, Batemoor, Sheffield S8 8LH, United Kingdom.</p>-->
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="footer-bottom">
-	<div class="container">
-		<div class="copyright-wrap">
-			<p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
-		</div>
-		<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js?v=<?= time(); ?>" async></script> -->
-		<!--Start of Tawk.to Script-->
-<!-- <script type="text/javascript">
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})();
-	</script> -->
-	<!--End of Tawk.to Script-->
-	<script>
-// 		const preloader = document.getElementById("preloader");
+                                <div class="text-center mt-4 space-y-2">
+                                    <p class="text-gray-600">
+                                        Don't have an account? 
+                                        <a href="https://asfirj.org/portal/signup/" class="text-asfi-blue font-medium hover:underline">Click here to create one</a>
+                                    </p>
+                                    <p class="text-gray-600">
+                                        Forgotten Password? 
+                                        <a href="https://asfirj.org/portal/resetPassword/" class="text-asfi-blue font-medium hover:underline">Click here to retrieve</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-// // Show preloader when submission is made
-// document.addEventListener("submit", () => {
-//   preloader.style.display = "block";
-// });
+    <!-- Footer -->
+    <!-- Footer -->
+  <?php include '../partials/footer.php'; ?>
 
-// // Hide preloader when submission is complete
-// document.addEventListener("submission-complete", () => {
-//   preloader.style.display = "none";
-// });
+    <!-- Back to Top Button -->
+    <button id="scroll-top" class="fixed bottom-6 right-6 bg-asfi-blue text-white p-3 rounded-full shadow-lg hover:bg-purple-800 transition-colors hidden">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
-
-	</script>
-	</div>
-</div></section>
- 
+    <!-- JavaScript -->
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        });
+        
+        // Password toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-password');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const passwordInput = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+                    
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        passwordInput.type = 'password';
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                });
+            });
+            
+            // Scroll to top button
+            const scrollButton = document.getElementById('scroll-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollButton.classList.remove('hidden');
+                } else {
+                    scrollButton.classList.add('hidden');
+                }
+            });
+            
+            scrollButton.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // Dropdown functionality for mobile
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth < 1024) { // Only for mobile
+                        e.preventDefault();
+                        const menu = this.querySelector('.dropdown-menu');
+                        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                    }
+                });
+            });
+        });
+        
   
-<!--/. footer-section -->
-<div id="scrollup">
-	<button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
-</div>
-
-<!-- jQuery Lib -->
-<script src="../../front/public/js/vendor/jquery-1.12.4.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/popper.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/bootstrap.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/waypoints.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/slick.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/jquery.ajaxchimp.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/odometer.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/jquery.isotope.v3.0.2.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/imagesloaded.pkgd.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/venobox.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/jquery.hoverdir.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/splitting.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor/jquery.nice-select.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/vendor wow.min.js?v=<?= time(); ?>"></script>
-<script src="../../front/public/js/main.js?v=<?= time(); ?>"></script>
-<script type="module" src="../../js/general.js?v=<?= time(); ?>"></script>
+    </script>
+    <!-- <script type="module" src="../../js/general.js?v=<?= time(); ?>"></script> -->
 <script type="module" src="../../js/forms/loginUser.js?v=<?= time(); ?>"></script>
 
-<script>
-    // Password toggle functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('pass');
-        
-        if (togglePassword && passwordInput) {
-            togglePassword.addEventListener('click', function() {
-                // Toggle the type attribute
-                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-                passwordInput.setAttribute('type', type);
-                
-                // Toggle the eye icon
-                this.querySelector('i').classList.toggle('fa-eye');
-                this.querySelector('i').classList.toggle('fa-eye-slash');
-            });
-        }
-    });
-</script>
 </body>
 </html>
