@@ -35,8 +35,14 @@ loginForm.addEventListener("submit", function(e) {
         }
     }).then(res => res.json())
     .then(data =>{
+   
         if(data.status === "success"){
+       
+            const userData = data.user_data
+           
             SetCookies("user", data.userEmail, daysToKeep)
+            SetCookies("_temp_email", userData.email, daysToKeep)
+
             window.location.href = parentDirectoryName+"/dashboard"
         }else{
             preloader.style.display = "none";

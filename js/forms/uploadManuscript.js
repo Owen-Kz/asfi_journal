@@ -5,7 +5,7 @@ import { GetCookie } from "../setCookie.js";
 const uploadForm = document.getElementById("uploadForm");
 const body = document.querySelector("body")
 const message_container = document.getElementById("message_container")
-const user = GetCookie("user")
+const user = GetCookie("_temp_email")
 
 window.location.href = `https://process.asfirj.org/uploadManuscript?_uid=${user}`
 

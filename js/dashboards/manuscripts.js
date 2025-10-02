@@ -3,7 +3,7 @@ import { formatTimestamp } from "../formatDate.js";
 import { GetCookie } from "../setCookie.js";
 import { GetAccountData } from "./accountData.js";
 
-const userID = GetCookie("user")
+const userID = GetCookie("_temp_email")
 const ArticlesContainer = document.getElementById("manuscriptsContainer")
 const emptyState = document.getElementById("emptyState")
 

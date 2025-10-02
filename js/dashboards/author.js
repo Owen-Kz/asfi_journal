@@ -224,7 +224,7 @@ function updateMobileNavigation(userInfo) {
       <a href="${parentDirectoryName}/portal/settings" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
         <i class="fa fa-user mr-3"></i> Account Details
       </a>
-      <a href="#" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
+      <a href="${parentDirectoryName}/portal/logout" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
         <i class="fas fa-sign-out-alt mr-3"></i> Logout
       </a>`;
   } else if (userInfo.account_status === "verified" && userInfo.is_reviewer === "yes" && userInfo.is_editor !== "yes") {
@@ -245,7 +245,7 @@ function updateMobileNavigation(userInfo) {
       <a href="${parentDirectoryName}/portal/settings" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
         <i class="fa fa-user mr-3"></i> Settings
       </a>
-      <a href="#" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
+      <a href="${parentDirectoryName}/portal/logout" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
         <i class="fas fa-sign-out-alt mr-3"></i> Logout
       </a>`;
   } else if (userInfo.account_status === "verified" && userInfo.is_editor === "yes") {
@@ -269,7 +269,7 @@ function updateMobileNavigation(userInfo) {
       <a href="${parentDirectoryName}/portal/settings" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
         <i class="fa fa-user mr-3"></i> Settings
       </a>
-      <a href="#" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
+      <a href="${parentDirectoryName}/portal/logout" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
         <i class="fas fa-sign-out-alt mr-3"></i> Logout
       </a>`;
   }

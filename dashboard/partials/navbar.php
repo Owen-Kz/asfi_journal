@@ -118,10 +118,10 @@
                 </div>
                 
                 <nav class="space-y-2" id="mobileNavLinks">
-                    <a href="#" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
+                    <a href="/dashboard/authordash/" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
                         <i class="fas fa-home mr-3"></i> Home
                     </a>
-                    <a href="#" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
+                    <a href="/dashboard/authordash/" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
                         <i class="fas fa-tachometer-alt mr-3"></i> Dashboard
                     </a>
                     <a href="#" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
@@ -136,7 +136,7 @@
                     <a href="#" class="block py-3 px-4 rounded-lg hover:bg-purple-800 transition">
                         <i class="fas fa-cog mr-3"></i> Settings
                     </a>
-                    <a href="#" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
+                    <a href="/portal/logout/" class="block py-3 px-4 rounded-lg hover:bg-red-700 transition mt-4">
                         <i class="fas fa-sign-out-alt mr-3"></i> Logout
                     </a>
                 </nav>
