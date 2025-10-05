@@ -41,7 +41,7 @@ if(userID){
                     if(ArticlesInfo.status === "returned_for_revision"){
                         viewSubmission = ``
                         RevisionAction = `
-                            <a href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}&revise=true" 
+                            <a href="https://process.asfirj.org/uploadManuscript?prg=true&a=${ArticlesInfo.revision_id}&_uid=${userID}&revise=true" 
                                class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm rounded-md hover:bg-purple-800 transition-colors">
                                 Submit Revision
                             </a>`
@@ -50,7 +50,7 @@ if(userID){
                     } else if(ArticlesInfo.status === "returned_for_correction"){
                         viewSubmission = ``
                         RevisionAction = `
-                            <a href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}&correct=true" 
+                            <a href="https://process.asfirj.org/uploadManuscript?prg=true&a=${ArticlesInfo.revision_id}&_uid=${userID}&correct=true" 
                                class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm rounded-md hover:bg-purple-800 transition-colors">
                                 Submit Correction
                             </a>`
@@ -59,7 +59,7 @@ if(userID){
                     } else if(ArticlesInfo.status === "correction_saved"){
                         viewSubmission = ``
                         RevisionAction = `
-                            <a href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}&correct=true" 
+                            <a href="https://process.asfirj.org/uploadManuscript?prg=true&a=${ArticlesInfo.revision_id}&_uid=${userID}&correct=true" 
                                class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm rounded-md hover:bg-purple-800 transition-colors">
                                 Continue Correction
                             </a>`
@@ -85,7 +85,7 @@ if(userID){
                             </a>`
                     } else if(ArticlesInfo.status === "saved_for_later" || ArticlesInfo.status === "revision_saved"){
                         RevisionAction = `
-                            <a href="https://process.asfirj.org/uploadManuscript?a=${ArticlesInfo.revision_id}&_uid=${userID}" 
+                            <a href="https://process.asfirj.org/uploadManuscript?prg=true&a=${ArticlesInfo.revision_id}&_uid=${userID}" 
                                class="inline-flex items-center px-3 py-1 bg-primary text-white text-sm rounded-md hover:bg-purple-800 transition-colors">
                                 Continue Submission
                             </a>`
