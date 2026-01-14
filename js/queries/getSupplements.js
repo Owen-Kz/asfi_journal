@@ -17,9 +17,40 @@ const dateReviewed = document.getElementById("dateReviewed")
 const dateAccepted = document.getElementById("dateAccepted")
 const datePublished = document.getElementById("datePublished")
 
-// Helper function to check if Quill content is valid
-function hasQuillContent(quillObj) {
-    return quillObj && quillObj.ops && quillObj.ops.length > 0;
+// Helper function to check if Quill content is valid (handles both formats)
+function hasQuillContent(quillData) {
+    if (!quillData) return false;
+    
+    // Format 1: Object with ops property {ops: [...]}
+    if (quillData.ops && Array.isArray(quillData.ops) && quillData.ops.length > 0) {
+        return true;
+    }
+    
+    // Format 2: Direct array [{...}, {...}]
+    if (Array.isArray(quillData) && quillData.length > 0) {
+        return true;
+    }
+    
+    return false;
+}
+
+// Helper function to get Quill content in standard format
+function getQuillContent(quillData) {
+    if (!quillData) return { ops: [] };
+    
+    // If it's already in {ops: [...]} format
+    if (quillData.ops && Array.isArray(quillData.ops)) {
+        return quillData;
+    }
+    
+    // If it's a direct array, convert to {ops: [...]} format
+    if (Array.isArray(quillData)) {
+        return { ops: quillData };
+    }
+    
+    // If format is unknown, return empty
+    console.warn("Unknown Quill format:", quillData);
+    return { ops: [] };
 }
 
 // Helper function to safely parse JSON
@@ -28,7 +59,7 @@ function safeParseJSON(jsonString) {
     try {
         return JSON.parse(jsonString);
     } catch (error) {
-        console.error("Error parsing JSON:", error);
+        console.error("Error parsing JSON:", error, "String:", jsonString);
         return null;
     }
 }
@@ -43,6 +74,16 @@ function renderQuillAsHTML(divId, deltaContent) {
         return;
     }
 
+    // Get content in standard format
+    const standardContent = getQuillContent(deltaContent);
+    
+    // Check if content is actually valid
+    if (!standardContent.ops || standardContent.ops.length === 0) {
+        console.log(`No content to render for ${divId}`);
+        toDisplay.innerHTML = '<p>No content available</p>';
+        return;
+    }
+
     // Create a Quill instance in a temporary div
     const tempDiv = document.createElement('div');
     const quill = new Quill(tempDiv, {
@@ -53,10 +94,11 @@ function renderQuillAsHTML(divId, deltaContent) {
 
     // Set the content as Quill Delta and extract the HTML
     try {
-        quill.setContents(deltaContent);
+        quill.setContents(standardContent);
         toDisplay.innerHTML = tempDiv.innerHTML;
     } catch (error) {
         console.error(`Error rendering Quill content for ${divId}:`, error);
+        console.log('Content that failed to render:', standardContent);
         toDisplay.innerHTML = '<p>Content could not be loaded</p>';
     }
 }
@@ -225,18 +267,30 @@ function getSupplement(articeID) {
                     console.log("Parsed Quill Content:", quillContent)
                     console.log("Parsed Quill Content2:", quillContent2)
                     
+                    // Log the type and content for debugging
                     if (quillContent) {
-                        console.log("Quill Content ops length:", quillContent.ops ? quillContent.ops.length : 0)
+                        console.log("Type of quillContent:", typeof quillContent);
+                        console.log("Is quillContent array?", Array.isArray(quillContent));
+                        console.log("Does quillContent have ops?", quillContent.ops ? "Yes" : "No");
+                        if (quillContent.ops) {
+                            console.log("quillContent.ops length:", quillContent.ops.length);
+                        } else if (Array.isArray(quillContent)) {
+                            console.log("quillContent array length:", quillContent.length);
+                        }
                     }
                     
                     if (quillContent2) {
-                        console.log("Quill Content2 ops length:", quillContent2.ops ? quillContent2.ops.length : 0)
+                        console.log("Type of quillContent2:", typeof quillContent2);
+                        console.log("Is quillContent2 array?", Array.isArray(quillContent2));
+                        console.log("Does quillContent2 have ops?", quillContent2.ops ? "Yes" : "No");
+                        if (quillContent2.ops) {
+                            console.log("quillContent2.ops length:", quillContent2.ops.length);
+                        } else if (Array.isArray(quillContent2)) {
+                            console.log("quillContent2 array length:", quillContent2.length);
+                        }
                     }
-                    
-                    console.log("Type of quillContent:", typeof quillContent)
-                    console.log("Type of quillContent2:", typeof quillContent2)
 
-                    // Render the Quill content
+                    // Render the main Quill content
                     if (hasQuillContent(quillContent)) {
                         renderQuillAsHTML('content', quillContent);
                     } else {
@@ -253,6 +307,8 @@ function getSupplement(articeID) {
                     if (hasQuillContent(quillContent2)) {
                         abstractHeader.style.display = "block"
                         renderQuillAsHTML('abstract', quillContent2)
+                    } else {
+                        console.log("No abstract content to display");
                     }
 
                 } else {
