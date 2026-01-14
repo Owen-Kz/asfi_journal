@@ -6,7 +6,7 @@ import { ViewItem } from "./viewsCount.js";
 const searchParams = new URLSearchParams(window.location.search);
 
 // Log all parameters
-// for (const [key, value] of searchParams.entries()) {
+// for (const [key, value] of searchParams.entries()) { 
 //     console.log(`Key: ${key}, Value: ${value}`);
 // }
 // Check if a parameter exists in the search query
