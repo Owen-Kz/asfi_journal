@@ -2,7 +2,6 @@ import { EndPoint } from "../constants.js"
 import { formatTimestamp } from "../formatDate.js";
 import { DownloadItem } from "./downloadCount.js";
 
-
 const manu_title = document.getElementById("manu_title");
 const published_date = document.getElementById("published_date")
 const authorsContainerTop = document.getElementById("authorsContainerTop")
@@ -18,7 +17,50 @@ const dateReviewed = document.getElementById("dateReviewed")
 const dateAccepted = document.getElementById("dateAccepted")
 const datePublished = document.getElementById("datePublished")
 
-                   
+// Helper function to check if Quill content is valid
+function hasQuillContent(quillObj) {
+    return quillObj && quillObj.ops && quillObj.ops.length > 0;
+}
+
+// Helper function to safely parse JSON
+function safeParseJSON(jsonString) {
+    if (!jsonString) return null;
+    try {
+        return JSON.parse(jsonString);
+    } catch (error) {
+        console.error("Error parsing JSON:", error);
+        return null;
+    }
+}
+
+// Function to render Quill content as HTML
+function renderQuillAsHTML(divId, deltaContent) {
+    if (!divId || !deltaContent) return;
+    
+    const toDisplay = document.getElementById(divId);
+    if (!toDisplay) {
+        console.error(`Element with id "${divId}" not found`);
+        return;
+    }
+
+    // Create a Quill instance in a temporary div
+    const tempDiv = document.createElement('div');
+    const quill = new Quill(tempDiv, {
+        theme: 'snow',
+        modules: { toolbar: false },
+        readOnly: true,
+    });
+
+    // Set the content as Quill Delta and extract the HTML
+    try {
+        quill.setContents(deltaContent);
+        toDisplay.innerHTML = tempDiv.innerHTML;
+    } catch (error) {
+        console.error(`Error rendering Quill content for ${divId}:`, error);
+        toDisplay.innerHTML = '<p>Content could not be loaded</p>';
+    }
+}
+
 function getSupplement(articeID) {
     fetch(`${EndPoint}/retrieveArticle.php?q=${articeID}`, {
         method: "GET"
@@ -54,7 +96,6 @@ function getSupplement(articeID) {
                     console.log(coverPhoto)
                     let mainCoverImage = ""
 
-
                     const previewHead = document.getElementById("previewHead")
                     // if(coverPhoto !== "cover.jpg"){
                     //     mainCoverImage = `../useruploads/article_images/${coverPhoto}`
@@ -63,75 +104,74 @@ function getSupplement(articeID) {
                     // }
                     mainCoverImage = `../images/articleImages/8.jpg`
 
-
                     previewHead.setAttribute("style", `background-image: url(${mainCoverImage}); background-size: cover; background-repeat: no-repeat;`)
+                    
                     let DateUploaded = "N/A"
                     let SubmittedDate = "N/A"
                     let ReviewedDate = "N/A"
                     let AcceptedDate = "N/A"
                     let PublishedDate = "N/A"
 
-                    
-                if(Article[0].date_uploaded != null && Article[0].date_uploaded != "" && Article[0].date_uploaded){
-                    DateUploaded = formatTimestamp(Article[0].date_uploaded)
+                    if(Article[0].date_uploaded != null && Article[0].date_uploaded != "" && Article[0].date_uploaded){
+                        DateUploaded = formatTimestamp(Article[0].date_uploaded)
                     }
 
                     if(Article[0].date_submitted != null && Article[0].date_submitted != "" && Article[0].date_submitted){
-                    SubmittedDate = formatTimestamp(Article[0].date_submitted)
+                        SubmittedDate = formatTimestamp(Article[0].date_submitted)
                     }
 
                     if(Article[0].date_reviewed != null && Article[0].date_reviewed != "" && Article[0].date_reviewed){
-                    ReviewedDate = formatTimestamp(Article[0].date_reviewed)
+                        ReviewedDate = formatTimestamp(Article[0].date_reviewed)
                     }
 
                     if(Article[0].date_accepted != null && Article[0].date_accepted != "" && Article[0].date_accepted){
-                    AcceptedDate = formatTimestamp(Article[0].date_accepted)
+                        AcceptedDate = formatTimestamp(Article[0].date_accepted)
                     }
 
                     if(Article[0].date_published != null && Article[0].date_published != "" && Article[0].date_published){
-                   PublishedDate = formatTimestamp(Article[0].date_published)
+                        PublishedDate = formatTimestamp(Article[0].date_published)
                     }
+                    
                     const buffer = Article[0].buffer
 
                     document.addEventListener("DOMContentLoaded", function () {
-                      // Function to create and add a meta tag
-                      function addMetaTag(property, content) {
-                        const metaTag = document.createElement("meta");
-                        metaTag.setAttribute("property", property);
-                        metaTag.setAttribute("content", content);
-                        document.head.appendChild(metaTag);
-                      }
+                        // Function to create and add a meta tag
+                        function addMetaTag(property, content) {
+                            const metaTag = document.createElement("meta");
+                            metaTag.setAttribute("property", property);
+                            metaTag.setAttribute("content", content);
+                            document.head.appendChild(metaTag);
+                        }
 
-                      // Add the meta tags
-                      addMetaTag("og:title", `${ArticleTitle}`);
+                        // Add the meta tags
+                        addMetaTag("og:title", `${ArticleTitle}`);
 
-                      // Assuming 'articleUrl' is defined or you can replace it with the actual URL
-                        const articleUrl = window.location.href; // You can replace this with your article URL logic
-                        
-                      const encodedUrl = `https:/asfirj.org/content?sid=${articeID}`;
-                      addMetaTag("og:url", encodedUrl);
+                        // Assuming 'articleUrl' is defined or you can replace it with the actual URL
+                        const articleUrl = window.location.href;
+                        const encodedUrl = `https:/asfirj.org/content?sid=${articeID}`;
+                        addMetaTag("og:url", encodedUrl);
                     });
 
                     const correspondingAuthorsEmailContainer = document.getElementById("correspondingAuthorsEmail")
                     correspondingAuthorsEmailContainer.innerHTML += ` <a style="color:#333;" href="mailto:${correspondingAuthorsEmail}">${correspondingAuthorsEmail}</a>`
                     
                     const hyperlinkContainer = document.getElementById("hyperlink")
-                    if(hyperLink != null && hyperLink !== null && hyperLink !== "null"){
-                    hyperlinkContainer.innerHTML += `<a style="color:#333;" href="${hyperLink}">${hyperLink}</a>`
+                    if(hyperLink != null && hyperLink !== "null"){
+                        hyperlinkContainer.innerHTML += `<a style="color:#333;" href="${hyperLink}">${hyperLink}</a>`
                     }else{
-                         hyperlinkContainer.style.display = "none"
+                        hyperlinkContainer.style.display = "none"
                     }
-                   
 
                     viewCountContainer.innerText = `${viewsCount} Views`
                     downloadsCountContainer.innerText = `${DownloadsCount} Downloads`
-                     issueNumber.innerText = `Issue Number: ${Issue}`
-                     pageNumber.innerText = `Page Number: ${Page}`
-                     doiNumber.innerText = `DOI Number: ${Doi}`
-                     dateSubmitted.innerText = `Date Submitted: ${SubmittedDate}`
-                     dateReviewed.innerText = `Date Revised: ${ReviewedDate}`
-                     dateAccepted.innerText = `Date Accepted: ${AcceptedDate}`
-                     datePublished.innerText = `Date Published: ${PublishedDate}`
+                    issueNumber.innerText = `Issue Number: ${Issue}`
+                    pageNumber.innerText = `Page Number: ${Page}`
+                    doiNumber.innerText = `DOI Number: ${Doi}`
+                    dateSubmitted.innerText = `Date Submitted: ${SubmittedDate}`
+                    dateReviewed.innerText = `Date Revised: ${ReviewedDate}`
+                    dateAccepted.innerText = `Date Accepted: ${AcceptedDate}`
+                    datePublished.innerText = `Date Published: ${PublishedDate}`
+                    
                     // Set the download links for the articles 
                     downloadLinks.forEach(link =>{
                         link.setAttribute("href", `../useruploads/manuscripts/${ManuscriptFile}`)
@@ -146,7 +186,7 @@ function getSupplement(articeID) {
                     manu_title.innerText = ArticleTitle
                     published_date.innerText = `${DateUploaded}`
 
-                    // gEt the authors 
+                    // Get the authors 
                     fetch(`${EndPoint}/allAuthors.php?articleID=${buffer}`, {
                         method: "GET"
                     }).then(res => res.json())
@@ -156,15 +196,13 @@ function getSupplement(articeID) {
                                 let AuthorsName = ""
 
                                 AllAuthors.forEach(author => {
-                                    // const AuthorsFullname = `${author.authors_prefix} ${author.authors_firstname} ${author.authors_middlename} ${author.authors_lastname}, `
                                     const AuthorsFullname = `${author.authors_fullname} `
                                     authorsListBottom.innerHTML += `<li> ${AuthorsFullname} </li>`
-
                                 })
+                                
                                 for(var i=0; i < AllAuthors.length; i++){
                                     if(i < AllAuthors.length - 1){
                                         AuthorsName += `${AllAuthors[i].authors_fullname}, `
-
                                     }else{
                                         AuthorsName += `${AllAuthors[i].authors_fullname}.`
                                     }
@@ -178,43 +216,43 @@ function getSupplement(articeID) {
                         })
 
                     // Parse the Quill content from the JSON data
-                                    
-                    const quillContent = JSON.parse(unstructuredAbstract);
-                    const quillContent2 = JSON.parse(AbstractDiscussoin);
+                    console.log("Unstructured Abstract:", unstructuredAbstract)
+                    console.log("Abstract Discussion:", AbstractDiscussoin)
+                    
+                    const quillContent = safeParseJSON(unstructuredAbstract);
+                    const quillContent2 = safeParseJSON(AbstractDiscussoin);
 
-                    // Create a Quill instance in "read-only" mode to render the content as HTML
-                    const contentDiv = document.getElementById('content');
-                    // const abstractDIV = document.getElementById("abstract")
+                    console.log("Parsed Quill Content:", quillContent)
+                    console.log("Parsed Quill Content2:", quillContent2)
+                    
+                    if (quillContent) {
+                        console.log("Quill Content ops length:", quillContent.ops ? quillContent.ops.length : 0)
+                    }
+                    
+                    if (quillContent2) {
+                        console.log("Quill Content2 ops length:", quillContent2.ops ? quillContent2.ops.length : 0)
+                    }
+                    
+                    console.log("Type of quillContent:", typeof quillContent)
+                    console.log("Type of quillContent2:", typeof quillContent2)
 
-                    function renderQuillAsHTML(divId, deltaContent) {
-                        // Create a Quill instance in a temporary div
-                        const tempDiv = document.createElement('div');
-                        const quill = new Quill(tempDiv, {
-                            theme: 'snow',
-                            modules: { toolbar: false },
-                            readOnly: true,
-                        });
-
-                        // Set the content as Quill Delta and extract the HTML
-                        quill.setContents(deltaContent);
-
-                        // Get the innerHTML from the Quill editor
-                        const htmlContent = tempDiv.innerHTML;
-                        const toDisplay = document.getElementById(divId)
-
-                        // Render the extracted HTML into the specified div
-                        toDisplay.innerHTML = htmlContent;
+                    // Render the Quill content
+                    if (hasQuillContent(quillContent)) {
+                        renderQuillAsHTML('content', quillContent);
+                    } else {
+                        const contentDiv = document.getElementById('content');
+                        if (contentDiv) {
+                            contentDiv.innerHTML = '<p>No content available</p>';
+                        }
                     }
 
-                    // Render the Quill content as HTML in the "content" div
-                    renderQuillAsHTML('content', quillContent);
                     const abstractHeader = document.getElementById("abstractHeader")
                     abstractHeader.style.display = "none"
 
-                   
-                    if(quillContent2.length > 0){
-                    abstractHeader.style.display = "block"
-                    renderQuillAsHTML('abstract', quillContent2)
+                    // Show abstract header only if there's content to display
+                    if (hasQuillContent(quillContent2)) {
+                        abstractHeader.style.display = "block"
+                        renderQuillAsHTML('abstract', quillContent2)
                     }
 
                 } else {
@@ -222,8 +260,11 @@ function getSupplement(articeID) {
                 }
             }
         })
+        .catch(error => {
+            console.error("Error fetching article data:", error);
+            alert("An error occurred while loading the article");
+        });
 }
-
 
 export {
     getSupplement
