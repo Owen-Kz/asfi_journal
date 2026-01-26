@@ -1,5 +1,5 @@
 import { parentDirectoryName } from "../constants.js";
-import { getSupplement } from "./getSupplements.js?v=12knaknlr";
+import { getSupplement } from "./getSupplements.js?v=12knaknler";
 import { ViewItem } from "./viewsCount.js";
 
 // Create a URLSearchParams object from the current page's query string
