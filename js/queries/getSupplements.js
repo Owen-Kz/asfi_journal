@@ -17,26 +17,74 @@ const dateReviewed = document.getElementById("dateReviewed")
 const dateAccepted = document.getElementById("dateAccepted")
 const datePublished = document.getElementById("datePublished")
 
-// Helper function to check if Quill content is valid (handles both formats)
-function hasQuillContent(quillData) {
-    if (!quillData) return false;
+// Helper function to detect if content is Quill Delta format
+function isQuillDelta(content) {
+    if (!content) return false;
     
-    // Format 1: Object with ops property {ops: [...]}
-    if (quillData.ops && Array.isArray(quillData.ops) && quillData.ops.length > 0) {
-        return true;
+    // If it's a string, check if it starts with { or [ and contains "ops" or "insert"
+    if (typeof content === 'string') {
+        const trimmed = content.trim();
+        // Check for Quill object format: {"ops": [...]}
+        if (trimmed.startsWith('{') && trimmed.includes('"ops"')) {
+            return true;
+        }
+        // Check for Quill array format: [{"insert": "text"}]
+        if (trimmed.startsWith('[') && trimmed.includes('"insert"')) {
+            return true;
+        }
+        return false;
     }
     
-    // Format 2: Direct array [{...}, {...}]
-    if (Array.isArray(quillData) && quillData.length > 0) {
-        return true;
+    // If it's already an object
+    if (typeof content === 'object' && content !== null) {
+        // Format 1: Object with ops property {ops: [...]}
+        if (content.ops && Array.isArray(content.ops) && content.ops.length > 0) {
+            return true;
+        }
+        
+        // Format 2: Direct array [{...}, {...}]
+        if (Array.isArray(content) && content.length > 0 && content[0].insert !== undefined) {
+            return true;
+        }
     }
     
     return false;
 }
 
+// Helper function to detect if content is regular HTML
+function isRegularHTML(content) {
+    if (!content) return false;
+    
+    if (typeof content === 'string') {
+        // Check for HTML tags
+        const trimmed = content.trim();
+        return trimmed.startsWith('<') && (trimmed.includes('</') || trimmed.includes('/>'));
+    }
+    
+    return false;
+}
+
+// Helper function to check if Quill content is valid (handles both formats)
+function hasQuillContent(quillData) {
+    if (!quillData) return false;
+    
+    return isQuillDelta(quillData);
+}
+
 // Helper function to get Quill content in standard format
 function getQuillContent(quillData) {
     if (!quillData) return { ops: [] };
+    
+    // If it's a string, try to parse it
+    if (typeof quillData === 'string') {
+        try {
+            const parsed = JSON.parse(quillData);
+            return getQuillContent(parsed);
+        } catch (e) {
+            // Not JSON, treat as plain text
+            return { ops: [{ insert: quillData }] };
+        }
+    }
     
     // If it's already in {ops: [...]} format
     if (quillData.ops && Array.isArray(quillData.ops)) {
@@ -60,17 +108,93 @@ function safeParseJSON(jsonString) {
         return JSON.parse(jsonString);
     } catch (error) {
         console.error("Error parsing JSON:", error, "String:", jsonString);
-        return null;
+        return jsonString; // Return the original string if parsing fails
     }
 }
 
-// Function to render Quill content in chunks
-function renderQuillAsHTMLInChunks(divId, deltaContent, chunkSize = 10, delay = 50) {
-    if (!divId || !deltaContent) return Promise.resolve();
+// Function to render content (handles both Quill and HTML)
+function renderContent(divId, content) {
+    if (!divId) return Promise.resolve();
     
     const toDisplay = document.getElementById(divId);
     if (!toDisplay) {
         console.error(`Element with id "${divId}" not found`);
+        return Promise.reject(new Error(`Element with id "${divId}" not found`));
+    }
+
+    // Show loader
+    toDisplay.innerHTML = `
+        <div class="loader-container" style="text-align: center; padding: 20px;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p class="mt-2">Loading content...</p>
+        </div>
+    `;
+
+    return new Promise((resolve) => {
+        // Small delay to allow loader to render
+        setTimeout(() => {
+            try {
+                if (!content) {
+                    toDisplay.innerHTML = '<p class="text-muted">No content available</p>';
+                    resolve();
+                    return;
+                }
+
+                // Try to parse if it's a string
+                let parsedContent = content;
+                if (typeof content === 'string') {
+                    // Check if it's regular HTML
+                    if (isRegularHTML(content)) {
+                        toDisplay.innerHTML = content;
+                        resolve();
+                        return;
+                    }
+                    
+                    // Try to parse as JSON for Quill content
+                    try {
+                        parsedContent = JSON.parse(content);
+                    } catch (e) {
+                        // Not JSON, treat as plain text
+                        toDisplay.innerHTML = `<p>${content}</p>`;
+                        resolve();
+                        return;
+                    }
+                }
+
+                // Check if it's Quill Delta format
+                if (isQuillDelta(parsedContent)) {
+                    renderQuillContent(divId, parsedContent).then(resolve);
+                } 
+                // Check if it's regular HTML (as object)
+                else if (typeof parsedContent === 'string' && isRegularHTML(parsedContent)) {
+                    toDisplay.innerHTML = parsedContent;
+                    resolve();
+                }
+                // If it's plain text
+                else if (typeof parsedContent === 'string') {
+                    toDisplay.innerHTML = `<p>${parsedContent}</p>`;
+                    resolve();
+                }
+                // If it's an unknown format, stringify it
+                else {
+                    toDisplay.innerHTML = `<p>${String(parsedContent)}</p>`;
+                    resolve();
+                }
+            } catch (error) {
+                console.error(`Error rendering content for ${divId}:`, error);
+                toDisplay.innerHTML = '<p class="text-danger">Content could not be loaded</p>';
+                resolve();
+            }
+        }, 50);
+    });
+}
+
+// Function to render Quill content with chunking for large content
+function renderQuillContent(divId, deltaContent, chunkSize = 10, delay = 30) {
+    const toDisplay = document.getElementById(divId);
+    if (!toDisplay) {
         return Promise.reject(new Error(`Element with id "${divId}" not found`));
     }
 
@@ -79,21 +203,47 @@ function renderQuillAsHTMLInChunks(divId, deltaContent, chunkSize = 10, delay = 
     
     // Check if content is actually valid
     if (!standardContent.ops || standardContent.ops.length === 0) {
-        console.log(`No content to render for ${divId}`);
-        toDisplay.innerHTML = '<p>No content available</p>';
+        toDisplay.innerHTML = '<p class="text-muted">No content available</p>';
         return Promise.resolve();
     }
 
     return new Promise((resolve) => {
         // Create a Quill instance in a temporary div
         const tempDiv = document.createElement('div');
+        
+        // Check if Quill is available
+        if (typeof Quill === 'undefined') {
+            console.error('Quill library not loaded');
+            // Fallback: try to extract text from ops
+            const text = standardContent.ops.map(op => op.insert || '').join('');
+            toDisplay.innerHTML = `<p>${text}</p>`;
+            resolve();
+            return;
+        }
+
         const quill = new Quill(tempDiv, {
             theme: 'snow',
             modules: { toolbar: false },
             readOnly: true,
         });
 
-        // Split the ops into chunks
+        // For small content (less than 50 ops), render immediately
+        if (standardContent.ops.length < 50) {
+            try {
+                quill.setContents(standardContent);
+                toDisplay.innerHTML = tempDiv.innerHTML;
+                resolve();
+            } catch (error) {
+                console.error('Error rendering Quill content:', error);
+                // Fallback to plain text
+                const text = standardContent.ops.map(op => op.insert || '').join('');
+                toDisplay.innerHTML = `<p>${text}</p>`;
+                resolve();
+            }
+            return;
+        }
+
+        // For large content, render in chunks
         const ops = standardContent.ops;
         const chunks = [];
         for (let i = 0; i < ops.length; i += chunkSize) {
@@ -101,7 +251,7 @@ function renderQuillAsHTMLInChunks(divId, deltaContent, chunkSize = 10, delay = 
         }
 
         // Clear the container and show loader
-        toDisplay.innerHTML = '<div class="loader-container"><div class="loader"></div><p>Loading content...</p></div>';
+        toDisplay.innerHTML = '<div class="loader-container"><div class="spinner-border text-primary"></div><p>Loading content...</p></div>';
         
         // Function to render next chunk
         function renderNextChunk(index) {
@@ -112,23 +262,28 @@ function renderQuillAsHTMLInChunks(divId, deltaContent, chunkSize = 10, delay = 
             }
 
             setTimeout(() => {
-                // Set content for current chunk and add to total
-                quill.setContents({ ops: chunks[index] }, 'api');
-                
-                // Update the display
-                if (index === 0) {
-                    // First chunk, replace loader
-                    toDisplay.innerHTML = tempDiv.innerHTML;
-                } else {
-                    // Append subsequent chunks
-                    const tempDiv2 = document.createElement('div');
-                    const quill2 = new Quill(tempDiv2, {
-                        theme: 'snow',
-                        modules: { toolbar: false },
-                        readOnly: true,
-                    });
-                    quill2.setContents({ ops: chunks[index] }, 'api');
-                    toDisplay.innerHTML += tempDiv2.innerHTML;
+                try {
+                    // Set content for current chunk
+                    quill.setContents({ ops: chunks[index] }, 'api');
+                    
+                    // Update the display
+                    if (index === 0) {
+                        // First chunk, replace loader
+                        toDisplay.innerHTML = tempDiv.innerHTML;
+                    } else {
+                        // For subsequent chunks, we need to append
+                        const tempDiv2 = document.createElement('div');
+                        const quill2 = new Quill(tempDiv2, {
+                            theme: 'snow',
+                            modules: { toolbar: false },
+                            readOnly: true,
+                        });
+                        quill2.setContents({ ops: chunks[index] }, 'api');
+                        toDisplay.innerHTML += tempDiv2.innerHTML;
+                    }
+                } catch (error) {
+                    console.error(`Error rendering chunk ${index}:`, error);
+                    // Continue with next chunk even if this one fails
                 }
 
                 // Render next chunk
@@ -141,45 +296,6 @@ function renderQuillAsHTMLInChunks(divId, deltaContent, chunkSize = 10, delay = 
     });
 }
 
-// Optimized function to render Quill content without chunks for small content
-function renderQuillAsHTML(divId, deltaContent) {
-    if (!divId || !deltaContent) return;
-    
-    const toDisplay = document.getElementById(divId);
-    if (!toDisplay) {
-        console.error(`Element with id "${divId}" not found`);
-        return;
-    }
-
-    // Get content in standard format
-    const standardContent = getQuillContent(deltaContent);
-    
-    // Check if content is actually valid
-    if (!standardContent.ops || standardContent.ops.length === 0) {
-        console.log(`No content to render for ${divId}`);
-        toDisplay.innerHTML = '<p>No content available</p>';
-        return;
-    }
-
-    // Create a Quill instance in a temporary div
-    const tempDiv = document.createElement('div');
-    const quill = new Quill(tempDiv, {
-        theme: 'snow',
-        modules: { toolbar: false },
-        readOnly: true,
-    });
-
-    // Set the content as Quill Delta and extract the HTML
-    try {
-        quill.setContents(standardContent);
-        toDisplay.innerHTML = tempDiv.innerHTML;
-    } catch (error) {
-        console.error(`Error rendering Quill content for ${divId}:`, error);
-        console.log('Content that failed to render:', standardContent);
-        toDisplay.innerHTML = '<p>Content could not be loaded</p>';
-    }
-}
-
 function getSupplement(articeID) {
     // Show loader for abstract immediately
     const abstractContainer = document.getElementById('abstract');
@@ -190,6 +306,19 @@ function getSupplement(articeID) {
                     <span class="visually-hidden">Loading abstract...</span>
                 </div>
                 <p class="mt-3">Loading abstract content...</p>
+            </div>
+        `;
+    }
+
+    // Show loader for content
+    const contentContainer = document.getElementById('content');
+    if (contentContainer) {
+        contentContainer.innerHTML = `
+            <div class="content-loader" style="text-align: center; padding: 40px;">
+                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                    <span class="visually-hidden">Loading content...</span>
+                </div>
+                <p class="mt-3">Loading manuscript content...</p>
             </div>
         `;
     }
@@ -320,50 +449,28 @@ function getSupplement(articeID) {
             });
     }
 
-    // Function to load abstract content (lowest priority - loaded in chunks)
-    function loadAbstractContent(unstructuredAbstract, AbstractDiscussoin) {
+    // Function to load content (handles both Quill and HTML)
+    function loadContent(unstructuredAbstract, AbstractDiscussoin) {
         return new Promise((resolve) => {
-            // Parse the Quill content from the JSON data
-            const quillContent = safeParseJSON(unstructuredAbstract);
-            const quillContent2 = safeParseJSON(AbstractDiscussoin);
+            // Parse the content
+            const content1 = safeParseJSON(unstructuredAbstract);
+            const content2 = safeParseJSON(AbstractDiscussoin);
 
-            // Load main content first (smaller, usually)
-            if (hasQuillContent(quillContent)) {
-                renderQuillAsHTML('content', quillContent);
-            } else {
-                const contentDiv = document.getElementById('content');
-                if (contentDiv) {
-                    contentDiv.innerHTML = '<p>No content available</p>';
-                }
-            }
-
-            // Load abstract content in chunks if it exists
-            if (hasQuillContent(quillContent2)) {
-                const abstractHeader = document.getElementById("abstractHeader");
-                abstractHeader.style.display = "block";
-                
-                // Estimate if content is large (more than 50 ops)
-                const opsCount = getQuillContent(quillContent2).ops.length;
-                if (opsCount > 50) {
-                    // Large content, load in chunks
-                    renderQuillAsHTMLInChunks('abstract', quillContent2, 10, 30).then(() => {
-                        console.log("Abstract loaded in chunks");
-                        resolve();
-                    });
+            // Load main content first
+            renderContent('content', content1).then(() => {
+                // Load abstract content
+                if (content2) {
+                    const abstractHeader = document.getElementById("abstractHeader");
+                    abstractHeader.style.display = "block";
+                    renderContent('abstract', content2).then(resolve);
                 } else {
-                    // Small content, load normally
-                    renderQuillAsHTML('abstract', quillContent2);
+                    const abstractContainer = document.getElementById('abstract');
+                    if (abstractContainer) {
+                        abstractContainer.innerHTML = '<p class="text-muted">No abstract available</p>';
+                    }
                     resolve();
                 }
-            } else {
-                console.log("No abstract content to display");
-                // Hide the loader if no abstract
-                const abstractContainer = document.getElementById('abstract');
-                if (abstractContainer && abstractContainer.querySelector('.abstract-loader')) {
-                    abstractContainer.innerHTML = '<p>No abstract available</p>';
-                }
-                resolve();
-            }
+            });
         });
     }
 
@@ -394,12 +501,12 @@ function getSupplement(articeID) {
                     loadMetadata(Article);
                 }, 100);
                 
-                // PHASE 3: Load abstract content in chunks (lowest priority)
+                // PHASE 3: Load content (handles both Quill and HTML)
                 setTimeout(() => {
                     const unstructuredAbstract = Article[0].unstructured_abstract;
                     const AbstractDiscussoin = Article[0].abstract_discussion;
                     
-                    loadAbstractContent(unstructuredAbstract, AbstractDiscussoin);
+                    loadContent(unstructuredAbstract, AbstractDiscussoin);
                 }, 300);
                 
             } else {
