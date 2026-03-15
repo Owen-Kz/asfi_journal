@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        window.location.href = "https://asfirj.org/portal/login"
+        window.location.href = "https://portal.asfirj.org/portal/login"
     </script>
     
 </body>

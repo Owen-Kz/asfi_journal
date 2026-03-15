@@ -9,6 +9,9 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <script src="../js/routes/dashboardRoutes.js?v=<?= time(); ?>" type="module"></script>
+      <script>
+        window.location.href = "https://portal.asfirj.org/dashboard"
+    </script>
+    <!-- <script src="../js/routes/dashboardRoutes.js?v=<?= time(); ?>" type="module"></script> -->
 </body>
 </html>

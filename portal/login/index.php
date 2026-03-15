@@ -488,7 +488,7 @@ define('RECAPTCHA_SECRET_KEY', $captchaSecret);
                 
                 <div class="sidebar-section">
                     <div class="sidebar-title">Account</div>
-                    <a href="https://asfirj.org/portal/signup/" class="sidebar-link">
+                    <a href="https://portal.asfirj.org/portal/signup/" class="sidebar-link">
                         <i class="fas fa-user-plus mr-2"></i> Sign Up
                     </a>
                     <a href="#" class="sidebar-link active">
@@ -527,7 +527,7 @@ define('RECAPTCHA_SECRET_KEY', $captchaSecret);
                 <!-- Mobile Navigation Tabs -->
                 <div class="lg:hidden mb-6">
                     <div class="bg-white rounded-lg shadow-sm p-1 flex">
-                        <a href="https://asfirj.org/portal/signup/" class="flex-1 text-center py-2 px-4 rounded-md text-gray-600 font-medium hover:bg-gray-50">
+                        <a href="https://portal.asfirj.org/portal/signup/" class="flex-1 text-center py-2 px-4 rounded-md text-gray-600 font-medium hover:bg-gray-50">
                             Sign Up
                         </a>
                         <a href="#" class="flex-1 text-center py-2 px-4 rounded-md bg-asfi-blue text-white font-medium">
@@ -580,11 +580,11 @@ define('RECAPTCHA_SECRET_KEY', $captchaSecret);
                                 <div class="text-center mt-4 space-y-2">
                                     <p class="text-gray-600">
                                         Don't have an account? 
-                                        <a href="https://asfirj.org/portal/signup/" class="text-asfi-blue font-medium hover:underline">Click here to create one</a>
+                                        <a href="https://portal.asfirj.org/portal/signup/" class="text-asfi-blue font-medium hover:underline">Click here to create one</a>
                                     </p>
                                     <p class="text-gray-600">
                                         Forgotten Password? 
-                                        <a href="https://asfirj.org/portal/resetPassword/" class="text-asfi-blue font-medium hover:underline">Click here to retrieve</a>
+                                        <a href="https://portal.asfirj.org/portal/resetPassword/" class="text-asfi-blue font-medium hover:underline">Click here to retrieve</a>
                                     </p>
                                 </div>
                             </div>

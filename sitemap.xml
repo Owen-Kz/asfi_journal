@@ -46,7 +46,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://asfirj.org/portal/</loc>
+  <loc>https://portal.asfirj.org/portal/</loc>
   <lastmod>2024-06-22T02:22:34+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -67,7 +67,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://asfirj.org/portal/login/</loc>
+  <loc>https://portal.asfirj.org/portal/login/</loc>
   <lastmod>2025-03-11T17:09:16+00:00</lastmod>
   <priority>0.64</priority>
 </url>
@@ -87,12 +87,12 @@
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://asfirj.org/portal/signup/</loc>
+  <loc>https://portal.asfirj.org/portal/signup/</loc>
   <lastmod>2025-03-11T17:09:16+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://asfirj.org/portal/resetPassword/</loc>
+  <loc>https://portal.asfirj.org/portal/resetPassword/</loc>
   <lastmod>2025-03-11T17:09:16+00:00</lastmod>
   <priority>0.51</priority>
 </url>

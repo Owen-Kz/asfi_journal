@@ -10,7 +10,10 @@
 </head>
 <body>
     <code>Processing Please hold.....</code>
+    <script>
+        window.location.href = "https://portal.asfirj.org/dashboard"
+    </script>
 
-    <script type="module" src="../js/dashboards/editorInvitations.js?v=<?= time(); ?>"></script>
+    <!-- <script type="module" src="../js/dashboards/editorInvitations.js?v=<?= time(); ?>"></script> -->
 </body>
 </html>

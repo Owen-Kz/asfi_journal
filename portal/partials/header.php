@@ -19,7 +19,7 @@
                     <a href="https://asfischolar.org/" target="_blank" class="hover:text-asfi-gold transition-colors">ASFIScholar</a>
                     <a href="https://africansciencefrontiers.com/about.php" target="_blank" class="hover:text-asfi-gold transition-colors">About ASFI</a>
                     <a href="https://asfirj.org/events.html" class="hover:text-asfi-gold transition-colors">Events</a>
-                    <a href="https://asfirj.org/portal/login/" class="hover:text-asfi-gold transition-colors">Login</a>
+                    <a href="https://portal.asfirj.org/portal/login/" class="hover:text-asfi-gold transition-colors">Login</a>
                 </div>
             </div>
             
@@ -31,7 +31,7 @@
                     <a href="https://asfischolar.org/" target="_blank" class="hover:text-asfi-gold transition-colors py-1">ASFIScholar</a>
                     <a href="https://africansciencefrontiers.com/about.php" target="_blank" class="hover:text-asfi-gold transition-colors py-1">About ASFI</a>
                     <a href="https://asfirj.org/events.html" class="hover:text-asfi-gold transition-colors py-1">Events</a>
-                    <a href="https://asfirj.org/portal/login/" class="hover:text-asfi-gold transition-colors py-1">Login</a>
+                    <a href="https://portal.asfirj.org/portal/login/" class="hover:text-asfi-gold transition-colors py-1">Login</a>
                 </div>
             </div>
         </div>
