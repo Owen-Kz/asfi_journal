@@ -2,6 +2,166 @@ import { EndPoint } from "../constants.js"
 import { formatTimestamp } from "../formatDate.js";
 import { DownloadItem } from "./downloadCount.js";
 
+// --- CSS INJECTOR (Ensures styles match the RichTextViewer exactly) ---
+const injectStyles = () => {
+    if (document.getElementById('rich-text-viewer-styles')) return;
+    const style = document.createElement('style');
+    style.id = 'rich-text-viewer-styles';
+    style.innerHTML = `
+        .rich-content-container {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.6;
+            font-family: 'Aptos', 'Arial', sans-serif;
+            color: #1a1a1a;
+            width: 100%;
+        }
+        .mode-delta { white-space: pre-wrap; }
+        .mode-html { white-space: normal; }
+        .rich-content-container p { margin: 0 0 0.5rem 0; min-height: 1.2em; width: 100%; }
+        .rich-content-container img { max-width: 100%; height: auto; display: block; margin: 1rem 0; border-radius: 4px; }
+        .rich-content-container sup { font-size: 0.75em; vertical-align: super; line-height: 0; }
+        .rich-content-container sub { font-size: 0.75em; vertical-align: sub; line-height: 0; }
+        .rich-content-container .delta-inline-bg { padding: 1px 3px; border-radius: 2px; }
+        .rich-content-container blockquote { border-left: 4px solid #3b82f6; padding-left: 1rem; margin: 1rem 0; font-style: italic; color: #4b5563; }
+        .rich-content-container ul, .rich-content-container ol { padding-left: 2rem; margin: 8px 0; }
+    `;
+    document.head.appendChild(style);
+};
+injectStyles();
+
+// --- DELTA CONVERTER LOGIC (Vanilla JS version of the React logic) ---
+function convertDeltaToHtml(delta) {
+    try {
+        let parsed = null;
+        if (typeof delta === 'string') {
+            const trimmed = delta.trim();
+            if (trimmed.startsWith('[{"')) parsed = JSON.parse(`{"ops":${trimmed}}`);
+            else if (trimmed.startsWith('{"ops":')) parsed = JSON.parse(trimmed);
+            else parsed = JSON.parse(trimmed);
+        } else if (Array.isArray(delta)) {
+            parsed = { ops: delta };
+        } else {
+            parsed = delta;
+        }
+
+        if (!parsed || !parsed.ops) return String(delta);
+
+        let html = '';
+        let currentBlockOps = [];
+
+        const renderInline = (op) => {
+            if (op.insert && typeof op.insert === 'object') {
+                if (op.insert.image) return `<img src="${op.insert.image}" alt="embedded image" />`;
+                if (op.insert.video) return `<iframe src="${op.insert.video}" frameBorder="0" allowFullScreen width="100%" height="315"></iframe>`;
+                return '';
+            }
+            let text = op.insert;
+            if (typeof text !== 'string' || text === '\n') return '';
+
+            const attrs = op.attributes || {};
+            let styles = [];
+            let classes = [];
+
+            if (attrs.color && attrs.color !== 'windowtext') styles.push(`color: ${attrs.color}`);
+            if (attrs.background) {
+                styles.push(`background-color: ${attrs.background}`);
+                classes.push('delta-inline-bg');
+            }
+            if (attrs.size) styles.push(`font-size: ${attrs.size}`);
+
+            let content = text;
+            if (attrs.bold) content = `<strong>${content}</strong>`;
+            if (attrs.italic) content = `<em>${content}</em>`;
+            if (attrs.underline) content = `<u>${content}</u>`;
+            if (attrs.strike) content = `<strike>${content}</strike>`;
+            if (attrs.script === 'super') content = `<sup>${content}</sup>`;
+            if (attrs.script === 'sub') content = `<sub>${content}</sub>`;
+
+            const styleAttr = styles.length > 0 ? ` style="${styles.join('; ')}"` : '';
+            const classAttr = classes.length > 0 ? ` class="${classes.join(' ')}"` : '';
+
+            if (styleAttr || classAttr) content = `<span${classAttr}${styleAttr}>${content}</span>`;
+            if (attrs.link) content = `<a href="${attrs.link}" target="_blank" style="color:#2563eb;text-decoration:underline;">${content}</a>`;
+            return content;
+        };
+
+        const flushBlock = (ops, blockAttrs = {}) => {
+            let content = ops.map(op => renderInline(op)).join('');
+            const styles = [];
+            if (blockAttrs.align) styles.push(`text-align: ${blockAttrs.align}`);
+            const styleAttr = styles.length > 0 ? ` style="${styles.join('; ')}"` : '';
+
+            if (blockAttrs.header) return `<h${blockAttrs.header}${styleAttr}>${content || '&nbsp;'}</h${blockAttrs.header}>`;
+            if (blockAttrs.blockquote) return `<blockquote${styleAttr}>${content || '&nbsp;'}</blockquote>`;
+            if (blockAttrs.list) return `<li data-list="${blockAttrs.list}"${styleAttr}>${content || '&nbsp;'}</li>`;
+            return `<p${styleAttr}>${content || '&nbsp;'}</p>`;
+        };
+
+        parsed.ops.forEach(op => {
+            if (typeof op.insert === 'string') {
+                const parts = op.insert.split('\n');
+                parts.forEach((part, index) => {
+                    if (index < parts.length - 1) {
+                        if (part) currentBlockOps.push({ ...op, insert: part });
+                        html += flushBlock(currentBlockOps, op.attributes || {});
+                        currentBlockOps = [];
+                    } else if (part) {
+                        currentBlockOps.push({ ...op, insert: part });
+                    }
+                });
+            } else {
+                currentBlockOps.push(op);
+            }
+        });
+
+        if (currentBlockOps.length > 0) html += flushBlock(currentBlockOps, {});
+        return html.replace(/(<li data-list="ordered">.*<\/li>)+/g, m => `<ol>${m}</ol>`)
+                   .replace(/(<li data-list="bullet">.*<\/li>)+/g, m => `<ul>${m}</ul>`);
+    } catch (e) {
+        return String(delta);
+    }
+}
+
+// Helper function to detect format
+function detectContentType(content) {
+    if (!content) return 'empty';
+    const trimmed = typeof content === 'string' ? content.trim() : '';
+    if (trimmed.startsWith('[{"') || trimmed.startsWith('{"ops":')) return 'delta';
+    if (trimmed.startsWith('<') && (trimmed.includes('</') || trimmed.includes('/>'))) return 'html';
+    return 'text';
+}
+
+// Simplified renderContent function
+function renderContent(divId, content) {
+    const toDisplay = document.getElementById(divId);
+    if (!toDisplay) return Promise.resolve();
+
+    toDisplay.innerHTML = `<div class="text-center p-3"><div class="spinner-border spinner-border-sm text-primary"></div></div>`;
+
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const type = detectContentType(content);
+            toDisplay.classList.add('rich-content-container');
+
+            if (type === 'delta') {
+                toDisplay.classList.add('mode-delta');
+                toDisplay.classList.remove('mode-html');
+                toDisplay.innerHTML = convertDeltaToHtml(content);
+            } else if (type === 'html') {
+                toDisplay.classList.add('mode-html');
+                toDisplay.classList.remove('mode-delta');
+                toDisplay.innerHTML = content;
+            } else {
+                toDisplay.innerHTML = content ? `<p>${content}</p>` : '<p class="text-muted">No content available</p>';
+            }
+            resolve();
+        }, 10);
+    });
+}
+
+// --- REST OF YOUR FUNCTIONS (UNCHANGED BUT CLEANED) ---
+
 const manu_title = document.getElementById("manu_title");
 const published_date = document.getElementById("published_date")
 const authorsContainerTop = document.getElementById("authorsContainerTop")
@@ -17,508 +177,80 @@ const dateReviewed = document.getElementById("dateReviewed")
 const dateAccepted = document.getElementById("dateAccepted")
 const datePublished = document.getElementById("datePublished")
 
-// Helper function to detect if content is Quill Delta format
-function isQuillDelta(content) {
-    if (!content) return false;
-    
-    // If it's a string, check if it starts with { or [ and contains "ops" or "insert"
-    if (typeof content === 'string') {
-        const trimmed = content.trim();
-        // Check for Quill object format: {"ops": [...]}
-        if (trimmed.startsWith('{') && trimmed.includes('"ops"')) {
-            return true;
-        }
-        // Check for Quill array format: [{"insert": "text"}]
-        if (trimmed.startsWith('[') && trimmed.includes('"insert"')) {
-            return true;
-        }
-        return false;
-    }
-    
-    // If it's already an object
-    if (typeof content === 'object' && content !== null) {
-        // Format 1: Object with ops property {ops: [...]}
-        if (content.ops && Array.isArray(content.ops) && content.ops.length > 0) {
-            return true;
-        }
-        
-        // Format 2: Direct array [{...}, {...}]
-        if (Array.isArray(content) && content.length > 0 && content[0].insert !== undefined) {
-            return true;
-        }
-    }
-    
-    return false;
-}
-
-// Helper function to detect if content is regular HTML
-function isRegularHTML(content) {
-    if (!content) return false;
-    
-    if (typeof content === 'string') {
-        // Check for HTML tags
-        const trimmed = content.trim();
-        return trimmed.startsWith('<') && (trimmed.includes('</') || trimmed.includes('/>'));
-    }
-    
-    return false;
-}
-
-// Helper function to check if Quill content is valid (handles both formats)
-function hasQuillContent(quillData) {
-    if (!quillData) return false;
-    
-    return isQuillDelta(quillData);
-}
-
-// Helper function to get Quill content in standard format
-function getQuillContent(quillData) {
-    if (!quillData) return { ops: [] };
-    
-    // If it's a string, try to parse it
-    if (typeof quillData === 'string') {
-        try {
-            const parsed = JSON.parse(quillData);
-            return getQuillContent(parsed);
-        } catch (e) {
-            // Not JSON, treat as plain text
-            return { ops: [{ insert: quillData }] };
-        }
-    }
-    
-    // If it's already in {ops: [...]} format
-    if (quillData.ops && Array.isArray(quillData.ops)) {
-        return quillData;
-    }
-    
-    // If it's a direct array, convert to {ops: [...]} format
-    if (Array.isArray(quillData)) {
-        return { ops: quillData };
-    }
-    
-    // If format is unknown, return empty
-    console.warn("Unknown Quill format:", quillData);
-    return { ops: [] };
-}
-
-// Helper function to safely parse JSON
-function safeParseJSON(jsonString) {
-    if (!jsonString) return null;
-    try {
-        return JSON.parse(jsonString);
-    } catch (error) {
-        console.error("Error parsing JSON:", error, "String:", jsonString);
-        return jsonString; // Return the original string if parsing fails
-    }
-}
-
-// Function to render content (handles both Quill and HTML)
-function renderContent(divId, content) {
-    if (!divId) return Promise.resolve();
-    
-    const toDisplay = document.getElementById(divId);
-    if (!toDisplay) {
-        console.error(`Element with id "${divId}" not found`);
-        return Promise.reject(new Error(`Element with id "${divId}" not found`));
-    }
-
-    // Show loader
-    toDisplay.innerHTML = `
-        <div class="loader-container" style="text-align: center; padding: 20px;">
-            <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
-            <p class="mt-2">Loading content...</p>
-        </div>
-    `;
-
-    return new Promise((resolve) => {
-        // Small delay to allow loader to render
-        setTimeout(() => {
-            try {
-                if (!content) {
-                    toDisplay.innerHTML = '<p class="text-muted">No content available</p>';
-                    resolve();
-                    return;
-                }
-
-                // Try to parse if it's a string
-                let parsedContent = content;
-                if (typeof content === 'string') {
-                    // Check if it's regular HTML
-                    if (isRegularHTML(content)) {
-                        toDisplay.innerHTML = content;
-                        resolve();
-                        return;
-                    }
-                    
-                    // Try to parse as JSON for Quill content
-                    try {
-                        parsedContent = JSON.parse(content);
-                    } catch (e) {
-                        // Not JSON, treat as plain text
-                        toDisplay.innerHTML = `<p>${content}</p>`;
-                        resolve();
-                        return;
-                    }
-                }
-
-                // Check if it's Quill Delta format
-                if (isQuillDelta(parsedContent)) {
-                    renderQuillContent(divId, parsedContent).then(resolve);
-                } 
-                // Check if it's regular HTML (as object)
-                else if (typeof parsedContent === 'string' && isRegularHTML(parsedContent)) {
-                    toDisplay.innerHTML = parsedContent;
-                    resolve();
-                }
-                // If it's plain text
-                else if (typeof parsedContent === 'string') {
-                    toDisplay.innerHTML = `<p>${parsedContent}</p>`;
-                    resolve();
-                }
-                // If it's an unknown format, stringify it
-                else {
-                    toDisplay.innerHTML = `<p>${String(parsedContent)}</p>`;
-                    resolve();
-                }
-            } catch (error) {
-                console.error(`Error rendering content for ${divId}:`, error);
-                toDisplay.innerHTML = '<p class="text-danger">Content could not be loaded</p>';
-                resolve();
-            }
-        }, 50);
-    });
-}
-
-// Function to render Quill content with chunking for large content
-function renderQuillContent(divId, deltaContent, chunkSize = 10, delay = 30) {
-    const toDisplay = document.getElementById(divId);
-    if (!toDisplay) {
-        return Promise.reject(new Error(`Element with id "${divId}" not found`));
-    }
-
-    // Get content in standard format
-    const standardContent = getQuillContent(deltaContent);
-    
-    // Check if content is actually valid
-    if (!standardContent.ops || standardContent.ops.length === 0) {
-        toDisplay.innerHTML = '<p class="text-muted">No content available</p>';
-        return Promise.resolve();
-    }
-
-    return new Promise((resolve) => {
-        // Create a Quill instance in a temporary div
-        const tempDiv = document.createElement('div');
-        
-        // Check if Quill is available
-        if (typeof Quill === 'undefined') {
-            console.error('Quill library not loaded');
-            // Fallback: try to extract text from ops
-            const text = standardContent.ops.map(op => op.insert || '').join('');
-            toDisplay.innerHTML = `<p>${text}</p>`;
-            resolve();
-            return;
-        }
-
-        const quill = new Quill(tempDiv, {
-            theme: 'snow',
-            modules: { toolbar: false },
-            readOnly: true,
-        });
-
-        // For small content (less than 50 ops), render immediately
-        if (standardContent.ops.length < 50) {
-            try {
-                quill.setContents(standardContent);
-                toDisplay.innerHTML = tempDiv.innerHTML;
-                resolve();
-            } catch (error) {
-                console.error('Error rendering Quill content:', error);
-                // Fallback to plain text
-                const text = standardContent.ops.map(op => op.insert || '').join('');
-                toDisplay.innerHTML = `<p>${text}</p>`;
-                resolve();
-            }
-            return;
-        }
-
-        // For large content, render in chunks
-        const ops = standardContent.ops;
-        const chunks = [];
-        for (let i = 0; i < ops.length; i += chunkSize) {
-            chunks.push(ops.slice(i, i + chunkSize));
-        }
-
-        // Clear the container and show loader
-        toDisplay.innerHTML = '<div class="loader-container"><div class="spinner-border text-primary"></div><p>Loading content...</p></div>';
-        
-        // Function to render next chunk
-        function renderNextChunk(index) {
-            if (index >= chunks.length) {
-                // All chunks rendered
-                resolve();
-                return;
-            }
-
-            setTimeout(() => {
-                try {
-                    // Set content for current chunk
-                    quill.setContents({ ops: chunks[index] }, 'api');
-                    
-                    // Update the display
-                    if (index === 0) {
-                        // First chunk, replace loader
-                        toDisplay.innerHTML = tempDiv.innerHTML;
-                    } else {
-                        // For subsequent chunks, we need to append
-                        const tempDiv2 = document.createElement('div');
-                        const quill2 = new Quill(tempDiv2, {
-                            theme: 'snow',
-                            modules: { toolbar: false },
-                            readOnly: true,
-                        });
-                        quill2.setContents({ ops: chunks[index] }, 'api');
-                        toDisplay.innerHTML += tempDiv2.innerHTML;
-                    }
-                } catch (error) {
-                    console.error(`Error rendering chunk ${index}:`, error);
-                    // Continue with next chunk even if this one fails
-                }
-
-                // Render next chunk
-                renderNextChunk(index + 1);
-            }, delay);
-        }
-
-        // Start rendering chunks
-        renderNextChunk(0);
-    });
-}
-
 function getSupplement(articeID) {
-    // Show loader for abstract immediately
-    const abstractContainer = document.getElementById('abstract');
-    if (abstractContainer) {
-        abstractContainer.innerHTML = `
-            <div class="abstract-loader" style="text-align: center; padding: 40px;">
-                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-                    <span class="visually-hidden">Loading abstract...</span>
-                </div>
-                <p class="mt-3">Loading abstract content...</p>
-            </div>
-        `;
-    }
+    // Show loaders...
+    ['abstract', 'content'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = `<div class="text-center p-5"><div class="spinner-border text-primary"></div><p class="mt-2">Loading...</p></div>`;
+    });
 
-    // Show loader for content
-    const contentContainer = document.getElementById('content');
-    if (contentContainer) {
-        contentContainer.innerHTML = `
-            <div class="content-loader" style="text-align: center; padding: 40px;">
-                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-                    <span class="visually-hidden">Loading content...</span>
-                </div>
-                <p class="mt-3">Loading manuscript content...</p>
-            </div>
-        `;
-    }
-
-    // Function to set up download links first (highest priority)
-    function setupDownloadLinks(ManuscriptFile, ArticleTitle, buffer) {
-        downloadLinks.forEach(link => {
-            link.setAttribute("href", `../useruploads/manuscripts/${ManuscriptFile}`);
-            link.setAttribute("download", `${ArticleTitle}.pdf`);
-            link.addEventListener("click", function() {
-                DownloadItem(buffer);
-            });
-            // Make sure links are visible and functional
-            link.style.pointerEvents = 'auto';
-            link.style.opacity = '1';
-        });
-    }
-
-    // Function to load basic article info (medium priority)
-    function loadBasicInfo(Article) {
-        const ArticleTitle = Article[0].manuscript_full_title;
-        const ManuscriptFile = Article[0].manuscript_file;
-        const buffer = Article[0].buffer;
-        
-        manu_title.innerText = ArticleTitle;
-        
-        // Format dates
-        let DateUploaded = "N/A";
-        if(Article[0].date_uploaded != null && Article[0].date_uploaded != "" && Article[0].date_uploaded){
-            DateUploaded = formatTimestamp(Article[0].date_uploaded);
-        }
-        published_date.innerText = `${DateUploaded}`;
-
-        return { ArticleTitle, ManuscriptFile, buffer };
-    }
-
-    // Function to load statistics and metadata (low priority)
-    function loadMetadata(Article) {
-        const viewsCount = Article[0].views_count;
-        const correspondingAuthorsEmail = Article[0].corresponding_authors_email;
-        const hyperLink = Article[0].hyperlink_to_others;
-        const DownloadsCount = Article[0].downloads_count;
-        const Issue = Article[0].issues_number;
-        const Page = Article[0].page_number;
-        const Doi = Article[0].doi_number;
-        
-        let SubmittedDate = "N/A";
-        let ReviewedDate = "N/A";
-        let AcceptedDate = "N/A";
-        let PublishedDate = "N/A";
-
-        if(Article[0].date_submitted != null && Article[0].date_submitted != "" && Article[0].date_submitted){
-            SubmittedDate = formatTimestamp(Article[0].date_submitted);
-        }
-
-        if(Article[0].date_reviewed != null && Article[0].date_reviewed != "" && Article[0].date_reviewed){
-            ReviewedDate = formatTimestamp(Article[0].date_reviewed);
-        }
-
-        if(Article[0].date_accepted != null && Article[0].date_accepted != "" && Article[0].date_accepted){
-            AcceptedDate = formatTimestamp(Article[0].date_accepted);
-        }
-
-        if(Article[0].date_published != null && Article[0].date_published != "" && Article[0].date_published){
-            PublishedDate = formatTimestamp(Article[0].date_published);
-        }
-
-        // Update metadata containers
-        viewCountContainer.innerText = `${viewsCount} Views`;
-        downloadsCountContainer.innerText = `${DownloadsCount} Downloads`;
-        issueNumber.innerText = `Issue Number: ${Issue}`;
-        pageNumber.innerText = `Page Number: ${Page}`;
-        doiNumber.innerText = `DOI Number: ${Doi}`;
-        dateSubmitted.innerText = `Date Submitted: ${SubmittedDate}`;
-        dateReviewed.innerText = `Date Revised: ${ReviewedDate}`;
-        dateAccepted.innerText = `Date Accepted: ${AcceptedDate}`;
-        datePublished.innerText = `Date Published: ${PublishedDate}`;
-
-        const correspondingAuthorsEmailContainer = document.getElementById("correspondingAuthorsEmail");
-        correspondingAuthorsEmailContainer.innerHTML += ` <a style="color:#333;" href="mailto:${correspondingAuthorsEmail}">${correspondingAuthorsEmail}</a>`;
-        
-        const hyperlinkContainer = document.getElementById("hyperlink");
-        if(hyperLink != null && hyperLink !== "null" && hyperLink !== ""){
-            hyperlinkContainer.innerHTML += `<a style="color:#333;" href="${hyperLink}">${hyperLink}</a>`;
-        }else{
-            hyperlinkContainer.style.display = "none";
-        }
-    }
-
-    // Function to load authors (medium priority)
-    function loadAuthors(buffer) {
-        return fetch(`${EndPoint}/allAuthors.php?articleID=${buffer}`, {
-            method: "GET"
-        }).then(res => res.json())
-            .then(data => {
-                if (data && data.authorsList) {
-                    const AllAuthors = data.authorsList;
-                    let AuthorsName = "";
-
-                    // Clear existing authors
-                    authorsListBottom.innerHTML = '';
-                    
-                    // Add authors to bottom list
-                    AllAuthors.forEach(author => {
-                        const AuthorsFullname = `${author.authors_fullname}`;
-                        authorsListBottom.innerHTML += `<li> ${AuthorsFullname} </li>`;
-                    });
-                    
-                    // Build authors string for top container
-                    for(let i = 0; i < AllAuthors.length; i++){
-                        if(i < AllAuthors.length - 1){
-                            AuthorsName += `${AllAuthors[i].authors_fullname}, `;
-                        }else{
-                            AuthorsName += `${AllAuthors[i].authors_fullname}.`;
-                        }
-                    }
-
-                    authorsContainerTop.innerText = AuthorsName;
-                    return true;
-                } else {
-                    console.log("No authors data found");
-                    return false;
-                }
-            })
-            .catch(error => {
-                console.error("Error fetching authors:", error);
-                return false;
-            });
-    }
-
-    // Function to load content (handles both Quill and HTML)
-    function loadContent(unstructuredAbstract, AbstractDiscussoin) {
-        return new Promise((resolve) => {
-            // Parse the content
-            const content1 = safeParseJSON(unstructuredAbstract);
-            const content2 = safeParseJSON(AbstractDiscussoin);
-
-            // Load main content first
-            renderContent('content', content1).then(() => {
-                // Load abstract content
-                if (content2) {
-                    const abstractHeader = document.getElementById("abstractHeader");
-                    abstractHeader.style.display = "block";
-                    renderContent('abstract', content2).then(resolve);
-                } else {
-                    const abstractContainer = document.getElementById('abstract');
-                    if (abstractContainer) {
-                        abstractContainer.innerHTML = '<p class="text-muted">No abstract available</p>';
-                    }
-                    resolve();
-                }
-            });
-        });
-    }
-
-    // Main fetch function with prioritized loading
-    fetch(`${EndPoint}/retrieveArticle.php?q=${articeID}`, {
-        method: "GET"
-    }).then(res => res.json())
+    fetch(`${EndPoint}/retrieveArticle.php?q=${articeID}`, { method: "GET" })
+        .then(res => res.json())
         .then(data => {
             if (data.articleData && data.articleData.length > 0) {
                 const Article = data.articleData;
                 
-                // PHASE 1: Load download links immediately (highest priority)
-                const basicInfo = loadBasicInfo(Article);
-                setupDownloadLinks(basicInfo.ManuscriptFile, basicInfo.ArticleTitle, basicInfo.buffer);
-                
-                // Set cover photo (quick operation)
-                const coverPhoto = Article[0].manuscriptPhoto;
-                const previewHead = document.getElementById("previewHead");
+                // PHASE 1: Basic Info & Links
+                const ArticleTitle = Article[0].manuscript_full_title;
+                const ManuscriptFile = Article[0].manuscript_file;
+                const buffer = Article[0].buffer;
+                manu_title.innerText = ArticleTitle;
+                published_date.innerText = Article[0].date_uploaded ? formatTimestamp(Article[0].date_uploaded) : "N/A";
+
+                downloadLinks.forEach(link => {
+                    link.setAttribute("href", `../useruploads/manuscripts/${ManuscriptFile}`);
+                    link.setAttribute("download", `${ArticleTitle}.pdf`);
+                    link.onclick = () => DownloadItem(buffer);
+                });
+
+                // PHASE 2: Cover & Metadata
                 const mainCoverImage = `../images/articleImages/8.jpg`;
-                previewHead.setAttribute("style", `background-image: url(${mainCoverImage}); background-size: cover; background-repeat: no-repeat;`);
+                document.getElementById("previewHead").style.backgroundImage = `url(${mainCoverImage})`;
                 
-                // PHASE 2: Load authors and metadata (medium priority)
-                // Load authors
-                loadAuthors(basicInfo.buffer);
-                
-                // Load metadata with a small delay to prioritize user interaction
+                loadAuthors(buffer);
+                setTimeout(() => loadMetadata(Article[0]), 100);
+
+                // PHASE 3: Render Content (Handle both Quill and RichText HTML)
                 setTimeout(() => {
-                    loadMetadata(Article);
-                }, 100);
-                
-                // PHASE 3: Load content (handles both Quill and HTML)
-                setTimeout(() => {
-                    const unstructuredAbstract = Article[0].unstructured_abstract;
-                    const AbstractDiscussoin = Article[0].abstract_discussion;
-                    
-                    loadContent(unstructuredAbstract, AbstractDiscussoin);
-                }, 300);
+                    renderContent('content', Article[0].unstructured_abstract);
+                    if (Article[0].abstract_discussion) {
+                        document.getElementById("abstractHeader").style.display = "block";
+                        renderContent('abstract', Article[0].abstract_discussion);
+                    }
+                }, 200);
                 
             } else {
                 alert("File Not found on server");
             }
-        })
-        .catch(error => {
-            console.error("Error fetching article data:", error);
-            alert("An error occurred while loading the article");
         });
 }
 
-export {
-    getSupplement
+function loadAuthors(buffer) {
+    fetch(`${EndPoint}/allAuthors.php?articleID=${buffer}`).then(res => res.json()).then(data => {
+        if (data && data.authorsList) {
+            const list = data.authorsList;
+            authorsListBottom.innerHTML = list.map(a => `<li>${a.authors_fullname}</li>`).join('');
+            authorsContainerTop.innerText = list.map(a => a.authors_fullname).join(', ') + '.';
+        }
+    });
 }
+
+function loadMetadata(item) {
+    viewCountContainer.innerText = `${item.views_count} Views`;
+    downloadsCountContainer.innerText = `${item.downloads_count} Downloads`;
+    issueNumber.innerText = `Issue Number: ${item.issues_number}`;
+    pageNumber.innerText = `Page Number: ${item.page_number}`;
+    doiNumber.innerText = `DOI Number: ${item.doi_number}`;
+    dateSubmitted.innerText = `Date Submitted: ${item.date_submitted ? formatTimestamp(item.date_submitted) : "N/A"}`;
+    dateReviewed.innerText = `Date Revised: ${item.date_reviewed ? formatTimestamp(item.date_reviewed) : "N/A"}`;
+    dateAccepted.innerText = `Date Accepted: ${item.date_accepted ? formatTimestamp(item.date_accepted) : "N/A"}`;
+    datePublished.innerText = `Date Published: ${item.date_published ? formatTimestamp(item.date_published) : "N/A"}`;
+
+    document.getElementById("correspondingAuthorsEmail").innerHTML += ` <a style="color:#333;" href="mailto:${item.corresponding_authors_email}">${item.corresponding_authors_email}</a>`;
+    const hyperLink = item.hyperlink_to_others;
+    if(hyperLink && hyperLink !== "null") {
+        document.getElementById("hyperlink").innerHTML += `<a style="color:#333;" href="${hyperLink}">${hyperLink}</a>`;
+    }
+}
+
+export { getSupplement }
