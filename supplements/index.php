@@ -779,7 +779,7 @@
 <script src="../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/main.js?v=<?= time(); ?>"></script>
 <script type="module" src="../js/general.js?v=<?= time(); ?>"></script>
-<script src="../js/queries/allArticles.js?v=<?= time(); ?>" type="module"></script>
+<script src="../js/queries/allArticles.js?v=<?= time(); ?>afklkslf" type="module"></script>
 <script src="../js/announcements/getPriority.js"></script>
 
 </body>

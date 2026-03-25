@@ -776,7 +776,7 @@
 <script src="../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/main.js?v=<?= time(); ?>"></script>
 <script type="module" src="../js/general.js?v=<?= time(); ?>"></script>
-<script src="../js/queries/allIssues.js?v=<?= time(); ?>vsf" type="module"></script>
+<script src="../js/queries/allIssues.js?v=<?= time(); ?>vsfaaf" type="module"></script>
 <script src="../js/announcements/getPriority.js?v=23"></script>
 
 
