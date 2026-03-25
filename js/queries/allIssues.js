@@ -1,6 +1,6 @@
 import { EndPoint, GetParameters } from "../constants.js";
 import { getURL } from "../getURL.js";
-import { UpdateIssues } from "../updateIssuesList.js";
+import { UpdateIssues } from "../updateIssuesList.js?v=a4lwwr";
 import { articlesNavigation } from "./articlesNavigation.js";
 
 const url = getURL();

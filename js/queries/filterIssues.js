@@ -1,6 +1,6 @@
 import { EndPoint } from "../constants.js";
-import { UpdateIssues } from "../updateIssuesList.js";
-import { ArticlePage } from "./allIssues.js";
+import { UpdateIssues } from "../updateIssuesList.js?v=a4lwwr";
+import { ArticlePage } from "./allIssues.js?v=a4lwwr";
 
 const TypeContainer = document.getElementById("typeOption");
 const authorsOptions = document.getElementById("authorsOption");
