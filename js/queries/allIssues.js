@@ -1,36 +1,28 @@
 import { EndPoint, GetParameters } from "../constants.js";
 import { getURL } from "../getURL.js";
-import { UpdateIssues } from "../updateIssuesList.js?v=aet";
+import { UpdateIssues } from "../updateIssuesList.js";
 import { articlesNavigation } from "./articlesNavigation.js";
 
-const search = document.getElementById("search");
-const searchArticle = document.getElementById("searchArticle");
-
 const url = getURL();
-const Limit = (url === "/asfi_journal/" || url === "/") ? 3 : 6;
+const Limit = (url === "/asfi_journal/" || url === "/") ? 6 : 10;
+const page = GetParameters(window.location.href).get("page") || 1;
 
-const currentLocationURL = window.location.href;
-const newpage = GetParameters(currentLocationURL).get("page") || 1;
-
-// Run the function immediately
-ArticlePage(newpage);
-
-async function ArticlePage(page) {
+async function ArticlePage(pageNumber = 1) {
     try {
-        const response = await fetch(`${EndPoint}/forIssues/allIssues.php?page=${page}&limit=${Limit}`);
+        const response = await fetch(`${EndPoint}/forIssues/allIssues.php?page=${pageNumber}&limit=${Limit}`);
+        if (!response.ok) throw new Error("Network response was not ok");
+        
         const data = await response.json();
-
         if (data?.articlesList) {
-           ;
-            const { articlesList, currentPage, totalPages } = data;
-            UpdateIssues(articlesList, Number(currentPage), Number(totalPages));
-            articlesNavigation(Number(totalPages), Number(currentPage));
-        } else {
-            console.warn("No data received.");
+            UpdateIssues(data.articlesList);
+            articlesNavigation(Number(data.totalPages), Number(data.currentPage));
         }
     } catch (error) {
-        console.error("Error fetching articles:", error);
+        console.error("Fetch error:", error);
     }
 }
+
+// Initialize
+ArticlePage(page);
 
 export { ArticlePage };

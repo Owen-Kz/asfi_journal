@@ -1,128 +1,65 @@
-import { EndPoint } from "../constants.js"
-import { UpdateIssues } from "../updateIssuesList.js"
-import { ArticlePage } from "./allIssues.js"
+import { EndPoint } from "../constants.js";
+import { UpdateIssues } from "../updateIssuesList.js";
+import { ArticlePage } from "./allIssues.js";
 
-const TypeContainer = document.getElementById("typeOption")
-const authorsOptions = document.getElementById("authorsOption")
-const search = document.getElementById("searchArticle")
-const searchField = document.getElementById("search")
+const TypeContainer = document.getElementById("typeOption");
+const authorsOptions = document.getElementById("authorsOption");
+const searchForm = document.getElementById("searchArticle");
+const searchField = document.getElementById("search");
 
+// Improved performance for populating dropdowns
+async function LoadFilterOptions() {
+    try {
+        const [authRes, typeRes] = await Promise.all([
+            fetch(`${EndPoint}/authors.php`, { method: "POST" }),
+            fetch(`${EndPoint}/articleType.php`, { method: "POST" })
+        ]);
 
-async function CreateAuthorsOptionsForIssues(){
+        const authorsData = await authRes.json();
+        const typesData = await typeRes.json();
 
-    // Get all the authors on the system 
-  return  fetch(`${EndPoint}/authors.php`, { 
-        method:"POST"
-    }).then(res => res.json())
-    .then(data=>{
-      return data.authors 
-        
-    })
-
-}
-
-if(TypeContainer){
-TypeContainer.addEventListener("change", function(){
-    if(TypeContainer.value !== "all"){
-
-    const databody = {
-        type: TypeContainer.value
-    }
-    fetch(`${EndPoint}/forIssues/filterbyType.php?type=${TypeContainer.value}`, {
-        method:"GET",
-       
-    }).then(res=>res.json())
-    .then(data =>{
-        if(data.status === "success"){
-            const articlesList = data.articlesList
-            UpdateIssues(articlesList)
-        }else{
-            alert(data.message)
+        if (authorsOptions && authorsData.authors) {
+            authorsOptions.innerHTML = '<option value="all">Filter by Author</option>' + 
+                authorsData.authors.map(a => `<option value="${a}">${a}</option>`).join('');
         }
-    })
-}else{
-    ArticlePage(1)
-}
 
-})
-
-}
-
-if(authorsOptions){
-authorsOptions.addEventListener("change", function(){
-    if(authorsOptions.value !== "all"){
-
-
-    const databody = {
-        author: authorsOptions.value
-    }
-    fetch(`${EndPoint}/forIssues/filterByAuthors.php?author=${authorsOptions.value}`, {
-        method:"GET",
-        // body: JSON.stringify(databody),
-        // headers:{
-        //     "Content-type": "application/JSON"
-        // }
-    }).then(res => res.json())
-    .then(data => {
-       if(data.status === "success"){
-            const articlesList = data.articlesList
-        
-            UpdateTemporaryArticles(articlesList)
-        }else{
-            alert(data.message)
-    }
-})
-}else{
-    ArticlePage(1)
-}
-})
-}
-
-if(search){
-search.addEventListener("submit", function(e){
-    e.preventDefault()
-
-    const databody = {
-        k: searchField.value,
-    }
-
-
-    fetch(`${EndPoint}/forIssues/filterIssues.php?k=${searchField.value}`, {
-        method:"GET",
-        // body: JSON.stringify(databody),
-        // headers:{
-        //     "Content-type": "application/JSON"
-        // }
-    }).then(res=> res.json())
-    .then(data =>{
-        if(data.status === "success"){
-           const Articles = data.articlesList
-           UpdateIssues(Articles) 
-        }else{
-            alert(data.message)
+        if (TypeContainer && typesData.types) {
+            TypeContainer.innerHTML = '<option value="all">Filter by Type</option>' + 
+                typesData.types.map(t => `<option value="${t}">${t}</option>`).join('');
         }
-    })
-})
-
+    } catch (e) { console.error("Filter load error", e); }
 }
-async function CreateTypeOptionsForIssues(){
-    return  fetch(`${EndPoint}/articleType.php`, {
-        method:"POST"
-    }).then(res => res.json())
-    .then(data=>{
-    //   return data.authors 
-    const TYpes = data.types 
-    TYpes.forEach(type => {
-        if(TypeContainer){
-            TypeContainer.innerHTML += `<option value="${type}">${type}</option>`
-        }
+
+async function handleFilter(url, isAll = false) {
+    if (isAll) {
+        ArticlePage(1);
+        return;
+    }
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data.status === "success") UpdateIssues(data.articlesList);
+    } catch (e) { console.error("Filter error", e); }
+}
+
+if (TypeContainer) {
+    TypeContainer.addEventListener("change", () => 
+        handleFilter(`${EndPoint}/forIssues/filterbyType.php?type=${TypeContainer.value}`, TypeContainer.value === "all")
+    );
+}
+
+if (authorsOptions) {
+    authorsOptions.addEventListener("change", () => 
+        handleFilter(`${EndPoint}/forIssues/filterByAuthors.php?author=${authorsOptions.value}`, authorsOptions.value === "all")
+    );
+}
+
+if (searchForm) {
+    searchForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        handleFilter(`${EndPoint}/forIssues/filterIssues.php?k=${searchField.value}`);
     });
-        
-    })
 }
 
-
-export {
-    CreateAuthorsOptionsForIssues,
-    CreateTypeOptionsForIssues
-}
+// Initial load
+LoadFilterOptions();
