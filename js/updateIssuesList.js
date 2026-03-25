@@ -54,7 +54,6 @@ async function UpdateIssues(articleList) {
     let articlesHTML = "";
 
     articleList.forEach((article, index) => {
-  
         const {
             manuscript_full_title: articleTitle,
             manuscript_file: articleFile,
@@ -66,11 +65,17 @@ async function UpdateIssues(articleList) {
             views_count: viewsCount,
             downloads_count: downloadsCount,
             is_editors_choice: isEditorsChoice,
-            is_open_access: isOpenAccess
+            is_open_access: isOpenAccess,
+            is_old_publication
         } = article;
 
-      let coverImage = `https://asfirj.org/useruploads/article_images/${coverPhoto}`? `https://asfirj.org/useruploads/article_images/${coverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
+        const OldCoverPhotos = coverPhoto ? `https://asfirj.org/useruploads/article_images/${coverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
 
+        const NewerCoverPhotos = coverPhoto? `https://process.asfirj.org/useruploads/article_images/${coverPhoto}` || `http://localhost:31000/useruploads/article_images/${coverPhoto}`: `https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg`
+
+      let coverImage = article.is_old_publication === "yes" ? OldCoverPhotos : NewerCoverPhotos
+
+      console.log("COVERIMAGe", coverImage)
         const formattedDate = formatTimestamp(mainPublishDate || date_uploaded);
         const authorsName = authorsData[index];
 

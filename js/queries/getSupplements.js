@@ -204,6 +204,8 @@ function getSupplement(articeID) {
                 });
 
                 // PHASE 2: Cover & Metadata
+                 const coverPhoto = Article[0].manuscriptPhoto;
+                 console.log("ARTICLE TYPE", Article[0].is_old_publication)
                 const mainCoverImage = `../images/articleImages/8.jpg`;
                 document.getElementById("previewHead").style.backgroundImage = `url(${mainCoverImage})`;
                 
