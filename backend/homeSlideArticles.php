@@ -84,7 +84,7 @@ function renderSliderItemsOptimized($con, $limit = 3) {
                 // Render slider item with proper escaping and data attributes for carousel
                 echo '
                 <div class="item ' . $activeClassAttr . '" style="background-image: url(\'' . $ArticlePhoto . '\'); background-size: cover; background-position: center;">
-                    <div class="carousel-caption article-info1">
+                    <div class="carousel-caption article-info1" style="left:0 !important; text-align:left;">
                         <div class="tag">Recently Published</div>
                         <span class="articleDateContainer">
                             <input type="hidden" value="' . $ArticleDate . '">
