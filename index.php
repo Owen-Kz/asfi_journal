@@ -291,8 +291,8 @@ include './backend/db.php';
                                         <a href="./supplements">Supplements</a>
                                     </div>
                                 </div>
-                                <div>
-                                    <div id="pane-01cbe741-499a-4611-874e-1061f1f4679e01" role="tabpanel" >
+                                <div >
+                                    <div id="pane-01cbe741-499a-4611-874e-1061f1f4679e01" class="grid grid-cols-2 gap-4" >
                                         <!-- <div data-mathjax="" class="top-content" id="articleListContainer"> -->
                                             <?php 
                                             // Include and render home items with caching
