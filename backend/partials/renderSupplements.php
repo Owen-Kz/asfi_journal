@@ -58,10 +58,10 @@ function renderSupplementArticle($row, $authorsName) {
     $downloadsCount = (int)$row['downloads_count'];
     
     return '
-    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow mb-6">
+ <div class="bg-white rounded-xl h-auto min-h-[200px] shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow mb-6">
         <div class="flex flex-col md:flex-row">
             <!-- Left Column: Image -->
-            <div class="w-full md:w-64 h-48 md:h-auto bg-cover bg-center relative" style="background-image: url(\'' . $coverImage . '\'); background-color: #f3f4f6;">
+            <div class="w-full md:w-64 h-48 md:h-[200px] bg-cover bg-center relative" style="background-image: url(\'' . $coverImage . '\'); background-color: #f3f4f6;">
                 <div class="w-full h-full bg-gradient-to-r from-orange-900/70 to-transparent flex items-end p-4">
                     <div class="flex gap-2">
                         <span class="text-white text-sm font-medium bg-orange-600 px-2 py-1 rounded">' . $articleType . '</span>
