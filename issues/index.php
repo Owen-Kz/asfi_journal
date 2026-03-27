@@ -41,8 +41,8 @@ include '../backend/partials/renderIssues.php';
     <script src="https://cdn.tailwindcss.com"></script>
 
     <div class="issueslay" style="display: flex; gap: 30px; padding: 20px;">
-        <section class="sup-article-section bd-bottom padding" style="flex: 2;">
-            <div id="articleListContainer">
+        <section class=" bd-bottom padding" >
+            <div id="articleListContainer" class="grid grid-cols-2 gap-4">
                 <?php
                 // Render issues with filters
                 renderIssues($con, $page, $filters);
