@@ -84,7 +84,7 @@ function renderArticle($row, $authorsName) {
                     </div>
                 </div>
 
-                <p class=" text-gray-400 mb-3">ID: ' . $buffer . '</p>
+    
                 
              
                 <!-- Stats Row -->

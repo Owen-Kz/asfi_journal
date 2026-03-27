@@ -85,7 +85,7 @@ function renderSupplementArticle($row, $authorsName) {
                     </div>
                 </div>
 
-                <p class="text-gray-400 mb-3">ID: ' . $buffer . '</p>
+            
                 
                 <!-- Stats Row -->
                 <div class="flex flex-wrap items-center gap-4 text-gray-500 mb-4">
