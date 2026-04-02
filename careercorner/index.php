@@ -17,6 +17,7 @@ include '../backend/partials/renderCareerCorner.php';
 
 <?php include '../components/header.php'; ?>
 <?php include '../components/top-navbar.php'; ?>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
     .page-header {
@@ -369,6 +370,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
 </main>
 
 <?php include '../components/footer.php'; ?>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 <script>
 // Toggle format links function
