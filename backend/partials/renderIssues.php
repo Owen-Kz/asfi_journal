@@ -75,7 +75,7 @@ function renderArticle($row, $authorsName) {
             
             <!-- Authors -->
             <div class="mb-3 md:mb-4">
-                <p class="text-xs md:text-base text-gray-600 line-clamp-2">by ' . htmlspecialchars($authorsName) . '</p>
+                <p class="text-xs md:text-base text-gray-600 line-clamp-2">' . htmlspecialchars($authorsName) . '</p>
             </div>
             
             <!-- Stats -->

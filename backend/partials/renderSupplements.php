@@ -81,7 +81,7 @@ function renderSupplementArticle($row, $authorsName) {
             
             <!-- Authors -->
             <div class="mb-3">
-                <p class="text-sm text-gray-600">by ' . htmlspecialchars($authorsName) . '</p>
+                <p class="text-sm text-gray-600">' . htmlspecialchars($authorsName) . '</p>
             </div>
             
             <!-- Stats -->
