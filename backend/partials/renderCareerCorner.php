@@ -37,12 +37,12 @@ function renderArticleLC($row, $authorsName) {
     $formattedDate = formatTimestampLC(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
     
     // Career Corner Badge (distinct color)
-    $careercornerBadge = '<span class="learning-corner-badge inline-flex items-center gap-1 text-[11px] md:text-sm text-orange-700 bg-orange-50 px-1.5 md:px-2 py-0.5 rounded-full whitespace-nowrap">
-        <svg width="14" height="14" class="md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        Career Corner
-    </span>';
+    // $careercornerBadge = '<span class="learning-corner-badge inline-flex items-center gap-1 text-[11px] md:text-sm text-orange-700 bg-orange-50 px-1.5 md:px-2 py-0.5 rounded-full whitespace-nowrap">
+    //     <svg width="14" height="14" class="md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    //         <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    //     </svg>
+    //     Career Corner
+    // </span>';
     
     // Original badge icons
     $editorsChoiceBadge = ($row['is_editors_choice'] === "yes") 
@@ -68,7 +68,7 @@ function renderArticleLC($row, $authorsName) {
             <img src="' . $coverImage . '" alt="' . $title . '" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
             <div class="absolute top-3 left-3 flex gap-1">
                 <span class="text-[10px] md:text-sm font-semibold text-purple-700 bg-white/90 backdrop-blur-sm px-2 py-0.5 md:py-1 rounded-full shadow-sm">' . $articleType . '</span>
-                ' . $careercornerBadge . '
+                
             </div>
             <div class="absolute top-3 right-3 flex gap-1">
                 ' . $openAccessBadge . '
