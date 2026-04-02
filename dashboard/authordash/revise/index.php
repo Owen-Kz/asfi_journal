@@ -308,7 +308,7 @@
                           <option value="Perspectives"> Perspectives</option>
                           <option value="Data">Data</option>
                           <option value="Opinion">Opinion</option>
-                          <option value="Learning Corner">Learning Corner</option>
+                          <option value="Career Corner">Career Corner</option>
                           <option value="Field Story">Field Story</option>
                           <option value="Insight">Insight</option>
                           <option value="Correspondence">Correspondence</option>
