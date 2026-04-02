@@ -254,7 +254,7 @@ include '../backend/partials/renderCareerCorner.php';
                     <a href="">Career Corner</a>
                 </div>
                 <h2>Prof. Nwaru's Career Corner</h2>
-                <p class="w-20 xl:w-50 m-auto">Prof. Nwaru shares actionable insights, proven strategies, and practical advice to help you navigate your academic journey, master research skills, and build a thriving scientific career in Africa and beyond.</p>
+                <p class="w-90 xl:w-50 m-auto">Prof. Nwaru shares actionable insights, proven strategies, and practical advice to help you navigate your academic journey, master research skills, and build a thriving scientific career in Africa and beyond.</p>
             </div>
         </div>
     </div>
