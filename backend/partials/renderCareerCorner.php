@@ -139,7 +139,7 @@ function renderCareerCorner($con, $page = 1, $filters = []) {
     $totalPages = 0;
     
     // Build WHERE clause - ONLY articles with article_type = 'Career Corner'
-    $whereClauses = ["`journals`.`is_publication` = 'yes'", "`journals`.`article_type` = 'Career Corner'"];
+    $whereClauses = ["`journals`.`is_publication` = 'yes'", "`journals`.`article_type` = 'LEARNING CORNER'"];
     $params = [];
     $types = "";
     

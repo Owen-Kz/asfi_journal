@@ -325,7 +325,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
     $featuredPhoto = $featured['manuscriptPhoto'] ?? null;
     $featuredImage = !empty($featuredPhoto) ? "https://asfirj.org/useruploads/article_images/" . $featuredPhoto : "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
 ?>
-<section class="featured-section py-5">
+<!-- <section class="featured-section py-5">
     <div class="container">
         <div class="featured-article">
             <div class="row g-0">
@@ -345,7 +345,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <?php endif; ?>
 
 <!-- Articles Listing Section -->
