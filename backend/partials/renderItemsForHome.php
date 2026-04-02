@@ -77,7 +77,7 @@ function renderArticle($row, $authorsName) {
             
             <!-- Authors - increased to text-xl -->
             <div class="mb-4">
-                <p class="text-xl text-gray-600 line-clamp-2" title="' . htmlspecialchars($authorsName) . '">by ' . htmlspecialchars($authorsName) . '</p>
+                <p class="text-xl text-gray-600 line-clamp-2" title="' . htmlspecialchars($authorsName) . '">' . htmlspecialchars($authorsName) . '</p>
             </div>
             
             <!-- Stats - increased to text-base/lg -->
