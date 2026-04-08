@@ -9,7 +9,7 @@ ob_start();
 // Set caching headers for better performance
 header("Cache-Control: public, max-age=3600"); 
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
-
+include_once("./helpers.php");
 // Function to get cover image URL
 function getCoverImage($row) {
     static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
@@ -24,6 +24,88 @@ function getCoverImage($row) {
         : "https://process.asfirj.org/useruploads/article_images/" . $photo;
 }
 
+// function getClientIp() {
+//     if (!empty($_SERVER['HTTP_CLIENT_IP'])) return $_SERVER['HTTP_CLIENT_IP'];
+//     if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) return $_SERVER['HTTP_X_FORWARDED_FOR'];
+//     return $_SERVER['REMOTE_ADDR'];
+// }
+
+// function updateDownloadsCount($row) {
+//     global $con;
+
+//     $articleId = $row["id"];
+//     $clientIp = getClientIp(); // Get client IP
+
+//     try {
+//         // Check if user already downloaded
+//         $stmtCheck = $con->prepare("
+//             SELECT id FROM view_download_count 
+//             WHERE user_ip = ? AND article_id = ? AND type = 'downloaded'
+//         ");
+
+//         if (!$stmtCheck) {
+//             throw new Exception("Prepare failed (check): " . $con->error);
+//         }
+
+//         $stmtCheck->bind_param("si", $clientIp, $articleId);
+//         $stmtCheck->execute();
+//         $result = $stmtCheck->get_result();
+
+//         if ($result->num_rows === 0) {
+//             // Not downloaded before → update count
+//             $stmtUpdate = $con->prepare("
+//                 UPDATE journals 
+//                 SET downloads_count = downloads_count + 1 
+//                 WHERE id = ?
+//             ");
+
+//             if (!$stmtUpdate) {
+//                 throw new Exception("Prepare failed (update): " . $con->error);
+//             }
+
+//             $stmtUpdate->bind_param("i", $articleId);
+//             $stmtUpdate->execute();
+//             $stmtUpdate->close();
+
+//             // Insert tracking record
+//             $stmtInsert = $con->prepare("
+//                 INSERT INTO view_download_count (user_ip, article_id, type)
+//                 VALUES (?, ?, 'downloaded')
+//             ");
+
+//             if (!$stmtInsert) {
+//                 throw new Exception("Prepare failed (insert): " . $con->error);
+//             }
+
+//             $stmtInsert->bind_param("si", $clientIp, $articleId);
+//             $stmtInsert->execute();
+//             $stmtInsert->close();
+
+//             $stmtCheck->close();
+//             return "Download updated";
+
+//         } else {
+//             $stmtCheck->close();
+//             return "Already downloaded";
+//         }
+
+//     } catch (Exception $e) {
+//         error_log($e->getMessage());
+//         return false;
+//     }
+// }
+// function getManuscriptURL($row) {
+//     static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+    
+//     $manuscript = $row['manuscript_file'] ?? null;
+//     $isOld = $row['is_old_publication'] ?? 'no';
+    
+//     if (empty($manuscript)) return $defaultImage;
+//     return $isOld === "yes" 
+//         ? "https://asfirj.org/useruploads/manuscripts/" . $manuscript
+//         : "https://process.asfirj.org/useruploads/manuscripts/" . $manuscript;
+// }
+
 // Function to format timestamp
 function formatTimestamp($date) {
     if (empty($date)) return "";
@@ -34,7 +116,7 @@ function formatTimestamp($date) {
 function renderArticle($row, $authorsName) {
     $coverImage = getCoverImage($row);
     $formattedDate = formatTimestamp(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
-    
+    $manuscriptFileURL = getManuscriptURL($row);
     // Original badge icons - keep exactly as they were
     $editorsChoiceBadge = ($row['is_editors_choice'] === "yes") 
         ? '<span class="editchoice inline-flex items-center gap-1 text-[11px] md:text-sm text-blue-700 bg-blue-50 px-1.5 md:px-2 py-0.5 rounded-full whitespace-nowrap"><svg width="14" height="14" class="md:w-4 md:h-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.965 8.521C19.988 8.347 20 8.173 20 8c0-2.379-2.143-4.288-4.521-3.965C14.786 2.802 13.466 2 12 2s-2.786.802-3.479 2.035C6.138 3.712 4 5.621 4 8c0 .173.012.347.035.521C2.802 9.215 2 10.535 2 12s.802 2.785 2.035 3.479A3.976 3.976 0 0 0 4 16c0 2.379 2.138 4.283 4.521 3.965C9.214 21.198 10.534 22 12 22s2.786-.802 3.479-2.035C17.857 20.283 20 18.379 20 16c0-.173-.012-.347-.035-.521C21.198 14.785 22 13.465 22 12s-.802-2.785-2.035-3.479z" fill="#4d91f7"/></svg> Editor\'s Choice</span>'
@@ -69,7 +151,7 @@ function renderArticle($row, $authorsName) {
         <!-- Content -->
         <div class="p-4 md:p-6">
             <!-- Title -->
-            <a href="/content?sid=' . $buffer . '" class="hover:text-purple-700 transition-colors">
+            <a href="/content?sid=' . $buffer . '" class="hover:text-purple-700 transition-colors" onClick='.updateDownloadsCount($row).'>
                 <h3 class="text-base md:text-2xl font-semibold text-gray-900 mb-2 md:mb-3 line-clamp-2 leading-tight">' . $title . '</h3>
             </a>
             
@@ -104,7 +186,7 @@ function renderArticle($row, $authorsName) {
                     <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     Full Text
                 </a>
-                <a href="https://asfirj.org/useruploads/manuscripts/' . $manuscriptFile . '" target="_blank" class="downloadLink px-2 md:px-4 py-1 md:py-2 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-1 text-[10px] md:text-sm font-medium">
+                <a href="'.$manuscriptFileURL.'" target="_blank" class="downloadLink px-2 md:px-4 py-1 md:py-2 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-1 text-[10px] md:text-sm font-medium">
                     <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     PDF
                 </a>
