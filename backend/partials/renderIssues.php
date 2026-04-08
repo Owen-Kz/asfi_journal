@@ -9,7 +9,8 @@ ob_start();
 // Set caching headers for better performance
 header("Cache-Control: public, max-age=3600"); 
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
-include __DIR__."./helpers.php";
+include __DIR__."/helpers.php";
+
 
 
 // Function to get cover image URL
