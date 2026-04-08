@@ -9,7 +9,8 @@ ob_start();
 // Set caching headers for better performance
 header("Cache-Control: public, max-age=3600"); 
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
-include_once("./helpers.php");
+include "./helpers.php";
+
 // Function to get cover image URL
 function getCoverImage($row) {
     static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
