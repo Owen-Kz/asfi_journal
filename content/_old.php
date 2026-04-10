@@ -1,0 +1,510 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <script>
+        const searchParams = new URLSearchParams(window.location.search);
+const hasParamSupplementId = searchParams.has('sid');
+if(hasParamSupplementId){
+    const SearchId = searchParams.get("sid")
+    window.location.href = `https://portal.asfirj.org/content?sid=${SearchId}`
+}
+    </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
+	<meta name="author" content="Weperch LLC">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title> ASFI Research Journal - Preview Issue</title>
+    <meta name="title" Content="ASFI Research Journal - Preview Issue">
+
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
+    <link rel="shortcut icon" href="../assets/images/logoIcon/favicon.png" type="image/x-icon">
+
+    
+    <link rel="apple-touch-icon" href="../assets/images/logoIcon/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Preview Issue">
+    
+    <meta itemprop="name" content="ASFI Research Journal - Preview Issue">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:image" content="https://asfirj.org/assets/images/seo/65be1258275121706955352.png"/>
+    <meta property="og:image:type" content="png"/>
+    <meta property="og:image:width" content="1180" />
+    <meta property="og:image:height" content="600" />
+    
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+
+	<link rel="stylesheet" href="../front/public/css/fontawesome.min.css">
+	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css">
+	<link rel="stylesheet" href="../front/public/css/business-icon.css">
+	<link rel="stylesheet" href="../front/public/css/animate.min.css">
+	<link rel="stylesheet" href="../front/public/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../front/public/css/slick.min.css">
+	<link rel="stylesheet" href="../front/public/css/venobox.min.css">
+	<link rel="stylesheet" href="../front/public/css/odometer.min.css">
+	<link rel="stylesheet" href="../front/public/css/nice-select.css">
+	<link rel="stylesheet" href="../front/public/css/splitting-cells.css">
+	<link rel="stylesheet" href="../front/public/css/splitting.css">
+	<link rel="stylesheet" href="../front/public/css/keyframe-animation.css">
+	<link rel="stylesheet" href="../front/public/css/slider.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../front/public/css/header.css">
+	<link rel="stylesheet" href="../front/public/css/footer.css">
+	<link rel="stylesheet" href="../front/public/css/main.css">
+	<link rel="stylesheet" href="../front/public/css/responsive.css">
+	<script src="../front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+    <!-- QUILL JS  -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <!-- END QUILL JS  -->
+     <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        .submit-nav a {
+    color: #310357 !important;
+}
+.ql-editor a {
+    color: #80078b !important;
+}
+
+/* Loader styles for abstract */
+.abstract-loader {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.loader-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ensure download links are immediately functional */
+.downloadLink {
+    transition: opacity 0.3s ease;
+}
+    </style>
+
+</head>
+
+<body class="header-1 business">
+
+
+
+
+	<div>
+ 	 <!-- Top Dark Navbar -->
+<div class="top-navbar">
+  <div class="top-nav-inner">
+    <div class="logo-section">
+		<a href="https://asfirj.org/">
+      <img src="../assets/images/logoIcon/logo.png" alt="Logo" />
+</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="top-menu-toggle" id="topMenuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="top-links" id="topLinks">
+      <a href="https://asfirj.org/issues">Explore asfirj</a>
+      <a href="https://asfirj.org/authors.html#ob">Get published</a>
+	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
+      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
+      <a href="https://asfirj.org/events.html">Events</a>
+      <a href="https://portal.asfirj.org/portal/login/">Login</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Journal Banner -->
+<div class="journal-banner">
+  <div class="container banner-inner">
+    <div class="journal-title">
+      <h1>ASFI Research Journal</h1>
+    </div>
+  </div>
+</div>
+ 
+	<header class="header header-one">
+		<div class="primary-header-one primary-header">
+			<div class="container">
+				<div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;" style="display:flex; flex-direction:column; align-items: start;">
+					<div class="header-logo show-logo">
+						<a href="https://asfirj.org/">
+							<img src="../assets/images/logoIcon/logo.png" alt="Logo" /></a>
+					</div><!-- /.header-logo -->
+					
+
+					<div class="header-menu-wrap" style="width: 100%;" style="width: 100%;">
+						<ul class="dl-menu ">
+							<!-- Menu Item -->
+							 <li><a href="../" class='menu-item'>Home</a></li>
+							<li><a href="https://asfirj.org/aboutus.html" class='menu-item dropdown'>About</a>
+                                <ul class="dropdown-menu aboutDropDown">
+								<li><a href="https://asfirj.org/aboutus.html#ASFI" class='menu-item'>
+								African Science Frontiers Initiatives</a>
+								</li>
+								<li><a href="https://asfirj.org/aboutus.html#aims" class='menu-item'>
+								ASFIRJ's AIMS & SCOPE</a>
+								</li>
+								<li><a href="https://asfirj.org/aboutus.html#values" class='menu-item'>
+									ASFIRJ Values</a>
+								</li>
+								<li><a href="https://asfirj.org/aboutus.html#prompt" class='menu-item'>
+									Prompt Decisions and Rapid Publication Timelines</a>
+								</li>
+								<li><a href="https://asfirj.org/aboutus.html#why-section" class='menu-item'>
+									Why Publish in ASFIRJ?</a>
+								</li>
+                                <li><a href="https://asfirj.org/aboutus.html#open-access" class='menu-item'>
+									Open Access and Author Licensing</a>
+								</li>
+								<li><a href="https://asfirj.org/aboutus.html#fees" class='menu-item'>Article Publication Fee</a>
+							</li>
+                                </ul>
+                            </li>
+							<li class="dropdown">
+								<a href="#" class='menu-item'>Browse Issues</a>
+								<ul class="dropdown-menu">
+									<li><a href="../issues" class='menu-item'>Issues</a></li>
+									<li><a href="../supplements" class='menu-item'>Supplements</a></li>
+								</ul>
+							</li>
+							<li><a href="../editors.html" class='menu-item'>Meet The Editors</a></li>
+							<li class="dropdown">
+								<a href="#" class="menu-item">Authors / Reviewers</a>
+								<ul class="dropdown-menu">
+
+
+									<li><a href="../authors.html" class='menu-item'>For Authors</a></li>
+									<li><a href="../reviewers.html" class='menu-item'>For Reviewers</a></li>
+								</ul>
+							</li>
+                            <li><a href="./careercorner" class='menu-item'>Career Corner</a></li>
+							<!-- <li><a href="./terms.html" class='menu-item'>Terms</a></li> -->
+							<li><a href="../contact.html" class='menu-item'>Contact Us</a></li>
+							
+						</ul>
+						<div class="header-right">
+								<a class="header-btn" href="/portal">
+									<p>Submit Manuscript</p>
+								</a>
+</div>
+					</div><!-- /.header-menu-wrap -->
+
+					
+						<!-- Burger menu -->
+						<div class="mobile-menu-icon">
+							<div class="burger-menu">
+								<div class="line-menu line-half first-line"></div>
+								<div class="line-menu"></div>
+								<div class="line-menu line-half last-line"></div>
+							</div>
+						</div>
+					</div><!-- /.header-right -->
+				</div><!-- /.primary-header-one-inner -->
+			</div>
+		</div><!-- /.primary-header-one -->
+	</header><!-- /.header-one -->
+</div>	
+  
+
+  
+  
+  
+  
+  
+   <section class="page-header padding">
+	<div class="overlay padding">
+	<div class="container">
+		<div class="page-content text-center">
+			<div class="short-nav">
+				<a href="https://asfirj.org/">Home</a><span>>>></span><a href="">Preview Issue</a>
+			</div>
+			<h2>Preview Issue</h2>
+			<p>
+				Preview Issue
+			</p>
+		</div>
+	</div>
+    </div>
+</section><!-- /.page-header -->
+    <main id="fulltext">
+
+        <div class="main-submit-container">
+            <div class="submission-header">
+                <h3>Issues</h3>
+                <ul class="submit-nav">
+                    <a href=""><li class="active abstractHeadText">Abstract</li></a>
+                    <a class="downloadLink"><li>Full-Text (PDF)</li></a>
+                    <a href=""><li>Authors</li></a>
+                </ul>
+            </div>
+            <div class="submit-container" style="background-color: white; margin-right: 20px;">
+                    <div class="preview-head" id="previewHead">
+                        <div style="background-color: rgba(54, 12, 110, 0.247);
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        z-index: 1;">
+                            <h4 style="color: white; margin: 16px; font-size: 23px; line-height: 1.2;" id="manu_title"></h4>
+                        <h6 style="margin-bottom: 6px; color:#80078b; background-color: rgba(255, 255, 255, 0.815); padding: 10px;" id="authorsContainerTop"></h6>
+                        <p>Published: <span id="published_date"></span></p>
+                        </div>
+    
+                    </div>
+                <div class="submit-body" style="display: flex; flex-direction: column; justify-content: space-around; padding: 12px;">
+                     <!-- <p><b>Date Submitted</b>: <span id="previous_manuscript_id "></span></p> -->
+                    <h4 id="abstractHeader" class="abstractHeadText">Abstract</h4>
+                    <div id="abstract" class="ql-editor"></div>
+              <h4>Full Text</h4>
+                    <div id="content" class="ql-editor"></div> <!-- Designated area for Quill content -->
+
+                    
+
+                    <h4>Authors</h4>
+                        <ul class="authors-list" id="authorsListBottom">                         
+                        </ul>
+                    
+                     
+                        <p id="correspondingAuthorsEmail"><b>Corresponding Authors Email:</b> </p>
+                        <p id="hyperlink"></p>
+
+                    <a  style="background-color: blueviolet; color: whitesmoke; padding: 12px; text-align: center;" class="downloadLink">Download Full-Text (PDF)</a>
+
+                    
+                
+                   
+                </div>
+            </div>
+            <div class="submit-research-container" style="margin-left: 12px;">
+                
+                <div class="sub-head">
+                    <h4>Issue Information</h4>
+                    <span id="issueNumber"></span>
+                    <span id="pageNumber"></span>
+                    <span id="doiNumber"></span>
+                </div>
+                    <div style="display: flex; flex-direction: column; font-size: 13px;">
+                        <span id="dateSubmitted"></span>
+                        <span id="dateReviewed"></span>
+                        <span id="dateAccepted"></span>
+                        <span id="datePublished"></span>
+                    </div> <br>
+                
+                <div class="submit-research">
+                    <div class="sub-manuscript" style="background-color: #80078b;">
+                        <div style="display: flex; flex-direction: column; color: #80078b; background-color: whitesmoke; border-radius: 4px; padding: 6px; font-weight: bolder;">
+                            <span id="viewCountContainer"></span>
+                        <span id="downloadsCountContainer"></span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+   <!-- Main js -->
+   <script src="../assets/templates/metro_hyip/js/main.js"></script>
+
+        
+    
+   <link rel="stylesheet" href="../assets/global/css/iziToast.min.css">
+<script src="../assets/global/js/iziToast.min.js"></script>
+
+
+   
+   
+   <section class="footer-section info-active">
+       <div class="footer-top">
+       <div class="container">
+           <div class="row">
+               <div class="col-lg-3 col-sm-6 sm-padding">
+                   <div class="footer-widget">
+                       <a class="logo" href="https://asfirj.org/">
+                           <img src="../assets/images/logoIcon/logo.png" alt="logo">
+                       </a>
+   
+                       <p>
+                           At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
+                       </p>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-sm-6 sm-padding">
+                   <div class="footer-widget link-widget">
+                       <h3>Author</h3>
+                       <ul class="widget-links">
+                           <!-- <li><i class="fas fa-square-full"></i><a href="../portal" class='menu-item'>Submit Manuscript</a></li> -->
+                           <li><i class="fas fa-square-full"></i><a href="" class='menu-item'>Print Request</a></li>
+                       </ul>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-sm-6 sm-padding">
+                   <div class="footer-widget link-widget">
+                       <h3>Editor</h3>
+                       <ul class="widget-links">
+                           <li><i class="fas fa-square-full"></i><a href="../editors.html" class='menu-item'>Editors</a></li>
+                           </ul>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-sm-6 sm-padding">
+                   <div class="footer-widget link-widget">
+                       <h3>About</h3>
+                       <ul class="widget-links">
+                           <li><i class="fas fa-square-full"></i><a href="../aboutus.html" class='menu-item'>About Us</a></li>
+                           <li><i class="fas fa-square-full"></i><a href="../https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
+                           <li><i class="fas fa-square-full"></i><a href="../https://asfischolar.org/">ASFIScholar</a></li>
+                       </ul>
+                   </div>
+               </div>
+               <div class="col-lg-3 col-sm-6 sm-padding">
+                   <div class="footer-widget link-widget">
+                       <h3>Useful Links</h3>
+                       <ul class="widget-links">
+                        <li><i class="fas fa-square-full"></i><a href="../events.html" class='menu-item'>Events</a></li>
+                           <li><i class="fas fa-square-full"></i><a href="../terms.html">Terms &amp; Conditions</a></li>
+                           <li><i class="fas fa-square-full"></i><a href="../contact.html">Contact Support</a></li>
+                       </ul>
+                   </div>
+               </div>
+               
+   
+               <div class="col-lg-3 col-sm-6 sm-padding">
+                   <div class="footer-widget">
+                       <h3>Newsletter Signup</h3>
+                       <p>Signup today for hints, tips and the latest news and updates.</p>
+                       <div class="subscribe-form">
+                           <form action="" class="subscribe-form">
+                               <input class="form-control" type="email" name="email" placeholder="Email *" required="">
+                               <input type="hidden" name="action" value="mailchimpsubscribe">
+                               <button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
+                               <div class="clearfix"></div>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+   
+               <div class="col-lg-3 col-sm-6 sm-padding">
+                   <div class="footer-widget">
+                       <h3>Contact Information</h3>
+                       
+                                                            <p>
+                                           <div class="footer-contact-menu__item-icon">
+                                               <i class="las la-phone"></i>                                        </div>
+                                           <div class="footer-contact-menu__item-content">
+                                               <p>+234(0)-701-436-3223 </p>
+                                           </div>
+                                       </p>
+                                                                       <p>
+                                           <div class="footer-contact-menu__item-icon">
+                                               <i class="far fa-envelope-open"></i>                                        </div>
+                                           <div class="footer-contact-menu__item-content">
+                                               <p>info@asfirj.org </p>
+                                           </div>
+                                       </p>
+                                                                       <p>
+                                           <div class="footer-contact-menu__item-icon">
+                                               <i class="fas fa-map-marked-alt"></i>                                        </div>
+                                           <div class="footer-contact-menu__item-content">
+                                               <p>12 Morin, Lagos State, Nigeria </p>
+                                           </div>
+                                       </p>
+                                   
+     
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="footer-bottom">
+       <div class="container">
+        <div id="google_translate_element"></div>
+           <div class="copyright-wrap">
+               <p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
+           </div>
+           <!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+           <!--Start of Tawk.to Script-->
+
+    <!--End of Tawk.to Script-->
+       </div>
+   </div></section>
+
+ 
+<!--/. footer-section -->
+<div id="scrollup">
+   <button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- jQuery Lib -->
+<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../front/public/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="../front/public/js/vendor/popper.min.js"></script>
+<script src="../front/public/js/vendor/bootstrap.min.js"></script>
+<script src="../front/public/js/vendor/waypoints.min.js"></script>
+<script src="../front/public/js/vendor/slick.min.js"></script>
+<script src="../front/public/js/vendor/jquery.ajaxchimp.min.js"></script>
+<script src="../front/public/js/vendor/odometer.min.js"></script>
+<script src="../front/public/js/vendor/jquery.isotope.v3.0.2.js"></script>
+<script src="../front/public/js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="../front/public/js/vendor/venobox.min.js"></script>
+<script src="../front/public/js/vendor/jquery.hoverdir.js"></script>
+<script src="../front/public/js/vendor/splitting.min.js"></script> 
+<script src="../front/public/js/vendor/jquery.nice-select.min.js"></script>
+<script src="../front/public/js/vendor/wow.min.js"></script>
+<script src="../front/public/js/main.js"></script>
+<script type="module" src="./../js/queries/previewArticlesPage.js?v=2408uhfabrjjbt02i4bi24"></script>
+
+    
+
+</body>
+</html>
