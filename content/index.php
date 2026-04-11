@@ -7,43 +7,13 @@
 <!--<![endif]-->
 
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
+<!-- <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> -->
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Secure and reliable investment project">
-	<meta name="author" content="Weperch LLC">
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title> ASFI Research Journal - Preview Issue</title>
-    <meta name="title" Content="ASFI Research Journal - Preview Issue">
+<?php
+include "../backend/db.php";
 
-    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
-    <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
-    <link rel="shortcut icon" href="../assets/images/logoIcon/favicon.png" type="image/x-icon">
-
-    
-    <link rel="apple-touch-icon" href="../assets/images/logoIcon/logo.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Preview Issue">
-    
-    <meta itemprop="name" content="ASFI Research Journal - Preview Issue">
-    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
-    <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
-    <meta property="og:image" content="https://asfirj.org/assets/images/seo/65be1258275121706955352.png"/>
-    <meta property="og:image:type" content="png"/>
-    <meta property="og:image:width" content="1180" />
-    <meta property="og:image:height" content="600" />
-    
-    
-    <meta name="twitter:card" content="summary_large_image">
-
+ include "../backend/partials/previewMetaData.php" ?>
 
 	<link rel="stylesheet" href="../front/public/css/fontawesome.min.css">
 	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css">
@@ -73,65 +43,159 @@
     </script>
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
     <style>
-        .submit-nav a {
-    color: #310357 !important;
-}
-.ql-editor a {
-    color: #80078b !important;
-}
-
-/* Loader styles for abstract */
-.abstract-loader {
-    min-height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.loader-container {
-    text-align: center;
-    padding: 40px;
-}
-
-.loader {
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #3498db;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Ensure download links are immediately functional */
-.downloadLink {
-    transition: opacity 0.3s ease;
-}
+        .footer-section a {
+            color: #dbdadaa9;
+        }
+        .tab__nav {
+            border-bottom: 1px solid #80078b;
+        }
+        .tab__nav li .active {
+            background-color: #80078b;
+            color: white;
+        }
+        .tab__nav li {
+            display: inline-block;
+            margin-bottom: .625rem;
+        }
+        .tab__nav a {
+            font-weight: 600;
+            border: none;
+            padding: .625rem;
+        }
+        .doi-access-wrapper {
+            padding-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .rlist--inline {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .content-item-format-links .rlist--inline li {
+            margin-right: 10px;
+            font-weight: bold;
+            color: #310357;
+        }
+        .content-item-format-links .rlist--inline li a {
+            padding-right: 10px;
+            color: #310357;
+        }
+        .comma p {
+            color: #3b3b3b;
+        }
+        .issue-item__details {
+            margin-top: 10px;
+        }
+        .section__mainHeader--mid {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        @media (min-width: 768px) {
+            .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 100%;
+            }
+            .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 100%;
+            }
+        }
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+            z-index: 9999;
+            display: none;
+        }
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #9834db;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            margin-top: 20%;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .errorpopup, .successpopup {
+            position: fixed;
+            top: 30%;
+            right: 20px;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            outline: none;
+            border: none;
+            z-index: 9999999;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .errorpopup { background-color: #e22424; }
+        .successpopup { background-color: #4CAF50; }
+        .errorpopup.show, .successpopup.show { opacity: 1; }
+        .errorpopup.hidden, .successpopup.hidden { display: none; }
+        .share-options {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .share-options ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .share-options li {
+            margin: 5px 0;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .share-options li:hover { color: #007bff; }
+        .shareButton { cursor: pointer; }
+        .doi-access-wrapper .articleSpan { margin-right: 20px; }
+        
+        @media screen and (max-width: 720px) {
+            .doi-access-wrapper { font-size: 12px; }
+            .doi-access-wrapper .articleSpan {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .editchoice { margin-left: 0px; }
+            .issue-item__title { font-size: 16px; }
+            .comma p { font-size: 12px; }
+            .issue-item__details { font-size: 14px; }
+            .content-item-format-links .rlist--inline li { font-size: 12px; }
+        }
+        .footer-widget p, .widget-links a { font-size: 1.3rem; }
+        .widget-links .fa-square-full { display: none; }
     </style>
-
 </head>
 
 <body class="header-1 business">
+
     <?php include ("../components/top-navbar.php") ?>
+    <?php include '../components/header.php'; ?>
+
    <style>
-    *{
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    body{
-        /* overflow: hidden; */
-    }
+
     iframe {
         width: 100%;
         height: 1000vh;
