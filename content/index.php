@@ -36,13 +36,13 @@ include "../backend/db.php";
 	<script src="../front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
     <!-- END QUILL JS  -->
-     <script type="text/javascript">
+     <!-- <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
         }
     </script>
 
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
 
     <style>
         .footer-section a {
