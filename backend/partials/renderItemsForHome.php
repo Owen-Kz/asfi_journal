@@ -16,18 +16,18 @@ include __DIR__."/helpers.php";
 
 
 // Function to get cover image URL
-function getCoverImage($row) {
-    static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+// function getCoverImage($row) {
+//     static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
     
-    $photo = $row['manuscriptPhoto'] ?? null;
-    $isOld = $row['is_old_publication'] ?? 'no';
+//     $photo = $row['manuscriptPhoto'] ?? null;
+//     $isOld = $row['is_old_publication'] ?? 'no';
     
-    if (empty($photo)) return $defaultImage;
+//     if (empty($photo)) return $defaultImage;
     
-    return $isOld === "yes" 
-        ? "https://asfirj.org/useruploads/article_images/" . $photo
-        : "https://process.asfirj.org/useruploads/article_images/" . $photo;
-}
+//     return $isOld === "yes" 
+//         ? "https://asfirj.org/useruploads/article_images/" . $photo
+//         : "https://process.asfirj.org/useruploads/article_images/" . $photo;
+// }
 
 // Function to format timestamp
 function formatTimestamp($date) {
