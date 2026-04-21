@@ -234,7 +234,7 @@ include './backend/db.php';
     </style>
 </head>
 
-<body class="header-1 business">
+<body class="header-1 business" style="  font-family: system-ui, -apple-system, san-serif !important;">
     <!-- <div class="site-preloader-wrap">
         <div class="spinner"></div>
     </div> -->
