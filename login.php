@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="loginForm" onsubmit="return false">
+        <input type="text" placeholder="Enter email" name="email" id="email">
+        <br>
+        <input type="password" placeholder="Enter password" name="pass" id="pass">
+        <button>submit</button>
+    </form>
+    <script>
+        window.location.href = "./portal"
+    </script>
+    <!-- <script type="module" src="./js/login.js"></script> -->
+
+    <!-- <script>
+        const Revieweraccount = document.getElementById("review_button")
+        const AuthorAccount = document.getElementById("author_account") 
+        const EditorAccount = document.getElementById("Aut")  
+
+        const 
+    </script> -->
+</body>
+</html>
