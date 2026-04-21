@@ -1,0 +1,454 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
+	<meta name="author" content="Weperch LLC">
+<title> ASFI Research Journal - Call For Papers</title>
+    <meta name="title" Content="ASFI Research Journal - Call For Papers">
+
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
+    <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
+
+    
+    <link rel="apple-touch-icon" href="assets/images/logoIcon/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Call For Papers">
+    
+    <meta itemprop="name" content="ASFI Research Journal - Call For Papers">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ASFI Research Journal">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
+    <meta property="og:image:type" content="png"/>
+    <meta property="og:image:width" content="1180" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="Call For Papersus.html">
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+
+	<link rel="stylesheet" href="front/public/css/fontawesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/nice-select.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/splitting-cells.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/splitting.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/keyframe-animation.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/slider.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="css/style.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/header.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/footer.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
+	<script src="front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body class="header-1 business">
+
+
+	<div>
+     <!-- Top Dark Navbar -->
+<div class="top-navbar">
+  <div class="top-nav-inner">
+    <div class="logo-section">
+		<a href="https://asfirj.org/">
+      <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
+</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="top-menu-toggle" id="topMenuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="top-links" id="topLinks">
+      <a href="https://asfirj.org/issues">Explore asfirj</a>
+      <a href="https://asfirj.org/authors.html#ob">Get published</a>
+	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
+      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
+      <a href="https://asfirj.org/events.html">Events</a>
+      <a href="https://portal.asfirj.org/portal/login/">Login</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Journal Banner -->
+<div class="journal-banner">
+  <div class="container banner-inner">
+    <div class="journal-title">
+      <h1>ASFI Research Journal</h1>
+    </div>
+  </div>
+</div>
+ 
+	<?php include './header.php'; ?>
+
+</div>	
+  
+  
+  
+  
+  
+   <section class="page-header padding">
+	<div class="overlay padding">
+	<div class="container">
+		<div class="page-content text-center">
+			<div class="short-nav">
+				<a href="https://asfirj.org/">Home</a><span>>>></span><a href="">Call For Papers</a>
+			</div>
+			<h2>Call For Papers</h2>
+			<p>
+				Rapid & Transparent Publishing
+			</p>
+		</div>
+	</div>
+    </div>
+</section><!-- /.page-header -->
+
+<section class="service-section bg-grey bd-bottom padding">
+	<div class="container">
+		<div class="section-heading mb-40 text-center wow fadeInUp" data-wow-delay="200ms">
+			<h2><span></span>CALL FOR ABSTRACTS<span></span></h2>
+			<h4><span>SPECIAL ISSUE: Collaborative Frontiers For Impactful Research and Career</span></h4>
+
+			<p>
+				The ASFI Research Journal (<a href="https://asfirj.org/" style="color: blueviolet;">ASFIRJ</a>) announces a special issue to be published in its 2025 issue under the theme <b>“Beyond Boundaries”</b> <br> <br>
+
+  <br> <br>
+
+<h3>Issue Editors:</h3>
+<p>
+	<b>Dr. Eunice Fondze-Fombele:</b> <br>
+	<ul>
+		<li>
+     Associate Professor of African Literatures and Cultural Studies, University of Buea, Cameroon</li>
+	 <li>Associate Editor, ASFI Research Journal</li>
+	</ul>
+<b>Dr. Eman Sobh:</b> <br>
+<ul>
+	<li>Associate Professor of Respiratory Diseases, Al-Azhar University, Cairo, Egypt </li>
+	<li>Editor, ASFI Research Journal</li>
+</ul>
+    
+<b>Dr. Lara Ferrero Gómez:</b> <br>
+<ul>
+	<li>Associate Professor of Biological Sciences, Jean Piaget University of Cabo Verde</li>
+	<li>
+     Associate Editor, ASFI Research Journal</li>
+</ul>
+</p>
+
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="about-section bd-bottom padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 wow fadeInLeft" data-wow-delay="200ms">
+				<div class="section-heading">
+					<h2>Dates to Note:</h2>
+					<p>
+						<i>Submission deadline: </i> <b>31st August 2025</b> <br>
+<i>Submission portal:</i> <b> <a style="color: blueviolet;" href="https://cutt.ly/mrUjbbhU">https://cutt.ly/mrUjbbhU</a>  </b> <br>
+<i>Abstract acceptance notification:</i> <b> 30th September 2025</b> <br>
+<i>Accepted abstractes will be published free in ASFIRJ:</i> <b> (https://asfirj.org)</b> 
+
+
+
+ 
+
+
+
+</p>
+
+				</div>
+			</div>
+
+			<div class="col-md-6 wow fadeInRight">
+				<div class="about-bg-holder">
+					<div class="dot-pattern"></div>
+					<!-- <img src="/assets/images/asfischolar.jpg" alt='' /> -->
+					<div class='top-space'>
+						<h2>Publication Fee:</h2>
+
+						<p>
+							
+All papers accepted for this special issue will be published free of charge.
+						 
+	
+	
+						</p>
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+<section class="about-section bd-bottom padding">
+	<div class="container">
+		<div style="display: flex; flex-direction: column; justify-content: center;">
+			<!-- <div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms">
+				<div class="section-heading">
+					<h2>Download full text of the call here:</h2>
+					<p style="width: 700px; margin: 0 auto;">
+						Please click the following link to download the full text: <a href="./assets/files/ASFIRJ Special Issue - Women in Science in Africa2.pdf" target="_blank" download="ASFIRJ Special Issue - Women in Science in Africa2.pdf" style="color: blueviolet;">Download FULL TEXT </a>.</p>
+
+				</div>
+			</div> -->
+
+			<div class="col-md-10 wow fadeInRight">
+				<div class="about-bg-holder">
+					<div class="dot-pattern"></div>
+					<!-- <img src="/assets/images/asfischolar.jpg" alt='' /> -->
+					<div class='section-heading'>
+
+                            <b>
+								Inquiries:</b><br>
+<p style="width: 700px; margin: 0 auto;">For more information about this call, please write to specialissues@asfirj.org. </p>
+	
+				
+					</div>
+
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--/. about-section -->
+<div class="about-main-section">
+	<div class="info wow fadeInUp" data-wow-delay="200ms">
+		<h2>ASFIRJ Values</h2>
+		<ul>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fff" d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+				<p>Excellence</p>
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fff" d="M4.1 38.2C1.4 34.2 0 29.4 0 24.6C0 11 11 0 24.6 0H133.9c11.2 0 21.7 5.9 27.4 15.5l68.5 114.1c-48.2 6.1-91.3 28.6-123.4 61.9L4.1 38.2zm503.7 0L405.6 191.5c-32.1-33.3-75.2-55.8-123.4-61.9L350.7 15.5C356.5 5.9 366.9 0 378.1 0H487.4C501 0 512 11 512 24.6c0 4.8-1.4 9.6-4.1 13.6zM80 336a176 176 0 1 1 352 0A176 176 0 1 1 80 336zm184.4-94.9c-3.4-7-13.3-7-16.8 0l-22.4 45.4c-1.4 2.8-4 4.7-7 5.1L168 298.9c-7.7 1.1-10.7 10.5-5.2 16l36.3 35.4c2.2 2.2 3.2 5.2 2.7 8.3l-8.6 49.9c-1.3 7.6 6.7 13.5 13.6 9.9l44.8-23.6c2.7-1.4 6-1.4 8.7 0l44.8 23.6c6.9 3.6 14.9-2.2 13.6-9.9l-8.6-49.9c-.5-3 .5-6.1 2.7-8.3l36.3-35.4c5.6-5.4 2.5-14.8-5.2-16l-50.1-7.3c-3-.4-5.7-2.4-7-5.1l-22.4-45.4z"/></svg>
+				<p>High Quality Publishing</p>
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fff" d="M64 64C28.7 64 0 92.7 0 128v64c0 8.8 7.4 15.7 15.7 18.6C34.5 217.1 48 235 48 256s-13.5 38.9-32.3 45.4C7.4 304.3 0 311.2 0 320v64c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V320c0-8.8-7.4-15.7-15.7-18.6C541.5 294.9 528 277 528 256s13.5-38.9 32.3-45.4c8.3-2.9 15.7-9.8 15.7-18.6V128c0-35.3-28.7-64-64-64H64zm64 112l0 160c0 8.8 7.2 16 16 16H432c8.8 0 16-7.2 16-16V176c0-8.8-7.2-16-16-16H144c-8.8 0-16 7.2-16 16zM96 160c0-17.7 14.3-32 32-32H448c17.7 0 32 14.3 32 32V352c0 17.7-14.3 32-32 32H128c-17.7 0-32-14.3-32-32V160z"/></svg>
+				<p>Impact </p>
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fff" d="M128 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm32 97.3c28.3-12.3 48-40.5 48-73.3c0-44.2-35.8-80-80-80S48 51.8 48 96c0 32.8 19.7 61 48 73.3V224H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H288v54.7c-28.3 12.3-48 40.5-48 73.3c0 44.2 35.8 80 80 80s80-35.8 80-80c0-32.8-19.7-61-48-73.3V288H608c17.7 0 32-14.3 32-32s-14.3-32-32-32H544V169.3c28.3-12.3 48-40.5 48-73.3c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 32.8 19.7 61 48 73.3V224H160V169.3zM488 96a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM320 392a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+				<p>Timely</p>
+			</li>	
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fff" d="M320 32c0-9.9-4.5-19.2-12.3-25.2S289.8-1.4 280.2 1l-179.9 45C79 51.3 64 70.5 64 92.5V448H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H96 288h32V480 32zM256 256c0 17.7-10.7 32-24 32s-24-14.3-24-32s10.7-32 24-32s24 14.3 24 32zm96-128h96V480c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H512V128c0-35.3-28.7-64-64-64H352v64z"/></svg>
+				<p>Open Access</p> 
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fff" d="M384 480h48c11.4 0 21.9-6 27.6-15.9l112-192c5.8-9.9 5.8-22.1 .1-32.1S555.5 224 544 224H144c-11.4 0-21.9 6-27.6 15.9L48 357.1V96c0-8.8 7.2-16 16-16H181.5c4.2 0 8.3 1.7 11.3 4.7l26.5 26.5c21 21 49.5 32.8 79.2 32.8H416c8.8 0 16 7.2 16 16v32h48V160c0-35.3-28.7-64-64-64H298.5c-17 0-33.3-6.7-45.3-18.7L226.7 50.7c-12-12-28.3-18.7-45.3-18.7H64C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H87.7 384z"/></svg>
+				<p>Transparent</p>
+			</li>
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fff" d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+				<p>Affordable</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+                
+        
+     
+    <!-- Main js -->
+    <script src="./assets/templates/metro_hyip/js/main.js"></script>
+
+        
+    
+    <link rel="stylesheet" href="./assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
+<script src="./assets/global/js/iziToast.min.js"></script>
+   
+    
+    
+  <section class="footer-section info-active">
+	<div class="footer-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget">
+					<a class="logo" href="https://asfirj.org/">
+						<img src="./assets/images/logoIcon/logo.png" alt="logo">
+					</a>
+
+					<p>
+						At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>Author</h3>
+					<ul class="widget-links">
+						<!-- <li><i class="fas fa-square-full"></i><a href="./submitManuscriptSignIn.html" class='menu-item'>Submit Manuscript</a></li> -->
+						<li><i class="fas fa-square-full"></i><a href="./authors.html#ob" class='menu-item'>Submission Process</a></li>
+					</ul>
+					<a href=""><h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3></a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>Editor</h3>
+					<ul class="widget-links">
+						<li><i class="fas fa-square-full"></i><a href="./editors.html" class='menu-item'>Editors</a></li>
+						</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>About</h3>
+					<ul class="widget-links">
+						<li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About Us</a></li>
+						<li><i class="fas fa-square-full"></i><a href="https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
+						<li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>Useful Links</h3>
+					<ul class="widget-links">
+						<li><i class="fas fa-square-full"></i><a href="./events.html" class='menu-item'>Events</a></li>
+						<li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a></li>
+						<li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li>
+						
+					</ul>
+				</div>
+			</div>
+			
+
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget">
+					<h3>Newsletter Signup</h3>
+					<p>Signup today for hints, tips and the latest news and updates.</p>
+					<div class="subscribe-form">
+						<form class="subscribe-form" id="newsLetterForm">
+							<input class="form-control" type="email" name="email" placeholder="Email *"
+								required id="subscribeEmail">
+							<!-- <input type="hidden" name="action" value="mailchimpsubscribe"> -->
+							<button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
+							<div class="clearfix"></div>
+						</form>
+						<script type="module" src="./js/forms/newsLetter.js"></script>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget">
+					<h3>Contact Information</h3>
+					
+					                                     <p>
+                                        <div class="footer-contact-menu__item-icon">
+                                            <i class="las la-phone"></i>                                        </div>
+                                        <div class="footer-contact-menu__item-content">
+                                            <p>+234(0)-701-436-3223 </p>
+                                        </div>
+                                    </p>
+                                                                    <p>
+                                        <div class="footer-contact-menu__item-icon">
+                                            <i class="far fa-envelope-open"></i>                                        </div>
+                                        <div class="footer-contact-menu__item-content">
+                                            <p>info@asfirj.org </p>
+                                        </div>
+                                    </p>
+                                                                    <p>
+                                        <div class="footer-contact-menu__item-icon">
+                                            <i class="fas fa-map-marked-alt"></i>                                        </div>
+                                        <div class="footer-contact-menu__item-content">
+                                            <p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p>
+                                        </div>
+                                    </p>
+                                
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer-bottom">
+	<div class="container">
+		<div class="copyright-wrap">
+			<p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
+		</div>
+		<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+		<!--Start of Tawk.to Script-->
+<!-- <script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script> -->
+	<!--End of Tawk.to Script-->
+	</div>
+</div></section>
+ 
+  
+<!--/. footer-section -->
+<div id="scrollup">
+	<button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- jQuery Lib -->
+<script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./front/public/js/vendor/popper.min.js"></script>
+<script src="./front/public/js/vendor/bootstrap.min.js"></script>
+<script src="./front/public/js/vendor/waypoints.min.js"></script>
+<script src="./front/public/js/vendor/slick.min.js"></script>
+<script src="./front/public/js/vendor/jquery.ajaxchimp.min.js"></script>
+<script src="./front/public/js/vendor/odometer.min.js"></script>
+<script src="./front/public/js/vendor/jquery.isotope.v3.0.2.js"></script>
+<script src="./front/public/js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="./front/public/js/vendor/venobox.min.js"></script>
+<script src="./front/public/js/vendor/jquery.hoverdir.js"></script>
+<script src="./front/public/js/vendor/splitting.min.js"></script>
+<script src="./front/public/js/vendor/jquery.nice-select.min.js"></script>
+<script src="./front/public/js/vendor/wow.min.js"></script>
+<script src="./front/public/js/main.js"></script>
+<script type="module" src="./js/general.js"></script>
+ 
+</body>
+</html>

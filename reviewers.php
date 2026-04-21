@@ -1,0 +1,472 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
+	<meta name="author" content="Weperch LLC">
+<title> ASFI Research Journal - Reviewers</title>
+    <meta name="title" Content="ASFI Research Journal - Reviewers">
+
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
+    <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
+
+    
+    <link rel="apple-touch-icon" href="assets/images/logoIcon/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Reviewers">
+    
+    <meta itemprop="name" content="ASFI Research Journal - Reviewers">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ASFI Research Journal">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
+    <meta property="og:image:type" content="png"/>
+    <meta property="og:image:width" content="1180" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="reviewers.html">
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+
+	<link rel="stylesheet" href="front/public/css/fontawesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/nice-select.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/splitting-cells.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/splitting.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/keyframe-animation.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/slider.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="css/style.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/header.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/footer.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
+	<script src="front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	<script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+
+<body class="header-1 business">
+
+
+	<div>
+ 	 <!-- Top Dark Navbar -->
+<div class="top-navbar">
+  <div class="top-nav-inner">
+   <div class="logo-section">
+		<a href="https://asfirj.org/">
+      <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
+</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="top-menu-toggle" id="topMenuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="top-links" id="topLinks">
+      <a href="https://asfirj.org/issues">Explore asfirj</a>
+      <a href="https://asfirj.org/authors.html#ob">Get published</a>
+	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
+      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
+      <a href="https://asfirj.org/events.html">Events</a>
+      <a href="https://portal.asfirj.org/portal/login/">Login</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Journal Banner -->
+<div class="journal-banner">
+  <div class="container banner-inner">
+    <div class="journal-title">
+      <h1>ASFI Research Journal</h1>
+    </div>
+  </div>
+</div>
+ 
+<?php include './header.php'; ?>
+
+</div>	
+
+    <section class="page-header padding">
+        <div class="overlay padding">
+        <div class="container">
+            <div class="page-content text-center">
+                <div class="short-nav">
+                    <a href="https://asfirj.org/">Home</a><span>>>></span><a href="">Reviewers</a>
+                </div>
+                <h2>Reviewers</h2>
+                <p>
+                    For Reviewers
+                </p>
+            </div>
+        </div>
+        </div>
+    </section><!-- /.page-header -->
+    <main>
+
+        <div class="main-submit-container">
+			<button id="showNavButton"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            <div class="submission-header hidden-mobile-nav" id="mobileNav">
+            <div class="submission-header-inner">
+                <h3>Reviewers</h3>
+				<ul class="author-submit-nav">
+                    <h3>REVIEWER GUIDELINES</h3>
+                    <a href="#1" onclick="setActive(event, 0)"><li class="active">ASFIRJ Editorial Procedure and Peer Review Processes</li></a>
+                    <a href="#2" onclick="setActive(event, 1)"><li class="">Your Role as a Reviewer for ASFIRJ</li></a>
+                    <a href="#3" onclick="setActive(event, 2)"><li class="">Benefits for You as a Reviewer for ASFIRJ</li></a>
+                    <a href="#4" onclick="setActive(event, 3)"><li class="">Single Blind Peer Review and Confidentiality</li></a>
+                    <a href="#5" onclick="setActive(event, 4)"><li class="">Reviewer’s Report</li></a>
+                    <a href="#6" onclick="setActive(event, 5)"><li class="">Structuring the Reviewer’s Report</li></a>
+                    <a href="#7" onclick="setActive(event, 6)"><li class="">Potential Questions to Consider when Reviewing a Manuscript</li></a>
+					<a href="#8" onclick="setActive(event, 6)"><li class="">Rating the Manuscript</li></a>
+					<a href="#9" onclick="setActive(event, 6)"><li class="">Giving Your Overall Recommendation</li></a>
+                </ul>
+			 </div>
+            </div>
+            <div class="submit-container">
+                <div class="submit-body" style="margin: 0 8px 0 8px;">
+                    <h2 id="1">Reviewer Guidelines</h2> <br>
+                    <h4>ASFIRJ Editorial Procedures and Peer Review Processes</h4>
+
+					<p>Peer review is an integral ingredient in the scientific process, culminating in the publication of articles for the consumption of fellow scientists or other interested stakeholders in society. For this reason, all papers submitted to <i>ASFIRJ</i> must undergo a thorough peer-review process in which expert peers in the topic area of respective submitted manuscripts are invited to provide critical assessment of the submitted manuscripts. The feedback received from the invited peers is critical in informing the editors’ decision on any submitted manuscript. The peer review process thus ensures that all submissions to <i>ASFIRJ</i> attain the highest expected standard of rigor, excellence, and scientific quality. <br> <br> 
+						
+						Any submission to <i>ASFIRJ</i> first undergoes a thorough check by the editorial assistance to ensure <i>ASFIRJ</i> in-house formatting and requirements are adhered to. Any manuscript that does not meet the required formatting is returned to the authors for amendment and re-submission. <br> <br> 
+						Once the formatting checks are successful, the manuscript is passed to a sectional or an associate editor, as the case may be, who then assesses the scientific content of the manuscript to ensure that it meets possible publication in <i>ASFIRJ</i>. If the manuscript is judged by the handling editor to be potentially suitable for publication in <i>ASFIRJ</i>, the handling editor appoints suitable peer reviewers to review the manuscript and make acceptance recommendation to the handling editor. <br> The handling editor, on the basis of the recommendations from the invited peer reviewers, makes a decision. Reports from at least two peer reviewers are required to make an editorial decision on any manuscript sent out for peer review. <span id="2"></span> Upon acceptance, manuscripts undergo copy-editing by the team of editorial assistance, after which the article is published in an issue on ASFIRJ website. Authors are informed once the manuscript is published online. </p>
+					
+					<h4>Your Role as a Reviewer for ASFIRJ:</h4>
+					<p>As a peer reviewer, your role is crucial in ensuring the highest scientific quality of articles published in ASFIRJ. The review process confers on the peer reviewer a professional responsibility through which s/he contributes to the scientific community by using their skills to enhance the quality and standard of scientific publications. As a reviewer, you are expected to perform your task timely, transparently, and in an ethical manner. The Committee on Publication Ethics (COPE) outlines various ethical standards the reviewer should be aware of and adhere to. Details are available at: <a href="https://publicationethics.org/files/cope-ethical-guidelines-peer-reviewers-v2_0.pdf" style="color: blueviolet;">Ethical guidelines for peer reviewers - COPE (publicationethics.org)</a>. <br> <br>
+						To ensure the scientific integrity of submissions to the journal, it is important that reviewers invited to review manuscripts for ASFIRJ have sufficient time to perform the assigned task and submit their report within the requested time. We understand that reviewers usually have many professional tasks being performed in parallel, potentially conflicting with other tasks, causing reviewers often not to meet the deadline required to submit their review reports. In that case, the editors will appreciate that reviewers communicate their situation and any inability to submit their review reports within the specified timeframe. <br>
+						
+						<ul style="margin-top: -16px;">
+							To be eligible to review a paper for <i>ASFIRJ</i>, the reviewers should meet the following criteria:
+							<li>Absence of any conflicts of interest in relation to the submitted manuscript or with any of the authors.</li>
+							<li>Not have published together with the authors in the last two years. <span id="3"></span></li>
+							<li>Has relevant experiences in the field of the submitted paper to judge the scientific quality.</li>
+						</ul>
+
+						</p>
+					
+					
+					<h4>Benefits for You as a Reviewer for ASFIRJ</h4>
+					
+					<p>ASFIRJ values the crucial work done by its reviewers and to show our appreciation of their contribution, reviewers for the journal are entitled to the following benefits: 
+						<ul style="margin-top: -16px;">
+							<li><b>Annual Reviewer Certificate:</b> <i>ASFIRJ</i> keeps record of all reviewers who successfully complete their reviews and are issued a personalized annual reviewer certificate that recognize their work within each year.</li>
+							<li><b>Exceptional Reviewer Awards:</b> <i>ASFIFJ</i> gives an award to the first three most dedicated and outstanding reviewers within a calendar year. The awards are given to the reviewers who completed all their reviews in a timely manner without the need for extension of initial allocated time, as well as judged by the editorial board to have provided outstanding assessment of the manuscripts assigned to them. The <i>Exceptional Reviewer Awards</i> are given annually.</li>
+							<li><b>Promotion to ASFIRJ Editorial Board:</b> Reviewers whose main excellent track record for <i>ASFIRJ</i> consistently for a minimum of three years may be recommended for promotion to <i>ASFIRJ</i> subject to the approval by the Editor-in-Chief. The content of the reviewer’s report will be rated by handling editors from a scientific point of view as well as general usefulness to the improvement of the manuscript. It is this rating that will be used as a reference to determine promotion to the Editorial Board.</li>
+							<li><b>Annual Reviewer Acknowledgement:</b> <span id="4"></span> Reviewers within a calendar year are included in the journal’s annual reviewer acknowledgment list published in an issue in the immediate subsequent year.</li>
+						</ul>
+					</p>
+					
+					<h4>Single Blind Peer Review and Confidentiality </h4>
+					<p>ASFIRJ operates a single-blind peer review system in which case the authors do not know the identity of the reviewers of their manuscript, but the reviewers will know the identity of the authors. Until the article is published, reviewers should keep the content of the manuscript confidential. <span id="5"></span> Reviewers must ensure not to reveal their identity to the authors when commenting the submitted manuscript.</p>
+					
+					
+					
+						<h4>Reviewer’s Report</h4>
+						<p>It is the duty of reviewers to provide a critical assessment of any manuscript they are invited to review. The reviewer’s assessment must meet the highest standard of quality expected of a scientific paper. Reviewers’ assessment must be guided by the scientific content of every submission rather than trivial errors in grammar or formatting. While the reviewer must pay close attention to ensure that the writing of the manuscript meets minimum standards of a scientific communication, the critical assessment of the scientific content of the manuscript is more important and must be given priority. <br>
+							
+
+							<ul style="margin-top: -16px;">
+								The peer review report must be written in English. As a guide, we invite reviewers to consider the following recommendations when evaluating a manuscript for <i>ASFIRJ</i>.
+								<li>Please read all sections of the manuscript, including abstract, main text, supplementary material (if provided) to ensure that you are acquainted with the content of the manuscript. Please also pay careful attention to the figures, tables, data, and correctness of language used in the manuscript.</li>
+								<li>Ensure that you provide a critical synopsis of the whole manuscript and at the same time comment on the different sections and field-specific concepts presented in the manuscript.</li>
+								<li>The reviewer’s comments should be comprehensive and detailed to allow the authors the opportunity to understand them and appropriately respond to the points raised.</li>
+								<li>Avoid recommending references to your work, your close associates, or other authors, when such references clearly are not helpful to improve the quality of the submitted manuscript. Every recommended reference must clearly improve the quality of the submitted manuscript.</li>
+								<li>The tone of your review report should be neutral, and your criticisms should be constructive to the extent of helping the authors improve their work. ASFIRJ does not accept any derogatory comment.</li>
+								<li><i>ASFIRJ</i> does not accept the use of artificial intelligence (AI) or AI-assisted tools (such as ChatGPT) for peer review of submitted manuscripts and in generating the peer review report. It is the sole responsibility of reviewers on the content of their review reports. The use of AI technologies in the peer review process constitutes a breach of peer review confidentiality.</li>
+								<li><i>ASFIRJ</i> adheres to established scientific publication standards and guidelines, including those from the ICMJE (medical journals), CONSORT (trial reporting), STROBE (observational studies), PRISMA (systematic reviews and meta-analyses) and other guidelines recommended by the EQUATOR network <a href="https://www.equator-network.org/" style="color: blueviolet;">(https://www.equator-network.org/)</a>, TOP (data transparency and openness), and ARRIVE (reporting of in vivo experiments). Reviewers should report any deviations or concerns they observe regarding these guidelines.</li>
+								<li>If you, as a reviewer, becomes aware of any scientific misconduct or fraud, plagiarism or any other unethical behavior related to the submitted manuscript,<span id="6"></span> you should immediately bring these to the attention of the handling editor.</li>
+							</ul>
+
+						 </p>
+						
+						<h4>Structuring the Reviewer’s Report</h4>
+						<p>Reviewers can outline their review reports in the following structure: 
+							<ul style="margin-top: -26px;">
+								<li><b>One paragraph summary</b> of the content of the manuscript, highlighting the key findings and strengths of the study.</li>
+								<li><b>General comments:</b> Reviewers should provide general comments that highlight the scientific content of the manuscript, including relevance of the topic to the field; appropriateness of the approaches and study design used to address the topic; validity and reliability of employed methods, including measurement instruments; areas of weakness; the appropriateness of references used; any ethical issues; etc. Reviewers’ comments should be sufficiently specific to enable the authors to respond and address the concerns appropriately.</li>
+								<li><b>Specific comments:</b> In addition to the general comments, reviewers should provide specific comments to the authors throughout the manuscript that touch on specific deviations and inaccuracies related to the scientific content of the manuscript, as well as areas weakness. These specific comments should primarily focus on the scientific content, <span id="7"></span> but at the same time reviewers should highlight issues spelling, formatting, and language problems.</li>
+							</ul>
+						</p>
+					
+					   <h4>Potential Questions to Consider when Reviewing a Manuscript</h4> 
+					<p>Reviewers can use the following questions as pointers to perform their assessment of the submitted manuscript and as a guide to preparing their review report:
+						<ul style="margin-top: -26px;">
+							<li>Is the title an accurate reflection of the subject of the manuscript?</li>
+							<li>Does the abstract succinctly and accurately provide a summary of the content of the manuscript?</li>
+							<li>Is the paper well written and are expressions and concepts used clear?</li>
+							<li>Does the manuscript present what is already known and unknown (gaps) on the topic?</li>
+							<li>Does the manuscript give an accurate summary of key recent research on the topic?</li>
+							<li>Is the purpose (aim or objective) of the paper, its originality and novelty clear?</li>
+							<li>In the methods section of the manuscript clear and what was done clearly and accurately described?</li>
+							<li>Are the study materials, methods, instruments used, and measurements made clearly described?</li>
+							<li>Are the research methods valid, reliable, reproducible, and meet requirements for best practices?</li>
+							<li>Are ethical standards followed in implementing the research and in writing the manuscript?</li>
+							<li>What did the study find and has this been clearly described?</li>
+							<li>Are the results of the manuscript presented in a logical and coherent manner?</li>
+							<li>Do the graphics used (tables and figures) clearly complemented the results?</li>
+							<li>Have the tables, graphics, figures, images followed highest specified standards?</li>
+							<li>Do the tables, graphics, figures, images add value or distract from the content of the manuscript?</li>
+							<li>Are there issues with titles, labels, statistical notation or image quality of tables, graphics, figures, images included in the manuscript?</li>
+							<li>Does the manuscript present the summary of the key findings?</li>
+							<li>Does the manuscript highlight the strengths and limitations of the study?</li>
+							<li>Does the manuscript compare its findings to similar papers on the topic?</li>
+							<li>Does the manuscript discuss the meaning and implications of the findings?</li>
+							<li>Does the manuscript describe and discuss the overall story formed so far on the topic?</li>
+							<li>Do the conclusions reflect the achievement of the study aims?</li>
+							<li>Does the manuscript discuss the gaps or inconsistencies on the topic and ways forward described?</li>
+							<li> <span id="8"></span>Is the referencing accurate, adequate and balance in relation to the topic of the manuscript?</li>
+						</ul>
+					</p>
+
+					<h4>Rating the Manuscript</h4>
+						<p>In addition to the above outlined questions, reviewers should rate the manuscript following the different aspects provided below: 
+							<ul style="margin-top: -26px;">
+								<li><b>Novelty:</b> Does the manuscript address an original and well-defined question? Do the findings of the manuscript advance current knowledge on the topic area?</li>
+								<li><b>Scope:</b> Does the manuscript align with the scope of ASFIRJ?</li>
+								<li><b>Quality:</b> Does the manuscript adhere to highest standard of writing and presentation of its findings? Are the manuscript sections appropriately written? </li>
+								<li><b>Scientific Accuracy:</b> Was the study design correct and sound? Do the methods employed follow expected standards in the study context? Are the data analyses choices and implementation of the highest technical standards within the scope of the topic area? Are the data and emanated results sufficiently robust to draw conclusions? </li>
+								<li><b>Interest to Readers:</b> Are the findings and conclusions of the manuscript of interest to the readership of ASFIRJ? </li>
+								<li><b>Overall Merit:</b> Does the manuscript have an overall benefit to warrant publication in ASFIRJ? Do the findings of the manuscript advance current knowledge in the topic area? <span id="9"></span> </li>
+								<li><b>English Level:</b> Is the English language appropriate and understandable?</li>
+							</ul>
+						</p>
+					
+
+					<h4>Giving Your Overall Recommendation</h4>
+						<p>Your overall recommendation to the handling editor should come in either of the four underlisted decision paths, which must be clearly well justified. 
+							<ul style="margin-top: -26px;">
+								<li><b>Accept As It Is:</b> The manuscript can be accepted without any further changes.</li>
+								<li><b>Accept Following Minor Revisions:</b> The paper can be accepted after satisfactory minor revisions on the basis of the comments raised by the reviewers and the editor. Authors will be asked to resubmit the revised paper within ten days.</li>
+								<li><b>Reconsider Following Major Revisions:</b> The manuscript can be accepted after satisfactory major revisions on the basis of the comments raised by the reviewers and the editor. Authors will be provided with the reviewers’ feedback and will be requested to respond to the comments raised and revise their manuscript accordingly. In their revision, the authors should provide a point-by-point response to the reviewers’ comment. Upon satisfactory revisions, the manuscript will be accepted, but if the revisions are unsatisfactory and fundamental issues not addressed, the manuscript will be rejected. Authors will be asked to resubmit the revised manuscript within a maximum of 30 days and the revised version will be returned to the reviewer for further comments.</li>
+								<li><b>Reject:</b> The manuscript is considered to contain serious flaws and does not offer any original contribution to the topic area. </li>
+							</ul>
+						</p>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        
+    </main>
+      <!-- Main js -->
+    <script src="./assets/templates/metro_hyip/js/main.js"></script>
+
+	<script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const showNavButton = document.getElementById('showNavButton');
+    const submissionHeader = document.querySelector('.submission-header');
+    let isNavVisible = false;
+
+    showNavButton.addEventListener('click', function() {
+        if (!isNavVisible) {
+            submissionHeader.style.marginLeft = '0'; // Reveal the navigation
+        } else {
+            submissionHeader.style.marginLeft = '-800px'; // Hide the navigation off-screen
+        }
+        isNavVisible = !isNavVisible; // Toggle the navigation visibility flag
+    });
+});
+    </script>
+
+        
+    
+    <link rel="stylesheet" href="./assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
+<script src="./assets/global/js/iziToast.min.js"></script>
+   
+    
+    
+  <section class="footer-section info-active">
+	<div class="footer-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget">
+					<a class="logo" href="https://asfirj.org/">
+						<img src="./assets/images/logoIcon/logo.png" alt="logo">
+					</a>
+
+					<p>
+						At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>Author</h3>
+					<ul class="widget-links">
+						<!-- <li><i class="fas fa-square-full"></i><a href="./portal" class='menu-item'>Submit Manuscript</a></li> -->
+						<li><i class="fas fa-square-full"></i><a href="./authors.html#ob" class='menu-item'>Submission Process</a></li>
+					</ul>
+					<a href=""><h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3></a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>Editor</h3>
+					<ul class="widget-links">
+						<li><i class="fas fa-square-full"></i><a href="./editors.html" class='menu-item'>Editors</a></li>
+						</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>About</h3>
+					<ul class="widget-links">
+						<li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About Us</a></li>
+						<li><i class="fas fa-square-full"></i><a href="https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
+						<li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget link-widget">
+					<h3>Useful Links</h3>
+					<ul class="widget-links">
+						<li><i class="fas fa-square-full"></i><a href="./events.html" class='menu-item'>Events</a></li>
+						<li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a></li>
+						<li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li>
+				
+					</ul>
+				</div>
+			</div>
+			
+			
+
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget">
+					<h3>Newsletter Signup</h3>
+					<p>Signup today for hints, tips and the latest news and updates.</p>
+					<div class="subscribe-form">
+						<form class="subscribe-form newsLetterForm" id="newsLetterForm">
+							<input class="form-control" type="email" name="email" placeholder="Email *"
+								required id="subscribeEmail">
+							<!-- <input type="hidden" name="action" value="mailchimpsubscribe"> -->
+							<button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
+							<div class="clearfix"></div>
+						</form>
+						<script type="module" src="./js/forms/newsLetter.js"></script>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-3 col-sm-6 sm-padding">
+				<div class="footer-widget">
+					<h3>Contact Information</h3>
+					
+					                                     <p>
+                                        <div class="footer-contact-menu__item-icon">
+                                            <i class="las la-phone"></i>                                        </div>
+                                        <div class="footer-contact-menu__item-content">
+                                            <p>+234(0)-701-436-3223 </p>
+                                        </div>
+                                    </p>
+                                                                    <p>
+                                        <div class="footer-contact-menu__item-icon">
+                                            <i class="far fa-envelope-open"></i>                                        </div>
+                                        <div class="footer-contact-menu__item-content">
+                                            <p>info@asfirj.org </p>
+                                        </div>
+                                    </p>
+                                                                    <p>
+                                        <div class="footer-contact-menu__item-icon">
+                                            <i class="fas fa-map-marked-alt"></i>                                        </div>
+                                        <div class="footer-contact-menu__item-content">
+                                            <p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p>
+                                        </div>
+                                    </p>
+                                
+				<!--	<p>Phone: VIP-MEMBERS-ONLY</p>
+					<p>Email: <a href="./#" class="__cf_email__" >[email&#160;protected]</a></p>
+					<p>Address: Bochum Pkwy, Batemoor, Sheffield S8 8LH, United Kingdom.</p>-->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer-bottom">
+	<div class="container">
+		<div id="google_translate_element"></div>
+		<div class="copyright-wrap">
+			<p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
+		</div>
+		<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+		<!-- Start of Tawk.to Script-->
+<!-- <script type="text/javascript">
+	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+	(function(){
+	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+	s1.async=true;
+	s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
+	s1.charset='UTF-8';
+	s1.setAttribute('crossorigin','*');
+	s0.parentNode.insertBefore(s1,s0);
+	})();
+	</script> -->
+	<!--End of Tawk.to Script -->
+
+	<script src="./js/scrollBehaviour.js"></script>
+
+	</div>
+</div></section>
+ 
+  
+<!--/. footer-section -->
+<div id="scrollup">
+	<button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- jQuery Lib -->
+<script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./front/public/js/vendor/popper.min.js"></script>
+<script src="./front/public/js/vendor/bootstrap.min.js"></script>
+<script src="./front/public/js/vendor/waypoints.min.js"></script>
+<script src="./front/public/js/vendor/slick.min.js"></script>
+<script src="./front/public/js/vendor/jquery.ajaxchimp.min.js"></script>
+<script src="./front/public/js/vendor/odometer.min.js"></script>
+<script src="./front/public/js/vendor/jquery.isotope.v3.0.2.js"></script>
+<script src="./front/public/js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="./front/public/js/vendor/venobox.min.js"></script>
+<script src="./front/public/js/vendor/jquery.hoverdir.js"></script>
+<script src="./front/public/js/vendor/splitting.min.js"></script>
+<script src="./front/public/js/vendor/jquery.nice-select.min.js"></script>
+<script src="./front/public/js/vendor/wow.min.js"></script>
+<script src="./front/public/js/main.js"></script>
+<script type="module" src="./js/general.js"></script>
+<script>
+  document.getElementById("showNavButton").addEventListener("click", function () {
+    document.getElementById("mobileNav").classList.toggle("open");
+  });
+</script>
+</body>
+</html>

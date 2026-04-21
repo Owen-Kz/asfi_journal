@@ -1,0 +1,385 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
+	<meta name="author" content="Weperch LLC">
+<title> ASFI Research Journal - Events</title>
+    <meta name="title" Content="ASFI Research Journal - Events">
+
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
+    <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
+
+    
+    <link rel="apple-touch-icon" href="assets/images/logoIcon/logo.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Events">
+    
+    <meta itemprop="name" content="ASFI Research Journal - Events">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ASFI Research Journal">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
+    <meta property="og:image:type" content="png"/>
+    <meta property="og:image:width" content="1180" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:url" content="events.html">
+    
+    <meta name="twitter:card" content="summary_large_image">
+
+
+	<link rel="stylesheet" href="front/public/css/fontawesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/nice-select.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/splitting-cells.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/splitting.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/keyframe-animation.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/slider.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="css/style.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/header.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/footer.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
+	<link rel="stylesheet" href="front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
+	<script src="front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+
+<body class="header-1 business">
+
+
+<div>
+     <!-- Top Dark Navbar -->
+<div class="top-navbar">
+  <div class="top-nav-inner">
+    <div class="logo-section">
+		<a href="https://asfirj.org/">
+      <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
+</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="top-menu-toggle" id="topMenuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="top-links" id="topLinks">
+      <a href="https://asfirj.org/issues">Explore asfirj</a>
+      <a href="https://asfirj.org/authors.html#ob">Get published</a>
+	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
+      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
+      <a href="https://asfirj.org/events.html">Events</a>
+      <a href="https://portal.asfirj.org/portal/login/">Login</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Journal Banner -->
+<div class="journal-banner">
+  <div class="container banner-inner">
+    <div class="journal-title">
+      <h1>ASFI Research Journal</h1>
+    </div>
+  </div>
+</div>
+ 
+<?php include './header.php'; ?>
+
+</div>	
+
+	
+  
+  
+  
+  
+   <section class="page-header padding">
+	<div class="overlay padding">
+	<div class="container">
+		<div class="page-content text-center">
+			<div class="short-nav">
+				<a href="https://asfirj.org/">Home</a><span>>>></span><a href="./events.html">Events</a>
+			</div>
+			<h2>Events</h2>
+			<p>
+				Our Events
+			</p>
+		</div>
+	</div>
+    </div>
+</section><!-- /.page-header -->
+    <main>
+        <div class="all-event-section">
+
+            
+
+            
+<section class="service-section bg-grey bd-bottom padding">
+	<div class="container">
+		<div class="section-heading mb-40 text-center wow fadeInUp" data-wow-delay="200ms">
+			<h2><span></span>3rd Annual ASFI Multidisciplinary Conference & Boot Camp<span></span></h2>
+            <h3>Theme:
+Beyond Boundaries: Breaking Collaborative Frontiers for Impactful Research and Career.</h3>
+
+            <div class="upcoming-events-list"></div>
+                <div class="events-list-items">
+                    <div class="events-list-item">
+                        <h4>25th - 27th November 2025</h4>
+                        <div style="border-radius: 12px;">
+            
+                            <!-- Add your video iframe here -->
+                            <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/M0DZeo7c4cA?si=4UaMSUglLqjzC_0X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+                            <img width="60%" src="./images/event2025.jpeg" alt="">
+                        </div>
+                         <p style="margin-top: 40px;">
+				The 3rd Annual Multidisciplinary Conference and Boot Camp, organized by the African Science Frontiers Initiatives (ASFI), is a groundbreaking opportunity for researchers, academics, and professionals across various fields to come together and engage in dynamic discussions. This event is centered on collaborative frontiers for impactful research and career across a wide range of disciplines. <br> <br>
+
+This year's theme, <i>"Beyond Boundaries"</i>, is proudly presented by ASFI in its 3rd Annual Virtual Multidisciplinary Conference & Boot Camp under the unifying banner of advancing Africa’s scientific collaboration, innovation, and policy influence.
+  <br> <br>
+
+  <p> <h3>Event Features:</h3>
+
+<ul>
+    <li><b>Keynotes from top experts:</b> Delivered by top experts from various disciplines.</li>
+    <li><b>Oral and poster presentations:</b> Includes both oral and poster presentations showcasing groundbreaking research.</li>
+    <li><b>Panel discussions on topical issues:</b> Engaging discussions on topical and pressing issues affecting African research.</li>
+    <li><b>Multidiscipline:</b> Researchers from a wide variety of fields will be represented, fostering diverse perspectives.</li>
+    <li><b>Career-advancing networking:</b> Career-advancing networking sessions that connect participants with experts and peers.</li>
+    <li><b>Prizes for excellent presentations:</b> Excellent presentations will be awarded prestigious prizes.</li>
+    <li><b>Certificate of attendance:</b> All participants will receive certificates of attendance.</li>
+    <li><b>Boot Camp on various activities:</b> Hands-on activities and workshops designed to develop practical skills in research and innovation.</li>
+    <li><b>Abstracts published in ASFIRJ:</b> Accepted abstracts will be published in the ASFI Research Journal.</li>
+    <p>And much more…</p>
+</ul>
+
+
+
+
+
+
+
+
+</p>
+
+<p>
+    <h3>Registration:</h3>
+   <b>Early Bird (15th July – 30th September 2025):</b> <br> <br>
+ASFI Members: $10 USD (₦10,000) <br>
+Non-ASFI Members: $30 USD (₦30,000) <br> <br>
+<b>Late Registration (1st October – 24th November 2025):</b> <br> <br>
+ASFI Members: $20 USD (₦20,000) <br>
+Non-ASFI Members: $50 USD (₦50,000)</p>
+
+<b>Registration Link:</b>
+Click the link to secure your spot for the conference and boot camp: <a href="https://cutt.ly/mrUjbbhU" style="color: blueviolet;" target="_blank"> https://cutt.ly/mrUjbbhU </a>.
+			</p>
+                    </div>
+                   
+                        
+                    
+                </div>
+               
+                
+            </div>
+
+		</div>
+	</div>
+</section>
+
+
+
+            
+        </div>
+    </main>
+  <!-- Main js -->
+  <script src="./assets/templates/metro_hyip/js/main.js"></script>
+
+        
+    
+  <link rel="stylesheet" href="./assets/global/css/iziToast.min.css?v=<?= time(); ?><?= time(); ?>">
+<script src="./assets/global/js/iziToast.min.js"></script>
+ 
+  
+  
+<section class="footer-section info-active">
+  <div class="footer-top">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-sm-6 sm-padding">
+              <div class="footer-widget">
+                  <a class="logo" href="https://asfirj.org/">
+                      <img src="./assets/images/logoIcon/logo.png" alt="logo">
+                  </a>
+
+                  <p>
+                      At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
+                  </p>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 sm-padding">
+              <div class="footer-widget link-widget">
+                  <h3>Author</h3>
+                  <ul class="widget-links">
+                      <!-- <li><i class="fas fa-square-full"></i><a href="./portal" class='menu-item'>Submit Manuscript</a></li> -->
+                      <li><i class="fas fa-square-full"></i><a href="./authors.html#ob" class='menu-item'>Submission Process</a></li>
+                  </ul>
+                  <a href=""><h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3></a>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 sm-padding">
+              <div class="footer-widget link-widget">
+                  <h3>Editor</h3>
+                  <ul class="widget-links">
+                      <li><i class="fas fa-square-full"></i><a href="./editors.html" class='menu-item'>Editors</a></li>
+                      </ul>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 sm-padding">
+              <div class="footer-widget link-widget">
+                  <h3>About</h3>
+                  <ul class="widget-links">
+                      <li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About Us</a></li>
+                      <li><i class="fas fa-square-full"></i><a href="https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
+                      <li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 sm-padding">
+              <div class="footer-widget link-widget">
+                  <h3>Useful Links</h3>
+                  <ul class="widget-links">
+                    <li><i class="fas fa-square-full"></i><a href="./events.html" class='menu-item'>Events</a></li>
+                      <li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a></li>
+                      <li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li>
+                    
+                  </ul>
+              </div>
+          </div>
+        
+          
+
+          <div class="col-lg-3 col-sm-6 sm-padding">
+              <div class="footer-widget">
+                  <h3>Newsletter Signup</h3>
+                  <p>Signup today for hints, tips and the latest news and updates.</p>
+                  <div class="subscribe-form">
+                    <form class="subscribe-form newsLetterForm" id="newsLetterForm">
+                        <input class="form-control" type="email" name="email" placeholder="Email *"
+                            required id="subscribeEmail">
+                        <!-- <input type="hidden" name="action" value="mailchimpsubscribe"> -->
+                        <button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
+                        <div class="clearfix"></div>
+                    </form>
+                    <script type="module" src="./js/forms/newsLetter.js"></script>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-lg-3 col-sm-6 sm-padding">
+              <div class="footer-widget">
+                  <h3>Contact Information</h3>
+                  
+                                                       <p>
+                                      <div class="footer-contact-menu__item-icon">
+                                          <i class="las la-phone"></i>                                        </div>
+                                      <div class="footer-contact-menu__item-content">
+                                          <p>+234(0)-701-436-3223 </p>
+                                      </div>
+                                  </p>
+                                                                  <p>
+                                      <div class="footer-contact-menu__item-icon">
+                                          <i class="far fa-envelope-open"></i>                                        </div>
+                                      <div class="footer-contact-menu__item-content">
+                                          <p>info@asfirj.org </p>
+                                      </div>
+                                  </p>
+                                                                  <p>
+                                      <div class="footer-contact-menu__item-icon">
+                                          <i class="fas fa-map-marked-alt"></i>                                        </div>
+                                      <div class="footer-contact-menu__item-content">
+                                          <p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p>
+                                      </div>
+                                  </p>
+                              
+              <!--	<p>Phone: VIP-MEMBERS-ONLY</p>
+                  <p>Email: <a href="./#" class="__cf_email__" >[email&#160;protected]</a></p>
+                  <p>Address: Bochum Pkwy, Batemoor, Sheffield S8 8LH, United Kingdom.</p>-->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="footer-bottom">
+  <div class="container">
+    <div id="google_translate_element"></div>
+      <div class="copyright-wrap">
+          <p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
+      </div>
+      <!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
+      <!--Start of Tawk.to Script-->
+<!-- <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script> -->
+  <!--End of Tawk.to Script-->
+  </div>
+</div></section>
+
+
+<!--/. footer-section -->
+<div id="scrollup">
+  <button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- jQuery Lib -->
+<script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="./front/public/js/vendor/popper.min.js"></script>
+<script src="./front/public/js/vendor/bootstrap.min.js"></script>
+<script src="./front/public/js/vendor/waypoints.min.js"></script>
+<script src="./front/public/js/vendor/slick.min.js"></script>
+<script src="./front/public/js/vendor/jquery.ajaxchimp.min.js"></script>
+<script src="./front/public/js/vendor/odometer.min.js"></script>
+<script src="./front/public/js/vendor/jquery.isotope.v3.0.2.js"></script>
+<script src="./front/public/js/vendor/imagesloaded.pkgd.min.js"></script>
+<script src="./front/public/js/vendor/venobox.min.js"></script>
+<script src="./front/public/js/vendor/jquery.hoverdir.js"></script>
+<script src="./front/public/js/vendor/splitting.min.js"></script>
+<script src="./front/public/js/vendor/jquery.nice-select.min.js"></script>
+<script src="./front/public/js/vendor/wow.min.js"></script>
+<script src="./front/public/js/main.js"></script>
+<script type="module" src="./js/general.js"></script>
+</body>
+</html>
