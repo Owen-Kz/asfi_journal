@@ -1,6 +1,6 @@
 <?php
 $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
-$base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . '' . rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\');
+$base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . '' ;
 ?>
 <header class="header header-one">
     <div class="primary-header-one primary-header">
