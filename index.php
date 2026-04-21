@@ -1,7 +1,7 @@
 <?php
 // Start output buffering for better performance
 ob_start();
-
+header('Content-Type: text/html; charset=UTF-8');
 // Set caching headers for better performance
 header("Cache-Control: public, max-age=3600"); // Cache for 1 hour
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
@@ -234,7 +234,7 @@ include './backend/db.php';
     </style>
 </head>
 
-<body class="header-1 business" style="  font-family: system-ui, -apple-system, san-serif !important;">
+<body class="header-1 business">
     <!-- <div class="site-preloader-wrap">
         <div class="spinner"></div>
     </div> -->
