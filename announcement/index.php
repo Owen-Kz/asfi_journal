@@ -119,7 +119,7 @@
   </div>
 </div>
  
-<?php include '../header.php'; ?>
+<?php include __DIR__ . "/../header.php" ?>
 
 </div>	
   
