@@ -142,7 +142,7 @@ function renderArticle($row, $authorsName) {
         <!-- Content -->
         <div class="p-4 md:p-6">
             <!-- Title -->
-            <a href="/content?sid=' . $buffer . '" class="hover:text-purple-700 transition-colors" onClick='.updateDownloadsCount($row).'>
+            <a href="/content?sid=' . $buffer . '" class="hover:text-purple-700 transition-colors">
                 <h3 class="text-base md:text-2xl font-semibold text-gray-900 mb-2 md:mb-3 line-clamp-2 leading-tight">' . $title . '</h3>
             </a>
             
