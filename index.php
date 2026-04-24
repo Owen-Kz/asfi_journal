@@ -669,7 +669,7 @@ $(document).ready(function() {
     <script src="./front/public/js/slider.js" type="module"></script>
     <script type="module" src="./js/general.js"></script>
     <script src="./front/public/js/main.js"></script>
-    <script src="./js/announcements/getPriority.js?v=3.1k"></script>
+    <script src="./js/announcements/getPriority.js?v=3.w1k"></script>
     <script src="./js/slider/bootstrap.min.js" type="text/javascript"></script>
     <script src="./js/slider/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
     
