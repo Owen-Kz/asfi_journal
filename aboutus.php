@@ -540,7 +540,7 @@
 	<section class="about-section bd-bottom padding-20">
 		
 		<div class="container">
-			<br/>
+		
 		
 			<div style="display: flex; flex-direction: column; justify-content: center;">
 				<div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms">
@@ -554,7 +554,7 @@
 					</div>
 					
 				</div>
-				<br/><br/>	<br/>
+			
 			</div>
 			
 				<div class="col-md-10 wow fadeInRight">
@@ -570,7 +570,11 @@
 
 	</section>
 	<section class="about-section bd-bottom padding-20">
-
+		<div class="container">
+		
+		
+			<div style="display: flex; flex-direction: column; justify-content: center;">
+				<div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms">
 		<div class='section-heading'>
 			<h2>Article Publication Fee</h2>
 
@@ -591,7 +595,7 @@
 
 		</div>
 
-		<table class="table-fees">
+		<table class="table-fees m-auto ">
 			<tr>
 				<th rowspan="2">ARTICLE TYPE</th>
 				<th colspan="2">ARTICLE PROCESSING FEES</th>
@@ -662,13 +666,16 @@
 			</tr>
 		</table>
 			<div class="next-section-placeholder" id="advert-policy"></div>
+</div>
+</div>
+</div>
 
 	</section>
 
 	<!-- POlicies  -->
 	<section class="service-section bg-grey bd-bottom padding">
 		<div class="container">
-			<br/>
+
 			<div class="section-heading mb-40  wow fadeInUp" data-wow-delay="200ms">
 
 				<h2 class="text-center">Advertising Policy</h2>
@@ -697,7 +704,7 @@
 	<!-- Archiving Policy  -->
 	 <section class="service-section bg-grey bd-bottom padding">
 		<div class="container">
-			<br/>
+		
 			<div class="section-heading mb-40  wow fadeInUp" data-wow-delay="200ms">
 
 				<h2 class="text-center">Archiving and Digital Preservation </h2>

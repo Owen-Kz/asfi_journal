@@ -139,7 +139,7 @@
                             <li style="margin-bottom: 10px;"><a href="./editors.html" style="color: #80078b; text-decoration: none;">Meet the Editors</a></li>
                             <li style="margin-bottom: 10px;"><a href="https://asfischolar.org" target="_blank" style="color: #80078b; text-decoration: none;">ASFI Scholar</a></li>
                             <!-- ASFIScholar image - clickable -->
-                            <div class="DST-iframe-nojobs" style="margin: 10px 0;">
+                            <!-- <div class="DST-iframe-nojobs" style="margin: 10px 0;">
                                 <a href="https://asfischolar.org" target="_blank">
                                     <img src="https://res.cloudinary.com/diml8ljwa/image/upload/v1775046499/WhatsApp_Image_2026-04-01_at_1.19.56_PM_1_rcq8ij.jpg" 
                                          alt="ASFIScholar" 
@@ -147,10 +147,10 @@
                                          onmouseover="this.style.transform='scale(1.02)'"
                                          onmouseout="this.style.transform='scale(1)'">
                                 </a>
-                            </div>
-                            <li style="margin-bottom: 10px;"><a href="https://africansciencefrontiers.com/" target="_blank" style="color: #80078b; text-decoration: none;">African Science Frontiers Initiatives</a></li>
+                            </div> -->
+                            <!-- <li style="margin-bottom: 10px;"><a href="https://africansciencefrontiers.com/" target="_blank" style="color: #80078b; text-decoration: none;">African Science Frontiers Initiatives</a></li> -->
                             <!-- ASFI image - clickable -->
-                            <div class="DST-iframe-nojobs" style="margin: 10px 0;">
+                            <!-- <div class="DST-iframe-nojobs" style="margin: 10px 0;">
                                 <a href="https://africansciencefrontiers.com/" target="_blank">
                                     <img src="https://res.cloudinary.com/diml8ljwa/image/upload/v1775046499/WhatsApp_Image_2026-04-01_at_1.19.56_PM_kfvxun.jpg" 
                                          alt="African Science Frontiers Initiatives" 
@@ -158,10 +158,10 @@
                                          onmouseover="this.style.transform='scale(1.02)'"
                                          onmouseout="this.style.transform='scale(1)'">
                                 </a>
-                            </div>
-                            <li style="margin-bottom: 10px;"><a href="https://asfischolar.net" target="_blank" style="color: #80078b; text-decoration: none;">ASFI Meet</a></li>
+                            </div> -->
+                            <!-- <li style="margin-bottom: 10px;"><a href="https://asfischolar.net" target="_blank" style="color: #80078b; text-decoration: none;">ASFI Meet</a></li> -->
                             <!-- ASFIMeet image - clickable -->
-                            <div class="DST-iframe-nojobs" style="margin: 10px 0;">
+                            <!-- <div class="DST-iframe-nojobs" style="margin: 10px 0;">
                                 <a href="https://asfischolar.net" target="_blank">
                                     <img src="https://res.cloudinary.com/diml8ljwa/image/upload/v1775046499/WhatsApp_Image_2026-04-01_at_1.19.56_PM_2_mahwpn.jpg" 
                                          alt="ASFI Meet" 
@@ -169,11 +169,11 @@
                                          onmouseover="this.style.transform='scale(1.02)'"
                                          onmouseout="this.style.transform='scale(1)'">
                                 </a>
-                            </div>
-                            <li style="margin-bottom: 10px;"><a href="./event2.html" style="color: #80078b; text-decoration: none;">ASFI 2024 Virtual Multidisciplinary Conference & Boot Camp</a></li>
-                            <div class="DST-iframe-nojobs" style="margin: 10px 0;">
+                            </div> -->
+                            <!-- <li style="margin-bottom: 10px;"><a href="./event2.html" style="color: #80078b; text-decoration: none;">ASFI 2024 Virtual Multidisciplinary Conference & Boot Camp</a></li> -->
+                            <!-- <div class="DST-iframe-nojobs" style="margin: 10px 0;">
                                 <img src="./images/event2025.jpeg" alt="" style="width:100%; border-radius: 15px;">
-                            </div>
+                            </div> -->
                         </ul>
                     </div>
                 </div>

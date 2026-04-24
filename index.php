@@ -277,7 +277,9 @@ include './backend/db.php';
                         <div data-widget-def="UX3Tabs" data-widget-id="01cbe741-499a-4611-874e-1061f1f4679e" class="tabs--defult-style articles-section">
     <!-- Section Header -->
     <div class="articles-header">
-        <h2 class="section__mainHeader--mid">Articles</h2>
+                        <?php include './components/welcome-section.php'; ?>
+
+        <h2 class="section__mainHeader--mid">Most recent Articles</h2>
         <div class="articles-dropdown">
             <button class="dropdown-trigger">
                 <span>Read More</span>
@@ -591,7 +593,6 @@ include './backend/db.php';
 
                         
 
-                        <?php include './components/welcome-section.php'; ?>
                     </div>
 
                     <?php include './components/sidebar.php'; ?>
