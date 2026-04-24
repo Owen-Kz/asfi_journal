@@ -37,7 +37,7 @@ form.addEventListener("submit", function(e){
     const subscribeEmail = form.querySelector("#subscribeEmail")
 
     // Show preloader when submission starts
-    preloader.style.display = "block";
+    // preloader.style.display = "block";
 
     const formData = new FormData(form);
 
@@ -50,18 +50,18 @@ form.addEventListener("submit", function(e){
     }).then(res=>res.json())
     .then(data =>{
         if(data.status === "success"){
-            preloader.style.display = "none";
+            // preloader.style.display = "none";
             alert(data.message)
             showSuccessPopup(data.message)
         }else{
-            preloader.style.display = "none";
+            // preloader.style.display = "none";
             showErrorPopup(data.message)
             console.log(data.message)
         }
     })
     .catch(error => {
         // Hide preloader on fetch error
-        preloader.style.display = "none";
+        // preloader.style.display = "none";
         showErrorPopup(data.message);
         console.error('Error:', error);
     });
