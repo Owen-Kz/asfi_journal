@@ -4,17 +4,17 @@
         <div class="welcome-connect-wrapper">
             <!-- Welcome Content -->
             <div class="welcome-content">
-                <div class="section-heading text-center mb-4">
+                <div class="section-heading text-left mb-4">
                     <h2 class="welcome-title">Welcome to ASFI Research Journal</h2>
                 </div>
                 <div class="welcome-text">
                     <p>
-               Welcome to the <b>African Science Frontiers Initiatives Research Journal (ASFIRJ)</b>—the official journal of the African Science Frontiers Initiatives. ASFIRJ is an online, open-access, multidisciplinary journal dedicated to publishing high-quality research across all fields, from basic to applied sciences. We provide an author-friendly platform and welcome contributions from researchers worldwide, ensuring a global perspective. Our mission is to advance impactful science and position ASFIRJ as a leading, globally competitive African research journal. All submissions are evaluated solely on scientific merit and quality.
-                    </p>
-                    <!-- <p>
-                      <b>Join us in advancing research, innovation, and collaboration.</b>
+               Welcome to the <b class="font-bold" style="font-weight:999 !important; color:black;">African Science Frontiers Initiatives Research Journal (ASFIRJ)</b>—the official journal of the African Science Frontiers Initiatives. ASFIRJ is an online, open-access, multidisciplinary journal dedicated to publishing high-quality research across all fields, from basic to applied sciences. We provide an author-friendly platform and welcome contributions from researchers worldwide, ensuring a global perspective. Our mission is to advance impactful science and position ASFIRJ as a leading, globally competitive African research journal. All submissions are evaluated solely on scientific merit and quality.
                     </p>
                     <p>
+                      <b class="font-bold" style="font-weight:999 !important; color:black;">Join us in advancing research, innovation, and collaboration.</b>
+                    </p>
+                    <!-- <p>
                         Join us in our mission to foster collaboration, innovation, and excellence in research. Together, let's explore new frontiers and make a lasting impact on the scientific landscape.
                     </p> -->
 
@@ -53,7 +53,7 @@
         content: '';
         position: absolute;
         bottom: 0;
-        left: 50%;
+        left: 5%;
         transform: translateX(-50%);
         width: 80px;
         height: 3px;

@@ -121,7 +121,7 @@ function renderArticle($row, $authorsName) {
     $articleType = htmlspecialchars($row['article_type']);
     $buffer = htmlspecialchars($row['buffer']);
     $title = htmlspecialchars($row['manuscript_full_title']);
-    $manuscriptFile = htmlspecialchars($row['manuscript_file']);
+    // $manuscriptFile = htmlspecialchars($row['manuscript_file']);
     $viewsCount = (int)$row['views_count'];
     $downloadsCount = (int)$row['downloads_count'];
     
