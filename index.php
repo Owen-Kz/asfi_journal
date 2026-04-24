@@ -245,7 +245,6 @@ include './backend/db.php';
     <div id="successPopup" class="successpopup hidden"></div>
 
     <?php include './components/top-navbar.php'; ?>
-    <!-- <?php include './components/header.php'; ?> -->
 
     <div class="right-search-submit" style="background:transparent; border:none; max-width: max-content;">
         <form action="search" class="right-search-submit " style="margin-left: 0px; background:transparent; border:none; outline:none; box-shadow: none; ">
@@ -621,7 +620,6 @@ include './backend/db.php';
     </section>
 
     <?php include './components/why-publish-section.php'; ?>
-    <?php include './components/footer.php'; ?>
 
     <!-- Optimized script loading at the end -->
     <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
