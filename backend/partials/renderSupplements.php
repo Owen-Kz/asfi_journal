@@ -164,7 +164,7 @@ function renderSupplements($con, $page = 1, $filters = []) {
     
     if ($hasAuthorFilter) {
         $authorJoin = " INNER JOIN `authors` ON `journals`.`buffer` = `authors`.`article_id`";
-        $whereClauses[] = "`authors`.`authors_fullname` = ?";
+        $whereClauses[] = "`authors`.`authors_fullname` = LIKE(%?%)";
         $params[] = $filters['author'];
         $types .= "s";
     }

@@ -248,8 +248,10 @@ include './backend/db.php';
     <?php include './components/header.php'; ?>
 
     <div class="right-search-submit">
-        <input type="text" placeholder="Search articles within this journal" />
-        <button class="search-btn"><i class="fas fa-search"></i></button>
+        <form action="search">
+        <input type="text" name="k" placeholder="Search articles within this journal" />
+        <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
 
     <div id="myCarousel" class="carousel" data-ride="carousel">

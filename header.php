@@ -1,3 +1,5 @@
+<?php include("includes/spam_detector.php"); ?>
+
 <?php
 $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
 $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . '' ;
