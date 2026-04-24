@@ -1,4 +1,4 @@
-<?php include("includes/spam_detector.php"); ?>
+<!-- <?php include("includes/spam_detector.php"); ?> -->
 
 <?php
 $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';

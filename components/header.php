@@ -54,7 +54,7 @@
     <link rel="stylesheet" href="../front/public/css/splitting.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/keyframe-animation.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/slider.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="../css/style.css?v=<?= time(); ?>">
+    <!-- <link rel="stylesheet" href="../css/style.css?v=<?= time(); ?>"> -->
     <link rel="stylesheet" href="../front/public/css/header.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/footer.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/main.css?v=<?= time(); ?>">

@@ -48,7 +48,7 @@
 	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css">
 	<link rel="stylesheet" href="../front/public/css/business-icon.css">
 	<link rel="stylesheet" href="../front/public/css/animate.min.css">
-	<link rel="stylesheet" href="../front/public/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="../front/public/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="../front/public/css/slick.min.css">
 	<link rel="stylesheet" href="../front/public/css/venobox.min.css">
 	<link rel="stylesheet" href="../front/public/css/odometer.min.css">
@@ -57,7 +57,7 @@
 	<link rel="stylesheet" href="../front/public/css/splitting.css">
 	<link rel="stylesheet" href="../front/public/css/keyframe-animation.css">
 	<link rel="stylesheet" href="../front/public/css/slider.css">
-	<link rel="stylesheet" href="../css/style.css?v=<?= time(); ?>">
+	<!-- <link rel="stylesheet" href="../css/style.css?v=<?= time(); ?>"> -->
 	<link rel="stylesheet" href="../front/public/css/header.css?v=<?= time(); ?>">
 	<link rel="stylesheet" href="../front/public/css/footer.css">
 	<link rel="stylesheet" href="../front/public/css/main.css">

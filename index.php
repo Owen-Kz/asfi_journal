@@ -245,10 +245,10 @@ include './backend/db.php';
     <div id="successPopup" class="successpopup hidden"></div>
 
     <?php include './components/top-navbar.php'; ?>
-    <?php include './components/header.php'; ?>
+    <!-- <?php include './components/header.php'; ?> -->
 
-    <div class="right-search-submit">
-        <form action="search">
+    <div class="right-search-submit" style="background:transparent; border:none; max-width: max-content;">
+        <form action="search" class="right-search-submit " style="margin-left: 0px; background:transparent; border:none; outline:none; box-shadow: none; ">
         <input type="text" name="k" placeholder="Search articles within this journal" />
         <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
         </form>
