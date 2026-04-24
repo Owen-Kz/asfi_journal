@@ -17,7 +17,7 @@ include '../backend/partials/renderSearchResults.php';
 
 <?php include '../components/header.php'; ?>
 <?php include '../components/top-navbar.php'; ?>
-<?php include '../components/page-header-supplements.php'; ?>
+<!-- <?php include '../components/page-header-supplements.php'; ?> -->
 
 <main id="supplements">
     <?php include '../components/filter-section.php'; ?>

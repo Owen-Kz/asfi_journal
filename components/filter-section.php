@@ -161,7 +161,7 @@ $yearsList = getAvailableYears($con, $activeTab);
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
             <div class="p-5">
-                <form id="searchArticle" method="GET" action="" role="search">
+                <form id="searchArticle" method="GET" action="../search" role="search">
                     <!-- Row 1: Filters -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
                         <input type="hidden" name="tab" id="activeTab" value="<?php echo $activeTab; ?>">
