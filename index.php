@@ -274,7 +274,10 @@ include './backend/db.php';
                         <?php include './components/welcome-section.php'; ?>
 
                         <div data-widget-def="UX3Tabs" data-widget-id="01cbe741-499a-4611-874e-1061f1f4679e" class="tabs--defult-style articles-section">
-    <!-- Section Header -->
+   
+    
+    <div data-ctrl-res="screen-md" class="tab">
+         <!-- Section Header -->
     <div class="articles-header">
 
         <h2 class="section__mainHeader--mid">Most Recent Articles</h2>
@@ -289,14 +292,12 @@ include './backend/db.php';
             </div>
         </div>
     </div>
-    
-    <div data-ctrl-res="screen-md" class="tab">
-        <div class="mb-6">
+        <!-- <div class="mb-6">
     <span class="inline-flex items-center gap-2 bg-[#80078b] text-white font-semibold text-[12px] uppercase tracking-wide px-4 py-2 rounded-full">
         <span class="w-1.5 h-1.5 bg-white rounded-full"></span>
         Most Recent
     </span>
-</div>
+</div> -->
         
         <div class="articles-content">
             <div id="pane-01cbe741-499a-4611-874e-1061f1f4679e01" class="grid grid-cols-1 md:grid-cols-2 gap-4">
