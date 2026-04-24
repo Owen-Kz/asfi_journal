@@ -168,7 +168,7 @@ function renderArticle($row, $authorsName) {
             </div>
             
             <!-- Action Buttons -->
-            <div class="flex flex-wrap items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2" style="justify-content: space-between;">
                 <a href="/content?sid=' . $buffer . '#abstract" class="px-2 md:px-4 py-1 md:py-2 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-1 text-[10px] md:text-sm font-medium">
                     <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                     Abstract

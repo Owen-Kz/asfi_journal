@@ -102,21 +102,21 @@ function renderArticle($row, $authorsName) {
             </div>
             
             <!-- Action Buttons - increased to text-base with larger padding -->
-            <div class="flex flex-wrap items-center gap-3">
-                <a href="./content?sid=' . $buffer . '#abstract" class="px-6 py-3 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium">
+            <div class="flex flex-wrap items-center gap-3" style="justify-content: space-between;">
+                <a href="./content?sid=' . $buffer . '#abstract" class="px-6 py-4 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                     Abstract
                 </a>
-                <a href="./content?sid=' . $buffer . '#fulltext" class="px-6 py-3 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium">
+                <a href="./content?sid=' . $buffer . '#fulltext" class="px-6 py-4 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     Full Text
                 </a>
-                <a href="' . $manuscriptFileURL . '" target="_blank" class="downloadLink px-6 py-3 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium">
+                <a href="' . $manuscriptFileURL . '" target="_blank" class="downloadLink px-6 py-4 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                     PDF
                 </a>
           
-                <button class="shareButton px-6 py-3 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium cursor-pointer" 
+                <button class="shareButton px-6 py-4 bg-gray-100 hover:bg-purple-100 text-purple-700 rounded-lg transition-colors flex items-center gap-2 text-base font-medium cursor-pointer" 
                         data-id="' . htmlspecialchars($buffer, ENT_QUOTES) . '" 
                         data-title="' . htmlspecialchars($title, ENT_QUOTES) . '">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
