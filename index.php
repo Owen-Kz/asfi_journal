@@ -620,6 +620,7 @@ include './backend/db.php';
     </section>
 
     <?php include './components/why-publish-section.php'; ?>
+    <?php include './components/footer.php'; ?>
 
     <!-- Optimized script loading at the end -->
     <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>

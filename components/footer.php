@@ -116,8 +116,11 @@
     <button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
 </div>
 
+
+
+
 <!-- Scripts -->
-<script src="../front/public/js/vendor/jquery-1.12.4.min.js?v=<?= time(); ?>"></script>
+<!-- <script src="../front/public/js/vendor/jquery-1.12.4.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/popper.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/bootstrap.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/waypoints.min.js?v=<?= time(); ?>"></script>
@@ -130,7 +133,5 @@
 <script src="../front/public/js/vendor/jquery.hoverdir.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/splitting.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/wow.min.js?v=<?= time(); ?>"></script>
-<!-- <script src="../front/public/js/main.js?v=<?= time(); ?>"></script> -->
-<!-- <script type="module" src="../js/general.js?v=<?= time(); ?>"></script> -->
 <script src="../js/announcements/getPriority.js?v=23"></script>
-<script src="../js/shareModal.js?v=<?= time(); ?>"></script>
+<script src="../js/shareModal.js?v=<?= time(); ?>"></script> -->
