@@ -269,17 +269,15 @@ include './backend/db.php';
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    
                     <div class="gutterless--xs gutterless--sm gutterless--md main-content col-md-9">
-                        <div id="rich-text-3643f25c-5be2-4cc8-a718-3728186a2285" class="pb-rich-text">
-                            <p><em>ASFIRJ</em>, the official journal of the African Science Frontiers Initiatives (ASFI), stands as an online-only, open-access multidisciplinary journal, dedicated to advancing, impacting, and communicating research from all disciplines, encompassing both basic and applied studies. Within the African scientific community, <em>ASFIRJ</em> endeavors to provide an unparalleled platform, offering an author-friendly approach to scientific publishing from manuscript submission through publication. Our overarching ambition is to emerge as one of Africa's leading research journals, globally competitive, and unwaveringly focused on delivering quality research with significant impact.</p>
-                        </div>
+                        <?php include './components/welcome-section.php'; ?>
 
                         <div data-widget-def="UX3Tabs" data-widget-id="01cbe741-499a-4611-874e-1061f1f4679e" class="tabs--defult-style articles-section">
     <!-- Section Header -->
     <div class="articles-header">
-                        <?php include './components/welcome-section.php'; ?>
 
-        <h2 class="section__mainHeader--mid">Most recent Articles</h2>
+        <h2 class="section__mainHeader--mid">Most Recent Articles</h2>
         <div class="articles-dropdown">
             <button class="dropdown-trigger">
                 <span>Read More</span>
@@ -315,6 +313,8 @@ include './backend/db.php';
             </div>
         </div>
     </div>
+                        <?php include './components/action-cards.php'; ?>
+
 </div>
 
 <style>
