@@ -82,8 +82,8 @@ include '../backend/partials/renderTheses.php';
         font-size: 12px;
     }
     
-    /* Career Corner Intro Section */
-    .career-intro {
+    /* Thesis Intro Section */
+    .thesis-intro {
         background: linear-gradient(135deg, #f8f5fc 0%, #fff 100%);
         border-bottom: 1px solid #e9ecef;
     }
@@ -120,7 +120,7 @@ include '../backend/partials/renderTheses.php';
         line-height: 1.6;
     }
     
-    /* Quick Tips Section */
+    /* Quick Tips Section - Adapted for Thesis Benefits */
     .quick-tips {
         background: #fff;
     }
@@ -164,7 +164,7 @@ include '../backend/partials/renderTheses.php';
         line-height: 1.5;
     }
     
-    /* Featured Article Section */
+    /* Featured Thesis Section */
     .featured-article {
         background: linear-gradient(135deg, #80078b 0%, #5a1f4e 100%);
         border-radius: 20px;
@@ -251,66 +251,66 @@ include '../backend/partials/renderTheses.php';
                 <div class="short-nav">
                     <a href="https://asfirj.org/">Home</a>
                     <span>>>></span>
-                    <a href="">Career Corner</a>
+                    <a href="">ASFIRJ Theses</a>
                 </div>
-                <h2>Prof. Nwaru's Career Corner</h2>
-                <p class="w-90 xl:w-50 m-auto">Prof. Nwaru shares actionable insights, proven strategies, and practical advice to help you navigate your academic journey, master research skills, and build a thriving scientific career in Africa and beyond.</p>
+                <h2>ASFIRJ Theses</h2>
+                <p class="w-90 xl:w-50 m-auto">Giving Academic Theses a Permanent Scientific Voice — Publish your bachelor's, master's, or doctoral thesis with DOI and permanent online visibility.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Quick Tips Section -->
+<!-- Quick Benefits Section - Thesis Publishing Advantages -->
 <section class="quick-tips py-5 bg-light">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 style="color: #80078b; font-size: 28px; font-weight: 700;">Quick Career Tips</h2>
+            <h2 style="color: #80078b; font-size: 28px; font-weight: 700;">Why Publish Your Thesis?</h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffbf00; margin: 10px auto;"></div>
         </div>
         <div class="row g-4">
             <div class="col-md-3 col-sm-6">
                 <div class="tip-card">
                     <div class="tip-icon">
-                        <i class="fas fa-pen-fancy"></i>
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <h4>Publish Strategically</h4>
-                    <p>Focus on quality journals that align with your research impact goals</p>
+                    <h4>Rapid Publication</h4>
+                    <p>Eligible theses published within one week of acceptance</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="tip-card">
                     <div class="tip-icon">
-                        <i class="fas fa-handshake"></i>
+                        <i class="fas fa-globe"></i>
                     </div>
-                    <h4>Build Networks</h4>
-                    <p>Collaborate across disciplines and institutions for greater impact</p>
+                    <h4>Permanent Visibility</h4>
+                    <p>Theses remain perpetually accessible online</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="tip-card">
                     <div class="tip-icon">
-                        <i class="fas fa-chart-line"></i>
+                        <i class="fas fa-certificate"></i>
                     </div>
-                    <h4>Master Grant Writing</h4>
-                    <p>Learn to craft compelling proposals that secure funding</p>
+                    <h4>Formal Citation</h4>
+                    <p>Each thesis receives a DOI for proper citation</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="tip-card">
                     <div class="tip-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-language"></i>
                     </div>
-                    <h4>Continuous Learning</h4>
-                    <p>Stay updated with latest research methodologies and tools</p>
+                    <h4>No Language Limit</h4>
+                    <p>Submit in any language, published as originally written</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Featured Article Section -->
+<!-- Featured Thesis Section -->
 <?php
-// Fetch featured article (most recent career corner article)
+// Fetch featured thesis (most recent ASFIRJ Theses article)
 $featuredQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto, article_type 
                  FROM journals 
                  WHERE is_publication = 'yes' 
@@ -326,17 +326,17 @@ if ($featuredResult && $featuredResult->num_rows > 0):
     $featuredPhoto = $featured['manuscriptPhoto'] ?? null;
     $featuredImage = !empty($featuredPhoto) ? "https://asfirj.org/useruploads/article_images/" . $featuredPhoto : "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
 ?>
-<!-- <section class="featured-section py-5">
+<section class="featured-section py-5">
     <div class="container">
         <div class="featured-article">
             <div class="row g-0">
                 <div class="col-lg-7">
                     <div class="featured-content">
-                        <span class="featured-badge"><i class="fas fa-star"></i> Featured Article</span>
+                        <span class="featured-badge"><i class="fas fa-star"></i> Featured Thesis</span>
                         <h3><?php echo $featuredTitle; ?></h3>
-                        <p>Discover practical strategies and expert advice to accelerate your academic career and research impact.</p>
+                        <p>This thesis has been formally published with a DOI and is now permanently accessible to the global research community.</p>
                         <a href="/content?sid=<?php echo $featuredBuffer; ?>" class="featured-btn">
-                            Read Full Article <i class="fas fa-arrow-right"></i>
+                            Read Full Thesis <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -346,23 +346,23 @@ if ($featuredResult && $featuredResult->num_rows > 0):
             </div>
         </div>
     </div>
-</section> -->
+</section>
 <?php endif; ?>
 
-<!-- Articles Listing Section -->
+<!-- Theses Listing Section -->
 <main id="supplements" class="py-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 style="color: #80078b; font-size: 28px; font-weight: 700;">All Career Resources</h2>
+            <h2 style="color: #80078b; font-size: 28px; font-weight: 700;">Published Theses</h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffbf00; margin: 10px auto;"></div>
-            <p class="text-muted mt-3">Explore our collection of career development articles, research tips, and professional insights</p>
+            <p class="text-muted mt-3">Explore bachelor's, master's, and doctoral theses published on ASFIRJ Theses — each with full citation credentials and permanent access</p>
         </div>
         
         <div class="issueslay">
             <div id="articleListContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <?php
-                // Render career corner articles
-                renderCareerCorner($con, $page, $filters);
+                // Render theses articles
+                renderTheses($con, $page, $filters);
                 ?>
             </div>
         </div>
@@ -370,7 +370,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
 </main>
 
 <?php include '../components/footer.php'; ?>
-    <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
 <script>
 // Toggle format links function
@@ -405,7 +405,7 @@ document.getElementById('yearFilter')?.addEventListener('change', function() {
 });
 </script>
 
-<!-- Share Modal (same as before) -->
+<!-- Share Modal -->
 <style>
   #asfirj-share-modal {
     position: fixed;
@@ -543,7 +543,7 @@ document.getElementById('yearFilter')?.addEventListener('change', function() {
   modal.innerHTML =
     '<div id="asfirj-share-inner">' +
       '<button id="asfirj-share-close" aria-label="Close">&times;</button>' +
-      '<h3>Share Article</h3>' +
+      '<h3>Share Thesis</h3>' +
       '<p id="asfirj-share-subtitle"></p>' +
       '<div class="asfirj-share-grid">' +
         '<button class="asfirj-share-btn twitter" data-platform="twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231z"/></svg>Twitter</button>' +
@@ -588,7 +588,7 @@ document.getElementById('yearFilter')?.addEventListener('change', function() {
       case 'facebook': url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(articleUrl); break;
       case 'linkedin': url = 'https://www.linkedin.com/shareArticle?mini=true&url=' + encodeURIComponent(articleUrl) + '&title=' + encodeURIComponent(articleTitle); break;
       case 'whatsapp': url = 'https://wa.me/?text=' + encodeURIComponent(articleTitle + ' ' + articleUrl); break;
-      case 'email': url = 'mailto:?subject=' + encodeURIComponent(articleTitle) + '&body=' + encodeURIComponent('Check out this article:\n\n' + articleUrl); break;
+      case 'email': url = 'mailto:?subject=' + encodeURIComponent(articleTitle) + '&body=' + encodeURIComponent('Check out this thesis:\n\n' + articleUrl); break;
       case 'copy': copyToClipboard(articleUrl); closeModal(); return;
     }
     if(url) { window.open(url, '_blank'); closeModal(); }
