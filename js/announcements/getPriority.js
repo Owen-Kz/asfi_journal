@@ -24,7 +24,7 @@ const announcementContainer = document.getElementById('announcement-container');
             })
             .catch(error => {
                 console.error('Error fetching priority announcements:', error);
-                announcementContainer.innerHTML = '<p>No priority announcements available at the moment: Err.</p>';
+                announcementContainer.innerHTML = '<p>No priority announcements available at the moment:</p>';
             });
     }else{
         console.log("no container")

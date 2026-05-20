@@ -68,7 +68,7 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . '' ;
                             </ul>
                         </li>
                         <li><a href="<?php echo $base_url; ?>/careercorner" class='menu-item'>Career Corner</a></li>
-                        <!-- <li><a href="<?php echo $base_url; ?>/terms.php" class='menu-item'>Terms</a></li> -->
+                        <li><a href="<?php echo $base_url; ?>/theses.php" class='menu-item'>ASFIRJ Theses</a></li>
                         <li><a href="<?php echo $base_url; ?>/contact.php" class='menu-item'>Contact Us</a></li>
 
                     </ul>
