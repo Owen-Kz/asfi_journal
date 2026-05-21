@@ -449,28 +449,46 @@
     <div class="container content-center">
         <div class="section-heading wow fadeInUp text-center">
             <h2>Criteria for Publishing Theses on ASFIRJ Theses</h2>
-            <p>To qualify for publication, your thesis must meet the following requirements:</p>
+            <p>To qualify for publication on ASFIRJ Theses, the following criteria must be met:</p>
         </div>
         <div class="checklist-grid">
             <div class="checklist-item">
                 <div class="check-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="check-content">
-                    <h4>Completed & Approved Thesis</h4>
-                    <p>The thesis must have been completed, defended (where applicable), and approved by an academic institution.</p>
+                    <h4>Completed, Defended & Approved</h4>
+                    <p>The thesis must have been completed, defended (where applicable), and formally approved by a recognized academic institution.</p>
                 </div>
             </div>
             <div class="checklist-item">
                 <div class="check-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="check-content">
                     <h4>Official Documentation</h4>
-                    <p>Authors must provide an official letter or documentation from their institution confirming approval of the thesis.</p>
+                    <p>Authors must provide official documentation from their institution confirming approval of the thesis.</p>
+                    <ol style="margin-top: 10px; padding-left: 20px; color: #555;">
+                        <li>Where a degree certificate is submitted as evidence, it must clearly demonstrate that the certificate is linked to the thesis, for example by indicating the title of the thesis on the certificate.</li>
+                        <li>If the degree certificate does not contain evidence linking it to the thesis, authors must provide a formal statement from the institution confirming that the thesis was duly defended/completed by the candidate.</li>
+                        <li>The statement must include:
+                            <ol type="a" style="margin-top: 5px; padding-left: 20px;">
+                                <li>The title of the thesis</li>
+                                <li>The name of the candidate</li>
+                                <li>The date of defense/completion</li>
+                            </ol>
+                        </li>
+                    </ol>
                 </div>
             </div>
             <div class="checklist-item">
                 <div class="check-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="check-content">
-                    <h4>Exclusive & Original Submission</h4>
+                    <h4>Exclusive Submission</h4>
                     <p>The thesis must not already be formally published elsewhere.</p>
+                </div>
+            </div>
+            <div class="checklist-item">
+                <div class="check-icon"><i class="fas fa-check-circle"></i></div>
+                <div class="check-content">
+                    <h4>Copyright Permission</h4>
+                    <p>If copyright to the thesis is held by the institution or its library, authors must obtain written permission to publish the thesis on ASFIRJ Theses.</p>
                 </div>
             </div>
         </div>
