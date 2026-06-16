@@ -3,12 +3,17 @@ header('Content-Type: application/json');
 include "db.php";
 
 function cleanAuthorName($name) {
+    if ($name === null || $name === '') return '';
     $cleaned = trim($name);
     $cleaned = preg_replace('/[\s\-\.\,]*[\d\-\_]+$/', '', $cleaned);
     $cleaned = preg_replace('/[^a-zA-Z\s\-\'\.\,]/', '', $cleaned);
     $cleaned = trim($cleaned, '- ');
     $cleaned = preg_replace('/[\s\-]+/', ' ', $cleaned);
     $cleaned = preg_replace('/\s*-\s*/', '-', $cleaned);
+
+    $cleaned = preg_replace('/(?<=^|\s)[a-zA-Z]\.?(?=\s|$)/', '', $cleaned);
+    $cleaned = preg_replace('/\s+/', ' ', trim($cleaned));
+
     $cleaned = mb_convert_case($cleaned, MB_CASE_TITLE, 'UTF-8');
     $cleaned = preg_replace_callback('/\b\w+-\w+\b/', function($matches) {
         return $matches[0];
