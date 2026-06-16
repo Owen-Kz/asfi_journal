@@ -5,6 +5,7 @@ header("Pragma: no-cache");
 include "../db.php";
 
 function cleanAuthorName($name) {
+    if ($name === null || $name === '') return '';
     $cleaned = trim($name);
     $cleaned = preg_replace('/[\s\-\.\,]*[\d\-\_]+$/', '', $cleaned);
     $cleaned = preg_replace('/[^a-zA-Z\s\-\'\.\,]/', '', $cleaned);

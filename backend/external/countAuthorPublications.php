@@ -4,56 +4,97 @@ header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 include "../db.php";
 
+function cleanAuthorName($name) {
+    if ($name === null || $name === '') return '';
+    $cleaned = trim($name);
+    $cleaned = preg_replace('/[\s\-\.\,]*[\d\-\_]+$/', '', $cleaned);
+    $cleaned = preg_replace('/[^a-zA-Z\s\-\'\.\,]/', '', $cleaned);
+    $cleaned = trim($cleaned, '- ');
+    $cleaned = preg_replace('/[\s\-]+/', ' ', $cleaned);
+    $cleaned = preg_replace('/\s*-\s*/', '-', $cleaned);
+    $cleaned = mb_convert_case($cleaned, MB_CASE_TITLE, 'UTF-8');
+    $cleaned = preg_replace_callback('/\b\w+-\w+\b/', function($matches) {
+        return $matches[0];
+    }, $cleaned);
+
+    return $cleaned;
+}
+
 $author = $_GET["author"] ?? null;
 
-if ($author) {
-    try {
-        // Find all authors matching the search parameter
-        $stmt = $con->prepare("SELECT article_id FROM `authors` WHERE `authors_fullname` LIKE ?");
-        if (!$stmt) {
-            error_log("Prepare failed: " . $con->error);
-            echo json_encode(['status' => 'internalError', 'message' => "Database error", 'count' => 0]);
-            exit();
-        }
-
-        $searchParam = "%" . $author . "%";
-        $stmt->bind_param("s", $searchParam);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $articleIDs = [];
-
-        while ($row = $result->fetch_assoc()) {
-            $articleIDs[] = $row["article_id"];
-        }
-
-        if (!empty($articleIDs)) {
-            // Dynamic placeholders
-            $placeholders = implode(',', array_fill(0, count($articleIDs), '?'));
-            $types = str_repeat('i', count($articleIDs)); // assuming article_id is INT
-
-            $query = "SELECT COUNT(*) as count FROM `journals` WHERE `buffer` IN ($placeholders)";
-            $stmtArticles = $con->prepare($query);
-            if (!$stmtArticles) {
-                error_log("Prepare failed: " . $con->error);
-                echo json_encode(['status' => 'internalError', 'message' => "Database error", 'count' => 0]);
-                exit();
-            }
-
-            $stmtArticles->bind_param($types, ...$articleIDs);
-            $stmtArticles->execute();
-            $articlesResult = $stmtArticles->get_result();
-            $row = $articlesResult->fetch_assoc();
-            $count = (int) $row['count'];
-
-            echo json_encode(['status' => 'success', 'count' => $count]);
-        } else {
-            echo json_encode(['status' => 'error', 'message' => "Author '$author' not found", 'count' => 0]);
-        }
-    } catch (Exception $e) {
-        error_log("Exception: " . $e->getMessage());
-        echo json_encode(['status' => 'internalError', 'message' => "Exception: " . $e->getMessage(), 'count' => 0]);
-    }
-} else {
+if (!$author) {
     echo json_encode(['status' => 'error', 'message' => 'Missing author parameter', 'count' => 0]);
+    exit;
+}
+
+try {
+    $cleanedQuery = cleanAuthorName($author);
+    $lowerQuery = strtolower(preg_replace('/\s+/', ' ', trim($cleanedQuery)));
+
+    $nameParts = explode(' ', $lowerQuery);
+    $nameParts = array_filter($nameParts);
+    $nameParts = array_values($nameParts);
+
+    if (empty($lowerQuery) || empty($nameParts)) {
+        echo json_encode(['status' => 'error', 'message' => "Invalid author name: $author", 'count' => 0]);
+        exit;
+    }
+
+    $conditions = [];
+    $params = [];
+    foreach ($nameParts as $part) {
+        $conditions[] = '`authors_fullname` LIKE ?';
+        $params[] = '%' . $part . '%';
+    }
+
+    $sql = "SELECT article_id, authors_fullname FROM `authors` WHERE " . implode(' AND ', $conditions);
+    $stmt = $con->prepare($sql);
+
+    if (!$stmt) {
+        error_log("Prepare failed: " . $con->error);
+        echo json_encode(['status' => 'internalError', 'message' => "Database error", 'count' => 0]);
+        exit;
+    }
+
+    $types = str_repeat('s', count($params));
+    $stmt->bind_param($types, ...$params);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $authorMap = [];
+    while ($row = $result->fetch_assoc()) {
+        $cleanedName = cleanAuthorName($row['authors_fullname']);
+        $lowerKey = strtolower(preg_replace('/\s+/', ' ', trim($cleanedName)));
+        if ($lowerKey === $lowerQuery) {
+            $authorMap[$row['article_id']] = true;
+        }
+    }
+
+    if (empty($authorMap)) {
+        echo json_encode(['status' => 'error', 'message' => "Author '$author' not found", 'count' => 0]);
+        exit;
+    }
+
+    $articleIDs = array_keys($authorMap);
+    $placeholders = implode(',', array_fill(0, count($articleIDs), '?'));
+    $stmtArticles = $con->prepare("SELECT COUNT(*) as count FROM `journals` WHERE `buffer` IN ($placeholders)");
+
+    if (!$stmtArticles) {
+        error_log("Prepare failed: " . $con->error);
+        echo json_encode(['status' => 'internalError', 'message' => "Database error", 'count' => 0]);
+        exit;
+    }
+
+    $stmtArticles->bind_param(str_repeat('s', count($articleIDs)), ...$articleIDs);
+    $stmtArticles->execute();
+    $articlesResult = $stmtArticles->get_result();
+    $row = $articlesResult->fetch_assoc();
+    $count = (int) $row['count'];
+
+    echo json_encode(['status' => 'success', 'count' => $count]);
+
+} catch (Exception $e) {
+    error_log("Exception: " . $e->getMessage());
+    echo json_encode(['status' => 'internalError', 'message' => "Exception: " . $e->getMessage(), 'count' => 0]);
 }
 ?>
