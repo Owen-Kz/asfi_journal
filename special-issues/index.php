@@ -333,7 +333,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
                 <div class="col-lg-7">
                     <div class="featured-content">
                         <span class="featured-badge"><i class="fas fa-star"></i> Featured Special Issue</span>
-                        <h3><?php echo $featuredTitle; ?></h3>
+                        <h3 style="color: #ffffff; font-size: 24px; font-weight: 700;"><?php echo $featuredTitle; ?></h3>
                         <p>Discover in-depth research and expert insights on critical topics shaping Africa's scientific landscape.</p>
                         <a href="/content?sid=<?php echo $featuredBuffer; ?>" class="featured-btn">
                             Read Full Article <i class="fas fa-arrow-right"></i>
