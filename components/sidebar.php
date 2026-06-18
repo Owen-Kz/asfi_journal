@@ -1,9 +1,11 @@
 <div class="gutterless--xs gutterless--sm gutterless--md col-md-3">
-    <div data-widget-def="ux3-layout-widget" data-widget-id="ee7a3430-1136-4dfb-922e-2ee614f121aa" class="journal-sidebar">
+    <div data-widget-def="ux3-layout-widget" data-widget-id="ee7a3430-1136-4dfb-922e-2ee614f121aa"
+        class="journal-sidebar">
         <div>
             <div>
                 <a href="">
-                    <button style="background-color: #80078b; color: white; height: 50px; width: 100%; margin: auto; margin-top: 20px; font-size: 15px; border: none; border-radius: 8px; cursor: pointer;">
+                    <button
+                        style="background-color: #80078b; color: white; height: 50px; width: 100%; margin: auto; margin-top: 20px; font-size: 15px; border: none; border-radius: 8px; cursor: pointer;">
                         <i aria-hidden="true" class="fas fa-bell"></i> Announcements
                     </button>
                 </a>
@@ -12,7 +14,7 @@
                 <!-- Announcement Container -->
                 <div id="announcement-container"></div>
                 <br>
-<!-- 
+                <!-- 
                 <div id="etoc-signup" role="status" aria-atomic="true" class="alert-sign-up">
                     <div class="alert-sign-up__box pb-0">
                         <i aria-hidden="true" class="fas fa-envelope"></i>
@@ -33,14 +35,16 @@
 
             <div class="journal-side-section journal-actions-container">
                 <a href="/portal">
-                    <button style="background-color: #80078b; color: white; height: 60px; width: 100%; margin: auto; margin-top: 20px; font-size: 20px; border: none; border-radius: 8px; cursor: pointer;">
+                    <button
+                        style="background-color: #80078b; color: white; height: 60px; width: 100%; margin: auto; margin-top: 20px; font-size: 20px; border: none; border-radius: 8px; cursor: pointer;">
                         <i aria-hidden="true" class="fas fa-book"></i> Submit Manuscript
                     </button>
                 </a>
             </div>
             <br>
 
-            <div data-widget-def="UX3HTMLWidget" data-widget-id="5e6f26aa-d597-4688-9154-94c250dbfcf6" class="card--bordered my-4 sidebar-society-logo">
+            <div data-widget-def="UX3HTMLWidget" data-widget-id="5e6f26aa-d597-4688-9154-94c250dbfcf6"
+                class="card--bordered my-4 sidebar-society-logo">
                 <div id="societyText">
                     <p>Official journal of the African Science Frontiers Initiatives (ASFI)</p>
                     <a href="https://africansciencefrontiers.com/" target="_blank">
@@ -50,31 +54,35 @@
             </div>
 
             <!-- Prof. Nwaru's Career Corner Section -->
-            <div class="career-corner-section" style="margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #f8f5fc 0%, #fff 100%); border-radius: 12px; border-left: 4px solid #ffbf00;">
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
-                    <div style="width: 40px; height: 40px; background: #80078b; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <div class="career-corner-section"
+                style="margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #f8f5fc 0%, #fff 100%); border-radius: 12px; border-left: 4px solid #ffbf00;">
+                <div
+                    style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
+                    <div
+                        style="width: 40px; height: 40px; background: #80078b; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                         <i class="fas fa-briefcase" style="color: #ffbf00; font-size: 20px;"></i>
                     </div>
-                    <h2 style="font-size: 18px; font-weight: 700; color: #80078b; margin: 0;">Prof. Nwaru's Career Corner</h2>
+                    <h2 style="font-size: 18px; font-weight: 700; color: #80078b; margin: 0;">Prof. Nwaru's Career
+                        Corner</h2>
                 </div>
-                <p style="font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.5;">Practical career advice, research tips, and professional development insights from Prof. Bright Nwaru.</p>
-                
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.5;">Practical career advice,
+                    research tips, and professional development insights from Prof. Bright Nwaru.</p>
+
                 <?php
                 // Fetch the most recent Career Corner article (filter by Career Corner)
-                // Remove is_old_publication column since it doesn't exist
                 $careerQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
                                FROM journals 
                                WHERE is_publication = 'yes' 
-                               AND article_type = 'LEARNING CORNER' 
+                               AND (UPPER(article_type) = 'LEARNING CORNER' OR UPPER(article_type) = 'CAREER CORNER')
                                ORDER BY id DESC 
                                LIMIT 1";
                 $careerResult = $con->query($careerQuery);
-                
+
                 if ($careerResult && $careerResult->num_rows > 0):
                     $career = $careerResult->fetch_assoc();
                     $careerTitle = htmlspecialchars($career['manuscript_full_title']);
                     $careerBuffer = htmlspecialchars($career['buffer']);
-                    
+
                     // Get cover image - simplified
                     $careerPhoto = $career['manuscriptPhoto'] ?? null;
                     if (!empty($careerPhoto)) {
@@ -82,69 +90,160 @@
                     } else {
                         $careerImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
                     }
-                    
+
                     // Check if file exists on server, if not use default
                     $careerImageUrl = $careerImage;
-                    
+
                     // Format date
                     $careerDate = !empty($career['date_published']) ? $career['date_published'] : $career['date_uploaded'];
                     $formattedDate = date("j M Y", strtotime($careerDate));
-                ?>
-                <div class="career-preview" style="background: white; border-radius: 10px; overflow: hidden; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                    <a href="/content?sid=<?php echo $careerBuffer; ?>">
-                        <img src="<?php echo $careerImageUrl; ?>" alt="<?php echo $careerTitle; ?>" style="width: 100%; height: 120px; object-fit: cover;">
-                    </a>
-                    <div style="padding: 12px;">
-                        <span style="font-size: 10px; color: #ffbf00; font-weight: 600; text-transform: uppercase;"><?php echo $formattedDate; ?></span>
-                        <h3 style="font-size: 14px; font-weight: 600; margin: 5px 0 10px; line-height: 1.4;">
-                            <a href="/content?sid=<?php echo $careerBuffer; ?>" style="color: #333; text-decoration: none; transition: color 0.2s;">
-                                <?php echo $careerTitle; ?>
-                            </a>
-                        </h3>
-                        <a href="/content?sid=<?php echo $careerBuffer; ?>" style="font-size: 12px; color: #80078b; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
-                            Read More <i class="fas fa-arrow-right" style="font-size: 10px;"></i>
+                    ?>
+                    <div class="career-preview"
+                        style="background: white; border-radius: 10px; overflow: hidden; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <a href="/content?sid=<?php echo $careerBuffer; ?>">
+                            <img src="<?php echo $careerImageUrl; ?>" alt="<?php echo $careerTitle; ?>"
+                                style="width: 100%; height: 120px; object-fit: cover;">
                         </a>
+                        <div style="padding: 12px;">
+                            <span
+                                style="font-size: 10px; color: #ffbf00; font-weight: 600; text-transform: uppercase;"><?php echo $formattedDate; ?></span>
+                            <h3 style="font-size: 14px; font-weight: 600; margin: 5px 0 10px; line-height: 1.4;">
+                                <a href="/content?sid=<?php echo $careerBuffer; ?>"
+                                    style="color: #333; text-decoration: none; transition: color 0.2s;">
+                                    <?php echo $careerTitle; ?>
+                                </a>
+                            </h3>
+                            <a href="/content?sid=<?php echo $careerBuffer; ?>"
+                                style="font-size: 12px; color: #80078b; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+                                Read More <i class="fas fa-arrow-right" style="font-size: 10px;"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 <?php else: ?>
-                <div class="career-preview" style="background: white; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
-                    <i class="fas fa-newspaper" style="font-size: 30px; color: #ccc; margin-bottom: 10px;"></i>
-                    <p style="font-size: 13px; color: #999;">New career tips coming soon!</p>
-                </div>
+                    <div class="career-preview"
+                        style="background: white; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
+                        <i class="fas fa-newspaper" style="font-size: 30px; color: #ccc; margin-bottom: 10px;"></i>
+                        <p style="font-size: 13px; color: #999;">New career tips coming soon!</p>
+                    </div>
                 <?php endif; ?>
-                
-                <a href="./careercorner" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #80078b; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: all 0.2s;">
+
+                <a href="./careercorner"
+                    style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #80078b; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: all 0.2s;">
                     <span class="text-white">See More Career Resources</span>
                     <i class="fas fa-arrow-right text-white" style="font-size: 11px;"></i>
                 </a>
             </div>
 
-            <!-- theses sesction  -->
-               <div class="theses-section" style="margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #f8f5fc 0%, #fff 100%); border-radius: 12px; border-left: 4px solid #6e1f75;">
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
-                    <div style="width: 40px; height: 40px; background: #80078b; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+            <!-- Special Issues Section -->
+            <div class="special-issues-section"
+                style="margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #f8f5fc 0%, #fff 100%); border-radius: 12px; border: 4px solid #4a2b8a;">
+                <div
+                    style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
+                    <div
+                        style="width: 40px; height: 40px; background: #80078b; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-briefcase" style="color: #ffbf00; font-size: 20px;"></i>
+                    </div>
+                    <h2 style="font-size: 18px; font-weight: 700; color: #80078b; margin: 0;">Special Issues</h2>
+                </div>
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.5;">Explore our latest special issues and exclusive content.</p>
+
+                <?php
+                // Fetch the most recent Special Issue article (filter by Special Issue)
+                $specialQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
+                               FROM journals 
+                               WHERE is_publication = 'yes' 
+                               AND (UPPER(article_type) = 'SPECIAL ISSUE' OR is_special_issue = 'yes')
+                               ORDER BY id DESC 
+                               LIMIT 1";
+                $specialResult = $con->query($specialQuery);
+
+                if ($specialResult && $specialResult->num_rows > 0):
+                    $special = $specialResult->fetch_assoc();
+                    $specialTitle = htmlspecialchars($special['manuscript_full_title']);
+                    $specialBuffer = htmlspecialchars($special['buffer']);
+
+                    // Get cover image - simplified
+                    $specialPhoto = $special['manuscriptPhoto'] ?? null;
+                    if (!empty($specialPhoto)) {
+                        $specialImage = "https://asfirj.org/useruploads/article_images/" . $specialPhoto;
+                    } else {
+                        $specialImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+                    }
+
+                    // Check if file exists on server, if not use default
+                    $specialImageUrl = $specialImage;
+
+                    // Format date
+                    $specialDate = !empty($special['date_published']) ? $special['date_published'] : $special['date_uploaded'];
+                    $formattedDate = date("j M Y", strtotime($specialDate));
+                    ?>
+                    <div class="career-preview"
+                        style="background: white; border-radius: 10px; overflow: hidden; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <a href="/content?sid=<?php echo $specialBuffer; ?>">
+                            <img src="<?php echo $specialImageUrl; ?>" alt="<?php echo $specialTitle; ?>"
+                                style="width: 100%; height: 120px; object-fit: cover;">
+                        </a>
+                        <div style="padding: 12px;">
+                            <span
+                                style="font-size: 10px; color: #ffbf00; font-weight: 600; text-transform: uppercase;"><?php echo $formattedDate; ?></span>
+                            <h3 style="font-size: 14px; font-weight: 600; margin: 5px 0 10px; line-height: 1.4;">
+                                <a href="/content?sid=<?php echo $specialBuffer; ?>"
+                                    style="color: #333; text-decoration: none; transition: color 0.2s;">
+                                    <?php echo $specialTitle; ?>
+                                </a>
+                            </h3>
+                            <a href="/content?sid=<?php echo $specialBuffer; ?>"
+                                style="font-size: 12px; color: #80078b; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+                                Read More <i class="fas fa-arrow-right" style="font-size: 10px;"></i>
+                            </a>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="career-preview"
+                        style="background: white; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
+                        <i class="fas fa-newspaper" style="font-size: 30px; color: #ccc; margin-bottom: 10px;"></i>
+                        <p style="font-size: 13px; color: #999;">More Special Issues Coming soon!</p>
+                    </div>
+                <?php endif; ?>
+
+                <a href="./special-issues"
+                    style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #80078b; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: all 0.2s;">
+                    <span class="text-white">See More Special Issues</span>
+                    <i class="fas fa-arrow-right text-white" style="font-size: 11px;"></i>
+                </a>
+            </div>
+            <!-- ENd special Issues section  -->
+
+            <!-- theses section  -->
+            <div class="theses-section"
+                style="margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #f8f5fc 0%, #fff 100%); border-radius: 12px; border-left: 4px solid #6e1f75;">
+                <div
+                    style="display: flex; flex-direction: column; align-items: center; gap: 10px; margin-bottom: 15px;">
+                    <div
+                        style="width: 40px; height: 40px; background: #80078b; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                         <i class="fas fa-briefcase" style="color: #ffbf00; font-size: 20px;"></i>
                     </div>
                     <h2 style="font-size: 18px; font-weight: 700; color: #80078b; margin: 0;">ASFIRJ Theses</h2>
                 </div>
-                <p style="font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.5;">Where academic theses are permanently made visible, citable, thereby enhancing their impact to science and society.</p>
-                
+                <p style="font-size: 13px; color: #666; margin-bottom: 15px; line-height: 1.5;">Where academic theses
+                    are permanently made visible, citable, thereby enhancing their impact to science and society.</p>
+
                 <?php
-                // Fetch the most recent Career Corner article (filter by Career Corner)
+                // Fetch the most recent These article (filter by Theses)
                 // Remove is_old_publication column since it doesn't exist
                 $careerQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
                                FROM journals 
                                WHERE is_publication = 'yes' 
-                               AND article_type = 'ASFIRJ THESES' 
+                               AND (UPPER(article_type) = 'ASFIRJ THESES' OR UPPER(article_type) = 'THESES') 
                                ORDER BY id DESC 
                                LIMIT 1";
                 $careerResult = $con->query($careerQuery);
-                
+
                 if ($careerResult && $careerResult->num_rows > 0):
                     $career = $careerResult->fetch_assoc();
                     $careerTitle = htmlspecialchars($career['manuscript_full_title']);
                     $careerBuffer = htmlspecialchars($career['buffer']);
-                    
+
                     // Get cover image - simplified
                     $careerPhoto = $career['manuscriptPhoto'] ?? null;
                     if (!empty($careerPhoto)) {
@@ -152,62 +251,81 @@
                     } else {
                         $careerImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
                     }
-                    
+
                     // Check if file exists on server, if not use default
                     $careerImageUrl = $careerImage;
-                    
+
                     // Format date
                     $careerDate = !empty($career['date_published']) ? $career['date_published'] : $career['date_uploaded'];
                     $formattedDate = date("j M Y", strtotime($careerDate));
-                ?>
-                <div class="career-preview" style="background: white; border-radius: 10px; overflow: hidden; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-                    <a href="/content?sid=<?php echo $careerBuffer; ?>">
-                        <img src="<?php echo $careerImageUrl; ?>" alt="<?php echo $careerTitle; ?>" style="width: 100%; height: 120px; object-fit: cover;">
-                    </a>
-                    <div style="padding: 12px;">
-                        <span style="font-size: 10px; color: #ffbf00; font-weight: 600; text-transform: uppercase;"><?php echo $formattedDate; ?></span>
-                        <h3 style="font-size: 14px; font-weight: 600; margin: 5px 0 10px; line-height: 1.4;">
-                            <a href="/content?sid=<?php echo $careerBuffer; ?>" style="color: #333; text-decoration: none; transition: color 0.2s;">
-                                <?php echo $careerTitle; ?>
-                            </a>
-                        </h3>
-                        <a href="/content?sid=<?php echo $careerBuffer; ?>" style="font-size: 12px; color: #80078b; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
-                            Read More <i class="fas fa-arrow-right" style="font-size: 10px;"></i>
+                    ?>
+                    <div class="career-preview"
+                        style="background: white; border-radius: 10px; overflow: hidden; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                        <a href="/content?sid=<?php echo $careerBuffer; ?>">
+                            <img src="<?php echo $careerImageUrl; ?>" alt="<?php echo $careerTitle; ?>"
+                                style="width: 100%; height: 120px; object-fit: cover;">
                         </a>
+                        <div style="padding: 12px;">
+                            <span
+                                style="font-size: 10px; color: #ffbf00; font-weight: 600; text-transform: uppercase;"><?php echo $formattedDate; ?></span>
+                            <h3 style="font-size: 14px; font-weight: 600; margin: 5px 0 10px; line-height: 1.4;">
+                                <a href="/content?sid=<?php echo $careerBuffer; ?>"
+                                    style="color: #333; text-decoration: none; transition: color 0.2s;">
+                                    <?php echo $careerTitle; ?>
+                                </a>
+                            </h3>
+                            <a href="/content?sid=<?php echo $careerBuffer; ?>"
+                                style="font-size: 12px; color: #80078b; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;">
+                                Read More <i class="fas fa-arrow-right" style="font-size: 10px;"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
                 <?php else: ?>
-                <div class="career-preview" style="background: white; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
-                    <i class="fas fa-newspaper" style="font-size: 30px; color: #ccc; margin-bottom: 10px;"></i>
-                    <p style="font-size: 13px; color: #999;">New theses tips coming soon!</p>
-                </div>
+                    <div class="career-preview"
+                        style="background: white; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 15px;">
+                        <i class="fas fa-newspaper" style="font-size: 30px; color: #ccc; margin-bottom: 10px;"></i>
+                        <p style="font-size: 13px; color: #999;">New theses tips coming soon!</p>
+                    </div>
                 <?php endif; ?>
-                
-                <a href="./asfirj-theses" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #80078b; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: all 0.2s;">
+
+                <a href="./asfirj-theses"
+                    style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #80078b; color: white; text-decoration: none; padding: 10px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: all 0.2s;">
                     <span class="text-white">See More Theses</span>
                     <i class="fas fa-arrow-right text-white" style="font-size: 11px;"></i>
                 </a>
             </div>
 
-            <section data-widget-def="general-rich-text" data-widget-id="266c820e-8d8d-4461-b70a-ed001b1d9e7e" class="tabs--default-style">
-                <h2 class="section__mainHeader--small" style="color: #80078b; font-size: 18px; font-weight: 600;">ASFIRJ Author Resources</h2>
+            <section data-widget-def="general-rich-text" data-widget-id="266c820e-8d8d-4461-b70a-ed001b1d9e7e"
+                class="tabs--default-style">
+                <h2 class="section__mainHeader--small" style="color: #80078b; font-size: 18px; font-weight: 600;">ASFIRJ
+                    Author Resources</h2>
                 <div id="rich-text-266c820e-8d8d-4461-b70a-ed001b1d9e7e" class="pb-rich-text">
-                    <p style="color: #555; font-size: 13px; line-height: 1.5;">When preparing their submission, authors are encouraged to make use of the below resources which have been developed specifically for&nbsp;<em>Asfirj&nbsp;</em>authors.&nbsp;</p>
-                    <p><br>a. <a href="./authors.html#ob" style="color: #80078b; text-decoration: none;">What is the submission process?</a></p>
-                    <p>b. <a href="./authors.html#sr" style="color: #80078b; text-decoration: none;">How to revise a manuscript?</a></p>
-                    <p>c. <a href="./authors.html#pp" style="color: #80078b; text-decoration: none;">How to organize a manuscript?</a></p>
-                    <p>d. <a href="./authors.html#fig" style="color: #80078b; text-decoration: none;">Guidelines for specific manuscripts</a></p>
+                    <p style="color: #555; font-size: 13px; line-height: 1.5;">When preparing their submission, authors
+                        are encouraged to make use of the below resources which have been developed specifically
+                        for&nbsp;<em>Asfirj&nbsp;</em>authors.&nbsp;</p>
+                    <p><br>a. <a href="./authors.html#ob" style="color: #80078b; text-decoration: none;">What is the
+                            submission process?</a></p>
+                    <p>b. <a href="./authors.html#sr" style="color: #80078b; text-decoration: none;">How to revise a
+                            manuscript?</a></p>
+                    <p>c. <a href="./authors.html#pp" style="color: #80078b; text-decoration: none;">How to organize a
+                            manuscript?</a></p>
+                    <p>d. <a href="./authors.html#fig" style="color: #80078b; text-decoration: none;">Guidelines for
+                            specific manuscripts</a></p>
                     <hr>
                 </div>
             </section>
 
-            <div data-widget-def="general-html-asset" data-widget-id="e4a898a9-7e70-47da-bc1a-640268219765" class="mt-4 mb-4">
+            <div data-widget-def="general-html-asset" data-widget-id="e4a898a9-7e70-47da-bc1a-640268219765"
+                class="mt-4 mb-4">
                 <div data-widget-def="UX3HTMLWidget" data-widget-id="56014d6b-bbc8-4ca7-ac51-490639ea3450" class="my-4">
-                    <h2 class="section__mainHeader--small" style="color: #80078b; font-size: 18px; font-weight: 600;">More from this journal</h2>
+                    <h2 class="section__mainHeader--small" style="color: #80078b; font-size: 18px; font-weight: 600;">
+                        More from this journal</h2>
                     <div class="journal-side-section journal-resources">
                         <ul class="unordered-bordered-list" style="list-style: none; padding-left: 0;">
-                            <li style="margin-bottom: 10px;"><a href="./editors.html" style="color: #80078b; text-decoration: none;">Meet the Editors</a></li>
-                            <li style="margin-bottom: 10px;"><a href="https://asfischolar.org" target="_blank" style="color: #80078b; text-decoration: none;">ASFI Scholar</a></li>
+                            <li style="margin-bottom: 10px;"><a href="./editors.html"
+                                    style="color: #80078b; text-decoration: none;">Meet the Editors</a></li>
+                            <li style="margin-bottom: 10px;"><a href="https://asfischolar.org" target="_blank"
+                                    style="color: #80078b; text-decoration: none;">ASFI Scholar</a></li>
                             <!-- ASFIScholar image - clickable -->
                             <!-- <div class="DST-iframe-nojobs" style="margin: 10px 0;">
                                 <a href="https://asfischolar.org" target="_blank">
@@ -259,24 +377,24 @@
         text-decoration: none !important;
         transition: color 0.2s ease;
     }
-    
+
     .journal-sidebar a:hover {
         color: #5a1f4e !important;
         text-decoration: underline !important;
     }
-    
+
     .journal-sidebar ul li a {
         color: #80078b !important;
     }
-    
+
     .career-corner-section a {
         color: #80078b !important;
     }
-    
+
     .career-corner-section a:hover {
         color: #5a1f4e !important;
     }
-    
+
     /* Career corner hover effect */
     .career-preview a:hover h3 {
         color: #80078b !important;
