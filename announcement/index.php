@@ -48,7 +48,7 @@
 	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css">
 	<link rel="stylesheet" href="../front/public/css/business-icon.css">
 	<link rel="stylesheet" href="../front/public/css/animate.min.css">
-	<!-- <link rel="stylesheet" href="../front/public/css/bootstrap.min.css"> -->
+	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" href="../front/public/css/slick.min.css">
 	<link rel="stylesheet" href="../front/public/css/venobox.min.css">
 	<link rel="stylesheet" href="../front/public/css/odometer.min.css">
@@ -83,45 +83,7 @@
 
 
 
-	<div>
- 	 <!-- Top Dark Navbar -->
-<div class="top-navbar">
-  <div class="top-nav-inner">
-    <div class="logo-section">
-		<a href="https://asfirj.org/">
-      <img src="../assets/images/logoIcon/logo.png" alt="Logo" />
-</a>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <button class="top-menu-toggle" id="topMenuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="top-links" id="topLinks">
-      <a href="https://asfirj.org/issues">Explore asfirj</a>
-      <a href="https://asfirj.org/authors.html#ob">Get published</a>
-	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
-      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
-      <a href="https://asfirj.org/events.html">Events</a>
-      <a href="https://portal.asfirj.org/portal/login/">Login</a>
-    </div>
-  </div>
-</div>
-
-
-<!-- Journal Banner -->
-<div class="journal-banner">
-  <div class="container banner-inner">
-    <div class="journal-title">
-      <h1>ASFI Research Journal</h1>
-    </div>
-  </div>
-</div>
- 
-<?php include __DIR__ . "/../header.php" ?>
-
-</div>	
+<?php include '../components/top-navbar.php'; ?>	
   
 
   
@@ -131,7 +93,7 @@
   
    <section class="page-header padding">
 	<div class="overlay padding">
-	<div class="container">
+	<div class="max-w-7xl mx-auto px-4">
 		<div class="page-content text-center">
 			<div class="short-nav">
 				<a href="https://asfirj.org/">Home</a><span>>>></span><a href="">Announcement</a>
@@ -151,7 +113,7 @@
 		flex-direction: row;
         padding: 20px;
 	">
-			<div class="container" style="width: 100%; padding-bottom: 150px;" id="announcement-main">
+			<div class="max-w-7xl mx-auto px-4" style="width: 100%; padding-bottom: 150px;" id="announcement-main">
 			
 
 			</div>
@@ -205,130 +167,12 @@
 
    
    
-   <section class="footer-section info-active">
-       <div class="footer-top">
-       <div class="container">
-           <div class="row">
-               <div class="col-lg-3 col-sm-6 sm-padding">
-                   <div class="footer-widget">
-                       <a class="logo" href="https://asfirj.org/">
-                           <img src="../assets/images/logoIcon/logo.png" alt="logo">
-                       </a>
-   
-                       <p>
-                           At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
-                       </p>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-sm-6 sm-padding">
-                   <div class="footer-widget link-widget">
-                       <h3>Author</h3>
-                       <ul class="widget-links">
-                           <!-- <li><i class="fas fa-square-full"></i><a href="../portal" class='menu-item'>Submit Manuscript</a></li> -->
-                           <li><i class="fas fa-square-full"></i><a href="" class='menu-item'>Print Request</a></li>
-                       </ul>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-sm-6 sm-padding">
-                   <div class="footer-widget link-widget">
-                       <h3>Editor</h3>
-                       <ul class="widget-links">
-                           <li><i class="fas fa-square-full"></i><a href="../editors.html" class='menu-item'>Editors</a></li>
-                           </ul>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-sm-6 sm-padding">
-                   <div class="footer-widget link-widget">
-                       <h3>About</h3>
-                       <ul class="widget-links">
-                           <li><i class="fas fa-square-full"></i><a href="../aboutus.html" class='menu-item'>About Us</a></li>
-                           <li><i class="fas fa-square-full"></i><a href="../https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
-                           <li><i class="fas fa-square-full"></i><a href="../https://asfischolar.org/">ASFIScholar</a></li>
-                       </ul>
-                   </div>
-               </div>
-               <div class="col-lg-3 col-sm-6 sm-padding">
-                   <div class="footer-widget link-widget">
-                       <h3>Useful Links</h3>
-                       <ul class="widget-links">
-                        <li><i class="fas fa-square-full"></i><a href="../events.html" class='menu-item'>Events</a></li>
-                           <li><i class="fas fa-square-full"></i><a href="../terms.html">Terms &amp; Conditions</a></li>
-                           <li><i class="fas fa-square-full"></i><a href="../contact.html">Contact Support</a></li>
-                       </ul>
-                   </div>
-               </div>
-               
-   
-               <div class="col-lg-3 col-sm-6 sm-padding">
-                   <div class="footer-widget">
-                       <h3>Newsletter Signup</h3>
-                       <p>Signup today for hints, tips and the latest news and updates.</p>
-                       <div class="subscribe-form">
-                           <form action="" class="subscribe-form">
-                               <input class="form-control" type="email" name="email" placeholder="Email *" required="">
-                               <input type="hidden" name="action" value="mailchimpsubscribe">
-                               <button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
-                               <div class="clearfix"></div>
-                           </form>
-                       </div>
-                   </div>
-               </div>
-   
-               <div class="col-lg-3 col-sm-6 sm-padding">
-                   <div class="footer-widget">
-                       <h3>Contact Information</h3>
-                       
-                                                            <p>
-                                           <div class="footer-contact-menu__item-icon">
-                                               <i class="las la-phone"></i>                                        </div>
-                                           <div class="footer-contact-menu__item-content">
-                                               <p>+234(0)-701-436-3223 </p>
-                                           </div>
-                                       </p>
-                                                                       <p>
-                                           <div class="footer-contact-menu__item-icon">
-                                               <i class="far fa-envelope-open"></i>                                        </div>
-                                           <div class="footer-contact-menu__item-content">
-                                               <p>info@asfirj.org </p>
-                                           </div>
-                                       </p>
-                                                                       <p>
-                                           <div class="footer-contact-menu__item-icon">
-                                               <i class="fas fa-map-marked-alt"></i>                                        </div>
-                                           <div class="footer-contact-menu__item-content">
-                                               <p>12 Morin, Lagos State, Nigeria </p>
-                                           </div>
-                                       </p>
-                                   
-     
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-   <div class="footer-bottom">
-       <div class="container">
-        <div id="google_translate_element"></div>
-           <div class="copyright-wrap">
-               <p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
-           </div>
-           <!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
-           <!--Start of Tawk.to Script-->
-
-    <!--End of Tawk.to Script-->
-       </div>
-   </div></section>
-
- 
-<!--/. footer-section -->
-<div id="scrollup">
-   <button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
-</div>
+<?php include '../components/footer.php'; ?>
 
 <!-- jQuery Lib -->
 <script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../front/public/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="../front/public/js/vendor/popper.min.js"></script>
-<script src="../front/public/js/vendor/bootstrap.min.js"></script>
+
 <script src="../front/public/js/vendor/waypoints.min.js"></script>
 <script src="../front/public/js/vendor/slick.min.js"></script>
 <script src="../front/public/js/vendor/jquery.ajaxchimp.min.js"></script>

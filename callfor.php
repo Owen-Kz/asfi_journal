@@ -10,13 +10,13 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Secure and reliable investment project">
+	<meta name="viewport" content="width=device-width,itial-scale=1">
+	<meta name="description" content="Secure and reliablevestment project">
 	<meta name="author" content="Weperch LLC">
 <title> ASFI Research Journal - Call For Papers</title>
     <meta name="title" Content="ASFI Research Journal - Call For Papers">
 
-    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
 
@@ -27,12 +27,12 @@
     <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Call For Papers">
     
     <meta itemprop="name" content="ASFI Research Journal - Call For Papers">
-    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFI Research Journal">
-    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
@@ -46,7 +46,6 @@
 	<link rel="stylesheet" href="front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
@@ -61,50 +60,13 @@
 	<link rel="stylesheet" href="front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
 	<script src="front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="header-1 business">
 
 
-	<div>
-     <!-- Top Dark Navbar -->
-<div class="top-navbar">
-  <div class="top-nav-inner">
-    <div class="logo-section">
-		<a href="https://asfirj.org/">
-      <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
-</a>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <button class="top-menu-toggle" id="topMenuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="top-links" id="topLinks">
-      <a href="https://asfirj.org/issues">Explore asfirj</a>
-      <a href="https://asfirj.org/authors.html#ob">Get published</a>
-	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
-      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
-      <a href="https://asfirj.org/events.html">Events</a>
-      <a href="https://portal.asfirj.org/portal/login/">Login</a>
-    </div>
-  </div>
-</div>
-
-
-<!-- Journal Banner -->
-<div class="journal-banner">
-  <div class="container banner-inner">
-    <div class="journal-title">
-      <h1>ASFI Research Journal</h1>
-    </div>
-  </div>
-</div>
- 
-	<?php include './header.php'; ?>
-
-</div>	
+<?php include './components/top-navbar.php'; ?>
   
   
   
@@ -112,7 +74,7 @@
   
    <section class="page-header padding">
 	<div class="overlay padding">
-	<div class="container">
+	<div class="max-w-7xl mx-auto px-4">
 		<div class="page-content text-center">
 			<div class="short-nav">
 				<a href="https://asfirj.org/">Home</a><span>>>></span><a href="">Call For Papers</a>
@@ -127,13 +89,13 @@
 </section><!-- /.page-header -->
 
 <section class="service-section bg-grey bd-bottom padding">
-	<div class="container">
-		<div class="section-heading mb-40 text-center wow fadeInUp" data-wow-delay="200ms">
+	<div class="max-w-7xl mx-auto px-4">
+		<div class="section-heading mb-40 text-center wowInUp" data-wow-delay="200ms">
 			<h2><span></span>CALL FOR ABSTRACTS<span></span></h2>
 			<h4><span>SPECIAL ISSUE: Collaborative Frontiers For Impactful Research and Career</span></h4>
 
 			<p>
-				The ASFI Research Journal (<a href="https://asfirj.org/" style="color: blueviolet;">ASFIRJ</a>) announces a special issue to be published in its 2025 issue under the theme <b>“Beyond Boundaries”</b> <br> <br>
+				The ASFI Research Journal (<a href="https://asfirj.org/" style="color: blueviolet;">ASFIRJ</a>) announces a special issue to be published its 2025 issue under the theme <b>“Beyond Boundaries”</b> <br> <br>
 
   <br> <br>
 
@@ -165,16 +127,16 @@
 </section>
 
 <section class="about-section bd-bottom padding">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 wow fadeInLeft" data-wow-delay="200ms">
+	<div class="max-w-7xl mx-auto px-4">
+		<div class="flex flex-wrap">
+			<div class="w-full md:w-1/2 wowInLeft" data-wow-delay="200ms">
 				<div class="section-heading">
 					<h2>Dates to Note:</h2>
 					<p>
 						<i>Submission deadline: </i> <b>31st August 2025</b> <br>
 <i>Submission portal:</i> <b> <a style="color: blueviolet;" href="https://cutt.ly/mrUjbbhU">https://cutt.ly/mrUjbbhU</a>  </b> <br>
 <i>Abstract acceptance notification:</i> <b> 30th September 2025</b> <br>
-<i>Accepted abstractes will be published free in ASFIRJ:</i> <b> (https://asfirj.org)</b> 
+<i>Accepted abstractes will be published free ASFIRJ:</i> <b> (https://asfirj.org)</b> 
 
 
 
@@ -187,7 +149,7 @@
 				</div>
 			</div>
 
-			<div class="col-md-6 wow fadeInRight">
+			<div class="w-full md:w-1/2 wowInRight">
 				<div class="about-bg-holder">
 					<div class="dot-pattern"></div>
 					<!-- <img src="/assets/images/asfischolar.jpg" alt='' /> -->
@@ -216,18 +178,18 @@ All papers accepted for this special issue will be published free of charge.
 
 
 <section class="about-section bd-bottom padding">
-	<div class="container">
+	<div class="max-w-7xl mx-auto px-4">
 		<div style="display: flex; flex-direction: column; justify-content: center;">
-			<!-- <div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms">
+			<!-- <div class="w-full wowInLeft" data-wow-delay="200ms">
 				<div class="section-heading">
 					<h2>Download full text of the call here:</h2>
 					<p style="width: 700px; margin: 0 auto;">
-						Please click the following link to download the full text: <a href="./assets/files/ASFIRJ Special Issue - Women in Science in Africa2.pdf" target="_blank" download="ASFIRJ Special Issue - Women in Science in Africa2.pdf" style="color: blueviolet;">Download FULL TEXT </a>.</p>
+						Please click the following link to download the full text: <a href="./assets/files/ASFIRJ Special Issue - Women Science Africa2.pdf" target="_blank" download="ASFIRJ Special Issue - Women Science Africa2.pdf" style="color: blueviolet;">Download FULL TEXT </a>.</p>
 
 				</div>
 			</div> -->
 
-			<div class="col-md-10 wow fadeInRight">
+			<div class="w-full md:w-5/6 wowInRight">
 				<div class="about-bg-holder">
 					<div class="dot-pattern"></div>
 					<!-- <img src="/assets/images/asfischolar.jpg" alt='' /> -->
@@ -235,7 +197,7 @@ All papers accepted for this special issue will be published free of charge.
 
                             <b>
 								Inquiries:</b><br>
-<p style="width: 700px; margin: 0 auto;">For more information about this call, please write to specialissues@asfirj.org. </p>
+<p style="width: 700px; margin: 0 auto;">For moreformation about this call, please write to specialissues@asfirj.org. </p>
 	
 				
 					</div>
@@ -250,7 +212,7 @@ All papers accepted for this special issue will be published free of charge.
 
 <!--/. about-section -->
 <div class="about-main-section">
-	<div class="info wow fadeInUp" data-wow-delay="200ms">
+	<div class="info wowInUp" data-wow-delay="200ms">
 		<h2>ASFIRJ Values</h2>
 		<ul>
 			<li>
@@ -299,138 +261,7 @@ All papers accepted for this special issue will be published free of charge.
    
     
     
-  <section class="footer-section info-active">
-	<div class="footer-top">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<a class="logo" href="https://asfirj.org/">
-						<img src="./assets/images/logoIcon/logo.png" alt="logo">
-					</a>
-
-					<p>
-						At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Author</h3>
-					<ul class="widget-links">
-						<!-- <li><i class="fas fa-square-full"></i><a href="./submitManuscriptSignIn.html" class='menu-item'>Submit Manuscript</a></li> -->
-						<li><i class="fas fa-square-full"></i><a href="./authors.html#ob" class='menu-item'>Submission Process</a></li>
-					</ul>
-					<a href=""><h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3></a>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Editor</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="./editors.html" class='menu-item'>Editors</a></li>
-						</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>About</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About Us</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Useful Links</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="./events.html" class='menu-item'>Events</a></li>
-						<li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a></li>
-						<li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li>
-						
-					</ul>
-				</div>
-			</div>
-			
-
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<h3>Newsletter Signup</h3>
-					<p>Signup today for hints, tips and the latest news and updates.</p>
-					<div class="subscribe-form">
-						<form class="subscribe-form" id="newsLetterForm">
-							<input class="form-control" type="email" name="email" placeholder="Email *"
-								required id="subscribeEmail">
-							<!-- <input type="hidden" name="action" value="mailchimpsubscribe"> -->
-							<button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
-							<div class="clearfix"></div>
-						</form>
-						<script type="module" src="./js/forms/newsLetter.js"></script>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<h3>Contact Information</h3>
-					
-					                                     <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="las la-phone"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>+234(0)-701-436-3223 </p>
-                                        </div>
-                                    </p>
-                                                                    <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="far fa-envelope-open"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>info@asfirj.org </p>
-                                        </div>
-                                    </p>
-                                                                    <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="fas fa-map-marked-alt"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p>
-                                        </div>
-                                    </p>
-                                
-				
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="footer-bottom">
-	<div class="container">
-		<div class="copyright-wrap">
-			<p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
-		</div>
-		<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
-		<!--Start of Tawk.to Script-->
-<!-- <script type="text/javascript">
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})();
-	</script> -->
-	<!--End of Tawk.to Script-->
-	</div>
-</div></section>
- 
-  
-<!--/. footer-section -->
-<div id="scrollup">
-	<button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
-</div>
+<?php include './components/footer.php'; ?>
 
 <!-- jQuery Lib -->
 <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>

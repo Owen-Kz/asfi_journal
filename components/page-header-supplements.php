@@ -1,6 +1,6 @@
 <section class="page-header padding">
     <div class="overlay padding">
-        <div class="container">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="page-content text-center">
                 <div class="short-nav">
                     <a href="https://asfirj.org/">Home</a><span>>>></span><a href="">Supplements</a>

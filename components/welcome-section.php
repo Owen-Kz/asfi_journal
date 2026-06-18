@@ -1,265 +1,109 @@
 <!-- Welcome & Connect Section -->
-<section class="welcome-connect-section">
-    <div class="container">
-        <div class="welcome-connect-wrapper">
+<section class="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
             <!-- Welcome Content -->
-            <div class="welcome-content">
-                <div class="section-heading text-left mb-4">
-                    <h2 class="welcome-title">Welcome to ASFI Research Journal</h2>
+            <div class="text-center md:text-left">
+                <div class="section-heading mb-6">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 relative inline-block pb-4 after:content-[''] after:absolute after:bottom-0 after:left-1/2 md:after:left-0 after:-translate-x-1/2 md:after:translate-x-0 after:w-20 after:h-1 after:bg-gradient-to-r after:from-[#80078b] after:to-[#ffbf00] after:rounded">
+                        Welcome to ASFI Research Journal
+                    </h2>
                 </div>
-                <div class="welcome-text">
-                    <p>
-               Welcome to the <b class="font-bold" style="font-weight:999 !important; color:black;">African Science Frontiers Initiatives Research Journal (ASFIRJ)</b>—the official journal of the African Science Frontiers Initiatives. ASFIRJ is an online, open-access, multidisciplinary journal dedicated to publishing high-quality research across all fields, from basic to applied sciences. We provide an author-friendly platform and welcome contributions from researchers worldwide, ensuring a global perspective. Our mission is to advance impactful science and position ASFIRJ as a leading, globally competitive African research journal. All submissions are evaluated solely on scientific merit and quality.
+                <div class="welcome-text max-w-3xl mx-auto md:mx-0">
+                    <p class="text-base md:text-lg leading-relaxed text-gray-600 mb-4 text-justify">
+                        Welcome to the <strong class="font-bold text-gray-900">African Science Frontiers Initiatives Research Journal (ASFIRJ)</strong>—the official journal of the African Science Frontiers Initiatives. ASFIRJ is an online, open-access, multidisciplinary journal dedicated to publishing high-quality research across all fields, from basic to applied sciences. We provide an author-friendly platform and welcome contributions from researchers worldwide, ensuring a global perspective. Our mission is to advance impactful science and position ASFIRJ as a leading, globally competitive African research journal. All submissions are evaluated solely on scientific merit and quality.
                     </p>
-                    <p>
-                      <b class="font-bold" style="font-weight:999 !important; color:black;">Join us in advancing research, innovation, and collaboration.</b>
+                    <p class="text-base md:text-lg leading-relaxed text-gray-600 mb-4 text-justify">
+                        <strong class="font-bold text-gray-900">Join us in advancing research, innovation, and collaboration.</strong>
                     </p>
-                    <!-- <p>
-                        Join us in our mission to foster collaboration, innovation, and excellence in research. Together, let's explore new frontiers and make a lasting impact on the scientific landscape.
-                    </p> -->
-
-                            <!-- <p><em>ASFIRJ</em>, the official journal of the African Science Frontiers Initiatives (ASFI), stands as an online-only, open-access multidisciplinary journal, dedicated to advancing, impacting, and communicating research from all disciplines, encompassing both basic and applied studies. Within the African scientific community, <em>ASFIRJ</em> endeavors to provide an unparalleled platform, offering an author-friendly approach to scientific publishing from manuscript submission through publication. Our overarching ambition is to emerge as one of Africa's leading research journals, globally competitive, and unwaveringly focused on delivering quality research with significant impact.</p> -->
-
                 </div>
             </div>
 
-        
+            <!-- Action Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-12 md:mt-16">
+                <!-- Card 1: Submit Manuscript -->
+                <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden">
+                    <div class="p-6 md:p-8 text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#80078b]/10 to-[#ffbf00]/10 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#80078b] group-hover:to-[#9b2cac] transition-all duration-300">
+                            <i class="fas fa-pencil-alt text-3xl text-[#80078b] group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Submit Manuscript</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            Submit your research to ASFIRJ and contribute to advancing scientific knowledge.
+                        </p>
+                        <a href="/portal" class="inline-block px-6 py-2.5 rounded-full font-semibold text-sm bg-gradient-to-r from-[#80078b] to-[#9b2cac] text-white shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 no-underline">
+                            Submit Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Browse Issues -->
+                <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden">
+                    <div class="p-6 md:p-8 text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#80078b]/10 to-[#ffbf00]/10 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#80078b] group-hover:to-[#9b2cac] transition-all duration-300">
+                            <i class="fas fa-book-open text-3xl text-[#80078b] group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Browse Issues</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            Explore the latest issues and discover cutting-edge research published in ASFIRJ.
+                        </p>
+                        <a href="./issues" class="inline-block px-6 py-2.5 rounded-full font-semibold text-sm bg-transparent border-2 border-[#80078b] text-[#80078b] hover:bg-[#80078b] hover:text-white hover:-translate-y-0.5 transition-all duration-300 no-underline">
+                            View Issues
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Connect -->
+                <div class="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 overflow-hidden">
+                    <div class="p-6 md:p-8 text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-[#80078b]/10 to-[#ffbf00]/10 rounded-full flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-[#80078b] group-hover:to-[#9b2cac] transition-all duration-300">
+                            <i class="fas fa-users text-3xl text-[#80078b] group-hover:text-white transition-colors duration-300"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Connect With Us</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-4">
+                            Stay connected with ASFIRJ through our social media channels and newsletter.
+                        </p>
+                        <div class="flex justify-center gap-3">
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300 no-underline">
+                                <i class="fab fa-whatsapp text-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#0077B5] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300 no-underline">
+                                <i class="fab fa-linkedin-in text-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gradient-to-br from-[#f09433] via-[#d62976] to-[#962fbf] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300 no-underline">
+                                <i class="fab fa-instagram text-lg"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-[#1DA1F2] text-white flex items-center justify-center hover:scale-110 transition-transform duration-300 no-underline">
+                                <i class="fab fa-twitter text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    .welcome-connect-section {
-        padding: 60px 0;
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    }
-    
-    .welcome-connect-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .welcome-title {
-        font-size: 36px;
-        font-weight: 700;
-        color: #2c2c2c;
-        margin-bottom: 20px;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 15px;
-    }
-    
-    .welcome-title:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 5%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background: linear-gradient(90deg, #80078b, #ffbf00);
-        border-radius: 3px;
-    }
-    
-    .welcome-text {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-    
+/* Minimal additional styles - mostly for transitions and specific effects */
+.welcome-text strong {
+    font-weight: 700 !important;
+}
+
+/* Ensure card hover effects work smoothly */
+.group {
+    will-change: transform, box-shadow;
+}
+
+/* Social icon hover scale */
+.social-icon {
+    transition: transform 0.3s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
     .welcome-text p {
-        font-size: 16px;
-        line-height: 1.8;
-        color: #555;
-        margin-bottom: 20px;
         text-align: justify;
     }
-    
-    .action-cards {
-        display: flex;
-        gap: 30px;
-        margin: 50px 0 40px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    .action-card {
-        flex: 1;
-        min-width: 280px;
-        max-width: 350px;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .action-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(128,7,139,0.12);
-    }
-    
-    .action-card-inner {
-        padding: 30px 25px;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .action-icon {
-        width: 70px;
-        height: 70px;
-        background: linear-gradient(135deg, rgba(128,7,139,0.1) 0%, rgba(255,191,0,0.1) 100%);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        transition: all 0.3s ease;
-    }
-    
-    .action-icon i {
-        font-size: 32px;
-        color: #80078b;
-    }
-    
-    .action-card:hover .action-icon {
-        background: linear-gradient(135deg, #80078b 0%, #9b2cac 100%);
-    }
-    
-    .action-card:hover .action-icon i {
-        color: #fff;
-    }
-    
-    .action-card h3 {
-        font-size: 22px;
-        font-weight: 700;
-        color: #2c2c2c;
-        margin-bottom: 12px;
-    }
-    
-    .action-card p {
-        font-size: 14px;
-        line-height: 1.6;
-        color: #666;
-        margin-bottom: 20px;
-    }
-    
-    .action-btn {
-        display: inline-block;
-        padding: 12px 28px;
-        border-radius: 40px;
-        font-weight: 600;
-        font-size: 14px;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-    
-    .action-btn.primary {
-        background: linear-gradient(135deg, #80078b 0%, #9b2cac 100%);
-        color: #fff;
-        box-shadow: 0 4px 12px rgba(128,7,139,0.3);
-    }
-    
-    .action-btn.primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(128,7,139,0.4);
-    }
-    
-    .action-btn.secondary {
-        background: transparent;
-        color: #80078b;
-        border: 2px solid #80078b;
-    }
-    
-    .action-btn.secondary:hover {
-        background: #80078b;
-        color: #fff;
-        transform: translateY(-2px);
-    }
-    
-    .social-connect {
-        text-align: center;
-        padding-top: 20px;
-        border-top: 1px solid #e0e0e0;
-    }
-    
-    .social-connect h4 {
-        font-size: 18px;
-        font-weight: 600;
-        color: #555;
-        margin-bottom: 20px;
-    }
-    
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-    
-    .social-icon {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        font-size: 22px;
-    }
-    
-    .social-icon.whatsapp {
-        background: #25D366;
-        color: #fff;
-    }
-    
-    .social-icon.linkedin {
-        background: #0077B5;
-        color: #fff;
-    }
-    
-    .social-icon.instagram {
-        background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
-        color: #fff;
-    }
-    
-    .social-icon.twitter {
-        background: #1DA1F2;
-        color: #fff;
-    }
-    
-    .social-icon:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    
-    @media (max-width: 768px) {
-        .welcome-connect-section {
-            padding: 40px 0;
-        }
-        
-        .welcome-title {
-            font-size: 28px;
-        }
-        
-        .welcome-text p {
-            font-size: 14px;
-        }
-        
-        .action-cards {
-            gap: 20px;
-        }
-        
-        .action-card {
-            min-width: 100%;
-        }
-        
-        .social-icon {
-            width: 45px;
-            height: 45px;
-            font-size: 18px;
-        }
-    }
+}
 </style>

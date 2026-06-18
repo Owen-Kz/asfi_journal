@@ -49,7 +49,7 @@
 	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="../front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="../front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="../front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
+	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" href="../front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="../front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="../front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
@@ -101,123 +101,7 @@
     
    
 
-	<div>
- 	 <!-- Top Dark Navbar -->
-<div class="top-navbar">
-  <div class="top-nav-inner">
-    <div class="logo-section">
-		<a href="https://asfirj.org/">
-      <img src="../assets/images/logoIcon/logo.png" alt="Logo" />
-</a>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <button class="top-menu-toggle" id="topMenuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="top-links" id="topLinks">
-      <a href="https://asfirj.org/issues">Explore asfirj</a>
-      <a href="https://asfirj.org/authors.html#ob">Get published</a>
-	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
-      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
-      <a href="https://asfirj.org/events.html">Events</a>
-      <a href="https://portal.asfirj.org/portal/login/">Login</a>
-    </div>
-  </div>
-</div>
-
-
-<!-- Journal Banner -->
-<div class="journal-banner">
-  <div class="container banner-inner">
-    <div class="journal-title">
-      <h1>ASFI Research Journal</h1>
-    </div>
-  </div>
-</div>
- 
-	<header class="header header-one">
-		<div class="primary-header-one primary-header">
-			<div class="container">
-				<div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;" style="display:flex; flex-direction:column; align-items: start;">
-					<div class="header-logo show-logo">
-						<a href="https://asfirj.org/">
-							<img src="../assets/images/logoIcon/logo.png" alt="Logo" /></a>
-					</div><!-- /.header-logo -->
-					
-
-					<div class="header-menu-wrap" style="width: 100%;" style="width: 100%;">
-						<ul class="dl-menu ">
-							<!-- Menu Item -->
-							 <li><a href="../" class='menu-item'>Home</a></li>
-							<li><a href="https://asfirj.org/aboutus.html" class='menu-item dropdown'>About</a>
-                                <ul class="dropdown-menu aboutDropDown">
-								<li><a href="https://asfirj.org/aboutus.html#ASFI" class='menu-item'>
-								African Science Frontiers Initiatives</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#aims" class='menu-item'>
-								ASFIRJ's AIMS & SCOPE</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#values" class='menu-item'>
-									ASFIRJ Values</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#prompt" class='menu-item'>
-									Prompt Decisions and Rapid Publication Timelines</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#why-section" class='menu-item'>
-									Why Publish in ASFIRJ?</a>
-								</li>
-                                <li><a href="https://asfirj.org/aboutus.html#open-access" class='menu-item'>
-									Open Access and Author Licensing</a>
-								</li>
-								<li><a href="https://asfirj.org/aboutus.html#fees" class='menu-item'>Article Publication Fee</a>
-							</li>
-                                </ul>
-                            </li>
-							<li class="dropdown">
-								<a href="#" class='menu-item'>Browse Issues</a>
-								<ul class="dropdown-menu">
-									<li><a href="../issues" class='menu-item'>Issues</a></li>
-									<li><a href="../supplements" class='menu-item'>Supplements</a></li>
-								</ul>
-							</li>
-							<li><a href="../editors.html" class='menu-item'>Meet The Editors</a></li>
-							<li class="dropdown">
-								<a href="#" class="menu-item">Authors / Reviewers</a>
-								<ul class="dropdown-menu">
-
-
-									<li><a href="../authors.html" class='menu-item'>For Authors</a></li>
-									<li><a href="../reviewers.html" class='menu-item'>For Reviewers</a></li>
-								</ul>
-							</li>
-							<!-- <li><a href="./terms.html" class='menu-item'>Terms</a></li> -->
-							<li><a href="../contact.html" class='menu-item'>Contact Us</a></li>
-							
-						</ul>
-						<div class="header-right">
-								<a class="header-btn" href="/portal">
-									<p>Submit Manuscript</p>
-								</a>
-</div>
-					</div><!-- /.header-menu-wrap -->
-
-					
-						<!-- Burger menu -->
-						<div class="mobile-menu-icon">
-							<div class="burger-menu">
-								<div class="line-menu line-half first-line"></div>
-								<div class="line-menu"></div>
-								<div class="line-menu line-half last-line"></div>
-							</div>
-						</div>
-					</div><!-- /.header-right -->
-				</div><!-- /.primary-header-one-inner -->
-			</div>
-		</div><!-- /.primary-header-one -->
-	</header><!-- /.header-one -->
-</div>	
+<?php include '../components/top-navbar.php'; ?>	
 
     
     <main>
@@ -249,8 +133,8 @@
 
 						<div id="title">
                             <label for="">Article Type:</label>
-                            <!-- <input type="text" class="form-control" placeholder="Enter Manuscript Type" name="ArticleType" id="ArticleType" required> -->
-                            <select name="article_type" id="article_type" class="form-control" required>
+                            <!-- <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" placeholder="Enter Manuscript Type" name="ArticleType" id="ArticleType" required> -->
+                            <select name="article_type" id="article_type" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" required>
                                 <option value="">Select Type</option>
                                 <option value="Conference Abstract">Conference Abstract</option>
                                 <option value="Original Article">Original Article</option>
@@ -270,7 +154,7 @@
 
                         <div >
                             <label for="">Title:</label>
-                            <input type="text" class="form-control" placeholder="Enter Manuscript Title..." name="title" id="title" required>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" placeholder="Enter Manuscript Title..." name="title" id="title" required>
                         </div>
                         
                         <div>
@@ -280,7 +164,7 @@
 	
                             <div id="app" >
                 
-                                <input type="text" id="authorsArray"  name="authorsArray"  class="form-control" v-model="saisie" placeholder="Enter or Paste Author Names Seperated With Comma (i,e 'Prof. John Doe, Dr. Steve Hawkins')" required/>                                
+                                <input type="text" id="authorsArray"  name="authorsArray"  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" v-model="saisie" placeholder="Enter or Paste Author Names Seperated With Comma (i,e 'Prof. John Doe, Dr. Steve Hawkins')" required/>                                
                                 <div class="keywords">
                                     <div class="keyword" v-for="(k, i) in keywords">
                                         {{ k }}
@@ -292,7 +176,7 @@
 
                             <div >
                                 <label for="">Corresponding Authors Email:</label>
-                                <input type="email" class="form-control" placeholder="Corresponding Author's email" name="corresponding_author" id="corresponding_author">
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" placeholder="Corresponding Author's email" name="corresponding_author" id="corresponding_author">
                             </div>
                 
                   <br>
@@ -336,44 +220,44 @@
 
                         <div>
                             <label for="">Cover  Image(optional):</label>
-                            <input type="file" class="form-control" placeholder="" name="manuscriptCover" id="manuscriptCover" accept=".jpg, .png .jpeg">
+                            <input type="file" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" placeholder="" name="manuscriptCover" id="manuscriptCover" accept=".jpg, .png .jpeg">
                         </div>
 
                         <div >
                             <label for="">Manuscript Upload:</label>
-                            <input type="file" class="form-control" placeholder="" name="manuscript_file" id="manuscript_file" accept=".pdf, .doc" required>
+                            <input type="file" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" placeholder="" name="manuscript_file" id="manuscript_file" accept=".pdf, .doc" required>
                         </div>
                         <div >
                             <label for="">Hyperlink to another published article in the journal (optional):</label>
-                            <input type="url" class="form-control" placeholder="Enter Link..." name="Hyperlink" id="Hyperlink">
+                            <input type="url" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" placeholder="Enter Link..." name="Hyperlink" id="Hyperlink">
                         </div>
                          <div >
                             <label for="">Issue Number:</label>
-                            <input type="number" class="form-control" name="issue_number" placeholder="Enter Issue Number..." id="issue_number">
+                            <input type="number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" name="issue_number" placeholder="Enter Issue Number..." id="issue_number">
                         </div>
                         <div >
                             <label for="">Page Number:</label>
-                            <input type="text" class="form-control" name="page_number" placeholder="Enter Page Number..." id="page_number">
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" name="page_number" placeholder="Enter Page Number..." id="page_number">
                         </div>
                         <div >
                             <label for="">DOI Number:</label>
-                            <input type="text" class="form-control" name="doi_number" placeholder="Enter DOI Number..." id="doi_number">
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" name="doi_number" placeholder="Enter DOI Number..." id="doi_number">
                         </div>
                         <div >
                             <label for="">Date of Manuscript Submitted:</label>
-                            <input type="date" class="form-control" name="date_submitted" id="date_submitted">
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" name="date_submitted" id="date_submitted">
                         </div>
                         <div >
                             <label for="">Date of Manuscript Revised:</label>
-                            <input type="date" class="form-control" name="date_reviewed" id="date_reviewed">
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" name="date_reviewed" id="date_reviewed">
                         </div>
                         <div >
                             <label for="">Date of Manuscript Accepted:</label>
-                            <input type="date" class="form-control" name="date_accepted" id="date_accepted">
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" name="date_accepted" id="date_accepted">
                         </div>
                         <div >
                             <label for="">Date of Manuscript Published:</label>
-                            <input type="date" class="form-control" name="date_published" id="date_published">
+                            <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" name="date_published" id="date_published">
                         </div>
                         <div  style="display: flex; align-items: center; height:max-content;">
                             <label for="">Editor's Choice <svg style="width:20px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.965 8.521C19.988 8.347 20 8.173 20 8c0-2.379-2.143-4.288-4.521-3.965C14.786 2.802 13.466 2 12 2s-2.786.802-3.479 2.035C6.138 3.712 4 5.621 4 8c0 .173.012.347.035.521C2.802 9.215 2 10.535 2 12s.802 2.785 2.035 3.479A3.976 3.976 0 0 0 4 16c0 2.379 2.138 4.283 4.521 3.965C9.214 21.198 10.534 22 12 22s2.786-.802 3.479-2.035C17.857 20.283 20 18.379 20 16c0-.173-.012-.347-.035-.521C21.198 14.785 22 13.465 22 12s-.802-2.785-2.035-3.479zm-9.01 7.895-3.667-3.714 1.424-1.404 2.257 2.286 4.327-4.294 1.408 1.42-5.749 5.706z" fill="#4d91f7" class="fill-000000"></path></svg> :</label>
@@ -387,7 +271,7 @@
                         </div>
                         <div >
                             <label for="">Verification Code:</label>
-                            <input type="password" class="form-control" placeholder="type code..." name="verifyCode" id="verifyCode" required>
+                            <input type="password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 text-gray-700 text-sm" placeholder="type code..." name="verifyCode" id="verifyCode" required>
                         </div>
 
                         <input type="submit" class="signin-btn" value="Submit" id="submitButton">
@@ -424,147 +308,12 @@
    
     
     
-  <section class="footer-section info-active">
-	<div class="footer-top">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<a class="logo" href="https://asfirj.org/index.html">
-						<img src="https://asfirj.org/assets/images/logoIcon/logo.png" alt="logo">
-					</a>
-
-					<p>
-						At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Author</h3>
-					<ul class="widget-links">
-						<!-- <li><i class="fas fa-square-full"></i><a href="" class='menu-item'>Submit Manuscript</a></li> -->
-						<li><i class="fas fa-square-full"></i><a href="" class='menu-item'>Print Request</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Editor</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="https://asfirj.org/editors.html" class='menu-item'>Editors</a></li>
-						</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>About</h3>
-					<ul class="widget-links">
-						<li><i class="fas fa-square-full"></i><a href="https://asfirj.org/aboutus.html" class='menu-item'>About Us</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget link-widget">
-					<h3>Useful Links</h3>
-					<ul class="widget-links">
-                        <li><i class="fas fa-square-full"></i><a href="https://asfirj.org/events.html" class='menu-item'>Events</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://asfirj.org/terms.html">Terms &amp; Conditions</a></li>
-						<li><i class="fas fa-square-full"></i><a href="https://asfirj.org/contact.html">Contact Support</a></li>
-					</ul>
-				</div>
-			</div>
-			
-
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<h3>Newsletter Signup</h3>
-					<p>Signup today for hints, tips and the latest news and updates.</p>
-					<div class="subscribe-form">
-						<form action="" class="subscribe-form">
-							<input class="form-control" type="email" name="email" placeholder="Email *" required="">
-							<input type="hidden" name="action" value="mailchimpsubscribe">
-							<button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
-							<div class="clearfix"></div>
-						</form>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-3 col-sm-6 sm-padding">
-				<div class="footer-widget">
-					<h3>Contact Information</h3>
-					
-					                                     <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="las la-phone"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>+234(0)-701-436-3223 </p>
-                                        </div>
-                                    </p>
-                                                                    <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="far fa-envelope-open"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>info@asfirj.org </p>
-                                        </div>
-                                    </p>
-                                                                    <p>
-                                        <div class="footer-contact-menu__item-icon">
-                                            <i class="fas fa-map-marked-alt"></i>                                        </div>
-                                        <div class="footer-contact-menu__item-content">
-                                            <p>12 Morin, Lagos State, Nigeria </p>
-                                        </div>
-                                    </p>
-                                
-				<!--	<p>Phone: VIP-MEMBERS-ONLY</p>
-					<p>Email: <a href="./#" class="__cf_email__" >[email&#160;protected]</a></p>
-					<p>Address: Bochum Pkwy, Batemoor, Sheffield S8 8LH, United Kingdom.</p>-->
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="footer-bottom">
-	<div class="container">
-        <div id="google_translate_element"></div>
-		<div class="copyright-wrap">
-			<p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/index.html">ASFI Research Journal</a> All Rights Reserved ||VO.</p>
-		</div>
-		<!-- <script src="https://asfirj.org/code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js?v=<?= time(); ?>" async></script> -->
-		<!--Start of Tawk.to Script-->
-<!-- <script type="text/javascript">
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})();
-	</script> -->
-	<!--End of Tawk.to Script-->
-
-    <!-- <script src="../js/forms/newAuthorsField.js?v=<?= time(); ?>">    </script> -->
-
-
-
-	</div>
-</div></section>
- 
-  
-<!--/. footer-section -->
-<div id="scrollup">
-	<button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
-</div>
+<?php include '../components/footer.php'; ?>
 
 <!-- jQuery Lib -->
 <script src="../front/public/js/vendor/jquery-1.12.4.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/popper.min.js?v=<?= time(); ?>"></script>
-<script src="../front/public/js/vendor/bootstrap.min.js?v=<?= time(); ?>"></script>
+
 <script src="../front/public/js/vendor/waypoints.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/slick.min.js?v=<?= time(); ?>"></script>
 <script src="../front/public/js/vendor/jquery.ajaxchimp.min.js?v=<?= time(); ?>"></script>

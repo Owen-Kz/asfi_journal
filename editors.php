@@ -11,14 +11,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Secure and reliable investment project">
+    <meta name="viewport" content="width=device-width,itial-scale=1">
+    <meta name="description" content="Secure and reliablevestment project">
     <meta name="author" content="Weperch LLC">
     <title> ASFI Research Journal - Editors</title>
     <meta name="title" Content="ASFI Research Journal - Editors">
 
     <meta name="description"
-        content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+        content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
 
@@ -30,13 +30,13 @@
 
     <meta itemprop="name" content="ASFI Research Journal - Editors">
     <meta itemprop="description"
-        content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+        content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFI Research Journal">
     <meta property="og:description"
-        content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+        content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png" />
     <meta property="og:image:type" content="png" />
     <meta property="og:image:width" content="1180" />
@@ -50,7 +50,6 @@
     <link rel="stylesheet" href="front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
     <link rel="stylesheet" href="front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
     <link rel="stylesheet" href="front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
-    <link rel="stylesheet" href="front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
     <link rel="stylesheet" href="front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
     <link rel="stylesheet" href="front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
     <link rel="stylesheet" href="front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
@@ -89,6 +88,7 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
 
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="header-1 business">
@@ -96,50 +96,12 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
 
    
 
-   <div>
- 	 <!-- Top Dark Navbar -->
-<div class="top-navbar">
-  <div class="top-nav-inner">
-   <div class="logo-section">
-		<a href="https://asfirj.org/">
-      <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
-</a>
-    </div>
-
-    <!-- Mobile Menu Toggle -->
-    <button class="top-menu-toggle" id="topMenuToggle">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <div class="top-links" id="topLinks">
-      <a href="https://asfirj.org/issues">Explore asfirj</a>
-      <a href="https://asfirj.org/authors.html#ob">Get published</a>
-	  <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
-      <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
-      <a href="https://asfirj.org/events.html">Events</a>
-      <a href="https://portal.asfirj.org/portal/login/">Login</a>
-    </div>
-  </div>
-</div>
-
-
-<!-- Journal Banner -->
-<div class="journal-banner">
-  <div class="container banner-inner">
-    <div class="journal-title">
-      <h1>ASFI Research Journal</h1>
-    </div>
-  </div>
-</div>
- 
-<?php include './header.php'; ?>
-
-</div>	
+<?php include './components/top-navbar.php'; ?>
   
 
     <section class="page-header padding">
         <div class="overlay padding">
-            <div class="container">
+            <div class="max-w-7xl mx-auto px-4">
                 <div class="page-content text-center">
                     <div class="short-nav">
                         <a href="https://asfirj.org/">Home</a><span>>>></span><a href="">Editors</a>
@@ -184,8 +146,8 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
         <!-- Modal -->
      
 
-        <div id="editorModal" class="modal">
-            <div class="modal-content">
+        <div id="editorModal" class="fixedset-0 z-50 hidden">
+            <div class="relative bg-white rounded-lg shadow-xl">
                 
                
             </div>
@@ -222,166 +184,7 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
 
 
 
-    <section class="footer-section info-active">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="footer-widget">
-                            <a class="logo" href="https://asfirj.org/">
-                                <img src="./assets/images/logoIcon/logo.png" alt="logo">
-                            </a>
-
-                            <p>
-                                At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure
-                                effective management and delivery. Join us in upholding excellence in research
-                                publishing.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="footer-widget link-widget">
-                            <h3>Author</h3>
-                            <ul class="widget-links">
-                                <!-- <li><i class="fas fa-square-full"></i><a href="./portal" class='menu-item'>Submit Manuscript</a></li> -->
-                                <li><i class="fas fa-square-full"></i><a href="./authors.html#ob" class='menu-item'>Submission Process</a>
-                                </li>
-                            </ul>
-                            <a href="">
-                                <h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="footer-widget link-widget">
-                            <h3>Editor</h3>
-                            <ul class="widget-links">
-                                <li><i class="fas fa-square-full"></i><a href="./editors.html"
-                                        class='menu-item'>Editors</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="footer-widget link-widget">
-                            <h3>About</h3>
-                            <ul class="widget-links">
-                                <li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About
-                                        Us</a></li>
-                                <li><i class="fas fa-square-full"></i><a
-                                        href="https://africansciencefrontiers.com/">African Science Frontiers
-                                        Initiatives</a></li>
-                                <li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="footer-widget link-widget">
-                            <h3>Useful Links</h3>
-                            <ul class="widget-links">
-                                <li><i class="fas fa-square-full"></i><a href="./events.html"
-                                        class='menu-item'>Events</a></li>
-                                <li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a>
-                                </li>
-                                <li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li>
-
-                            </ul>
-                        </div>
-                    </div>
-
-
-
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="footer-widget">
-                            <h3>Newsletter Signup</h3>
-                            <p>Signup today for hints, tips and the latest news and updates.</p>
-                            <div class="subscribe-form">
-                                <form class="subscribe-form newsLetterForm" id="newsLetterForm">
-									<input class="form-control" type="email" name="email" placeholder="Email *"
-										required id="subscribeEmail">
-									<!-- <input type="hidden" name="action" value="mailchimpsubscribe"> -->
-									<button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
-									<div class="clearfix"></div>
-								</form>
-								<script type="module" src="./js/forms/newsLetter.js"></script>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-sm-6 sm-padding">
-                        <div class="footer-widget">
-                            <h3>Contact Information</h3>
-
-                            <p>
-                            <div class="footer-contact-menu__item-icon">
-                                <i class="las la-phone"></i>
-                            </div>
-                            <div class="footer-contact-menu__item-content">
-                                <p>+234(0)-701-436-3223 </p>
-                            </div>
-                            </p>
-                            <p>
-                            <div class="footer-contact-menu__item-icon">
-                                <i class="far fa-envelope-open"></i>
-                            </div>
-                            <div class="footer-contact-menu__item-content">
-                                <p>info@asfirj.org </p>
-                            </div>
-                            </p>
-                            <p>
-                            <div class="footer-contact-menu__item-icon">
-                                <i class="fas fa-map-marked-alt"></i>
-                            </div>
-                            <div class="footer-contact-menu__item-content">
-                                <p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p>
-                            </div>
-                            </p>
-
-                            <!--	<p>Phone: VIP-MEMBERS-ONLY</p>
-					<p>Email: <a href="./#" class="__cf_email__" >[email&#160;protected]</a></p>
-					<p>Address: Bochum Pkwy, Batemoor, Sheffield S8 8LH, United Kingdom.</p>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <div id="google_translate_element"></div>
-                <div class="copyright-wrap">
-                    <p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a>
-                        All Rights Reserved ||VO.</p>
-                </div>
-                <!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
-                <!--Start of Tawk.to Script-->
-
-                <!-- <script type="text/javascript">
-                    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-                    (function () {
-                        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-                        s1.async = true;
-                        s1.src = 'https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
-                        s1.charset = 'UTF-8';
-                        s1.setAttribute('crossorigin', '*');
-                        s0.parentNode.insertBefore(s1, s0);
-                    })();
-                </script> -->
-                <!--End of Tawk.to Script-->
-
-
-                <script src="./js/queries/getBio.js">
-             
-                </script>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!--/. footer-section -->
-    <div id="scrollup">
-        <button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button>
-    </div>
+<?php include './components/footer.php'; ?>
 
     <!-- jQuery Lib -->
     <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>

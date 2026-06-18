@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="../front/public/css/line-awesome.min.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/business-icon.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/animate.min.css?v=<?= time(); ?>">
-    <link rel="stylesheet" href="../front/public/css/bootstrap.min.css?v=<?= time(); ?>">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../front/public/css/slick.min.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/venobox.min.css?v=<?= time(); ?>">
     <link rel="stylesheet" href="../front/public/css/odometer.min.css?v=<?= time(); ?>">
@@ -131,18 +131,7 @@
             font-size: 40px;
         }
 
-        @media (min-width: 768px) {
-            .col-md-8 {
-                -ms-flex: 0 0 66.666667%;
-                flex: 0 0 66.666667%;
-                max-width: 100%;
-            }
-            .col-md-4 {
-                -ms-flex: 0 0 33.333333%;
-                flex: 0 0 33.333333%;
-                max-width: 100%;
-            }
-        }
+
 
         .share-options {
             background-color: white;

@@ -11,10 +11,10 @@ const parentDIRName = segments[1];
 let processEndpoint = "https://process.asfirj.org/"
 const domainName = window.location.origin
 let parentDirectoryName, EndPoint, submissionsEndpoint, editorsDomainEndpoint 
-if(parentDIRName === "asfi_journal"){   
+if(parentDIRName === "asfi_journal" || parentDIRName === "ASFIRJ/asfi_journal" || parentDIRName === "ASFIRJ"){   
 
-    parentDirectoryName = "/asfi_journal"
-    EndPoint = `/asfi_journal/backend`;
+    parentDirectoryName = "ASFIRJ/asfi_journal"
+    EndPoint = `/ASFIRJ/asfi_journal/backend`;
 
     submissionsEndpoint = "http://localhost/asfirj_submission_controls";
     editorsDomainEndpoint = "http://localhost/asfirj_admin";  

@@ -246,7 +246,7 @@ include '../backend/partials/renderCareerCorner.php';
 <!-- Page Header -->
 <section class="page-header">
     <div class="overlay">
-        <div class="container">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="page-content text-center">
                 <div class="short-nav">
                     <a href="https://asfirj.org/">Home</a>
@@ -261,14 +261,14 @@ include '../backend/partials/renderCareerCorner.php';
 </section>
 
 <!-- Quick Tips Section -->
-<section class="quick-tips py-5 bg-light">
-    <div class="container">
+<section class="quick-tips py-5 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-5">
             <h2 style="color: #80078b; font-size: 28px; font-weight: 700;">Quick Career Tips</h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffbf00; margin: 10px auto;"></div>
         </div>
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
+        <div class="flex flex-wrap gap-4">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-pen-fancy"></i>
@@ -277,7 +277,7 @@ include '../backend/partials/renderCareerCorner.php';
                     <p>Focus on quality journals that align with your research impact goals</p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-handshake"></i>
@@ -286,7 +286,7 @@ include '../backend/partials/renderCareerCorner.php';
                     <p>Collaborate across disciplines and institutions for greater impact</p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-chart-line"></i>
@@ -295,7 +295,7 @@ include '../backend/partials/renderCareerCorner.php';
                     <p>Learn to craft compelling proposals that secure funding</p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="tip-card">
                     <div class="tip-icon">
                         <i class="fas fa-brain"></i>
@@ -327,10 +327,10 @@ if ($featuredResult && $featuredResult->num_rows > 0):
     $featuredImage = getCoverImage($featured);
 ?>
 <!-- <section class="featured-section py-5">
-    <div class="container">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="featured-article">
-            <div class="row g-0">
-                <div class="col-lg-7">
+            <div class="flex flex-wrap">
+                <div class="w-full lg:w-7/12">
                     <div class="featured-content">
                         <span class="featured-badge"><i class="fas fa-star"></i> Featured Article</span>
                         <h3><?php echo $featuredTitle; ?></h3>
@@ -340,7 +340,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="w-full lg:w-5/12">
                     <div class="featured-image" style="background-image: url('<?php echo $featuredImage; ?>');"></div>
                 </div>
             </div>
@@ -351,11 +351,11 @@ if ($featuredResult && $featuredResult->num_rows > 0):
 
 <!-- Articles Listing Section -->
 <main id="supplements" class="py-5">
-    <div class="container">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-5">
             <h2 style="color: #80078b; font-size: 28px; font-weight: 700;">All Career Resources</h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffbf00; margin: 10px auto;"></div>
-            <p class="text-muted mt-3">Explore our collection of career development articles, research tips, and professional insights</p>
+            <p class="text-gray-500 mt-3">Explore our collection of career development articles, research tips, and professional insights</p>
         </div>
         
         <div class="issueslay">

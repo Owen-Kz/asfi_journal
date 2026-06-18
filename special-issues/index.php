@@ -245,7 +245,7 @@ include '../backend/partials/renderSpecialIssues.php';
 <!-- Page Header -->
 <section class="page-header">
     <div class="overlay">
-        <div class="container">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="page-content text-center">
                 <div class="short-nav">
                     <a href="https://asfirj.org/">Home</a>
@@ -260,14 +260,14 @@ include '../backend/partials/renderSpecialIssues.php';
 </section>
 
 <!-- Quick Facts Section -->
-<section class="quick-facts py-5 bg-light">
-    <div class="container">
+<section class="quick-facts py-5 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-5">
             <h2 style="color: #2d1b69; font-size: 28px; font-weight: 700;">Why Special Issues Matter</h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffd700; margin: 10px auto;"></div>
         </div>
-        <div class="row g-4">
-            <div class="col-md-3 col-sm-6">
+         <div class="flex flex-wrap gap-4">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="fact-card">
                     <div class="fact-icon">
                         <i class="fas fa-users"></i>
@@ -276,7 +276,7 @@ include '../backend/partials/renderSpecialIssues.php';
                     <p>Bring together experts across disciplines to address complex challenges</p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="fact-card">
                     <div class="fact-icon">
                         <i class="fas fa-trophy"></i>
@@ -285,7 +285,7 @@ include '../backend/partials/renderSpecialIssues.php';
                     <p>Special issues often receive higher citation rates and visibility</p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="fact-card">
                     <div class="fact-icon">
                         <i class="fas fa-globe-africa"></i>
@@ -294,7 +294,7 @@ include '../backend/partials/renderSpecialIssues.php';
                     <p>Addressing pressing issues and opportunities specific to Africa</p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="w-full sm:w-1/2 md:w-1/4">
                 <div class="fact-card">
                     <div class="fact-icon">
                         <i class="fas fa-book-open"></i>
@@ -325,10 +325,10 @@ if ($featuredResult && $featuredResult->num_rows > 0):
     $featuredImage = getCoverImage($featured);
 ?>
 <section class="featured-section py-5">
-    <div class="container">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="featured-issue">
-            <div class="row g-0">
-                <div class="col-lg-7">
+            <div class="flex flex-wrap gap-0">
+                <div class="w-full lg:w-7/12">
                     <div class="featured-content">
                         <span class="featured-badge"><i class="fas fa-star"></i> Featured Special Issue</span>
                         <h3 style="color: #ffffff; font-size: 24px; font-weight: 700;"><?php echo $featuredTitle; ?></h3>
@@ -338,7 +338,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-5">
+                <div class="w-full lg:w-5/12">
                     <div class="featured-image" style="background-image: url('<?php echo $featuredImage; ?>');"></div>
                 </div>
             </div>
@@ -349,11 +349,11 @@ if ($featuredResult && $featuredResult->num_rows > 0):
 
 <!-- Articles Listing Section -->
 <main id="supplements" class="py-5">
-    <div class="container">
+    <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-5">
             <h2 style="color: #2d1b69; font-size: 28px; font-weight: 700;">All Special Issues</h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffd700; margin: 10px auto;"></div>
-            <p class="text-muted mt-3">Explore our collection of special issues featuring thematic research compilations and comprehensive reviews</p>
+            <p class="text-gray-500 mt-3">Explore our collection of special issues featuring thematic research compilations and comprehensive reviews</p>
         </div>
         
         <div class="issueslay">
@@ -368,8 +368,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
 </main>
 
 <?php include '../components/footer.php'; ?>
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    
 <script>
 // Toggle format links function
 window.toggleFormatLinks = function(button) {

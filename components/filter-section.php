@@ -280,7 +280,7 @@ $yearsList = getAvailableYears($con, $activeTab);
         background-color: #5a1f4e;
     }
     .focus\:ring-purple-500:focus {
-        --tw-ring-color: #80078b;
+        --ring-color: #80078b;
     }
     .focus\:border-purple-500:focus {
         border-color: #80078b;

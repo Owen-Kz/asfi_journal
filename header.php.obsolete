@@ -1,0 +1,226 @@
+<!-- <?php include("includes/spam_detector.php"); ?> -->
+
+<?php
+$scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . '' ;
+?>
+
+<header class="header header-one bg-white shadow-sm relative z-50">
+    <div class="primary-header-one primary-header">
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="primary-header-inner flex flex-col items-start py-2">
+                <!-- Logo -->
+                <div class="header-logo show-logo mb-2">
+                    <a href="https://asfirj.org/" class="block">
+                        <img src="<?php echo $base_url; ?>/assets/images/logoIcon/logo.png" alt="Logo" class="h-12 w-auto" />
+                    </a>
+                </div><!-- /.header-logo -->
+
+                <!-- Navigation -->
+                <div class="header-menu-wrap w-full flex flex-wrap items-center justify-between gap-4">
+                    <ul class="dl-menu flex flex-wrap items-center gap-1 list-none p-0 m-0">
+                        <!-- Menu Item -->
+                        <li class="relative group">
+                            <a href="<?php echo $base_url; ?>/" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                Home
+                            </a>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="<?php echo $base_url; ?>/aboutus.php" class='menu-item dropdown block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                About
+                            </a>
+                            <ul class="dropdown-menu aboutDropDown absolute left-0 mt-0 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100">
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#ASFI" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        African Science Frontiers Initiatives
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#aims" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        ASFIRJ's AIMS & SCOPE
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#values" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        ASFIRJ Values
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#prompt" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Prompt Decisions and Rapid Publication Timelines
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#why-section" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Why Publish in ASFIRJ?
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#open-access" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Open Access and Author Licensing
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#indexing" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Indexing
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#fees" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Article Publication Fee
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#advert-policy" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        ASFIRJ Advertising Policy
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/aboutus.php#archiving" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Archiving and Digital Preservation
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="#" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                Browse Issues
+                            </a>
+                            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100">
+                                <li><a href="<?php echo $base_url; ?>/issues" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Issues
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/supplements" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        Supplements
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="<?php echo $base_url; ?>/editors.php" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                Meet The Editors
+                            </a>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="#" class="menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium">
+                                Authors / Reviewers
+                            </a>
+                            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100">
+                                <li><a href="<?php echo $base_url; ?>/authors.php" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        For Authors
+                                    </a>
+                                </li>
+                                <li><a href="<?php echo $base_url; ?>/reviewers.php" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200'>
+                                        For Reviewers
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="<?php echo $base_url; ?>/careercorner" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                Career Corner
+                            </a>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="<?php echo $base_url; ?>/special-issues" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                Special Issues
+                            </a>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="<?php echo $base_url; ?>/theses.php" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                ASFIRJ Theses
+                            </a>
+                        </li>
+                        
+                        <li class="relative group">
+                            <a href="<?php echo $base_url; ?>/contact.php" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium'>
+                                Contact Us
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- Submit Manuscript Button -->
+                    <div class="header-right flex-shrink-0">
+                        <a class="header-btn inline-block px-5 py-2 bg-[#80078b] text-white rounded-md hover:bg-[#6a0674] transition-colors duration-200 text-sm font-semibold shadow-sm hover:shadow-md" 
+                           href="/portal">
+                            <p class="m-0">Submit Manuscript</p>
+                        </a>
+                    </div>
+                </div><!-- /.header-menu-wrap -->
+
+                <!-- Burger menu (mobile) -->
+                <div class="mobile-menu-icon block md:hidden absolute right-4 top-4">
+                    <div class="burger-menu cursor-pointer w-8 h-6 flex flex-col justify-between">
+                        <div class="line-menu line-half first-line w-full h-0.5 bg-gray-700 rounded"></div>
+                        <div class="line-menu w-full h-0.5 bg-gray-700 rounded"></div>
+                        <div class="line-menu line-half last-line w-full h-0.5 bg-gray-700 rounded"></div>
+                    </div>
+                </div>
+            </div><!-- /.primary-header-inner -->
+        </div><!-- /.container -->
+    </div><!-- /.primary-header-one -->
+</header><!-- /.header-one -->
+
+<style>
+/* Keep existing dropdown styles but add Tailwind compatibility */
+.header-one .dropdown-menu {
+    display: none;
+}
+
+.header-one .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Override any Bootstrap conflicts */
+.header-one .container {
+    max-width: 100% !important;
+}
+
+/* Mobile menu toggle - keep your existing mobile menu functionality */
+@media (max-width: 768px) {
+    .header-one .dl-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .header-one .dl-menu.active {
+        display: flex;
+    }
+    
+    .header-one .header-menu-wrap {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .header-one .header-right {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .header-one .header-right a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .header-one .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding-left: 20px !important;
+        background: transparent !important;
+    }
+}
+</style>
+
+<script>
+// Add mobile menu toggle functionality if not already present
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const dlMenu = document.querySelector('.dl-menu');
+    
+    if (burgerMenu && dlMenu) {
+        burgerMenu.addEventListener('click', function() {
+            dlMenu.classList.toggle('active');
+        });
+    }
+});
+</script>

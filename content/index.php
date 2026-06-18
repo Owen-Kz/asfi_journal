@@ -19,7 +19,7 @@ include "../backend/db.php";
 	<link rel="stylesheet" href="../front/public/css/line-awesome.min.css">
 	<link rel="stylesheet" href="../front/public/css/business-icon.css">
 	<link rel="stylesheet" href="../front/public/css/animate.min.css">
-	<link rel="stylesheet" href="../front/public/css/bootstrap.min.css">
+	<script src="https://cdn.tailwindcss.com"></script>
 	<link rel="stylesheet" href="../front/public/css/slick.min.css">
 	<link rel="stylesheet" href="../front/public/css/venobox.min.css">
 	<link rel="stylesheet" href="../front/public/css/odometer.min.css">

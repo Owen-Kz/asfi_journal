@@ -1,89 +1,311 @@
-<header class="header header-one">
+<header class="header header-one bg-white shadow-sm relative z-50">
     <div class="primary-header-one primary-header">
-        <div class="container">
-            <div class="primary-header-inner" style="display:flex; flex-direction:column; align-items: start;"
-                style="display:flex; flex-direction:column; align-items: start;">
-                <div class="header-logo show-logo">
-                    <a href="https://asfirj.org/">
-                        <img src="./assets/images/logoIcon/logo.png" alt="Logo" /></a>
+        <div class="container max-w-7xl mx-auto px-4">
+            <div class="primary-header-inner flex flex-col items-start py-3 relative">
+                <!-- Logo -->
+                <div class="header-logo show-logo mb-3">
+                    <a href="https://asfirj.org/" class="block">
+                        <img src="./assets/images/logoIcon/logo.png" alt="Logo" class="h-14 w-auto object-contain" />
+                    </a>
                 </div><!-- /.header-logo -->
 
-
-
-                <div class="header-menu-wrap" style="width: 100%;" style="width: 100%;">
-                    <ul class="dl-menu ">
-                        <!-- Menu Item -->
-                        <li><a href="./" class='menu-item'>Home</a></li>
-                        <li><a href="./aboutus.php" class='menu-item dropdown'>About</a>
-                            <ul class="dropdown-menu aboutDropDown">
-                                <li><a href="./aboutus.php#ASFI" class='menu-item'>
-                                        African Science Frontiers Initiatives</a>
+                <!-- Navigation Menu -->
+                <div class="header-menu-wrap w-full flex flex-wrap items-center justify-between gap-3">
+                    <ul class="dl-menu flex flex-wrap items-center gap-1 list-none p-0 m-0">
+                        <!-- Home -->
+                        <li class="relative group">
+                            <a href="./" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline'>
+                                Home
+                            </a>
+                        </li>
+                        
+                        <!-- About with Dropdown -->
+                        <li class="relative group">
+                            <a href="./aboutus.php" class='menu-item dropdown block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline'>
+                                About
+                            </a>
+                            <ul class="dropdown-menu aboutDropDown absolute left-0 mt-0 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100">
+                                <li><a href="./aboutus.php#ASFI" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        African Science Frontiers Initiatives
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#aims" class='menu-item'>
-                                        ASFIRJ's AIMS & SCOPE</a>
+                                <li><a href="./aboutus.php#aims" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        ASFIRJ's AIMS & SCOPE
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#values" class='menu-item'>
-                                        ASFIRJ Values</a>
+                                <li><a href="./aboutus.php#values" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        ASFIRJ Values
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#prompt" class='menu-item'>
-                                        Prompt Decisions and Rapid Publication Timelines</a>
+                                <li><a href="./aboutus.php#prompt" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Prompt Decisions and Rapid Publication Timelines
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#why-section" class='menu-item'>
-                                        Why Publish in ASFIRJ?</a>
+                                <li><a href="./aboutus.php#why-section" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Why Publish in ASFIRJ?
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#open-access" class='menu-item'>
-                                        Open Access and Author Licensing</a>
+                                <li><a href="./aboutus.php#open-access" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Open Access and Author Licensing
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#indexing" class='menu-item'>Indexing</a>
+                                <li><a href="./aboutus.php#indexing" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Indexing
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#fees" class='menu-item'>Article Publication Fee</a>
+                                <li><a href="./aboutus.php#fees" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Article Publication Fee
+                                    </a>
                                 </li>
-                                <li><a href="./aboutus.php#advert-policy" class='menu-item'>ASFIRJ Advertising Policy</a>
-							</li>
-                            		<li><a href="./aboutus.php#archiving" class='menu-item'>Archiving and Digital Preservation</a>
-							</li>
+                                <li><a href="./aboutus.php#advert-policy" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        ASFIRJ Advertising Policy
+                                    </a>
+                                </li>
+                                <li><a href="./aboutus.php#archiving" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Archiving and Digital Preservation
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class='menu-item'>Browse Issues</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="./issues" class='menu-item'>Issues</a></li>
-                                <li><a href="./supplements" class='menu-item'>Supplements</a></li>
+                        
+                        <!-- Browse Issues with Dropdown -->
+                        <li class="relative group">
+                            <a href="#" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline'>
+                                Browse Issues
+                            </a>
+                            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100">
+                                <li><a href="./issues" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Issues
+                                    </a>
+                                </li>
+                                <li><a href="./supplements" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        Supplements
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                        <li><a href="./editors.php" class='menu-item'>Meet The Editors</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="menu-item">Authors / Reviewers</a>
-                            <ul class="dropdown-menu">
-
-
-                                <li><a href="./authors.php" class='menu-item'>For Authors</a></li>
-                                <li><a href="./reviewers.php" class='menu-item'>For Reviewers</a></li>
+                        
+                        <!-- Meet The Editors -->
+                        <li class="relative group">
+                            <a href="./editors.php" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline'>
+                                Meet The Editors
+                            </a>
+                        </li>
+                        
+                        <!-- Authors / Reviewers with Dropdown -->
+                        <li class="relative group">
+                            <a href="#" class="menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline">
+                                Authors / Reviewers
+                            </a>
+                            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2 border border-gray-100">
+                                <li><a href="./authors.php" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        For Authors
+                                    </a>
+                                </li>
+                                <li><a href="./reviewers.php" class='menu-item block px-4 py-2 text-sm text-gray-700 hover:bg-[#80078b] hover:text-white transition-colors duration-200 no-underline'>
+                                        For Reviewers
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                        <li><a href="./careercorner" class='menu-item'>Career Corner</a></li>
-                        <li><a href="./special-issues" class='menu-item'>Special Issues</a></li>
-                        <li><a href="./contact.php" class='menu-item'>Contact Us</a></li>
-
+                        
+                        <!-- Career Corner -->
+                        <li class="relative group">
+                            <a href="./careercorner" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline'>
+                                Career Corner
+                            </a>
+                        </li>
+                        
+                        <!-- Special Issues -->
+                        <li class="relative group">
+                            <a href="./special-issues" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline'>
+                                Special Issues
+                            </a>
+                        </li>
+                        
+                        <!-- Contact Us -->
+                        <li class="relative group">
+                            <a href="./contact.php" class='menu-item block px-3 py-2 text-gray-700 hover:text-[#80078b] transition-colors duration-200 text-sm font-medium no-underline'>
+                                Contact Us
+                            </a>
+                        </li>
                     </ul>
-                    <div class="header-right">
-                        <a class="header-btn" href="/portal">
-                            <p>Submit Manuscript</p>
+                    
+                    <!-- Submit Manuscript Button -->
+                    <div class="header-right flex-shrink-0">
+                        <a class="header-btn inline-block px-6 py-2.5 bg-[#80078b] text-white rounded-md hover:bg-[#6a0674] hover:shadow-lg transition-all duration-200 text-sm font-semibold shadow-sm" 
+                           href="/portal">
+                            <p class="m-0">Submit Manuscript</p>
                         </a>
                     </div>
                 </div><!-- /.header-menu-wrap -->
 
-
-                <!-- Burger menu -->
-                <div class="mobile-menu-icon">
-                    <div class="burger-menu">
-                        <div class="line-menu line-half first-line"></div>
-                        <div class="line-menu"></div>
-                        <div class="line-menu line-half last-line"></div>
+                <!-- Burger menu (mobile) -->
+                <div class="mobile-menu-icon block md:hidden absolute right-0 top-4">
+                    <div class="burger-menu cursor-pointer w-8 h-6 flex flex-col justify-between">
+                        <div class="line-menu line-half first-line w-full h-0.5 bg-gray-700 rounded transition-all duration-200"></div>
+                        <div class="line-menu w-full h-0.5 bg-gray-700 rounded transition-all duration-200"></div>
+                        <div class="line-menu line-half last-line w-full h-0.5 bg-gray-700 rounded transition-all duration-200"></div>
                     </div>
                 </div>
-            </div><!-- /.header-right -->
-        </div><!-- /.primary-header-one-inner -->
-    </div>
+            </div><!-- /.primary-header-inner -->
+        </div><!-- /.container -->
     </div><!-- /.primary-header-one -->
 </header><!-- /.header-one -->
+
+<style>
+/* Preserve existing dropdown functionality */
+.header-one .dropdown-menu {
+    display: none;
+}
+
+.header-one .dropdown:hover .dropdown-menu,
+.header-one .group:hover .dropdown-menu {
+    display: block;
+}
+
+/* Override any Bootstrap conflicts */
+.header-one .container {
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .header-one .dl-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        padding: 1rem 0;
+        border-top: 1px solid #e5e7eb;
+        margin-top: 0.5rem;
+    }
+    
+    .header-one .dl-menu.active {
+        display: flex;
+    }
+    
+    .header-one .header-menu-wrap {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+    
+    .header-one .header-right {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    .header-one .header-right a {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    
+    .header-one .dropdown-menu {
+        position: static !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding-left: 1.25rem !important;
+        background: transparent !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: none;
+    }
+    
+    .header-one .dropdown:hover .dropdown-menu,
+    .header-one .group:hover .dropdown-menu {
+        display: none;
+    }
+    
+    .header-one .dropdown.open .dropdown-menu,
+    .header-one .group.open .dropdown-menu {
+        display: block !important;
+    }
+    
+    .header-one .dl-menu > li {
+        width: 100%;
+    }
+    
+    .header-one .dl-menu > li > a {
+        padding: 0.75rem 1rem;
+        display: block;
+    }
+    
+    .header-one .dropdown-menu li a {
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Burger menu active state */
+    .burger-menu.active .line-menu:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .burger-menu.active .line-menu:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .burger-menu.active .line-menu:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+</style>
+
+<script>
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerMenu = document.querySelector('.burger-menu');
+    const dlMenu = document.querySelector('.dl-menu');
+    const dropdowns = document.querySelectorAll('.dropdown, .group');
+    
+    // Toggle mobile menu
+    if (burgerMenu && dlMenu) {
+        burgerMenu.addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('active');
+            dlMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+    }
+    
+    // Handle dropdown toggles on mobile
+    dropdowns.forEach(dropdown => {
+        const link = dropdown.querySelector('a');
+        if (link) {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const parent = this.closest('.dropdown, .group');
+                    if (parent) {
+                        parent.classList.toggle('open');
+                    }
+                }
+            });
+        }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const header = document.querySelector('.header-one');
+        if (header && !header.contains(e.target)) {
+            if (dlMenu) dlMenu.classList.remove('active');
+            if (burgerMenu) burgerMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+    });
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        const dlMenu = document.querySelector('.dl-menu');
+        const burgerMenu = document.querySelector('.burger-menu');
+        if (dlMenu) dlMenu.classList.remove('active');
+        if (burgerMenu) burgerMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+});
+</script>

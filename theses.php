@@ -2,12 +2,12 @@
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,itial-scale=1">
     <meta name="description" content="Publish your bachelor's, master's, or doctoral thesis with ASFIRJ Theses and gain permanent online visibility with DOI.">
     <meta name="author" content="ASFI Research Journal">
     <title>ASFIRJ Theses - Publish Your Academic Thesis</title>
     <meta name="title" Content="ASFIRJ Theses - Publish Your Academic Thesis">
-    <meta name="description" content="ASFIRJ Theses provides a dedicated publication platform where completed, defended, and institutionally approved theses — including bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.">
+    <meta name="description" content="ASFIRJ Theses provides a dedicated publication platform where completed, defended, andstitutionally approved theses —cluding bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.">
     <meta name="keywords" content="thesis publication, academic theses, bachelor thesis, master thesis, doctoral thesis, ASFIRJ, publish thesis, DOI for thesis">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="assets/images/logoIcon/logo.png">
@@ -15,11 +15,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="ASFIRJ Theses">
     <meta itemprop="name" content="ASFIRJ Theses - Publish Your Academic Thesis">
-    <meta itemprop="description" content="ASFIRJ Theses provides a dedicated publication platform where completed, defended, and institutionally approved theses — including bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.">
+    <meta itemprop="description" content="ASFIRJ Theses provides a dedicated publication platform where completed, defended, andstitutionally approved theses —cluding bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFIRJ Theses">
-    <meta property="og:description" content="ASFIRJ Theses provides a dedicated publication platform where completed, defended, and institutionally approved theses — including bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.">
+    <meta property="og:description" content="ASFIRJ Theses provides a dedicated publication platform where completed, defended, andstitutionally approved theses —cluding bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png" />
     <meta property="og:image:type" content="png" />
     <meta property="og:image:width" content="1180" />
@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="front/public/css/line-awesome.min.css">
     <link rel="stylesheet" href="front/public/css/business-icon.css">
     <link rel="stylesheet" href="front/public/css/animate.min.css">
-    <link rel="stylesheet" href="front/public/css/bootstrap.min.css">
     <link rel="stylesheet" href="front/public/css/slick.min.css">
     <link rel="stylesheet" href="front/public/css/venobox.min.css">
     <link rel="stylesheet" href="front/public/css/odometer.min.css">
@@ -62,7 +61,7 @@
             margin-left: auto;
             margin-right: auto;
         }
-        /* Card styling for lists turned into cards */
+        /* Card styling for lists turnedto cards */
         .cards-grid {
             display: flex;
             flex-wrap: wrap;
@@ -90,7 +89,7 @@
             font-size: 2.2rem;
             color: #8266d6;
             margin-bottom: 1rem;
-            display: inline-block;
+            display:line-block;
         }
         .card-item h4 {
             font-size: 1.4rem;
@@ -153,7 +152,7 @@
                 padding: 1.2rem;
             }
         }
-        /* additional style to keep left alignment inside cards */
+        /* additional style to keep left alignmentside cards */
         .text-card-left {
             text-align: left;
         }
@@ -165,53 +164,21 @@
             margin-bottom: 1rem;
         }
         .btn-subtle {
-            display: inline-block;
+            display:line-block;
             margin-top: 0.75rem;
             font-weight: 500;
             color: #8266d6;
         }
     </style>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="header-1 business">
 
-<div>
-    <!-- Top Dark Navbar -->
-    <div class="top-navbar">
-        <div class="top-nav-inner">
-            <div class="logo-section">
-                <a href="https://asfirj.org/">
-                    <img src="./assets/images/logoIcon/logo.png" alt="Logo" />
-                </a>
-            </div>
-            <button class="top-menu-toggle" id="topMenuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="top-links" id="topLinks">
-                <a href="https://asfirj.org/issues">Explore asfirj</a>
-                <a href="https://asfirj.org/authors.html#ob">Get published</a>
-                <a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
-                <a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
-                <a href="https://asfirj.org/events.html">Events</a>
-                <a href="https://portal.asfirj.org/portal/login/">Login</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Journal Banner -->
-    <div class="journal-banner">
-        <div class="container banner-inner">
-            <div class="journal-title">
-                <h1>ASFI Research Journal</h1>
-            </div>
-        </div>
-    </div>
-
-    <?php include './header.php'; ?>
-</div>
+<?php include './components/top-navbar.php'; ?>
 
 <section class="page-header padding">
     <div class="overlay padding">
-        <div class="container">
+        <div class="max-w-7xl mx-auto px-4">
             <div class="page-content text-center">
                 <div class="short-nav">
                     <a href="https://asfirj.org/">Home</a><span>>>></span><a href="">ASFIRJ Theses</a>
@@ -225,19 +192,19 @@
 
 <!-- Intro section: unchanged but kept consistent with design -->
 <section class="service-section bg-grey bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading mb-40 text-center wow fadeInUp" data-wow-delay="200ms">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading mb-40 text-center wowInUp" data-wow-delay="200ms">
             <h2>Giving Academic Theses a Permanent Scientific Voice</h2>
-            <p>ASFIRJ is pleased to introduce ASFIRJ Theses as part of its scientific publication platform. ASFIRJ's ultimate mission is to create a platform where scientists and scholars can freely express themselves through the publication of their academic and scientific work. We believe that every credible piece of research and academic knowledge contributes meaningfully to the advancement of science and societal development. To further achieve this mission, ASFIRJ Theses provides a dedicated publication platform where completed, defended, and institutionally approved theses — including bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.</p>
+            <p>ASFIRJ is pleased totroduce ASFIRJ Theses as part of its scientific publication platform. ASFIRJ's ultimate mission is to create a platform where scientists and scholars can freely express themselves through the publication of their academic and scientific work. We believe that every credible piece of research and academic knowledge contributes meaningfully to the advancement of science and societal development. To further achieve this mission, ASFIRJ Theses provides a dedicated publication platform where completed, defended, andstitutionally approved theses —cluding bachelor's, master's, and doctoral theses — can be formally published and permanently credited to their authors with full citation credentials.</p>
         </div>
     </div>
 </section>
 
 <!-- ========== PUBLISHING BUILDS ACADEMIC AND PROFESSIONAL VISIBILITY (CARDS INSTEAD OF LIST) ========== -->
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="row">
-            <div class="col-md-12 wow fadeInUp" data-wow-delay="200ms">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="flex flex-wrap">
+            <div class="w-full wowInUp" data-wow-delay="200ms">
                 <div class="section-heading text-center">
                     <h2>Publishing Builds Academic and Professional Visibility</h2>
                     <p>A published thesis demonstrates the ability to:</p>
@@ -247,7 +214,7 @@
                     <div class="card-item">
                         <div class="card-icon"><i class="fas fa-microscope"></i></div>
                         <h4>Conduct rigorous research</h4>
-                        <p>Demonstrate methodological excellence, critical analysis, and robust data interpretation that advances knowledge.</p>
+                        <p>Demonstrate methodological excellence, critical analysis, and robust dataterpretation that advances knowledge.</p>
                     </div>
                     <!-- Card 2: Communicate scientific findings clearly -->
                     <div class="card-item">
@@ -259,7 +226,7 @@
                     <div class="card-item">
                         <div class="card-icon"><i class="fas fa-comments"></i></div>
                         <h4>Contribute to scholarly discourse</h4>
-                        <p>Engage in academic conversations that shape future research and foster intellectual progress.</p>
+                        <p>Engage academic conversations that shape future research and fostertellectual progress.</p>
                     </div>
                 </div>
                 <p class="text-center mt-3">Publications strengthen academic profiles and improve competitiveness for future research, scholarship, and professional opportunities.</p>
@@ -270,18 +237,18 @@
 
 <!-- ========== PUBLISHING ENCOURAGES CONFIDENCE AND SCHOLARLY IDENTITY (CARDS FOR LIST ITEMS) ========== -->
 <section class="about-section bd-bottom padding bg-soft-lavender">
-    <div class="container content-center">
-        <div class="row">
-            <div class="col-md-12 wow fadeInUp" data-wow-delay="200ms">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="flex flex-wrap">
+            <div class="w-full wowInUp" data-wow-delay="200ms">
                 <div class="section-heading text-center">
                     <h2>Publishing Encourages Confidence and Scholarly Identity</h2>
-                    <p>Converting a thesis into a formal publication helps students transition from being learners to becoming contributors to science. Publication:</p>
+                    <p>Converting a thesisto a formal publication helps students transition from being learners to becoming contributors to science. Publication:</p>
                 </div>
                 <div class="cards-grid">
                     <div class="card-item benefits-card">
                         <div class="card-icon"><i class="fas fa-check-circle"></i></div>
                         <h4>Builds confidence</h4>
-                        <p>Validates research efforts and instills a sense of achievement as a recognized author.</p>
+                        <p>Validates research efforts andstills a sense of achievement as a recognized author.</p>
                     </div>
                     <div class="card-item benefits-card">
                         <div class="card-icon"><i class="fas fa-id-card"></i></div>
@@ -291,12 +258,12 @@
                     <div class="card-item benefits-card">
                         <div class="card-icon"><i class="fas fa-rocket"></i></div>
                         <h4>Encourages future research engagement</h4>
-                        <p>Motivates continued inquiry and long-term contribution to science and innovation.</p>
+                        <p>Motivates continuedquiry and long-term contribution to science andnovation.</p>
                     </div>
                     <div class="card-item benefits-card">
                         <div class="card-icon"><i class="fas fa-pen-fancy"></i></div>
                         <h4>Develops scientific communication skills</h4>
-                        <p>Refines writing, peer interaction, and dissemination of complex findings effectively.</p>
+                        <p>Refines writing, peerteraction, and dissemination of complex findings effectively.</p>
                     </div>
                 </div>
             </div>
@@ -306,9 +273,9 @@
 
 <!-- ========== WHO CAN PUBLISH ON ASFIRJ THESES? (CARDS FOR THESIS TYPES) ========== -->
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="row">
-            <div class="col-md-12 wow fadeInUp" data-wow-delay="200ms">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="flex flex-wrap">
+            <div class="w-full wowInUp" data-wow-delay="200ms">
                 <div class="section-heading text-center">
                     <h2>Who Can Publish on ASFIRJ Theses?</h2>
                     <p>ASFIRJ Theses accepts:</p>
@@ -336,28 +303,28 @@
     </div>
 </section>
 
-<!-- Additional important sections keep original content but wrapped in centered container (already content-center) -->
+<!-- Additional important sections keep original content but wrapped centered container (already content-center) -->
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>Why Publishing a Degree Thesis Matters</h2>
-            <p>A degree thesis often represents months or years of intellectual effort, critical thinking, data collection, analysis, and academic growth. Yet many theses remain hidden in libraries or institutional repositories without reaching the wider scientific community. Publishing a thesis is important, not only for the student, but also for universities, society, and the advancement of knowledge itself.</p>
+            <p>A degree thesis often represents months or years oftellectual effort, critical thinking, data collection, analysis, and academic growth. Yet many theses remain hidden libraries orstitutional repositories without reaching the wider scientific community. Publishing a thesis is important, not only for the student, but also for universities, society, and the advancement of knowledge itself.</p>
         </div>
     </div>
 </section>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
-            <h2>Publishing Transforms Research into Impact</h2>
-            <p>A thesis that is not published has limited visibility and influence. Publishing allows research findings, ideas, and innovations to become accessible to researchers, policymakers, practitioners, and the public. Research achieves its greatest value when it contributes to solving real-world problems and advancing collective knowledge.</p>
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
+            <h2>Publishing Transforms Researchto Impact</h2>
+            <p>A thesis that is not published has limited visibility andfluence. Publishing allows research findings, ideas, andnovations to become accessible to researchers, policymakers, practitioners, and the public. Research achieves its greatest value when it contributes to solving real-world problems and advancing collective knowledge.</p>
         </div>
     </div>
 </section>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp text-center">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp text-center">
             <h2>Publishing Contributes to Scientific Progress</h2>
             <p>Every well-conducted thesis contributes to the larger body of scientific knowledge. Even studies with negative or non-significant findings are valuable because they:</p>
         </div>
@@ -375,19 +342,19 @@
             <div class="card-item scientific-card">
                 <div class="card-icon"><i class="fas fa-chart-line"></i></div>
                 <h4>Guide Future Investigations</h4>
-                <p>Every thesis lays groundwork for new hypotheses, methods, and breakthroughs in the scientific community.</p>
+                <p>Every thesis lays groundwork for new hypotheses, methods, and breakthroughs the scientific community.</p>
             </div>
         </div>
-        <div class="insight-message wow fadeInUp" data-wow-delay="200ms">
+        <div class="insight-message wowInUp" data-wow-delay="200ms">
             <div class="warning-insight">
-                <p>When theses remain unpublished: valuable data may be lost, scientific knowledge becomes incomplete, and research investments generate less societal value. Publishing therefore ensures that academic research contributes to cumulative scientific progress.</p>
+                <p>When theses remain unpublished: valuable data may be lost, scientific knowledge becomescomplete, and researchvestments generate less societal value. Publishing therefore ensures that academic research contributes to cumulative scientific progress.</p>
             </div>
         </div>
     </div>
 </section>
 
 <style>
-/* Additional styling for scientific cards and insight message */
+/* Additional styling for scientific cards andsight message */
 .scientific-cards {
     margin-bottom: 2rem;
 }
@@ -428,26 +395,26 @@
 </style>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>Publishing Honors the Effort Invested</h2>
-            <p>A thesis often requires enormous discipline, sacrifice, and perseverance from students, supervisors, participants, and institutions. Publishing honors this collective effort by ensuring that the work creates lasting scientific and societal value beyond graduation requirements.</p>
+            <p>A thesis often requires enormous discipline, sacrifice, and perseverance from students, supervisors, participants, andstitutions. Publishing honors this collective effort by ensuring that the work creates lasting scientific and societal value beyond graduation requirements.</p>
         </div>
     </div>
 </section>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>Publishing Strengthens Research Culture</h2>
-            <p>Publishing theses encourages a culture of inquiry, excellence, and dissemination within universities and research institutions. It inspires younger scholars, strengthens institutional visibility, and promotes active participation in global scholarship.</p>
+            <p>Publishing theses encourages a culture ofquiry, excellence, and dissemination within universities and researchstitutions. Itspires younger scholars, strengthensstitutional visibility, and promotes active participation global scholarship.</p>
         </div>
     </div>
 </section>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp text-center">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp text-center">
             <h2>Criteria for Publishing Theses on ASFIRJ Theses</h2>
             <p>To qualify for publication on ASFIRJ Theses, the following criteria must be met:</p>
         </div>
@@ -456,18 +423,18 @@
                 <div class="check-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="check-content">
                     <h4 style="text-align:left;">Completed, Defended & Approved</h4>
-                    <p style="text-align:left;">The thesis must have been completed, defended (where applicable), and formally approved by a recognized academic institution.</p>
+                    <p style="text-align:left;">The thesis must have been completed, defended (where applicable), and formally approved by a recognized academicstitution.</p>
                 </div>
             </div>
             <div class="checklist-item">
                 <div class="check-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="check-content">
                     <h4 style="text-align:left;">Official Documentation</h4>
-                    <p style="text-align:left;">Authors must provide official documentation from their institution confirming approval of the thesis.</p>
+                    <p style="text-align:left;">Authors must provide official documentation from theirstitution confirming approval of the thesis.</p>
                     <ol style="margin-top: 10px; padding-left: 20px; color: #555; text-align:left">
-                        <li>Where a degree certificate is submitted as evidence, it must clearly demonstrate that the certificate is linked to the thesis, for example by indicating the title of the thesis on the certificate.</li>
-                        <li>If the degree certificate does not contain evidence linking it to the thesis, authors must provide a formal statement from the institution confirming that the thesis was duly defended/completed by the candidate.</li>
-                        <li>The statement must include:
+                        <li>Where a degree certificate is submitted as evidence, it must clearly demonstrate that the certificate is linked to the thesis, for example bydicating the title of the thesis on the certificate.</li>
+                        <li>If the degree certificate does not contain evidence linking it to the thesis, authors must provide a formal statement from thestitution confirming that the thesis was duly defended/completed by the candidate.</li>
+                        <li>The statement mustclude:
                             <ol type="a" style="margin-top: 5px; padding-left: 20px; text-align-left;">
                                 <li>The title of the thesis</li>
                                 <li>The name of the candidate</li>
@@ -488,7 +455,7 @@
                 <div class="check-icon"><i class="fas fa-check-circle"></i></div>
                 <div class="check-content">
                     <h4 style="text-align:left;">Copyright Permission</h4>
-                    <p>If copyright to the thesis is held by the institution or its library, authors must obtain written permission to publish the thesis on ASFIRJ Theses.</p>
+                    <p>If copyright to the thesis is held by thestitution or its library, authors must obtain written permission to publish the thesis on ASFIRJ Theses.</p>
                 </div>
             </div>
         </div>
@@ -558,8 +525,8 @@
 </style>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp text-center">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp text-center">
             <h2>Benefits of Publishing on ASFIRJ Theses</h2>
             <p>Publishing your thesis through ASFIRJ Theses provides several long-term benefits:</p>
         </div>
@@ -587,7 +554,7 @@
             <div class="card-item">
                 <div class="card-icon"><i class="fas fa-language"></i></div>
                 <h4>No language limitation</h4>
-                <p>Theses can be submitted in any language and will be published in its original language.</p>
+                <p>Theses can be submitted any language and will be published its original language.</p>
             </div>
         </div>
     </div>
@@ -595,19 +562,19 @@
 
 <!-- Peer review & production costs tables (centered) -->
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>Peer Review and Production Process</h2>
-            <p>Submitted theses will be published as originally submitted. ASFIRJ Theses does not conduct peer review of the thesis content, copyediting, or production formatting. The publication process primarily involves verification of eligibility requirements, DOI assignment, and addition of publication and reference information.</p>
+            <p>Submitted theses will be published as originally submitted. ASFIRJ Theses does not conduct peer review of the thesis content, copyediting, or production formatting. The publication process primarilyvolves verification of eligibility requirements, DOI assignment, and addition of publication and referenceformation.</p>
         </div>
     </div>
 </section>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>Thesis Publication Costs</h2>
-            <p>Publication fees depend on the total number of pages in the thesis (cover to cover). Active ASFI members receive a 30% discount.</p>
+            <p>Publication fees depend on the total number of pages the thesis (cover to cover). Active ASFI members receive a 30% discount.</p>
             <div style="overflow-x: auto;">
                 <table class="table-fees m-auto" style="width:100%; border-collapse: collapse; margin-top:1rem;">
                     <thead>
@@ -625,27 +592,27 @@
 </section>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>Discounts and Special Arrangements</h2>
-            <p><strong>Institutional and Bulk Submission Discounts:</strong> Universities, institutions, organizations, and groups intending to submit theses in bulk may be eligible for additional discounted publication arrangements. Contact <a href="mailto:asfirj.theses@asfirj.org" style="color:blueviolet;">asfirj.theses@asfirj.org</a></p>
+            <p><strong>Institutional and Bulk Submission Discounts:</strong> Universities,stitutions, organizations, and groupstending to submit theses bulk may be eligible for additional discounted publication arrangements. Contact <a href="mailto:asfirj.theses@asfirj.org" style="color:blueviolet;">asfirj.theses@asfirj.org</a></p>
         </div>
     </div>
 </section>
 
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>How to Submit a Thesis</h2>
-            <p>Authors should submit the thesis as a Word document and supporting institutional approval documentation to: <a href="mailto:asfirj.theses@asfirj.org" style="color:blueviolet;">asfirj.theses@asfirj.org</a></p>
+            <p>Authors should submit the thesis as a Word document and supportingstitutional approval documentation to: <a href="mailto:asfirj.theses@asfirj.org" style="color:blueviolet;">asfirj.theses@asfirj.org</a></p>
         </div>
     </div>
 </section>
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp text-center">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp text-center">
             <h2>Required Author Declarations</h2>
-            <p>In the submission email, authors must include the following declarations verbatim:</p>
+            <p>In the submission email, authors mustclude the following declarations verbatim:</p>
         </div>
         <div class="declarations-checklist">
             <div class="declaration-card">
@@ -709,9 +676,9 @@
                 </label>
             </div>
         </div>
-        <!-- <div class="declaration-note wow fadeInUp" data-wow-delay="200ms">
+        <!-- <div class="declaration-note wowInUp" data-wow-delay="200ms">
             <i class="fas fa-info-circle"></i>
-            <p>These declarations must be included verbatim in your submission email. Incomplete declarations may delay the review process.</p>
+            <p>These declarations must becluded verbatim your submission email. Incomplete declarations may delay the review process.</p>
         </div> -->
     </div>
 </section>
@@ -749,7 +716,7 @@
 }
 
 /* Hide default checkbox */
-.declaration-checkbox input.styled-checkbox {
+.declaration-checkboxput.styled-checkbox {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -774,7 +741,7 @@
     color: #8266d6;
 }
 
-/* Text content in the middle */
+/* Text content the middle */
 .declaration-text {
     display: flex;
     flex-direction: column;
@@ -811,7 +778,7 @@
     background-color: #f5f3ff;
 }
 
-.declaration-checkbox input.styled-checkbox:checked ~ .declaration-content .checkmark {
+.declaration-checkboxput.styled-checkbox:checked ~ .declaration-content .checkmark {
     background-color: #2ecc71;
     border-color: #2ecc71;
 }
@@ -829,7 +796,7 @@
     transform: rotate(45deg);
 }
 
-.declaration-checkbox input.styled-checkbox:checked ~ .declaration-content .checkmark:after {
+.declaration-checkboxput.styled-checkbox:checked ~ .declaration-content .checkmark:after {
     display: block;
 }
 
@@ -885,36 +852,16 @@
 }
 </style>
 <section class="about-section bd-bottom padding">
-    <div class="container content-center">
-        <div class="section-heading wow fadeInUp">
+    <div class="max-w-7xl mx-auto px-4 content-center">
+        <div class="section-heading wowInUp">
             <h2>Advancing Science Through Visibility</h2>
-            <p>ASFIRJ Theses exists because valuable academic knowledge should not remain hidden. Every thesis has the potential to contribute to science, policy, innovation, and societal development. By publishing your thesis, you help ensure that your research becomes visible, accessible, citable, and impactful for future generations.</p>
+            <p>ASFIRJ Theses exists because valuable academic knowledge should not remain hidden. Every thesis has the potential to contribute to science, policy,novation, and societal development. By publishing your thesis, you help ensure that your research becomes visible, accessible, citable, and impactful for future generations.</p>
         </div>
     </div>
 </section>
 
 <!-- footer and scripts same as original -->
-<section class="footer-section info-active">
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6 sm-padding">
-                    <div class="footer-widget"><a class="logo" href="https://asfirj.org/"><img src="./assets/images/logoIcon/logo.png" alt="logo"></a><p>At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure effective management and delivery. Join us in upholding excellence in research publishing.</p></div>
-                </div>
-                <div class="col-lg-3 col-sm-6 sm-padding">
-                    <div class="footer-widget link-widget"><h3>Author</h3><ul class="widget-links"><li><i class="fas fa-square-full"></i><a href="./authors.html#ob" class='menu-item'>Submission Process</a></li></ul><a href=""><h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3></a></div>
-                </div>
-                <div class="col-lg-3 col-sm-6 sm-padding"><div class="footer-widget link-widget"><h3>Editor</h3><ul class="widget-links"><li><i class="fas fa-square-full"></i><a href="./editors.html" class='menu-item'>Editors</a></li></ul></div></div>
-                <div class="col-lg-3 col-sm-6 sm-padding"><div class="footer-widget link-widget"><h3>About</h3><ul class="widget-links"><li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About Us</a></li><li><i class="fas fa-square-full"></i><a href="https://africansciencefrontiers.com/">African Science Frontiers Initiatives</a></li><li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a></li></ul></div></div>
-                <div class="col-lg-3 col-sm-6 sm-padding"><div class="footer-widget link-widget"><h3>Useful Links</h3><ul class="widget-links"><li><i class="fas fa-square-full"></i><a href="./events.html" class='menu-item'>Events</a></li><li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a></li><li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li></ul></div></div>
-                <div class="col-lg-3 col-sm-6 sm-padding"><div class="footer-widget"><h3>Newsletter Signup</h3><p>Signup today for hints, tips and the latest news and updates.</p><div class="subscribe-form"><form class="subscribe-form" id="newsLetterForm"><input class="form-control" type="email" name="email" placeholder="Email *" required id="subscribeEmail"><button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button><div class="clearfix"></div></form><script type="module" src="./js/forms/newsLetter.js"></script></div></div></div>
-                <div class="col-lg-3 col-sm-6 sm-padding"><div class="footer-widget"><h3>Contact Information</h3><p><div class="footer-contact-menu__item-icon"><i class="las la-phone"></i></div><div class="footer-contact-menu__item-content"><p>+234(0)-701-436-3223 </p></div></p><p><div class="footer-contact-menu__item-icon"><i class="far fa-envelope-open"></i></div><div class="footer-contact-menu__item-content"><p>info@asfirj.org </p></div></p><p><div class="footer-contact-menu__item-icon"><i class="fas fa-map-marked-alt"></i></div><div class="footer-contact-menu__item-content"><p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p></div></p></div></div>
-            </div>
-        </div>
-    </div>
-    <div class="footer-bottom"><div class="container"><div id="google_translate_element"></div><div class="copyright-wrap"><p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a> All Rights Reserved ||VO.</p></div><script type="text/javascript">var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();</script></div></div>
-</section>
-<div id="scrollup"><button id="scroll-top" class="scroll-to-top"><i class="fas fa-chevron-up"></i></button></div>
+<?php include './components/footer.php'; ?>
 
 <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="./front/public/js/vendor/popper.min.js"></script>

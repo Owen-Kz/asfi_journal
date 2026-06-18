@@ -7,25 +7,6 @@
 include_once dirname(__FILE__) . '/helpers/getAuthorsBatch.php';
 include __DIR__."/partials/helpers.php";
 
-// Function to get cover image URL with caching
-// function getSliderCoverImage($row) {
-//     static $defaultImage = null;
-//     if ($defaultImage === null) {
-//         $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-//     }
-    
-//     $photo = $row['manuscriptPhoto'] ?? null;
-//     $isOld = $row['is_old_publication'] ?? 'no';
-    
-//     if (empty($photo)) {
-//         return $defaultImage;
-//     }
-    
-//     return $isOld === "yes" 
-//         ? "https://asfirj.org/useruploads/article_images/" . $photo
-//         : "https://process.asfirj.org/useruploads/article_images/" . $photo;
-// }
-
 // Function to format date
 function formatSliderDate($date) {
     if (empty($date)) return "";
@@ -82,31 +63,39 @@ function renderSliderItemsOptimized($con, $limit = 3) {
                 $activeClassAttr = $activeClass ? 'active' : '';
                 $activeClass = false;
                 
-                // Render slider item with proper escaping and data attributes for carousel
+                // Render slider item with Tailwind styling
                 echo '
-                <div class="item ' . $activeClassAttr . '" style="background-image: url(\'' . $ArticlePhoto . '\'); background-size: cover; background-position: center;">
-                    <div class="carousel-caption article-info1" style="left:0 !important; text-align:left;">
-                        <div class="tag">Recently Published</div>
-                        <span class="articleDateContainer">
-                            <input type="hidden" value="' . $ArticleDate . '">
-                            ' . $ArticleDate . '
-                        </span>
-                        <div class="big">
-                            <div class="inner-layer">
-                                <div data-animation="reveal-text" data-delay="1s">
-                                    <span style="animation-delay: 1s;"></span>
-                                    <a href="./content?sid=' . $ArticleId . '"
-                                        class="article-title u-text u-text-palette-5-light-3 u-text-2">
-                                        ' . $ArticleTitle . '
-                                    </a>
-                                </div>
+                <div class="carousel-item ' . $activeClassAttr . ' relative w-full h-[500px] md:h-[600px] bg-cover bg-center bg-no-repeat transition-opacity duration-700 ease-in-out" 
+                     style="background-image: url(\'' . $ArticlePhoto . '\');">
+                    <!-- Dark overlay for readability -->
+                    <div class="absolute inset-0 bg-black/50 bg-gradient-to-r from-black/70 to-transparent"></div>
+                    
+                    <!-- Carousel Caption -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white text-left">
+                        <div class="max-w-3xl">
+                            <!-- Tag -->
+                            <span class="inline-block bg-[#80078b] text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded mb-3">
+                                Recently Published
+                            </span>
+                            
+                            <!-- Date -->
+                            <div class="text-sm text-gray-300 mb-2 flex items-center gap-2">
+                                <i class="far fa-calendar-alt text-[#9834db]"></i>
+                                <span class="articleDateContainer">' . $ArticleDate . '</span>
                             </div>
-                            <div class="small">
-                                <div class="inner-layer">
-                                    <p class="u-text u-text-palette-5-light-3 u-text-1">
-                                        ' . $authorsHTML . '
-                                    </p>
-                                </div>
+                            
+                            <!-- Article Title -->
+                            <div class="mb-3">
+                                <a href="./content?sid=' . $ArticleId . '"
+                                   class="block text-2xl md:text-3xl lg:text-4xl font-bold text-white hover:text-[#9834db] transition-colors duration-200 no-underline leading-tight">
+                                    ' . $ArticleTitle . '
+                                </a>
+                            </div>
+                            
+                            <!-- Authors -->
+                            <div class="text-sm text-gray-300 flex items-center gap-2">
+                                <i class="fas fa-user-edit text-[#9834db]"></i>
+                                <span>' . $authorsHTML . '</span>
                             </div>
                         </div>
                     </div>
@@ -117,25 +106,19 @@ function renderSliderItemsOptimized($con, $limit = 3) {
         } else {
             // Fallback content when no articles are available
             echo '
-            <div class="item active">
-                <div class="carousel-caption article-info1">
-                    <div class="tag">Coming Soon</div>
-                    <div class="big">
-                        <div class="inner-layer">
-                            <div data-animation="reveal-text" data-delay="1s">
-                                <span style="animation-delay: 1s;"></span>
-                                <a href="#" class="article-title u-text u-text-palette-5-light-3 u-text-2">
-                                    New articles coming soon. Stay tuned!
-                                </a>
-                            </div>
-                        </div>
-                        <div class="small">
-                            <div class="inner-layer">
-                                <p class="u-text u-text-palette-5-light-3 u-text-1">
-                                    Check back regularly for new publications.
-                                </p>
-                            </div>
-                        </div>
+            <div class="carousel-item active relative w-full h-[500px] md:h-[600px] bg-gradient-to-r from-[#80078b] to-[#4a0452]">
+                <div class="absolute inset-0 bg-black/30"></div>
+                <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white text-left">
+                    <div class="max-w-3xl">
+                        <span class="inline-block bg-[#ffbf00] text-[#80078b] text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded mb-3">
+                            Coming Soon
+                        </span>
+                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+                            New articles coming soon. Stay tuned!
+                        </h2>
+                        <p class="text-gray-300 text-sm">
+                            Check back regularly for new publications.
+                        </p>
                     </div>
                 </div>
             </div>';
@@ -148,25 +131,19 @@ function renderSliderItemsOptimized($con, $limit = 3) {
         // Log error and show fallback
         error_log("Slider Error: " . $e->getMessage());
         echo '
-        <div class="item active">
-            <div class="carousel-caption article-info1">
-                <div class="tag">Error Loading</div>
-                <div class="big">
-                    <div class="inner-layer">
-                        <div data-animation="reveal-text" data-delay="1s">
-                            <span style="animation-delay: 1s;"></span>
-                            <a href="#" class="article-title u-text u-text-palette-5-light-3 u-text-2">
-                                Unable to load articles
-                            </a>
-                        </div>
-                    </div>
-                    <div class="small">
-                        <div class="inner-layer">
-                            <p class="u-text u-text-palette-5-light-3 u-text-1">
-                                Please refresh the page or try again later.
-                            </p>
-                        </div>
-                    </div>
+        <div class="carousel-item active relative w-full h-[500px] md:h-[600px] bg-gradient-to-r from-[#80078b] to-[#4a0452]">
+            <div class="absolute inset-0 bg-black/30"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-white text-left">
+                <div class="max-w-3xl">
+                    <span class="inline-block bg-red-500 text-white text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded mb-3">
+                        Error Loading
+                    </span>
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+                        Unable to load articles
+                    </h2>
+                    <p class="text-gray-300 text-sm">
+                        Please refresh the page or try again later.
+                    </p>
                 </div>
             </div>
         </div>';

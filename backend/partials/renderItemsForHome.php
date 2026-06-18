@@ -19,13 +19,13 @@ function renderArticle($row, $authorsName) {
     $coverImage = getCoverImage($row);
     $formattedDate = formatTimestamp(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
     
-    // Badges - increased font size to text-lg
+    // Badges - increased font size to text-m
     $editorsChoiceBadge = ($row['is_editors_choice'] === "yes") 
-        ? '<span class="editchoice inline-flex items-center gap-1.5 text-lg text-blue-700 bg-blue-50 px-3 py-1.5 rounded-full"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.965 8.521C19.988 8.347 20 8.173 20 8c0-2.379-2.143-4.288-4.521-3.965C14.786 2.802 13.466 2 12 2s-2.786.802-3.479 2.035C6.138 3.712 4 5.621 4 8c0 .173.012.347.035.521C2.802 9.215 2 10.535 2 12s.802 2.785 2.035 3.479A3.976 3.976 0 0 0 4 16c0 2.379 2.138 4.283 4.521 3.965C9.214 21.198 10.534 22 12 22s2.786-.802 3.479-2.035C17.857 20.283 20 18.379 20 16c0-.173-.012-.347-.035-.521C21.198 14.785 22 13.465 22 12s-.802-2.785-2.035-3.479zm-9.01 7.895-3.667-3.714 1.424-1.404 2.257 2.286 4.327-4.294 1.408 1.42-5.749 5.706z" fill="#4d91f7"/></svg> Editor\'s Choice</span>'
+        ? '<span class="editchoice inline-flex items-center gap-1.5 text-sm text-blue-700 bg-blue-50 px-3 py-1.5 rounded-full"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.965 8.521C19.988 8.347 20 8.173 20 8c0-2.379-2.143-4.288-4.521-3.965C14.786 2.802 13.466 2 12 2s-2.786.802-3.479 2.035C6.138 3.712 4 5.621 4 8c0 .173.012.347.035.521C2.802 9.215 2 10.535 2 12s.802 2.785 2.035 3.479A3.976 3.976 0 0 0 4 16c0 2.379 2.138 4.283 4.521 3.965C9.214 21.198 10.534 22 12 22s2.786-.802 3.479-2.035C17.857 20.283 20 18.379 20 16c0-.173-.012-.347-.035-.521C21.198 14.785 22 13.465 22 12s-.802-2.785-2.035-3.479zm-9.01 7.895-3.667-3.714 1.424-1.404 2.257 2.286 4.327-4.294 1.408 1.42-5.749 5.706z" fill="#4d91f7"/></svg> Editor\'s Choice</span>'
         : "";
     
     $openAccessBadge = ($row['is_open_access'] === "yes")
-        ? '<span class="openaccess inline-flex items-center gap-1.5 text-lg text-green-700 bg-green-50 px-3 py-1.5 rounded-full"><img src="./images/20181007070735!Open_Access_logo_PLoS_white.svg" style="width:18px;" alt=""> Open Access</span>'
+        ? '<span class="openaccess inline-flex items-center gap-1.5 text-sm text-green-700 bg-green-50 px-3 py-1.5 rounded-full"><img src="./images/20181007070735!Open_Access_logo_PLoS_white.svg" style="width:18px;" alt=""> Open Access</span>'
         : "";
     
     // Escape output
@@ -44,7 +44,7 @@ function renderArticle($row, $authorsName) {
         <div class="relative h-80 w-full overflow-hidden bg-gray-100">
             <img src="' . $coverImage . '" alt="' . $title . '" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105">
             <div class="absolute top-4 left-4">
-                <span class="text-base font-semibold text-purple-700 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm">' . $articleType . '</span>
+                <span class="text-sm font-semibold text-purple-700 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm">' . $articleType . '</span>
             </div>
             <div class="absolute top-4 right-4 flex gap-2">
                 ' . $openAccessBadge . '
@@ -54,14 +54,14 @@ function renderArticle($row, $authorsName) {
         
         <!-- Content -->
         <div class="p-6">
-            <!-- Title - increased to 3xl/4xl -->
+            <!-- Title - increased to l/xl -->
             <a href="./content?sid=' . $buffer . '" class="hover:text-purple-700 transition-colors">
-                <h3 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 line-clamp-2 leading-tight">' . $title . '</h3>
+                <h3 class="text-l md:text-xl font-semibold text-gray-900 mb-3 line-clamp-2 leading-tight">' . $title . '</h3>
             </a>
             
             <!-- Authors - increased to text-xl -->
             <div class="mb-4">
-                <p class="text-xl text-gray-600 line-clamp-2" title="' . htmlspecialchars($authorsName) . '">' . htmlspecialchars($authorsName) . '</p>
+                <p class="text-m text-gray-600 line-clamp-2" title="' . htmlspecialchars($authorsName) . '">' . htmlspecialchars($authorsName) . '</p>
             </div>
             
             <!-- Stats - increased to text-base/lg -->
@@ -119,7 +119,7 @@ function renderItemsForHome($con, $limit = 10) {
         if (mysqli_num_rows($result) > 0) {
             $articles = [];
             $articleIds = [];
-            
+    
             while ($row = $result->fetch_assoc()) {
                 $articles[] = $row;
                 $articleIds[] = $row['buffer'];

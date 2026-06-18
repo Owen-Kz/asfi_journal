@@ -12,14 +12,14 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Secure and reliable investment project">
+	<meta name="viewport" content="width=device-width,itial-scale=1">
+	<meta name="description" content="Secure and reliablevestment project">
 	<meta name="author" content="Weperch LLC">
 	<title> ASFI Research Journal - About</title>
 	<meta name="title" Content="ASFI Research Journal - About">
 
 	<meta name="description"
-		content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+		content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
 	<meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
 	<link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
 
@@ -31,13 +31,13 @@
 
 	<meta itemprop="name" content="ASFI Research Journal - About">
 	<meta itemprop="description"
-		content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+		content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
 	<meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
 
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="ASFI Research Journal">
 	<meta property="og:description"
-		content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+		content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
 	<meta property="og:image" content="assets/images/seo/65be1258275121706955352.png" />
 	<meta property="og:image:type" content="png" />
 	<meta property="og:image:width" content="1180" />
@@ -51,7 +51,6 @@
 	<link rel="stylesheet" href="front/public/css/line-awesome.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/business-icon.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/animate.min.css?v=<?= time(); ?><?= time(); ?>">
-	<link rel="stylesheet" href="front/public/css/bootstrap.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/slick.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/venobox.min.css?v=<?= time(); ?><?= time(); ?>">
 	<link rel="stylesheet" href="front/public/css/odometer.min.css?v=<?= time(); ?><?= time(); ?>">
@@ -75,6 +74,7 @@
 	<script type="text/javascript"
 		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="header-1 business">
@@ -86,43 +86,8 @@
 
 	<div>
 		<!-- Top Dark Navbar -->
-		 
-		<div class="top-navbar">
-			<div class="top-nav-inner">
-				<div class="logo-section">
-					<a href="https://asfirj.org/">
-						<img src="./assets/images/logoIcon/logo.png" alt="Logo" />
-					</a>
-				</div>
+			<?php include './components/top-navbar.php'; ?>
 
-				<!-- Mobile Menu Toggle -->
-				<button class="top-menu-toggle" id="topMenuToggle">
-					<i class="fas fa-bars"></i>
-				</button>
-
-				<div class="top-links" id="topLinks">
-					<a href="https://asfirj.org/issues">Explore asfirj</a>
-					<a href="https://asfirj.org/authors.html#ob">Get published</a>
-					<a href="https://asfischolar.org/" target="_blank">ASFIScholar</a>
-					<a href="https://africansciencefrontiers.com/about.php" target="_blank">About ASFI</a>
-					<a href="https://asfirj.org/events.html">Events</a>
-					<a href="https://portal.asfirj.org/portal/login/">Login</a>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- Journal Banner -->
-		<div class="journal-banner">
-			<div class="container banner-inner">
-				<div class="journal-title">
-					<h1>ASFI Research Journal</h1>
-				</div>
-			</div>
-		</div>
-
-		<?php include './header.php'; ?>
-	</div>
 
 
 
@@ -130,7 +95,7 @@
 
 	<section class="page-header padding">
 		<div class="overlay padding">
-			<div class="container">
+			<div class="max-w-7xl mx-auto px-4">
 				<div class="page-content text-center">
 					<div class="short-nav">
 						<a href="https://asfirj.org/">Home</a><span>>>></span><a href="">About</a>
@@ -147,30 +112,30 @@
 	</section><!-- /.page-header -->
 
 	<section class="service-section bg-grey bd-bottom padding">
-		<div class="container">
-			<div class="section-heading mb-40 text-center wow fadeInUp" data-wow-delay="200ms">
+		<div class="max-w-7xl mx-auto px-4">
+			<div class="section-heading mb-40 text-center wowInUp" data-wow-delay="200ms">
 				<h2>African Science Frontiers Initiatives</h2>
 				<h4>(ASFI)</h4>
 
 				<p>
 					ASFI is a non-profit organization that aims to contribute to Africa’s research strides through
-					capacity building in science and research. ASFI's vision is to raise the next generation of African
+					capacity building science and research. ASFI's vision is to raise the next generation of African
 					scientists with the right competencies to drive Africa’s developmental and transformational agenda
-					through innovative scientific research. ASFI's mission is to instill excellence in Africa’s science
+					throughnovative scientific research. ASFI's mission is tostill excellence Africa’s science
 					through competence acquisition, capacity building, and career development, enabling African
-					scientists to increasingly play an active role in the continent's development through evidence-based
+					scientists tocreasingly play an active role the continent's development through evidence-based
 					research. To achieve its goals, ASFI organizes regular research seminars and workshops, hands-on
 					research capacity-building training, mentoring programs, and other research activities. <br> </p>
 
-				<p>Since 2023, ASFI is a member-based organization, with members from over 45 countries in Africa. ASFI
-					aims to be the reference organization in Africa in training and continuous education, cross-sectoral
+				<p>Since 2023, ASFI is a member-based organization, with members from over 45 countries Africa. ASFI
+					aims to be the reference organization Africa training and continuous education, cross-sectoral
 					and cross-disciplinary collaboration, and mentoring. Putting all its activities together, ASFI aims
 					to serve as the most robust platform for African scientists to express themselves at the regional
-					and global levels in scientific communication, education, and collaboration. Finally, ASFI aims to
+					and global levels scientific communication, education, and collaboration. Finally, ASFI aims to
 					serve as a bridge that connects scientists/researchers, policy makers, journalists, governments, the
 					private sector, and other non-profit organizations throughout Africa. <br>
 
-					For more information about ASFI, please visit <a href="https://africansciencefrontiers.com/"
+					For moreformation about ASFI, please visit <a href="https://africansciencefrontiers.com/"
 						style="color: blueviolet;">https://africansciencefrontiers.com/</a>.
 				</p>
 			</div>
@@ -180,9 +145,9 @@
 	</section>
 
 	<section class="about-section bd-bottom padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6 wow fadeInLeft" data-wow-delay="200ms">
+		<div class="max-w-7xl mx-auto px-4">
+			<div class="flex flex-wrap">
+				<div class="w-full md:w-1/2 wowInLeft" data-wow-delay="200ms">
 					<div class="section-heading">
 						<h2>ASFIRJ's AIMS & SCOPE</h2>
 						<p>
@@ -190,23 +155,23 @@
 							is an online-only open access multidisciplinary journal. ASFIRJ thus aims to advance, impact
 							and communicate research undertaken from all disciplines, both basic and applied research.
 							Within the African scientific community, ASFIRJ aims to offer an unparalleled reach and an
-							author-friendly approach in scientific publishing - from manuscript submission through
+							author-friendly approach scientific publishing - from manuscript submission through
 							publication. Its overarching ambition is to be one of the leading research journals from
 							Africa, globally competitive, with an unwavering emphasis on quality research and impact.
 						</p>
 
-						<p>ASFIRJ is an international journal, accepting contributions from all countries of the world.
+						<p>ASFIRJ is anternational journal, accepting contributions from all countries of the world.
 							ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses,
 							position papers, perspective papers, guidelines, protocols, data, editorials, news, field
 							stories, commentaries, research letters, and other paper types that foster scientific
-							communication. Articles published in ASFIRJ are accepted solely on the basis of their
+							communication. Articles published ASFIRJ are accepted solely on the basis of their
 							scientific merit and quality. <br> <br>
 							<b>ISSN: 3043-4262</b>
 						</p>
 					</div>
 				</div>
 
-				<div class="col-md-6 wow fadeInRight">
+				<div class="w-full md:w-1/2 wowInRight">
 					<div class="about-bg-holder">
 						<div class="dot-pattern"></div>
 						<!-- <img src="/assets/images/asfischolar.jpg" alt='' /> -->
@@ -218,18 +183,18 @@
 								professionals, home and abroad, a common space to learn, mentor, collaborate, publish
 								and be visible. With ASFIScholar, ASFI creates a community for African scholars that
 								brings learning, teaching, mentoring, collaboration, publishing, and scholarly
-								visibility in one place. ASFIScholar aims to make learning, teaching, and collaboration
+								visibility one place. ASFIScholar aims to make learning, teaching, and collaboration
 								seamless for African scholars. It aims to catalyze the strength of African scholars,
-								home and in diaspora, to continuously create a community that empowers African scholars
-								to be globally competitive in their fields of scholarship; and a platform that unify
-								African scholarly and research forces to generate innovate research that will add value
+								home and diaspora, to continuously create a community that empowers African scholars
+								to be globally competitive their fields of scholarship; and a platform that unify
+								African scholarly and research forces to generatenovate research that will add value
 								to the development of our dear continent.
 
 
 							</p>
 
 							<p>
-								For more information about ASFIScholar and sign up to the platform, please visit <a
+								For moreformation about ASFIScholar and sign up to the platform, please visit <a
 									href="https://asfischolar.org" style="color: blueviolet;">https://asfischolar.org
 								</a></p>
 						</div>
@@ -244,7 +209,7 @@
 	</section>
 	<!--/. about-section -->
 	<div class="about-main-section">
-		<div class="info wow fadeInUp" data-wow-delay="200ms">
+		<div class="info wowInUp" data-wow-delay="200ms">
 			<h2>ASFIRJ Values</h2>
 			<ul>
 				<li>
@@ -310,8 +275,8 @@
 	</div>
 
 	<section class="service-section bg-grey bd-bottom padding">
-		<div class="container">
-			<div class="section-heading mb-40 text-center wow fadeInUp" data-wow-delay="200ms">
+		<div class="max-w-7xl mx-auto px-4">
+			<div class="section-heading mb-40 text-center wowInUp" data-wow-delay="200ms">
 				<h2>Prompt Decisions and Rapid Publication Timelines</h2>
 				<div class="justify-content-between d-flex flex-wrap notice_notify" style="justify-content: center;">
 					<div>
@@ -345,15 +310,15 @@
 
 	<section class="why-section about-section bd-bottom padding">
 		<div class="why-header">
-			<h2 class="h3">Why Publish in <span>ASFIRJ?</span></h2>
+			<h2 class="h3">Why Publish <span>ASFIRJ?</span></h2>
 
 			<div class="why-info">
 				Within the African scientific community, ASFIRJ aims to offer an unparalleled reach and an
-				author-friendly approach in scientific publishing - from manuscript submission through publication.
+				author-friendly approach scientific publishing - from manuscript submission through publication.
 			</div>
 		</div>
 
-		<div class="why-items-bg wow fadeInLeft" data-wow-delay="200ms">
+		<div class="why-items-bg wowInLeft" data-wow-delay="200ms">
 			<div class="why-items">
 				<div class="jog">
 					<div class="why-item animate-slide">
@@ -380,7 +345,7 @@
 						</svg>
 						<div class="sub-text">
 							<span>Easy and User-Friendly Manuscript Submission</span>
-							<span>Seamlessly submit your paper in our user-friendly portal with high quality editorial
+							<span>Seamlessly submit your paper our user-friendly portal with high quality editorial
 								standards. </span>
 						</div>
 					</div>
@@ -397,7 +362,7 @@
 							<span>Modest Article Processing Fee</span>
 							<span>Our affordable article processing charges for perpetual open access, which are very
 								modest, with judicious discounts for ASFI members. <br> <br>Open access means free
-								public access in perpetuality.</span>
+								public access perpetuality.</span>
 						</div>
 					</div>
 				</div>
@@ -412,7 +377,7 @@
 
 						<div class="sub-text">
 							<span>Early View Articles Immediately Following Acceptance:</span>
-							<span>All articles are immediately made freely on the ASFIRJ website in Early View pending
+							<span>All articles are immediately made freely on the ASFIRJ website Early View pending
 								post-acceptance editorial corrections.</span>
 						</div>
 					</div>
@@ -446,7 +411,7 @@
 
 						<div class="sub-text">
 							<span>Augmented Editor-Selected Articles & Article Views:</span>
-							<span>Editor-selected articles augmented with expert illustrations, interactive features,
+							<span>Editor-selected articles augmented with expert illustrations,teractive features,
 								videos, and graphical abstracts. <br> With
 								article views, downloads, and other essential metrics displayed with every
 								article.</span>
@@ -464,8 +429,8 @@
 						</svg>
 
 						<div class="sub-text">
-							<span>Deposit Contents in ASFIScholar:</span>
-							<span>Authors may post accepted articles in ASFIScholar with link to the published article
+							<span>Deposit Contents ASFIScholar:</span>
+							<span>Authors may post accepted articles ASFIScholar with link to the published article
 								on the journal website.</span>
 						</div>
 					</div>
@@ -482,7 +447,7 @@
 
 						<div class="sub-text">
 							<span>Published Proceedings of ASFI Annual Conference:</span>
-							<span>All accepted oral and poster abstracts at the ASFI Annual Conference are published in
+							<span>All accepted oral and poster abstracts at the ASFI Annual Conference are published
 								ASFIRJ.</span>
 						</div>
 					</div>
@@ -509,9 +474,9 @@
 
 	</section>
 	<section class="about-section bd-bottom padding">
-		<div class="container">
+		<div class="max-w-7xl mx-auto px-4">
 			<div style="display: flex; flex-direction: column; justify-content: center;">
-				<div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms">
+				<div class="w-full wowInLeft" data-wow-delay="200ms">
 					<div class="section-heading">
 						<h2>Open Access and Author Licensing</h2>
 						<p>
@@ -525,7 +490,7 @@
 					</div>
 				</div>
 
-				<div class="col-md-10 wow fadeInRight">
+				<div class="w-full md:w-5/6 wowInRight">
 					<div class="about-bg-holder">
 						<div class="dot-pattern"></div>
 						<!-- < <img src="/assets/images/asfischolar.jpg" alt='' />  -->
@@ -539,11 +504,11 @@
 	</section>
 	<section class="about-section bd-bottom padding-20">
 		
-		<div class="container">
+		<div class="max-w-7xl mx-auto px-4">
 		
 		
 			<div style="display: flex; flex-direction: column; justify-content: center;">
-				<div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms">
+				<div class="w-full wowInLeft" data-wow-delay="200ms">
 					<div class='section-heading'>
 						<h2>Indexing</h2>
 						<ul>
@@ -557,7 +522,7 @@
 			
 			</div>
 			
-				<div class="col-md-10 wow fadeInRight">
+				<div class="w-full md:w-5/6 wowInRight">
 					<div class="about-bg-holder">
 						<div class="dot-pattern"></div>
 						<!-- < <img src="/assets/images/asfischolar.jpg" alt='' />  -->
@@ -570,22 +535,22 @@
 
 	</section>
 	<section class="about-section bd-bottom padding-20">
-		<div class="container">
+		<div class="max-w-7xl mx-auto px-4">
 		
 		
 			<div style="display: flex; flex-direction: column; justify-content: center;">
-				<div class="col-md-12 wow fadeInLeft" data-wow-delay="200ms">
+				<div class="w-full wowInLeft" data-wow-delay="200ms">
 		<div class='section-heading'>
 			<h2>Article Publication Fee</h2>
 
 			<p>
-				As an open access journal, all content published in ASFIRJ are made freely available online and can be
-				accessed by anyone anywhere in the world, perpetually. There is no subscription cost to access its
+				As an open access journal, all content published ASFIRJ are made freely available online and can be
+				accessed by anyone anywhere the world, perpetually. There is no subscription cost to access its
 				content. To achieve this goal, <i>ASFIRJ</i> charges modest article processing fees (APF) to submitting
 				authors across the article types <i>ASFIRJ</i> publishes. The modest APF recognizes the challenges
-				African scholars may face in getting their papers published if higher fees are charged, many of them not
+				African scholars may face getting their papers published if higher fees are charged, many of them not
 				having the required external funding to undertake their research. Thus, the APF are pegged to ensure
-				publishing in <i>ASFIRJ</i> is as affordable as possible for every African scholar. Members of the ASFI
+				publishing <i>ASFIRJ</i> is as affordable as possible for every African scholar. Members of the ASFI
 				General Assembly receive up to 50% discount on the APF. To benefit from this, their membership must be
 				up to date as the date of final acceptance of their manuscript.
 
@@ -620,12 +585,12 @@
 				<td>$60</td>
 			</tr>
 			<tr>
-				<td>Correspondences on papers published in ASFIRJ</td>
+				<td>Correspondences on papers published ASFIRJ</td>
 				<td>Free</td>
 				<td>Free</td>
 			</tr>
 			<tr>
-				<td>Correspondences on papers published in another journal</td>
+				<td>Correspondences on papers published another journal</td>
 				<td>$10</td>
 				<td>$30</td>
 			</tr>
@@ -674,26 +639,26 @@
 
 	<!-- POlicies  -->
 	<section class="service-section bg-grey bd-bottom padding">
-		<div class="container">
+		<div class="max-w-7xl mx-auto px-4">
 
-			<div class="section-heading mb-40  wow fadeInUp" data-wow-delay="200ms">
+			<div class="section-heading mb-40  wowInUp" data-wow-delay="200ms">
 
 				<h2 class="text-center">Advertising Policy</h2>
 
 				<p style="width:90%; margin:auto;">
-				ASFIRJ is committed to maintaining the integrity, independence, and transparency of its editorial processes. Any advertising associated with the journal must adhere to the following principles:<br> </p>
+				ASFIRJ is committed to maintaining thetegrity,dependence, and transparency of its editorial processes. Any advertising associated with the journal must adhere to the following principles:<br> </p>
 <ul style="list-style-type: disc; margin:auto; padding: 10px; width: 80%; text-align: left;">
-	<li><b>Editorial Independence: </b>Advertising has no influence on editorial decisions. The acceptance, review, and publication of manuscripts are based solely on scientific merit, quality, and relevance to the journal’s scope. Editorial decisions are made independently of any commercial or financial considerations. </li>
+	<li><b>Editorial Independence: </b>Advertising has nofluence on editorial decisions. The acceptance, review, and publication of manuscripts are based solely on scientific merit, quality, and relevance to the journal’s scope. Editorial decisions are madedependently of any commercial or financial considerations. </li>
 
-		<li><b>Types of Advertising: </b>ASFIRJ may consider advertisements that are relevant to the academic, scientific, and research community. These may include, but are not limited to, announcements of conferences, academic programs, research tools, publications, or institutional initiatives. Advertising that is misleading, unethical, discriminatory, or unrelated to the journal’s scope will not be accepted. </li>
+		<li><b>Types of Advertising: </b>ASFIRJ may consider advertisements that are relevant to the academic, scientific, and research community. These mayclude, but are not limited to, announcements of conferences, academic programs, research tools, publications, orstitutionalitiatives. Advertising that is misleading, unethical, discriminatory, or unrelated to the journal’s scope will not be accepted. </li>
 
 			<li><b>Approval of Advertisements: </b>All advertisements are subject to review and approval by the journal’s editorial office to ensure they meet the journal’s standards and ethical requirements. </li>
 
-				<li><b>Separation from Editorial Content: </b>Advertisements are clearly distinguished from editorial content and are presented in a manner that avoids any confusion with peer-reviewed material. Advertising content will not be embedded within or influence scholarly articles. </li>
+				<li><b>Separation from Editorial Content: </b>Advertisements are clearly distinguished from editorial content and are presented a manner that avoids any confusion with peer-reviewed material. Advertising content will not be embedded within orfluence scholarly articles. </li>
 
-					<li><b>Placement and Targeting: </b>Advertisements displayed on the ASFIRJ website may be placed in designated areas and are not linked to specific editorial content or individual reader behavior. Where applicable, advertisements may be displayed randomly or based on general relevance to the journal’s audience, without compromising user privacy. </li>
+					<li><b>Placement and Targeting: </b>Advertisements displayed on the ASFIRJ website may be placed designated areas and are not linked to specific editorial content ordividual reader behavior. Where applicable, advertisements may be displayed randomly or based on general relevance to the journal’s audience, without compromising user privacy. </li>
 </ul>
-				<p style="width:90%; margin:auto;">ASFIRJ reserves the right to decline or remove any advertisement that does not comply with this policy or that may undermine the journal’s integrity and reputation.
+				<p style="width:90%; margin:auto;">ASFIRJ reserves the right to decline or remove any advertisement that does not comply with this policy or that may undermine the journal’stegrity and reputation.
 </p>
 			</div>
 			<div class="next-section-placeholder" id="archiving"></div>
@@ -703,18 +668,18 @@
 
 	<!-- Archiving Policy  -->
 	 <section class="service-section bg-grey bd-bottom padding">
-		<div class="container">
+		<div class="max-w-7xl mx-auto px-4">
 		
-			<div class="section-heading mb-40  wow fadeInUp" data-wow-delay="200ms">
+			<div class="section-heading mb-40  wowInUp" data-wow-delay="200ms">
 
 				<h2 class="text-center">Archiving and Digital Preservation </h2>
 
 				<p style="width:90%; margin:auto;">
-				ASFIRJ is committed to the long-term preservation and accessibility of its published scholarly content. As an online-only, open-access journal, ASFIRJ ensures that all articles remain permanently available to the global research community. To safeguard against data loss and to guarantee continued access in the event that the journal ceases publication, ASFIRJ implements the following archiving and preservation measures:<br> </p>
+				ASFIRJ is committed to the long-term preservation and accessibility of its published scholarly content. As an online-only, open-access journal, ASFIRJ ensures that all articles remain permanently available to the global research community. To safeguard against data loss and to guarantee continued access the event that the journal ceases publication, ASFIRJ implements the following archiving and preservation measures:<br> </p>
 <ul style="list-style-type: disc; margin:auto; padding: 10px; width: 80%; text-align: left;">
 	<li><b>Secure Digital Backup: </b>All published content is regularly backed up and stored on secure, ASFIRJ redundant server to prevent data loss.  </li>
 
-		<li><b>Repository Indexing and Accessibility: </b>Where applicable, ASFIRJ supports the inclusion of its articles in established repositories and indexing platforms (e.g., institutional repositories and subject-based archives) to enhance discoverability and redundancy. </li>
+		<li><b>Repository Indexing and Accessibility: </b>Where applicable, ASFIRJ supports theclusion of its articles established repositories anddexing platforms (e.g.,stitutional repositories and subject-based archives) to enhance discoverability and redundancy. </li>
 
 			<li><b>Persistent Identifiers: </b>All articles are assigned persistent identifiers (such as DOIs), ensuring stable and reliable access over time. </li>
 </ul>
@@ -738,152 +703,8 @@
 
 
 
-	<section class="footer-section info-active">
-		<div class="footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-3 col-sm-6 sm-padding">
-						<div class="footer-widget">
-							<a class="logo" href="https://asfirj.org/">
-								<img src="./assets/images/logoIcon/logo.png" alt="logo">
-							</a>
+    <?php include './components/footer.php'; ?>
 
-							<p>
-								At ASFIRJ, we prioritize our publishers' expectations. With clear guidance, we ensure
-								effective management and delivery. Join us in upholding excellence in research
-								publishing.
-							</p>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 sm-padding">
-						<div class="footer-widget link-widget">
-							<h3>Author</h3>
-							<ul class="widget-links">
-								<!-- <li><i class="fas fa-square-full"></i><a href="./portal" class='menu-item'>Submit Manuscript</a></li> -->
-								<li><i class="fas fa-square-full"></i><a href="./authors.html#ob"
-										class='menu-item'>Submission Process</a></li>
-							</ul>
-							<a href="">
-								<h3 style="margin-top: 80px; font-size: 25px">ISSN: 3043-4262</h3>
-							</a>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 sm-padding">
-						<div class="footer-widget link-widget">
-							<h3>Editor</h3>
-							<ul class="widget-links">
-								<li><i class="fas fa-square-full"></i><a href="./editors.html"
-										class='menu-item'>Editors</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 sm-padding">
-						<div class="footer-widget link-widget">
-							<h3>About</h3>
-							<ul class="widget-links">
-								<li><i class="fas fa-square-full"></i><a href="./aboutus.html" class='menu-item'>About
-										Us</a></li>
-								<li><i class="fas fa-square-full"></i><a
-										href="https://africansciencefrontiers.com/">African Science Frontiers
-										Initiatives</a></li>
-								<li><i class="fas fa-square-full"></i><a href="https://asfischolar.org/">ASFIScholar</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-3 col-sm-6 sm-padding">
-						<div class="footer-widget link-widget">
-							<h3>Useful Links</h3>
-							<ul class="widget-links">
-								<li><i class="fas fa-square-full"></i><a href="./events.html"
-										class='menu-item'>Events</a></li>
-								<li><i class="fas fa-square-full"></i><a href="./terms.html">Terms &amp; Conditions</a>
-								</li>
-								<li><i class="fas fa-square-full"></i><a href="./contact.html">Contact Support</a></li>
-
-							</ul>
-						</div>
-					</div>
-
-
-					<div class="col-lg-3 col-sm-6 sm-padding">
-						<div class="footer-widget">
-							<h3>Newsletter Signup</h3>
-							<p>Signup today for hints, tips and the latest news and updates.</p>
-							<div class="subscribe-form">
-								<form class="subscribe-form" id="newsLetterForm">
-									<input class="form-control" type="email" name="email" placeholder="Email *" required
-										id="subscribeEmail">
-									<!-- <input type="hidden" name="action" value="mailchimpsubscribe"> -->
-									<button class="submit">Subscribe<i class="fas fa-paper-plane"></i></button>
-									<div class="clearfix"></div>
-								</form>
-								<script type="module" src="./js/forms/newsLetter.js"></script>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-3 col-sm-6 sm-padding">
-						<div class="footer-widget">
-							<h3>Contact Information</h3>
-
-							<p>
-							<div class="footer-contact-menu__item-icon">
-								<i class="las la-phone"></i>
-							</div>
-							<div class="footer-contact-menu__item-content">
-								<p>+234(0)-701-436-3223 </p>
-							</div>
-							</p>
-							<p>
-							<div class="footer-contact-menu__item-icon">
-								<i class="far fa-envelope-open"></i>
-							</div>
-							<div class="footer-contact-menu__item-content">
-								<p>info@asfirj.org </p>
-							</div>
-							</p>
-							<p>
-							<div class="footer-contact-menu__item-icon">
-								<i class="fas fa-map-marked-alt"></i>
-							</div>
-							<div class="footer-contact-menu__item-content">
-								<p>2b Gold Estate Banku off Lagos Ibadan Expressway, Wawa. Ogun State </p>
-							</div>
-							</p>
-
-							<!--	<p>Phone: VIP-MEMBERS-ONLY</p>
-					<p>Email: <a href="./#" class="__cf_email__" >[email&#160;protected]</a></p>
-					<p>Address: Bochum Pkwy, Batemoor, Sheffield S8 8LH, United Kingdom.</p>-->
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom">
-			<div class="container">
-				<div id="google_translate_element"></div>
-				<div class="copyright-wrap">
-					<p>&copy; <span id="currentYear"> </span> <a href="https://asfirj.org/">ASFI Research Journal</a>
-						All Rights Reserved ||VO.</p>
-				</div>
-				<!-- <script src="../code.tidio.co_443/ul5qgbsv4aaw44cev9wh3hoyyxwmkqqa.js" async></script> -->
-				<!-- Start of Tawk.to Script-->
-				<script type="text/javascript">
-	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-	(function(){
-	var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-	s1.async=true;
-	s1.src='https://embed.tawk.to/65f102799131ed19d9794931/1hoqn3g6l';
-	s1.charset='UTF-8';
-	s1.setAttribute('crossorigin','*');
-	s0.parentNode.insertBefore(s1,s0);
-	})();
-	</script>
-				<!--End of Tawk.to Script-->
-			</div>
-		</div>
-	</section>
 
 
 	<!--/. footer-section -->
