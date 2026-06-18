@@ -317,6 +317,63 @@ include './backend/db.php';
     }
 }
     </style>
+
+
+<style>
+/* Announcement animations and hover effects */
+.announcement {
+    animation: fadeInUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.announcement:nth-child(1) { animation-delay: 0.1s; }
+.announcement:nth-child(2) { animation-delay: 0.2s; }
+.announcement:nth-child(3) { animation-delay: 0.3s; }
+.announcement:nth-child(4) { animation-delay: 0.4s; }
+.announcement:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect for announcement cards */
+.announcement a:hover .fa-arrow-right {
+    transform: translateX(4px);
+}
+
+/* Line clamp for multi-line truncation */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+</style>
 </head>
 
 <body class="bg-white">
