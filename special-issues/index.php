@@ -312,8 +312,7 @@ include '../backend/partials/renderSpecialIssues.php';
 // Fetch featured special issue (most recent)
 $featuredQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto, article_type 
                  FROM journals 
-                 WHERE is_publication = 'yes' 
-                 AND (is_special_issue = 'yes' OR UPPER(article_type) = 'SPECIAL ISSUE')
+                 WHERE (is_special_issue = 'yes' OR UPPER(article_type) = 'SPECIAL ISSUE')
                  ORDER BY id DESC 
                  LIMIT 1";
 $featuredResult = $con->query($featuredQuery);

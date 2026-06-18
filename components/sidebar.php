@@ -151,8 +151,7 @@
                 // Fetch the most recent Special Issue article (filter by Special Issue)
                 $specialQuery = "SELECT buffer, is_old_publication, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
                                FROM journals 
-                               WHERE is_publication = 'yes' 
-                               AND (UPPER(article_type) = 'SPECIAL ISSUE' OR is_special_issue = 'yes')
+                               WHERE (UPPER(article_type) = 'SPECIAL ISSUE' OR is_special_issue = 'yes')
                                ORDER BY id DESC 
                                LIMIT 1";
                 $specialResult = $con->query($specialQuery);

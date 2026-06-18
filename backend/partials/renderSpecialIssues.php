@@ -119,7 +119,7 @@ function renderSpecialIssues($con, $page = 1, $filters = []) {
     
     // Build WHERE clause - Case-insensitive filter for Special Issues
     // Includes: is_special_issue = 'yes' OR article_type = 'Special Issue' (case-insensitive)
-    $whereClauses = ["`journals`.`is_publication` = 'yes'"];
+    $whereClauses = ["id IS NOT NULL"]; // Base condition to ensure valid SQL syntax
     
     // Properly handle both conditions with correct SQL syntax
     $whereClauses[] = "(`journals`.`is_special_issue` = 'yes' OR UPPER(`journals`.`article_type`) = 'SPECIAL ISSUE')";
@@ -255,8 +255,8 @@ function renderSpecialIssues($con, $page = 1, $filters = []) {
         error_log("Error in renderSpecialIssues: " . $e->getMessage());
         echo '<div class="text-center py-12 bg-red-50 rounded-xl">
                 <h3 class="text-lg md:text-xl font-semibold text-red-700 mb-2">Error loading articles</h3>
-                <p class="text-sm md:text-base text-red-500">Please try again later.</p>
-              </div>';
+                <p class="text-sm md:text-base text-red-500">Please try again later. </p>
+              </div>' . $e->getMessage();
     }
 }
 
