@@ -5,25 +5,26 @@
 
 // Include batch author helper
 include_once dirname(__FILE__) . '/helpers/getAuthorsBatch.php';
+include __DIR__."/partials/helpers.php";
 
 // Function to get cover image URL with caching
-function getSliderCoverImage($row) {
-    static $defaultImage = null;
-    if ($defaultImage === null) {
-        $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-    }
+// function getSliderCoverImage($row) {
+//     static $defaultImage = null;
+//     if ($defaultImage === null) {
+//         $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+//     }
     
-    $photo = $row['manuscriptPhoto'] ?? null;
-    $isOld = $row['is_old_publication'] ?? 'no';
+//     $photo = $row['manuscriptPhoto'] ?? null;
+//     $isOld = $row['is_old_publication'] ?? 'no';
     
-    if (empty($photo)) {
-        return $defaultImage;
-    }
+//     if (empty($photo)) {
+//         return $defaultImage;
+//     }
     
-    return $isOld === "yes" 
-        ? "https://asfirj.org/useruploads/article_images/" . $photo
-        : "https://process.asfirj.org/useruploads/article_images/" . $photo;
-}
+//     return $isOld === "yes" 
+//         ? "https://asfirj.org/useruploads/article_images/" . $photo
+//         : "https://process.asfirj.org/useruploads/article_images/" . $photo;
+// }
 
 // Function to format date
 function formatSliderDate($date) {
@@ -62,7 +63,7 @@ function renderSliderItemsOptimized($con, $limit = 3) {
             $counter = 0;
             foreach ($articles as $row) {
                 $ArticleTitle = htmlspecialchars($row['manuscript_full_title']);
-                $ArticlePhoto = getSliderCoverImage($row);
+                $ArticlePhoto = getCoverImage($row);
                 $ArticleId = htmlspecialchars($row['buffer']);
                 
                 // Format date

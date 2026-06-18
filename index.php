@@ -305,6 +305,7 @@ include './backend/db.php';
                 <?php 
                 include './backend/partials/renderItemsForHome.php';
                 renderItemsForHome($con, 10);
+                
                 ?>
             </div>
             <div class="articles-footer">

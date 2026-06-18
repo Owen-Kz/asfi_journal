@@ -88,10 +88,14 @@ function getCoverImage($row) {
     
     $photo = $row['manuscriptPhoto'] ?? null;
     $isOld = $row['is_old_publication'] ?? 'no';
-    
     if (empty($photo)) return $defaultImage;
     
     return $isOld === "yes" 
         ? "https://asfirj.org/useruploads/article_images/" . $photo
         : "https://process.asfirj.org/useruploads/article_images/" . $photo;
+}
+
+function formatTimestamp($date) {
+    if (empty($date)) return "";
+    return date("j M Y", strtotime($date));
 }

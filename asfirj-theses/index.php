@@ -324,7 +324,7 @@ if ($featuredResult && $featuredResult->num_rows > 0):
     $featuredTitle = htmlspecialchars($featured['manuscript_full_title']);
     $featuredBuffer = htmlspecialchars($featured['buffer']);
     $featuredPhoto = $featured['manuscriptPhoto'] ?? null;
-    $featuredImage = !empty($featuredPhoto) ? "https://asfirj.org/useruploads/article_images/" . $featuredPhoto : "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+    $featuredImage = getCoverImage($featured);
 ?>
 <section class="featured-section py-5">
     <div class="container">

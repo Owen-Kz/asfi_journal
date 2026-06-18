@@ -70,7 +70,7 @@
 
                 <?php
                 // Fetch the most recent Career Corner article (filter by Career Corner)
-                $careerQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
+                $careerQuery = "SELECT buffer, is_old_publication, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
                                FROM journals 
                                WHERE is_publication = 'yes' 
                                AND (UPPER(article_type) = 'LEARNING CORNER' OR UPPER(article_type) = 'CAREER CORNER')
@@ -84,15 +84,15 @@
                     $careerBuffer = htmlspecialchars($career['buffer']);
 
                     // Get cover image - simplified
-                    $careerPhoto = $career['manuscriptPhoto'] ?? null;
-                    if (!empty($careerPhoto)) {
-                        $careerImage = "https://asfirj.org/useruploads/article_images/" . $careerPhoto;
-                    } else {
-                        $careerImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-                    }
+                    $careerPhoto = getCoverImage($career);
+                    // if (!empty($careerPhoto)) {
+                    //     $careerImage = "https://asfirj.org/useruploads/article_images/" . $careerPhoto;
+                    // } else {
+                    //     $careerImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+                    // }
 
                     // Check if file exists on server, if not use default
-                    $careerImageUrl = $careerImage;
+                    $careerImageUrl = $careerPhoto;
 
                     // Format date
                     $careerDate = !empty($career['date_published']) ? $career['date_published'] : $career['date_uploaded'];
@@ -149,7 +149,7 @@
 
                 <?php
                 // Fetch the most recent Special Issue article (filter by Special Issue)
-                $specialQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
+                $specialQuery = "SELECT buffer, is_old_publication, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
                                FROM journals 
                                WHERE is_publication = 'yes' 
                                AND (UPPER(article_type) = 'SPECIAL ISSUE' OR is_special_issue = 'yes')
@@ -163,15 +163,15 @@
                     $specialBuffer = htmlspecialchars($special['buffer']);
 
                     // Get cover image - simplified
-                    $specialPhoto = $special['manuscriptPhoto'] ?? null;
-                    if (!empty($specialPhoto)) {
-                        $specialImage = "https://asfirj.org/useruploads/article_images/" . $specialPhoto;
-                    } else {
-                        $specialImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-                    }
+                    $specialPhoto = getCoverImage($special);
+                    // if (!empty($specialPhoto)) {
+                    //     $specialImage = "https://asfirj.org/useruploads/article_images/" . $specialPhoto;
+                    // } else {
+                    //     $specialImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+                    // }
 
                     // Check if file exists on server, if not use default
-                    $specialImageUrl = $specialImage;
+                    $specialImageUrl = $specialPhoto;
 
                     // Format date
                     $specialDate = !empty($special['date_published']) ? $special['date_published'] : $special['date_uploaded'];
@@ -231,8 +231,8 @@
                 <?php
                 // Fetch the most recent These article (filter by Theses)
                 // Remove is_old_publication column since it doesn't exist
-                $careerQuery = "SELECT buffer, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
-                               FROM journals 
+                $careerQuery = "SELECT buffer, is_old_publication, manuscript_full_title, manuscript_file, date_published, date_uploaded, manuscriptPhoto 
+                               FROM journals  
                                WHERE is_publication = 'yes' 
                                AND (UPPER(article_type) = 'ASFIRJ THESES' OR UPPER(article_type) = 'THESES') 
                                ORDER BY id DESC 
@@ -245,15 +245,15 @@
                     $careerBuffer = htmlspecialchars($career['buffer']);
 
                     // Get cover image - simplified
-                    $careerPhoto = $career['manuscriptPhoto'] ?? null;
-                    if (!empty($careerPhoto)) {
-                        $careerImage = "https://asfirj.org/useruploads/article_images/" . $careerPhoto;
-                    } else {
-                        $careerImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-                    }
+                    $careerPhoto = getCoverImage($career);
+                    // if (!empty($careerPhoto)) {
+                    //     $careerImage = "https://asfirj.org/useruploads/article_images/" . $careerPhoto;
+                    // } else {
+                    //     $careerImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
+                    // }
 
                     // Check if file exists on server, if not use default
-                    $careerImageUrl = $careerImage;
+                    $careerImageUrl = $careerPhoto;
 
                     // Format date
                     $careerDate = !empty($career['date_published']) ? $career['date_published'] : $career['date_uploaded'];

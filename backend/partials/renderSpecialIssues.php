@@ -12,30 +12,12 @@ header("Cache-Control: public, max-age=3600");
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
 include __DIR__."/helpers.php";
 
-// Function to get cover image URL
-function getCoverImageSI($row) {
-    static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-    
-    $photo = $row['manuscriptPhoto'] ?? null;
-    $isOld = $row['is_old_publication'] ?? 'no';
-    
-    if (empty($photo)) return $defaultImage;
-    
-    return $isOld === "yes" 
-        ? "https://asfirj.org/useruploads/article_images/" . $photo
-        : "https://process.asfirj.org/useruploads/article_images/" . $photo;
-}
 
-// Function to format timestamp
-function formatTimestampSI($date) {
-    if (empty($date)) return "";
-    return date("j M Y", strtotime($date));
-}
 
 // Function to render a single article
 function renderArticleSI($row, $authorsName) {
-    $coverImage = getCoverImageSI($row);
-    $formattedDate = formatTimestampSI(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
+    $coverImage = getCoverImage($row);
+    $formattedDate = formatTimestamp(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
     
     // Special Issues Badge (distinct color - Purple theme)
     $specialIssuesBadge = '<span class="special-issues-badge inline-flex items-center gap-1 text-[11px] md:text-sm text-purple-700 bg-purple-50 px-1.5 md:px-2 py-0.5 rounded-full whitespace-nowrap">

@@ -12,19 +12,6 @@ header("Cache-Control: public, max-age=3600");
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
 include __DIR__."/helpers.php";
 
-// Function to get cover image URL
-function getCoverImageLC($row) {
-    static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-    
-    $photo = $row['manuscriptPhoto'] ?? null;
-    $isOld = $row['is_old_publication'] ?? 'no';
-    
-    if (empty($photo)) return $defaultImage;
-    
-    return $isOld === "yes" 
-        ? "https://asfirj.org/useruploads/article_images/" . $photo
-        : "https://process.asfirj.org/useruploads/article_images/" . $photo;
-}
 
 // Function to format timestamp
 function formatTimestampLC($date) {
@@ -34,7 +21,7 @@ function formatTimestampLC($date) {
 
 // Function to render a single article
 function renderArticleLC($row, $authorsName) {
-    $coverImage = getCoverImageLC($row);
+    $coverImage = getCoverImage($row);
     $formattedDate = formatTimestampLC(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
     
     // Career Corner Badge (distinct color)

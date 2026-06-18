@@ -13,25 +13,7 @@ header("Cache-Control: public, max-age=3600");
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
 include __DIR__."/helpers.php";
 
-// Function to get cover image URL
-function getCoverImageSupplements($row) {
-    static $defaultImage = "https://res.cloudinary.com/dvm0bs013/image/upload/v1738234900/asfischolar_asbtdc.jpg";
-    
-    $photo = $row['manuscriptPhoto'] ?? null;
-    $isOld = $row['is_old_publication'] ?? 'no';
-    
-    if (empty($photo)) return $defaultImage;
-    
-    return $isOld === "yes" 
-        ? "https://asfirj.org/useruploads/article_images/" . $photo
-        : "https://process.asfirj.org/useruploads/article_images/" . $photo;
-}
 
-// Function to format timestamp
-function formatTimestampSupplements($date) {
-    if (empty($date)) return "";
-    return date("j M Y", strtotime($date));
-}
 
 // Function to sanitize output
 function sanitizeOutput($string) {
@@ -40,8 +22,8 @@ function sanitizeOutput($string) {
 
 // Function to render a single supplement article with modern card layout
 function renderSupplementArticle($row, $authorsName) {
-    $coverImage = getCoverImageSupplements($row);
-    $formattedDate = formatTimestampSupplements(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
+    $coverImage = getCoverImage($row);
+    $formattedDate = formatTimestamp(!empty($row['date_published']) ? $row['date_published'] : $row['date_uploaded']);
     
     // Badges with improved accessibility
     $editorsChoiceBadge = ($row['is_editors_choice'] === "yes") 

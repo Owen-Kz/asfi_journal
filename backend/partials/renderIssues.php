@@ -97,11 +97,7 @@ include __DIR__."/helpers.php";
 //         : "https://process.asfirj.org/useruploads/manuscripts/" . $manuscript;
 // }
 
-// Function to format timestamp
-function formatTimestamp($date) {
-    if (empty($date)) return "";
-    return date("j M Y", strtotime($date));
-}
+
 
 // Function to render a single article
 function renderArticle($row, $authorsName) {
