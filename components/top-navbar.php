@@ -26,7 +26,13 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
                 <i class="fas fa-bars"></i>
             </button>
             
-            <div class="hidden md:flex space-x-6">
+            <div class="hidden md:flex items-center space-x-6">
+                <button id="searchToggle" class="hover:text-[#ffbf00] transition-colors p-1" title="Search publications">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                </button>
                 <a href="https://asfirj.org/issues" class="hover:text-[#ffbf00] transition-colors text-sm">Explore ASFIRJ</a>
                 <a href="https://asfirj.org/authors.html#ob" class="hover:text-[#ffbf00] transition-colors text-sm">Get Published</a>
                 <a href="https://asfischolar.org/" target="_blank" rel="noopener noreferrer" class="hover:text-[#ffbf00] transition-colors text-sm">ASFIScholar</a>
@@ -200,6 +206,103 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
         </div>
     </div>
 </nav>
+
+<style>
+/* Search Modal */
+#search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.6);
+    z-index: 9999;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 80px;
+}
+#search-overlay.open { display: flex; }
+#search-modal {
+    background: #fff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 560px;
+    padding: 24px;
+    box-shadow: 0 24px 48px rgba(0,0,0,.2);
+}
+#search-modal input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color .2s;
+}
+#search-modal input:focus { border-color: #80078b; }
+#search-modal input::placeholder { color: #9ca3af; }
+#search-modal .search-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #f3f4f6;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Search modal
+    var searchOverlay = document.createElement('div');
+    searchOverlay.id = 'search-overlay';
+    searchOverlay.innerHTML = 
+        '<div id="search-modal" style="position:relative">' +
+            '<button class="search-close" id="searchModalClose">&times;</button>' +
+            '<h3 style="font-size:18px;font-weight:700;color:#111827;margin:0 0 4px">Search Publications</h3>' +
+            '<p style="font-size:13px;color:#6b7280;margin:0 0 16px">Search by title, author, or keywords</p>' +
+            '<form id="searchForm" action="' + window.location.origin + '/search" method="GET">' +
+                '<input type="text" name="k" placeholder="Search articles, authors, topics..." autocomplete="off" />' +
+                '<div style="display:flex;gap:8px;margin-top:12px">' +
+                    '<button type="submit" style="flex:1;padding:10px;background:#80078b;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer">Search</button>' +
+                    '<button type="button" id="searchModalCancel" style="padding:10px 20px;background:#f3f4f6;color:#374151;border:none;border-radius:10px;font-size:14px;cursor:pointer">Cancel</button>' +
+                '</div>' +
+            '</form>' +
+        '</div>';
+    document.body.appendChild(searchOverlay);
+
+    var searchToggle = document.getElementById('searchToggle');
+    var searchModalClose = document.getElementById('searchModalClose');
+    var searchModalCancel = document.getElementById('searchModalCancel');
+    var searchForm = document.getElementById('searchForm');
+    var searchInput = searchForm ? searchForm.querySelector('input') : null;
+
+    function openSearch() {
+        searchOverlay.classList.add('open');
+        if (searchInput) setTimeout(function() { searchInput.focus(); }, 100);
+        document.body.style.overflow = 'hidden';
+    }
+    function closeSearch() {
+        searchOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    if (searchToggle) searchToggle.addEventListener('click', openSearch);
+    if (searchModalClose) searchModalClose.addEventListener('click', closeSearch);
+    if (searchModalCancel) searchModalCancel.addEventListener('click', closeSearch);
+    searchOverlay.addEventListener('click', function(e) {
+        if (e.target === searchOverlay) closeSearch();
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeSearch();
+    });
+});
+</script>
 
 <style>
 /* Hover effects for desktop dropdowns */

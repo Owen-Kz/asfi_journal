@@ -11,6 +11,26 @@ $filters = [
 ];
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
+// Special issues filter
+$selectedSpecialIssueSlug = isset($_GET['si']) ? trim($_GET['si']) : null;
+$selectedSpecialIssueId = null;
+if ($selectedSpecialIssueSlug) {
+    $stmtSi = $con->prepare("SELECT special_issue_id FROM special_issues WHERE slug = ?");
+    $stmtSi->bind_param("s", $selectedSpecialIssueSlug);
+    $stmtSi->execute();
+    $resSi = $stmtSi->get_result();
+    if ($rowSi = $resSi->fetch_assoc()) {
+        $selectedSpecialIssueId = $rowSi['special_issue_id'];
+    }
+}
+$specialIssuesList = [];
+$siFilterResult = $con->query("SELECT special_issue_id, special_issue_name, slug FROM special_issues ORDER BY special_issue_name ASC");
+if ($siFilterResult) {
+    while ($row = $siFilterResult->fetch_assoc()) {
+        $specialIssuesList[] = $row;
+    }
+}
+
 // Include the supplements renderer component
 include '../backend/partials/renderSearchResults.php';
 ?>
@@ -23,13 +43,28 @@ include '../backend/partials/renderSearchResults.php';
     <?php include '../components/filter-section.php'; ?>
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <?php if (!empty($specialIssuesList)): ?>
+    <div class="max-w-7xl mx-auto px-4 mt-2">
+        <div class="flex flex-wrap items-center gap-3">
+            <label class="text-sm font-medium text-gray-700">Special Issue:</label>
+            <select id="specialIssueFilter" class="px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <option value="">All Publications</option>
+                <?php foreach ($specialIssuesList as $si): ?>
+                <option value="<?php echo htmlspecialchars($si['slug'] ?? $si['special_issue_id']); ?>" <?php echo $selectedSpecialIssueSlug === ($si['slug'] ?? $si['special_issue_id']) ? 'selected' : ''; ?>>
+                    <?php echo htmlspecialchars($si['special_issue_name']); ?>
+                </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+    <?php endif; ?>
 
     <div class="issueslay" style="display: flex; gap: 30px; padding: 40px;">
         <section class="bd-bottom padding">
             <div id="articleListContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <?php
                 // Render supplements with filters (is_publication = 'no' for supplements)
-                renderSearchResults($con, $page, $filters);
+                renderSearchResults($con, $page, $filters, $selectedSpecialIssueSlug);
                 ?>
             </div>
         </section>
@@ -68,6 +103,21 @@ document.getElementById('yearFilter')?.addEventListener('change', function() {
     } else {
         currentUrl.searchParams.delete('year');
     }
+    
+    window.location.href = currentUrl.toString();
+});
+
+// Special Issue filter
+document.getElementById('specialIssueFilter')?.addEventListener('change', function() {
+    const si = this.value;
+    const currentUrl = new URL(window.location.href);
+    
+    if (si) {
+        currentUrl.searchParams.set('si', si);
+    } else {
+        currentUrl.searchParams.delete('si');
+    }
+    currentUrl.searchParams.delete('page');
     
     window.location.href = currentUrl.toString();
 });

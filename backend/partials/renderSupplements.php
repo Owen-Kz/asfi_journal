@@ -109,10 +109,24 @@ function renderSupplementArticle($row, $authorsName) {
     </div>';
 }
 
-function renderSupplements($con, $page = 1, $filters = []) {
+function renderSupplements($con, $page = 1, $filters = [], $specialIssueSlug = null) {
     $items_per_page = 6;
     $offset = ($page - 1) * $items_per_page;
     $totalPages = 0;
+    
+    // Resolve slug to special_issue_id
+    $selectedSpecialIssueId = null;
+    if (!empty($specialIssueSlug)) {
+        $stmtSlug = $con->prepare("SELECT special_issue_id FROM special_issues WHERE slug = ?");
+        if ($stmtSlug) {
+            $stmtSlug->bind_param("s", $specialIssueSlug);
+            $stmtSlug->execute();
+            $resSlug = $stmtSlug->get_result();
+            if ($rowSlug = $resSlug->fetch_assoc()) {
+                $selectedSpecialIssueId = $rowSlug['special_issue_id'];
+            }
+        }
+    }
     
     // Build WHERE clause based on filters (is_publication = 'no' for supplements)
     $whereClauses = ["`journals`.`is_publication` = 'no'"];
@@ -132,6 +146,13 @@ function renderSupplements($con, $page = 1, $filters = []) {
     if (!empty($filters['type'])) {
         $whereClauses[] = "`journals`.`article_type` = ?";
         $params[] = $filters['type'];
+        $types .= "s";
+    }
+    
+    // Filter by special issue
+    if (!empty($selectedSpecialIssueId)) {
+        $whereClauses[] = "`journals`.`special_issue_id` = ?";
+        $params[] = $selectedSpecialIssueId;
         $types .= "s";
     }
     
@@ -215,35 +236,38 @@ function renderSupplements($con, $page = 1, $filters = []) {
                 
                 // Previous button
                 if ($page > 1) {
-                    $prevUrl = buildPaginationUrlSupplements($filters, $page - 1);
+                    $prevUrl = buildPaginationUrlSupplements($filters, $page - 1, $specialIssueSlug);
+
                     echo '<a href="' . $prevUrl . '" class="px-4 py-2 rounded-lg text-sm bg-gray-200 text-gray-700 hover:bg-orange-100 transition-colors">&laquo; Prev</a>';
                 }
                 
-                // Page numbers
                 $startPage = max(1, $page - 2);
                 $endPage = min($totalPages, $page + 2);
                 
                 if ($startPage > 1) {
-                    $firstUrl = buildPaginationUrlSupplements($filters, 1);
+                    $firstUrl = buildPaginationUrlSupplements($filters, 1, $specialIssueSlug);
+
                     echo '<a href="' . $firstUrl . '" class="px-4 py-2 rounded-lg text-sm bg-gray-200 text-gray-700 hover:bg-orange-100 transition-colors">1</a>';
                     if ($startPage > 2) echo '<span class="px-3 py-2 text-gray-500">...</span>';
                 }
                 
                 for ($i = $startPage; $i <= $endPage; $i++) {
-                    $activeClass = ($i == $page) ? 'bg-orange-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-orange-100';
-                    $pageUrl = buildPaginationUrlSupplements($filters, $i);
+                    $activeClass = ($i == $page) ? 'bg-purple-700 text-white' : 'bg-gray-200 text-gray-700 hover:bg-orange-100';
+                    $pageUrl = buildPaginationUrlSupplements($filters, $i, $specialIssueSlug);
+
                     echo '<a href="' . $pageUrl . '" class="px-4 py-2 rounded-lg text-sm ' . $activeClass . ' transition-colors">' . $i . '</a>';
                 }
                 
                 if ($endPage < $totalPages) {
                     if ($endPage < $totalPages - 1) echo '<span class="px-3 py-2 text-gray-500">...</span>';
-                    $lastUrl = buildPaginationUrlSupplements($filters, $totalPages);
+                    $lastUrl = buildPaginationUrlSupplements($filters, $totalPages, $specialIssueSlug);
+
                     echo '<a href="' . $lastUrl . '" class="px-4 py-2 rounded-lg text-sm bg-gray-200 text-gray-700 hover:bg-orange-100 transition-colors">' . $totalPages . '</a>';
                 }
                 
                 // Next button
                 if ($page < $totalPages) {
-                    $nextUrl = buildPaginationUrlSupplements($filters, $page + 1);
+                    $nextUrl = buildPaginationUrlSupplements($filters, $page + 1, $specialIssueSlug);
                     echo '<a href="' . $nextUrl . '" class="px-4 py-2 rounded-lg text-sm bg-gray-200 text-gray-700 hover:bg-orange-100 transition-colors">Next &raquo;</a>';
                 }
                 
@@ -251,9 +275,20 @@ function renderSupplements($con, $page = 1, $filters = []) {
             }
             
         } else {
-            echo '<div class="text-center py-12 bg-gray-50 rounded-xl">
-                    <h3 class="text-lg font-semibold text-gray-700 mb-2">No supplements found</h3>
-                    <p class="text-sm text-gray-500">Check back soon for conference proceedings and special issues.</p>
+            $searchTerm = $filters['search'] ?? '';
+            $msg = $searchTerm
+                ? 'No publications found matching &ldquo;' . htmlspecialchars($searchTerm) . '&rdquo;'
+                : 'No publications found';
+            echo '<div class="text-center min-h-[50vh] w-full col-span-full flex flex-col items-center justify-center bg-gray-50 rounded-xl px-6">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">' . $msg . '</h3>
+                    <p class="text-sm text-gray-500 mb-6">Check back soon for conference proceedings and special issues.</p>
+                    <div class="border-t border-gray-200 pt-6 mt-4 w-full max-w-sm">
+                        <p class="text-sm font-medium text-gray-700 mb-3">Working on a research paper?</p>
+                        <a href="/portal" class="inline-flex items-center px-5 py-2.5 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-colors text-sm font-medium">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            Publish Your Manuscript
+                        </a>
+                    </div>
                   </div>';
         }
         
@@ -267,14 +302,13 @@ function renderSupplements($con, $page = 1, $filters = []) {
 }
 
 // Helper function to build pagination URL
-function buildPaginationUrlSupplements($filters, $page) {
+function buildPaginationUrlSupplements($filters, $page, $specialIssueSlug = null) {
     $params = [];
-    
     if (!empty($filters['search'])) $params['k'] = urlencode($filters['search']);
     if (!empty($filters['author'])) $params['author'] = urlencode($filters['author']);
     if (!empty($filters['type'])) $params['type'] = urlencode($filters['type']);
+    if (!empty($specialIssueSlug)) $params['si'] = urlencode($specialIssueSlug);
     $params['page'] = $page;
-    
     return '?' . http_build_query($params);
 }
 
@@ -313,8 +347,21 @@ if (basename($_SERVER['PHP_SELF']) == 'renderSupplements.php') {
     ];
     
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $slugg = isset($_GET['si']) ? trim($_GET['si']) : null;
+    $resolvedIdd = null;
+    if ($slugg) {
+        $stmtSi = $con->prepare("SELECT special_issue_id FROM special_issues WHERE slug = ?");
+        if ($stmtSi) {
+            $stmtSi->bind_param("s", $slugg);
+            $stmtSi->execute();
+            $resSi = $stmtSi->get_result();
+            if ($rowSi = $resSi->fetch_assoc()) {
+                $resolvedIdd = $rowSi['special_issue_id'];
+            }
+        }
+    }
     
-    renderSupplements($con, $page, $filters);
+    renderSupplements($con, $page, $filters, $slugg);
 }
 
 // End output buffering
