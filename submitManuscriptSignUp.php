@@ -217,7 +217,7 @@
 <!-- jQuery Lib -->
 <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
 <script src="./front/public/js/vendor/popper.min.js"></script>
-<script src="./front/public/js/vendor/bootstrap.min.js"></script>
+<!-- bootstrap.min.js removed -->
 <script src="./front/public/js/vendor/waypoints.min.js"></script>
 <script src="./front/public/js/vendor/slick.min.js"></script>
 <script src="./front/public/js/vendor/jquery.ajaxchimp.min.js"></script>

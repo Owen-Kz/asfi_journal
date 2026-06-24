@@ -9,6 +9,34 @@ $filters = [
     'type' => isset($_GET['type']) ? trim($_GET['type']) : null
 ];
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$selectedSpecialIssueId = isset($_GET['si']) ? trim($_GET['si']) : null;
+
+// Query all special issues for the sidebar with publication counts
+$specialIssuesSidebar = [];
+$siQuery = "SELECT si.*, 
+                   (SELECT COUNT(*) FROM journals j WHERE j.special_issue_id = si.special_issue_id) AS publication_count
+            FROM special_issues si 
+            ORDER BY si.date_created DESC";
+$siResult = $con->query($siQuery);
+if ($siResult) {
+    while ($row = $siResult->fetch_assoc()) {
+        $specialIssuesSidebar[$row['special_issue_id']] = $row;
+    }
+}
+
+// Build sidebar lookup for renderer
+$sidebarSpecialIssues = [];
+foreach ($specialIssuesSidebar as $id => $info) {
+    $sidebarSpecialIssues[$id] = $info['special_issue_name'];
+}
+
+// Total special issue articles count (includes named + is_special_issue = yes + special_issue_id IS NOT NULL)
+$totalSICount = 0;
+$totalSIQuery = "SELECT COUNT(DISTINCT id) AS total FROM journals WHERE is_special_issue = 'yes' OR UPPER(article_type) = 'SPECIAL ISSUE' OR special_issue_id IS NOT NULL";
+$totalSIResult = $con->query($totalSIQuery);
+if ($totalSIResult && $row = $totalSIResult->fetch_assoc()) {
+    $totalSICount = (int)$row['total'];
+}
 
 // Include the special issues renderer component
 include '../backend/partials/renderSpecialIssues.php'; 
@@ -229,6 +257,85 @@ include '../backend/partials/renderSpecialIssues.php';
         background: linear-gradient(90deg, rgba(45,27,105,0.9) 0%, transparent 100%);
     }
     
+    /* Sidebar Styles */
+    .si-sidebar {
+        position: sticky;
+        top: 100px;
+    }
+    .si-sidebar-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        border: 1px solid transparent;
+    }
+    .si-sidebar-item:hover {
+        background: #f5f3ff;
+        border-color: #e0d4f5;
+    }
+    .si-sidebar-item.active {
+        background: #ede9fe;
+        border-color: #c4b5fd;
+    }
+    .si-sidebar-item.active .si-name {
+        color: #5b21b6;
+        font-weight: 600;
+    }
+    .si-sidebar-item .si-name {
+        color: #374151;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    .si-sidebar-item .si-count {
+        background: #e5e7eb;
+        color: #6b7280;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 999px;
+        white-space: nowrap;
+        margin-left: 8px;
+    }
+    .si-sidebar-item.active .si-count {
+        background: #c4b5fd;
+        color: #5b21b6;
+    }
+    .si-sidebar-item.all-item .si-count {
+        background: #2d1b69;
+        color: #fff;
+    }
+    .si-sidebar-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #2d1b69;
+        padding: 0 14px 12px;
+        border-bottom: 2px solid #ffd700;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    @media (max-width: 1023px) {
+        .si-sidebar {
+            position: static;
+            margin-bottom: 24px;
+        }
+        .si-sidebar-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .si-sidebar-scroll .si-sidebar-item {
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+    }
+    
     @media (max-width: 768px) {
         .page-header h2 {
             font-size: 28px;
@@ -351,17 +458,52 @@ if ($featuredResult && $featuredResult->num_rows > 0):
 <main id="supplements" class="py-5">
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-5">
-            <h2 style="color: #2d1b69; font-size: 28px; font-weight: 700;">All Special Issues</h2>
+            <h2 style="color: #2d1b69; font-size: 28px; font-weight: 700;"><?php echo $selectedSpecialIssueId && isset($specialIssuesSidebar[$selectedSpecialIssueId]) ? htmlspecialchars($specialIssuesSidebar[$selectedSpecialIssueId]['special_issue_name']) : 'All Special Issues'; ?></h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffd700; margin: 10px auto;"></div>
-            <p class="text-gray-500 mt-3">Explore our collection of special issues featuring thematic research compilations and comprehensive reviews</p>
+            <p class="text-gray-500 mt-3"><?php echo $selectedSpecialIssueId ? 'Browse all publications in this special issue' : 'Explore our collection of special issues featuring thematic research compilations and comprehensive reviews'; ?></p>
         </div>
         
-        <div class="issueslay">
-            <div id="articleListContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <?php
-                // Render special issues articles
-                renderSpecialIssues($con, $page, $filters);
-                ?>
+        <div class="flex flex-wrap lg:flex-nowrap gap-6">
+            <!-- Sidebar -->
+            <div class="w-full lg:w-64 flex-shrink-0">
+                <div class="si-sidebar">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
+                        <div class="si-sidebar-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke="#2d1b69" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Special Issues
+                        </div>
+                        <div class="si-sidebar-scroll">
+                            <a href="?" class="si-sidebar-item all-item <?php echo !$selectedSpecialIssueId ? 'active' : ''; ?>">
+                                <span class="si-name">All Special Issues</span>
+                                <span class="si-count"><?php echo $totalSICount; ?></span>
+                            </a>
+                            <?php foreach ($specialIssuesSidebar as $id => $si): ?>
+                            <a href="?si=<?php echo urlencode($id); ?>" class="si-sidebar-item <?php echo $selectedSpecialIssueId === $id ? 'active' : ''; ?>">
+                                <span class="si-name"><?php echo htmlspecialchars($si['special_issue_name']); ?></span>
+                                <span class="si-count"><?php echo (int)$si['publication_count']; ?></span>
+                            </a>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="flex-1 min-w-0">
+                <?php if ($selectedSpecialIssueId): ?>
+                <div class="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-6">
+                    <p class="text-sm text-purple-800 flex items-center gap-2">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        Showing publications in: <strong><?php echo htmlspecialchars($specialIssuesSidebar[$selectedSpecialIssueId]['special_issue_name'] ?? 'Selected Special Issue'); ?></strong>
+                        <a href="?" class="ml-auto text-purple-700 hover:text-purple-900 underline text-xs font-medium">Clear filter</a>
+                    </p>
+                </div>
+                <?php endif; ?>
+                <div class="issueslay" id="articleListContainer">
+                    <?php
+                    renderSpecialIssues($con, $page, $filters, $selectedSpecialIssueId, $sidebarSpecialIssues);
+                    ?>
+                </div>
             </div>
         </div>
     </div>

@@ -494,59 +494,6 @@ include './backend/db.php';
     <!-- Scripts -->
     <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
     <script>
-    // Carousel functionality
-    (function() {
-        var carousel = document.getElementById('myCarousel');
-        if (!carousel) return;
-        var items = carousel.querySelectorAll('.item');
-        if (items.length === 0) return;
-        var current = 0;
-
-        // Build indicators
-        var indicators = document.getElementById('carousel-indicators');
-        if (indicators) {
-            indicators.innerHTML = '';
-            for (var i = 0; i < items.length; i++) {
-                var li = document.createElement('li');
-                if (i === 0) li.className = 'active';
-                li.setAttribute('data-index', i);
-                li.className = 'w-3 h-3 rounded-full bg-white/50 cursor-pointer transition-colors hover:bg-white';
-                if (i === 0) li.classList.add('bg-white');
-                li.addEventListener('click', function() { goTo(parseInt(this.getAttribute('data-index'))); });
-                indicators.appendChild(li);
-            }
-        }
-
-        function goTo(index) {
-            items[current].classList.remove('active');
-            if (indicators) {
-                indicators.children[current].classList.remove('bg-white');
-                indicators.children[current].classList.add('bg-white/50');
-            }
-            current = index;
-            items[current].classList.add('active');
-            if (indicators) {
-                indicators.children[current].classList.remove('bg-white/50');
-                indicators.children[current].classList.add('bg-white');
-            }
-        }
-
-        function next() { goTo((current + 1) % items.length); }
-        function prev() { goTo((current - 1 + items.length) % items.length); }
-
-        document.getElementById('carousel-prev').addEventListener('click', function(e) { e.preventDefault(); prev(); });
-        document.getElementById('carousel-next').addEventListener('click', function(e) { e.preventDefault(); next(); });
-
-        // Auto-advance
-        setInterval(next, 5000);
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-        });
-    })();
-
     // Dropdown toggle
     document.addEventListener('DOMContentLoaded', function() {
         const trigger = document.querySelector('.dropdown-trigger');
@@ -591,7 +538,6 @@ include './backend/db.php';
         if (yearSpan) yearSpan.textContent = new Date().getFullYear();
     });
     </script>
-    <script src="./front/public/js/vendor/bootstrap.min.js"></script>
     <script src="./front/public/js/main.js"></script>
     <script src="./js/announcements/getPriority.js?v=3.w1k"></script>
 
