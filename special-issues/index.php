@@ -9,11 +9,11 @@ $filters = [
     'type' => isset($_GET['type']) ? trim($_GET['type']) : null
 ];
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-$selectedSpecialIssueId = isset($_GET['si']) ? trim($_GET['si']) : null;
+$selectedSpecialIssueSlug = isset($_GET['si']) ? trim($_GET['si']) : null;
 
 // Query all special issues for the sidebar with publication counts
 $specialIssuesSidebar = [];
-$siQuery = "SELECT si.*, 
+$siQuery = "SELECT si.*,
                    (SELECT COUNT(*) FROM journals j WHERE j.special_issue_id = si.special_issue_id) AS publication_count
             FROM special_issues si 
             ORDER BY si.date_created DESC";
@@ -24,7 +24,18 @@ if ($siResult) {
     }
 }
 
-// Build sidebar lookup for renderer
+// Resolve slug to ID for the renderer
+$resolvedSpecialIssueId = null;
+if ($selectedSpecialIssueSlug) {
+    foreach ($specialIssuesSidebar as $id => $si) {
+        if (isset($si['slug']) && $si['slug'] === $selectedSpecialIssueSlug) {
+            $resolvedSpecialIssueId = $id;
+            break;
+        }
+    }
+}
+
+// Build sidebar lookup for renderer: [id => name]
 $sidebarSpecialIssues = [];
 foreach ($specialIssuesSidebar as $id => $info) {
     $sidebarSpecialIssues[$id] = $info['special_issue_name'];
@@ -458,9 +469,9 @@ if ($featuredResult && $featuredResult->num_rows > 0):
 <main id="supplements" class="py-5">
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-5">
-            <h2 style="color: #2d1b69; font-size: 28px; font-weight: 700;"><?php echo $selectedSpecialIssueId && isset($specialIssuesSidebar[$selectedSpecialIssueId]) ? htmlspecialchars($specialIssuesSidebar[$selectedSpecialIssueId]['special_issue_name']) : 'All Special Issues'; ?></h2>
+            <h2 style="color: #2d1b69; font-size: 28px; font-weight: 700;"><?php echo $resolvedSpecialIssueId && isset($specialIssuesSidebar[$resolvedSpecialIssueId]) ? htmlspecialchars($specialIssuesSidebar[$resolvedSpecialIssueId]['special_issue_name']) : 'All Special Issues'; ?></h2>
             <div class="gold-line" style="width: 60px; height: 3px; background: #ffd700; margin: 10px auto;"></div>
-            <p class="text-gray-500 mt-3"><?php echo $selectedSpecialIssueId ? 'Browse all publications in this special issue' : 'Explore our collection of special issues featuring thematic research compilations and comprehensive reviews'; ?></p>
+            <p class="text-gray-500 mt-3"><?php echo $resolvedSpecialIssueId ? 'Browse all publications in this special issue' : 'Explore our collection of special issues featuring thematic research compilations and comprehensive reviews'; ?></p>
         </div>
         
         <div class="flex flex-wrap lg:flex-nowrap gap-6">
@@ -473,12 +484,12 @@ if ($featuredResult && $featuredResult->num_rows > 0):
                             Special Issues
                         </div>
                         <div class="si-sidebar-scroll">
-                            <a href="?" class="si-sidebar-item all-item <?php echo !$selectedSpecialIssueId ? 'active' : ''; ?>">
+                            <a href="?" class="si-sidebar-item all-item <?php echo !$selectedSpecialIssueSlug ? 'active' : ''; ?>">
                                 <span class="si-name">All Special Issues</span>
                                 <span class="si-count"><?php echo $totalSICount; ?></span>
                             </a>
                             <?php foreach ($specialIssuesSidebar as $id => $si): ?>
-                            <a href="?si=<?php echo urlencode($id); ?>" class="si-sidebar-item <?php echo $selectedSpecialIssueId === $id ? 'active' : ''; ?>">
+                            <a href="?si=<?php echo urlencode($si['slug'] ?? $id); ?>" class="si-sidebar-item <?php echo $selectedSpecialIssueSlug === ($si['slug'] ?? $id) ? 'active' : ''; ?>">
                                 <span class="si-name"><?php echo htmlspecialchars($si['special_issue_name']); ?></span>
                                 <span class="si-count"><?php echo (int)$si['publication_count']; ?></span>
                             </a>
@@ -490,18 +501,18 @@ if ($featuredResult && $featuredResult->num_rows > 0):
             
             <!-- Main Content -->
             <div class="flex-1 min-w-0">
-                <?php if ($selectedSpecialIssueId): ?>
+                <?php if ($resolvedSpecialIssueId): ?>
                 <div class="bg-purple-50 border border-purple-200 rounded-xl p-4 mb-6">
                     <p class="text-sm text-purple-800 flex items-center gap-2">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        Showing publications in: <strong><?php echo htmlspecialchars($specialIssuesSidebar[$selectedSpecialIssueId]['special_issue_name'] ?? 'Selected Special Issue'); ?></strong>
+                        Showing publications in: <strong><?php echo htmlspecialchars($specialIssuesSidebar[$resolvedSpecialIssueId]['special_issue_name'] ?? 'Selected Special Issue'); ?></strong>
                         <a href="?" class="ml-auto text-purple-700 hover:text-purple-900 underline text-xs font-medium">Clear filter</a>
                     </p>
                 </div>
                 <?php endif; ?>
                 <div class="issueslay" id="articleListContainer">
                     <?php
-                    renderSpecialIssues($con, $page, $filters, $selectedSpecialIssueId, $sidebarSpecialIssues);
+                    renderSpecialIssues($con, $page, $filters, $selectedSpecialIssueSlug, $sidebarSpecialIssues);
                     ?>
                 </div>
             </div>

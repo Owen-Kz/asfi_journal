@@ -98,18 +98,32 @@ function renderArticleSI($row, $authorsName) {
     </div>';
 }
 
-function renderSpecialIssues($con, $page = 1, $filters = [], $selectedSpecialIssueId = null, $specialIssues = []) {
+function renderSpecialIssues($con, $page = 1, $filters = [], $specialIssueSlug = null, $specialIssues = []) {
     $items_per_page = 6;
     $offset = ($page - 1) * $items_per_page;
     $totalPages = 0;
+    
+    // Resolve slug to special_issue_id and name
+    $resolvedId = null;
+    $resolvedName = '';
+    if (!empty($specialIssueSlug)) {
+        $stmtSlug = $con->prepare("SELECT special_issue_id, special_issue_name FROM special_issues WHERE slug = ?");
+        $stmtSlug->bind_param("s", $specialIssueSlug);
+        $stmtSlug->execute();
+        $resultSlug = $stmtSlug->get_result();
+        if ($rowSlug = $resultSlug->fetch_assoc()) {
+            $resolvedId = $rowSlug['special_issue_id'];
+            $resolvedName = $rowSlug['special_issue_name'];
+        }
+    }
     
     $whereClauses = ["id IS NOT NULL"];
     $params = [];
     $types = "";
     
-    if (!empty($selectedSpecialIssueId)) {
+    if (!empty($resolvedId)) {
         $whereClauses[] = "`journals`.`special_issue_id` = ?";
-        $params[] = $selectedSpecialIssueId;
+        $params[] = $resolvedId;
         $types .= "s";
     } else {
         $whereClauses[] = "(`journals`.`is_special_issue` = 'yes' OR UPPER(`journals`.`article_type`) = 'SPECIAL ISSUE' OR `journals`.`special_issue_id` IS NOT NULL)";
@@ -181,8 +195,8 @@ function renderSpecialIssues($con, $page = 1, $filters = [], $selectedSpecialIss
             
             $authorsMap = getAuthorsBatchSI($con, $articleIds);
             
-            if (!empty($selectedSpecialIssueId)) {
-                $siName = $specialIssues[$selectedSpecialIssueId] ?? 'Special Issue';
+            if (!empty($specialIssueSlug)) {
+                $siName = $resolvedName ?: ($specialIssues[$resolvedId] ?? 'Special Issue');
                 echo '<div class="mb-6">';
                 echo '<h3 class="text-xl font-bold text-purple-800 mb-4 flex items-center gap-2">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -237,7 +251,7 @@ function renderSpecialIssues($con, $page = 1, $filters = [], $selectedSpecialIss
                 echo '<div class="flex justify-center gap-2 mt-8 flex-wrap">';
                 
                 if ($page > 1) {
-                    $prevUrl = buildPaginationUrlSI($filters, $page - 1, $selectedSpecialIssueId);
+                    $prevUrl = buildPaginationUrlSI($filters, $page - 1, $specialIssueSlug);
                     echo '<a href="' . $prevUrl . '" class="px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-[10px] md:text-sm bg-gray-200 text-gray-700 hover:bg-purple-100 transition-colors">&laquo; Prev</a>';
                 }
                 
@@ -245,25 +259,25 @@ function renderSpecialIssues($con, $page = 1, $filters = [], $selectedSpecialIss
                 $endPage = min($totalPages, $page + 2);
                 
                 if ($startPage > 1) {
-                    $firstUrl = buildPaginationUrlSI($filters, 1, $selectedSpecialIssueId);
+                    $firstUrl = buildPaginationUrlSI($filters, 1, $specialIssueSlug);
                     echo '<a href="' . $firstUrl . '" class="px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-[10px] md:text-sm bg-gray-200 text-gray-700 hover:bg-purple-100 transition-colors">1</a>';
                     if ($startPage > 2) echo '<span class="px-2 md:px-3 py-1.5 text-gray-500">...</span>';
                 }
                 
                 for ($i = $startPage; $i <= $endPage; $i++) {
                     $activeClass = ($i == $page) ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-700 hover:bg-purple-100';
-                    $pageUrl = buildPaginationUrlSI($filters, $i, $selectedSpecialIssueId);
+                    $pageUrl = buildPaginationUrlSI($filters, $i, $specialIssueSlug);
                     echo '<a href="' . $pageUrl . '" class="px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-[10px] md:text-sm ' . $activeClass . ' transition-colors">' . $i . '</a>';
                 }
                 
                 if ($endPage < $totalPages) {
                     if ($endPage < $totalPages - 1) echo '<span class="px-2 md:px-3 py-1.5 text-gray-500">...</span>';
-                    $lastUrl = buildPaginationUrlSI($filters, $totalPages, $selectedSpecialIssueId);
+                    $lastUrl = buildPaginationUrlSI($filters, $totalPages, $specialIssueSlug);
                     echo '<a href="' . $lastUrl . '" class="px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-[10px] md:text-sm bg-gray-200 text-gray-700 hover:bg-purple-100 transition-colors">' . $totalPages . '</a>';
                 }
                 
                 if ($page < $totalPages) {
-                    $nextUrl = buildPaginationUrlSI($filters, $page + 1, $selectedSpecialIssueId);
+                    $nextUrl = buildPaginationUrlSI($filters, $page + 1, $specialIssueSlug);
                     echo '<a href="' . $nextUrl . '" class="px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-[10px] md:text-sm bg-gray-200 text-gray-700 hover:bg-purple-100 transition-colors">Next &raquo;</a>';
                 }
                 
@@ -286,11 +300,11 @@ function renderSpecialIssues($con, $page = 1, $filters = [], $selectedSpecialIss
     }
 }
 
-function buildPaginationUrlSI($filters, $page, $selectedSpecialIssueId = null) {
+function buildPaginationUrlSI($filters, $page, $specialIssueSlug = null) {
     $params = [];
     if (!empty($filters['search'])) $params['k'] = urlencode($filters['search']);
     if (!empty($filters['author'])) $params['author'] = urlencode($filters['author']);
-    if (!empty($selectedSpecialIssueId)) $params['si'] = urlencode($selectedSpecialIssueId);
+    if (!empty($specialIssueSlug)) $params['si'] = urlencode($specialIssueSlug);
     $params['page'] = $page;
     return '?' . http_build_query($params);
 }
@@ -319,10 +333,10 @@ if (basename($_SERVER['PHP_SELF']) == 'renderSpecialIssues.php') {
         'author' => isset($_GET['author']) ? trim($_GET['author']) : null
     ];
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-    $selectedSpecialIssueId = isset($_GET['si']) ? trim($_GET['si']) : null;
+    $specialIssueSlug = isset($_GET['si']) ? trim($_GET['si']) : null;
     
     $specialIssues = [];
-    if ($selectedSpecialIssueId) {
+    if ($specialIssueSlug) {
         $stmt = $con->prepare("SELECT special_issue_id, special_issue_name FROM special_issues");
         $stmt->execute();
         $res = $stmt->get_result();
@@ -331,7 +345,7 @@ if (basename($_SERVER['PHP_SELF']) == 'renderSpecialIssues.php') {
         }
     }
     
-    renderSpecialIssues($con, $page, $filters, $selectedSpecialIssueId, $specialIssues);
+    renderSpecialIssues($con, $page, $filters, $specialIssueSlug, $specialIssues);
 }
 
 ob_end_flush();
