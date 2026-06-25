@@ -378,7 +378,7 @@ include '../backend/partials/renderSpecialIssues.php';
 </section>
 
 <!-- Quick Facts Section -->
-<section class="quick-facts py-5 bg-gray-100">
+<!-- <section class="quick-facts py-5 bg-gray-100">
     <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-5">
             <h2 style="color: #2d1b69; font-size: 28px; font-weight: 700;">Why Special Issues Matter</h2>
@@ -423,7 +423,7 @@ include '../backend/partials/renderSpecialIssues.php';
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Featured Special Issue Section -->
 <?php
