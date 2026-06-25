@@ -285,9 +285,24 @@ function renderSpecialIssues($con, $page = 1, $filters = [], $specialIssueSlug =
             }
             
         } else {
-            echo '<div class="text-center py-12 bg-gray-50 rounded-xl">
-                    <h3 class="text-lg md:text-xl font-semibold text-gray-700 mb-2">No Special Issues articles found</h3>
-                    <p class="text-sm md:text-base text-gray-500">Check back soon for special issue content.</p>
+            // echo '<div class="text-center py-12 bg-gray-50 rounded-xl">
+            //         <h3 class="text-lg md:text-xl font-semibold text-gray-700 mb-2">No Special Issues articles found</h3>
+            //         <p class="text-sm md:text-base text-gray-500">Check back soon for special issue content.</p>
+            //       </div>';
+                    //    $searchTerm = $filters['search'] ?? '';
+            // $msg = $searchTerm
+            //     ? 'No publications found matching &ldquo;' . htmlspecialchars($searchTerm) . '&rdquo;'
+            //     : 'No publications found';
+            echo '<div class="text-center min-h-[50vh] w-[100vw] col-span-full flex flex-col items-center justify-center rounded-xl px-6">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-2">No Special Issues articles found</h3>
+                    <p class="text-sm text-gray-500 mb-6">Check back soon for special issue content.</p>
+                    <div class="border-t border-gray-200 pt-6 mt-4 w-full max-w-sm">
+                        <p class="text-sm font-medium text-gray-700 mb-3">Working on a research paper?</p>
+                        <a href="/portal" class="inline-flex items-center px-5 py-2.5 bg-purple-700 text-white rounded-lg hover:bg-purple-800 transition-colors text-sm font-medium">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                            Publish Your Manuscript
+                        </a>
+                    </div>
                   </div>';
         }
         

@@ -272,7 +272,7 @@ function renderSearchResults($con, $page = 1, $filters = [], $specialIssueSlug =
             $msg = $searchTerm
                 ? 'No publications found matching &ldquo;' . htmlspecialchars($searchTerm) . '&rdquo;'
                 : 'No publications found';
-            echo '<div class="text-center min-h-[50vh] w-full col-span-full flex flex-col items-center justify-center bg-gray-50 rounded-xl px-6">
+            echo '<div class="text-center min-h-[50vh] w-[100vw] col-span-full flex flex-col items-center justify-center rounded-xl px-6">
                     <h3 class="text-lg font-semibold text-gray-700 mb-2">' . $msg . '</h3>
                     <p class="text-sm text-gray-500 mb-6">Check back soon for conference proceedings and special issues.</p>
                     <div class="border-t border-gray-200 pt-6 mt-4 w-full max-w-sm">
