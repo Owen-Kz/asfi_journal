@@ -540,7 +540,7 @@ include './backend/db.php';
     });
     </script>
     <script src="./front/public/js/main.js"></script>
-    <script src="./js/announcements/getPriority.js?v=3.w1k"></script>
+    <script src="./js/announcements/getPriority.js?v=3.w1k23"></script>
 
     <!-- Share Modal -->
     <div id="asfirj-share-modal" role="dialog" aria-modal="true">
