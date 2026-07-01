@@ -8,7 +8,7 @@ header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
 // Include database connection
 include './backend/db.php';
 ?>
-
+<!-- mango mango  -->
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -370,6 +370,7 @@ include './backend/db.php';
     }
 }
 
+  
 .animate-spin {
     animation: spin 1s linear infinite;
 }
