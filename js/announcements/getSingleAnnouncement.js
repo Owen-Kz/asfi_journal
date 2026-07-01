@@ -6,7 +6,7 @@ if(!slug) {
     throw new Error("No slug provided in the URL.");
 }
 if (announcementContainer) {
-    fetch("http://localhost/ASFIRJ/asfi_journal/backend/announcement/retrieveSingle.php?xid=" + slug)
+    fetch("https://asfirj.org/backend/announcement/retrieveSingle.php?xid=" + slug)
         .then(response => response.json())
         .then(data => {
             if (data) {

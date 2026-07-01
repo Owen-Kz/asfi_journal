@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        fetch('http://localhost/ASFIRJ/asfi_journal/backend/announcement/retrieve.php?priority=1')
+        fetch('https://asfirj.org/backend/announcement/retrieve.php?priority=1')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
