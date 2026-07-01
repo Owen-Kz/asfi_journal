@@ -3,6 +3,21 @@
 </div> */}
 
 {/* <script> */}
+const FormatDescription = (description) =>{
+    if(description.includes(`<img src="data:ima`) || description.includes(`<img src="http`) || description.includes(`<img src="/`) || description.includes(`<img src="`)){
+
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = description;
+        const imgElement = tempDiv.querySelector('img');
+    
+        const textContent = tempDiv.textContent.length > 120 ? tempDiv.textContent.substring(0, 120) : tempDiv.textContent;
+        const finalContent = imgElement ? imgElement.outerHTML + textContent : textContent;
+        return finalContent;
+    }
+   else{
+        return  description.length > 120 ? description.substring(0, 120) + '...' : description
+    }
+}
 document.addEventListener('DOMContentLoaded', function() {
     const announcementContainer = document.getElementById('announcement-container');
     
@@ -15,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        fetch('https://asfirj.org/backend/announcement/retrieve.php?priority=1')
+        fetch('http://localhost/ASFIRJ/asfi_journal/backend/announcement/retrieve.php?priority=1')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -28,7 +43,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     data.forEach(announcement => {
                         // Truncate description
                         const desc = announcement.data || '';
-                        const truncatedDesc = desc.length > 120 ? desc.substring(0, 120) + '...' : desc;
+                        // const truncatedDesc = desc.length > 120 ? desc.substring(0, 120) + '...' : desc;
+                        const truncatedDesc = FormatDescription(desc);
                         
                         const announcementElement = document.createElement('div');
                         announcementElement.className = 'bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-100 hover:border-[#80078b]/20';
