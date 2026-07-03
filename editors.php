@@ -148,7 +148,7 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
      
 
         <div id="editorModal" class="fixedset-0 z-50 hidden">
-            <div class="relative bg-white rounded-lg shadow-xl">
+            <div class="relative bg-white rounded-lg shadow-xl modal-content">
                 
                
             </div>
