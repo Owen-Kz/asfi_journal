@@ -64,7 +64,6 @@
     <link rel="stylesheet" href="front/public/css/main.css?v=<?= time(); ?><?= time(); ?>">
     <link rel="stylesheet" href="front/public/css/responsive.css?v=<?= time(); ?><?= time(); ?>">
     <script src="front/public/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-    <script src="js/queries/getBio.js"></script>
         <!-- QUILL JS  -->
         <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css?v=<?= time(); ?><?= time(); ?>" rel="stylesheet">
         <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
@@ -147,12 +146,12 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
         <!-- Modal -->
      
 
-        <div id="editorModal" class="fixedset-0 z-50 hidden">
-            <div class="relative bg-white rounded-lg shadow-xl modal-content">
+        <div id="editorModal" class="modal">
+            <div class="relative bg-white rounded-lg shadow-xl modal-content" id="modal-content">
                 
                
             </div>
-        </div>
+        </div> 
 
  
    
@@ -208,6 +207,8 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
 
 
     <script type="module" src="./js/general.js"></script>
+    <script src="js/queries/getBio.js?<?= time(); ?>"></script>
+
     <script type="module" src="./js/queries/editorsForFront.js"></script>
 <script>
   document.getElementById("showNavButton").addEventListener("click", function () {

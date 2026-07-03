@@ -49,7 +49,7 @@ function GetEditors() {
                                             .then(data => {
                                                 if (data.status === "success") {
                                                     const editors = data.editors;
-                                                    console.log(editors)
+                                              
                                                     for(let i=0; i<editors.length; i++){
 
                                                     // }

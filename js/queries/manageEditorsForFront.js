@@ -1,12 +1,37 @@
 import { EndPoint, parentDirectoryName } from "../constants.js";
-// import { quill } from "../forms/quill.js";
 
 const editorsContainer = document.getElementById("ae");
 const editorialNav = document.getElementById("editorialNav")
+var adminModal = document.getElementById("editorModal");
+var adminContent = adminModal ? adminModal.querySelector("form") : null;
 
+window.closeModal = function () {
+    if (adminModal) adminModal.classList.remove("show");
+};
 
-// onclick="setActive(${i})"
-
+window.openModal = function (prefix, fullname, country, photo, discipline, id, field) {
+    if (!adminModal || !adminContent) return;
+    adminContent.innerHTML =
+        '<span class="close" onclick="closeModal()">&times;</span>' +
+        '<div class="avatar" style="background-image: url(\'./useruploads/editors/' + photo + '\')"></div>' +
+        '<div style="display:flex;flex-direction:column;gap:8px;padding:16px">' +
+            '<select name="prefix" class="form-control">' +
+                '<option value="' + prefix + '">' + prefix + '</option>' +
+                '<option value="Prof.">Prof.</option>' +
+                '<option value="Dr.">Dr.</option>' +
+                '<option value="Mr.">Mr.</option>' +
+                '<option value="Mrs.">Mrs.</option>' +
+                '<option value="Miss">Miss</option>' +
+            '</select>' +
+            '<input class="form-control" type="text" name="fullname" value="' + fullname + '" required />' +
+            '<input class="form-control" type="text" name="discipline" value="' + discipline + '" />' +
+            '<input class="form-control" type="text" name="country" value="' + country + '" />' +
+            '<input class="form-control" type="text" name="field" value="' + field + '" />' +
+            '<input class="form-control" type="hidden" name="id" value="' + id + '" />' +
+            '<input class="form-control" type="password" name="verifyCode" placeholder="Enter Verification Code" required />' +
+        '</div>';
+    adminModal.classList.add("show");
+};
 
 // Find Each Unique Section 
 function GetEditors() {

@@ -157,7 +157,7 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
         <!-- Modal -->
      
 
-        <div id="editorModal" class="fixedset-0 z-50 hidden">
+        <div id="editorModal" class="modal">
         
             <div class="relative bg-white rounded-lg shadow-xl">
                 <span class="close" onclick="closeModal()">&times;</span>
@@ -170,7 +170,7 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
             </div>
         </div>
 
-        <div id="editorModal1" class="fixedset-0 z-50 hidden">
+        <div id="editorModal1" class="modal">
             <div class="relative bg-white rounded-lg shadow-xl">
                 <form id="deleteEditor" enctype="multipart/form-data">
 
