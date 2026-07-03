@@ -7,6 +7,7 @@ $fullname = $_POST["fullname"];
 $discipline = $_POST["discipline"];
 $field = $_POST["field"];
 $country = $_POST["country"];
+$email = $_POST["email"] ?? "";
 $profileimage = $_FILES["photo"];
 
 
@@ -45,12 +46,12 @@ if(isset($_POST["prefix"])){
             }
       
 
-    $stmt = $con->prepare("INSERT INTO `editors_list` (`prefix`, `fullname`, `bio`, `discipline`, `field`, `country`, `photo`) VALUES(?,?,?,?,?,?,?)");
+    $stmt = $con->prepare("INSERT INTO `editors_list` (`prefix`, `fullname`, `bio`, `discipline`, `field`, `country`, `email`, `photo`) VALUES(?,?,?,?,?,?,?,?)");
     if(!$stmt){
         $response = array("error"=>$stmt->error);
         echo json_encode($response);
     }
-    $stmt->bind_param("sssssss", $prefix, $fullname, $bio, $discipline, $field, $country, $newFileName );
+    $stmt->bind_param("ssssssss", $prefix, $fullname, $bio, $discipline, $field, $country, $email, $newFileName );
     if( $stmt->execute()){
         $response = array("success"=>"Editor Created");
         echo json_encode($response);

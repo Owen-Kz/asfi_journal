@@ -4,10 +4,13 @@
  * @ThemeEaster
  */
 
-document.getElementById("topMenuToggle").addEventListener("click", function () {
+const topMenuToggle = document.getElementById("topMenuToggle");
+if (topMenuToggle) {
+  topMenuToggle.addEventListener("click", function () {
     const topLinks = document.getElementById("topLinks");
-    topLinks.classList.toggle("activemenu");
+    if (topLinks) topLinks.classList.toggle("activemenu");
   });
+}
 
 
 function toggleFormatLinks(button) {

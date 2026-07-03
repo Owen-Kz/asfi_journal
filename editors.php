@@ -89,6 +89,60 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+    #editorModal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    #editorModal.show {
+        display: flex;
+    }
+    #editorModal .modal-content {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        max-width: 600px;
+        width: 100%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 32px;
+        position: relative;
+        margin: 0;
+        border: none;
+        opacity: 1;
+        transform: none;
+        animation: modalFadeIn 0.2s ease-out;
+    }
+    #editorModal .close-btn {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 28px;
+        color: #9ca3af;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.2s;
+        line-height: 1;
+    }
+    #editorModal .close-btn:hover {
+        color: #6b7280;
+    }
+    @keyframes modalFadeIn {
+        from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+</style>
 </head>
 
 <body class="header-1 business">
@@ -147,17 +201,19 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
      
 
         <div id="editorModal" class="modal">
-            <div class="relative bg-white rounded-lg shadow-xl modal-content" id="modal-content">
+            <div class="modal-content" id="modal-content">
                 
-               
-            </div>
+               </div>
         </div> 
 
  
    
 
     </main>
-    <!-- Main js -->
+
+    <!-- jQuery Lib (load before jQuery-dependent scripts) -->
+    <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
+
     <script src="./assets/templates/metro_hyip/js/main.js"></script>
 
     <script>
@@ -186,8 +242,6 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
 
 <?php include './components/footer.php'; ?>
 
-    <!-- jQuery Lib -->
-    <script src="./front/public/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="./front/public/js/vendor/popper.min.js"></script>
     <!-- bootstrap.min.js removed -->
     <script src="./front/public/js/vendor/waypoints.min.js"></script>
@@ -210,11 +264,6 @@ navItems[new Number(index)].classList.add('active'); // Add active class to clic
     <script src="js/queries/getBio.js?<?= time(); ?>"></script>
 
     <script type="module" src="./js/queries/editorsForFront.js"></script>
-<script>
-  document.getElementById("showNavButton").addEventListener("click", function () {
-    document.getElementById("mobileNav").classList.toggle("open");
-  });
-</script>
 
 
 </body>

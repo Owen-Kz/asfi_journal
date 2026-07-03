@@ -59,8 +59,16 @@ function GetEditors() {
 
                             
                                                         editorContainer.innerHTML = `
-                                                        <div class="indi-editors" onclick="openModal('${editors[i].prefix}', '${editors[i].fullname}', '${editors[i].country}','${editors[i].photo}')">        
-                                                        <div class="avatar" style="background-image: url('./useruploads/editors/${editors[i].photo}')"></div>
+                                                        <div class="indi-editors" onclick="openModal(
+                                                            '${encodeURIComponent(editors[i].prefix || '')}',
+                                                            '${encodeURIComponent(editors[i].fullname || '')}',
+                                                            '${encodeURIComponent(editors[i].country || '')}',
+                                                            '${encodeURIComponent(editors[i].photo || '')}',
+                                                            '${encodeURIComponent(editors[i].email || '')}',
+                                                            '${encodeURIComponent(editors[i].discipline || '')}',
+                                                            '${encodeURIComponent(editors[i].is_old_editor || 'no')}'
+                                                        )">        
+                                                        <div class="avatar" style="background-image: url('${editors[i].is_old_editor === 'yes' ? './useruploads/editors/' : 'https://process.asfirj.org/useruploads/editors/'}${editors[i].photo}')"></div>
                                                          <div class="editor-info" id=${editors[i].photo}>
                                                          <h4 style="font-size:14px;">${editors[i].prefix} ${editors[i].fullname}</h4>    
                                                          <p style="margin-left:8px;" style="background:green;">  ${editors[i].discipline}, ${editors[i].country}</p>

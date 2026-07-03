@@ -10,6 +10,7 @@ $fullname = $_POST["fullname"];
 $discipline = $_POST["discipline"];
 $field = $_POST["field"];
 $country = $_POST["country"];
+$email = $_POST["email"] ?? "";
 $id = $_POST["id"];
 $profileimage = $_FILES["photo"];
 
@@ -49,12 +50,12 @@ if(isset($_POST["prefix"])){
             }
       
 
-    $stmt = $con->prepare("UPDATE `editors_list` SET `prefix` =?, `fullname`=?, `bio`=?, `discipline`=?, `field`=?, `country`=?, `photo` = ? WHERE `id` = ?");
+    $stmt = $con->prepare("UPDATE `editors_list` SET `prefix` =?, `fullname`=?, `bio`=?, `discipline`=?, `field`=?, `country`=?, `email`=?, `photo` = ? WHERE `id` = ?");
     if(!$stmt){
         $response = array("error"=>$stmt->error);
         echo json_encode($response);
     }
-    $stmt->bind_param("ssssssss", $prefix, $fullname, $bio, $discipline, $field, $country, $newFileName, $id );
+    $stmt->bind_param("sssssssss", $prefix, $fullname, $bio, $discipline, $field, $country, $email, $newFileName, $id );
     if( $stmt->execute()){
         $response = array("success"=>"Editor Updated");
         echo json_encode($response);
