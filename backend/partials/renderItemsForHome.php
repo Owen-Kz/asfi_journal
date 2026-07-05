@@ -233,7 +233,147 @@ if (basename($_SERVER['PHP_SELF']) == 'renderItemsForHome.php') {
 
 // End output buffering
 ob_end_flush(); ?>
+<!-- Citation List Modal -->
+<div id="citationModal" class="citation-modal-overlay" style="display:none;">
+  <div class="citation-modal-content">
+    <div class="citation-modal-header">
+      <h3>Citing Articles</h3>
+      <button class="citation-modal-close">&times;</button>
+    </div>
+    <div class="citation-modal-body">
+      <div class="citation-modal-info"></div>
+      <div class="citation-modal-list"></div>
+    </div>
+  </div>
+</div>
+
 <style>
+.citation-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 1rem;
+}
+.citation-modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.citation-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: white;
+  border-radius: 12px 12px 0 0;
+}
+.citation-modal-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+.citation-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 0 0.25rem;
+  line-height: 1;
+}
+.citation-modal-close:hover { color: #6b7280; }
+.citation-modal-body { padding: 1.5rem; }
+.citation-modal-info {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.citation-modal-info .article-title {
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+.citation-modal-info .article-meta {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.citation-modal-info .cited-by {
+  font-size: 0.875rem;
+  color: #d97706;
+  font-weight: 600;
+}
+.citation-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+}
+.citation-item:last-child { margin-bottom: 0; }
+.citation-item-number {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fef3c7;
+  color: #d97706;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.citation-item-content { flex: 1; min-width: 0; }
+.citation-doi-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-size: 0.875rem;
+  word-break: break-all;
+}
+.citation-doi-link:hover { text-decoration: underline; }
+.citation-doi-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+.citation-meta {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+.self-citation-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  background: #fef3c7;
+  color: #a16207;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  margin-top: 0.25rem;
+}
+.no-doi-message {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+}
+.no-doi-message p:first-child {
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
 .citation-spinner { animation: cit-spin .8s linear infinite; display: none; }
 .citationButton.is-loading .citation-icon { display: none; }
 .citationButton.is-loading .citation-spinner { display: inline-block; }
@@ -241,6 +381,19 @@ ob_end_flush(); ?>
 </style>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
+    var closeBtn = document.querySelector('.citation-modal-close');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function(){
+            var modal = document.getElementById('citationModal');
+            if (modal) modal.style.display = 'none';
+        });
+    }
+    var modalOverlay = document.getElementById('citationModal');
+    if (modalOverlay) {
+        modalOverlay.addEventListener('click', function(e){
+            if(e.target === this) this.style.display = 'none';
+        });
+    }
     document.querySelectorAll('.citationButton').forEach(function(btn){
         var doi = btn.getAttribute('data-doi');
         if(!doi || doi === '') return;
@@ -260,6 +413,71 @@ document.addEventListener('DOMContentLoaded', function(){
         .catch(function(){
             countSpan.textContent = '0';
             btn.classList.remove('is-loading');
+        });
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+            var modal = document.getElementById('citationModal');
+            if (!modal) return;
+            var infoDiv = modal.querySelector('.citation-modal-info');
+            var listDiv = modal.querySelector('.citation-modal-list');
+            var articleEl = this.closest('.w-full');
+            var titleEl = articleEl ? articleEl.querySelector('h3') : null;
+            var title = titleEl ? titleEl.textContent.trim() : '';
+            
+            if(!doi || doi === '') {
+                infoDiv.innerHTML = '<p class="article-title">' + title + '</p><p class="article-meta">No DOI assigned</p>';
+                listDiv.innerHTML = '<div class="no-doi-message"><p>No DOI assigned</p><p>This article does not have a DOI number, so citation tracking is unavailable.</p></div>';
+                modal.style.display = 'flex';
+                return;
+            }
+            
+            infoDiv.innerHTML = '<p class="article-title">' + title + '</p><p class="article-meta">DOI: ' + doi + '</p><p class="cited-by">Fetching citation data...</p>';
+            listDiv.innerHTML = '<div style="text-align:center;padding:2rem;"><div class="citation-spinner" style="display:inline-block;width:24px;height:24px;border-width:3px;border-color:#d97706;border-top-color:transparent;"></div></div>';
+            modal.style.display = 'flex';
+            
+            fetch('https://process.asfirj.org/journal/public/fetch-citations', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({doi_number: doi})
+            })
+            .then(function(r){ return r.json(); })
+            .then(function(data){
+                if(data.success && data.data) {
+                    var total = data.data.total_citations || 0;
+                    var citations = data.data.citations || [];
+                    infoDiv.innerHTML = '<p class="article-title">' + title + '</p><p class="article-meta">DOI: ' + doi + '</p><p class="cited-by">Cited by ' + total + ' ' + (total === 1 ? 'article' : 'articles') + '</p>';
+                    
+                    if(citations.length === 0) {
+                        listDiv.innerHTML = '<div style="text-align:center;padding:2rem;color:#9ca3af;"><p>No citation details available</p></div>';
+                    } else {
+                        var html = '';
+                        citations.forEach(function(cit, i){
+                            html += '<div class="citation-item"><div style="display:flex;align-items:flex-start;gap:0.75rem;">';
+                            html += '<span class="citation-item-number">' + (i + 1) + '</span>';
+                            html += '<div class="citation-item-content">';
+                            if(cit.citing_doi) {
+                                html += '<div><span class="citation-doi-label">Citing DOI:</span> <a href="https://doi.org/' + encodeURIComponent(cit.citing_doi) + '" target="_blank" class="citation-doi-link" rel="noopener">' + cit.citing_doi + '</a></div>';
+                            }
+                            if(cit.publication_date) {
+                                html += '<div class="citation-meta"><span style="font-weight:500;">Date:</span> ' + cit.publication_date + '</div>';
+                            }
+                            if(cit.timespan) {
+                                html += '<div class="citation-meta"><span style="font-weight:500;">Timespan:</span> ' + cit.timespan + '</div>';
+                            }
+                            if(cit.journal_self_citation === 'true') {
+                                html += '<span class="self-citation-badge">Journal Self-Citation</span>';
+                            }
+                            html += '</div></div></div>';
+                        });
+                        listDiv.innerHTML = html;
+                    }
+                } else {
+                    listDiv.innerHTML = '<div style="text-align:center;padding:2rem;color:#9ca3af;"><p>Failed to load citation data</p></div>';
+                }
+            })
+            .catch(function(){
+                listDiv.innerHTML = '<div style="text-align:center;padding:2rem;color:#9ca3af;"><p>Failed to load citation data</p></div>';
+            });
         });
     });
 });
