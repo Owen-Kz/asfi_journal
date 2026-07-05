@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(!doi || doi === '') return;
         btn.classList.add('is-loading');
         var countSpan = btn.querySelector('.citation-count');
-        fetch('http://localhost:31000/journal/public/fetch-citations', {
+        fetch('https://process.asfirj.org/journal/public/fetch-citations', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({doi_number: doi})
