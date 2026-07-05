@@ -120,6 +120,7 @@ function renderArticle($row, $authorsName) {
     // $manuscriptFile = htmlspecialchars($row['manuscript_file']);
     $viewsCount = (int)$row['views_count'];
     $downloadsCount = (int)$row['downloads_count'];
+    $doi = htmlspecialchars($row['doi_number']);
     
     return '
     <div class="w-full bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 mb-6">
@@ -183,6 +184,11 @@ function renderArticle($row, $authorsName) {
                         data-title="' . htmlspecialchars($title, ENT_QUOTES) . '">
                     <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684z"></path></svg>
                     Share
+                </button>
+                <button class="citationButton px-2 md:px-4 py-1 md:py-2 bg-gray-100 hover:bg-amber-100 text-amber-600 rounded-lg transition-colors flex items-center gap-1 text-[10px] md:text-sm font-medium cursor-pointer" 
+                        data-doi="' . $doi . '">
+                    <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <span class="citation-count">0</span> Citations
                 </button>
             </div>
         </div>
@@ -374,5 +380,24 @@ if (basename($_SERVER['PHP_SELF']) == 'renderIssues.php') {
     renderIssues($con, $page, $filters);
 }
 
-ob_end_flush();
-?>
+ob_end_flush(); ?>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.citationButton').forEach(function(btn){
+        var doi = btn.getAttribute('data-doi');
+        if(!doi || doi === '') return;
+        var countSpan = btn.querySelector('.citation-count');
+        fetch('http://localhost:31000/journal/public/fetch-citations', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({doi_number: doi})
+        })
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+            var count = (data && data.data && data.data.total_citations) ? data.data.total_citations : 0;
+            countSpan.textContent = count;
+        })
+        .catch(function(){ countSpan.textContent = '0'; });
+    });
+});
+</script>
