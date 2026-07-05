@@ -187,7 +187,8 @@ function renderArticle($row, $authorsName) {
                 </button>
                 <button class="citationButton px-2 md:px-4 py-1 md:py-2 bg-gray-100 hover:bg-amber-100 text-amber-600 rounded-lg transition-colors flex items-center gap-1 text-[10px] md:text-sm font-medium cursor-pointer" 
                         data-doi="' . $doi . '">
-                    <svg class="w-2.5 h-2.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <svg class="citation-icon w-2.5 h-2.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <svg class="citation-spinner w-2.5 h-2.5 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" stroke-dasharray="31.4 31.4" stroke-linecap="round"></circle></svg>
                     <span class="citation-count">0</span> Citations
                 </button>
             </div>
@@ -381,11 +382,18 @@ if (basename($_SERVER['PHP_SELF']) == 'renderIssues.php') {
 }
 
 ob_end_flush(); ?>
+<style>
+.citation-spinner { animation: cit-spin .8s linear infinite; display: none; }
+.citationButton.is-loading .citation-icon { display: none; }
+.citationButton.is-loading .citation-spinner { display: inline-block; }
+@keyframes cit-spin { to { transform: rotate(360deg); } }
+</style>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.citationButton').forEach(function(btn){
         var doi = btn.getAttribute('data-doi');
         if(!doi || doi === '') return;
+        btn.classList.add('is-loading');
         var countSpan = btn.querySelector('.citation-count');
         fetch('http://localhost:31000/journal/public/fetch-citations', {
             method: 'POST',
@@ -396,8 +404,12 @@ document.addEventListener('DOMContentLoaded', function(){
         .then(function(data){
             var count = (data && data.data && data.data.total_citations) ? data.data.total_citations : 0;
             countSpan.textContent = count;
+            btn.classList.remove('is-loading');
         })
-        .catch(function(){ countSpan.textContent = '0'; });
+        .catch(function(){
+            countSpan.textContent = '0';
+            btn.classList.remove('is-loading');
+        });
     });
 });
 </script>
