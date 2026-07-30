@@ -160,7 +160,7 @@
 							Africa, globally competitive, with an unwavering emphasis on quality research and impact.
 						</p>
 
-						<p>ASFIRJ is anternational journal, accepting contributions from all countries of the world.
+						<p>ASFIRJ is an international journal, accepting contributions from all countries of the world.
 							ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses,
 							position papers, perspective papers, guidelines, protocols, data, editorials, news, field
 							stories, commentaries, research letters, and other paper types that foster scientific
@@ -345,7 +345,7 @@
 						</svg>
 						<div class="sub-text">
 							<span>Easy and User-Friendly Manuscript Submission</span>
-							<span>Seamlessly submit your paper our user-friendly portal with high quality editorial
+							<span>Seamlessly submit your paper in our user-friendly portal with high quality editorial
 								standards. </span>
 						</div>
 					</div>
@@ -411,7 +411,7 @@
 
 						<div class="sub-text">
 							<span>Augmented Editor-Selected Articles & Article Views:</span>
-							<span>Editor-selected articles augmented with expert illustrations,teractive features,
+							<span>Editor-selected articles augmented with expert illustrations, interactive features,
 								videos, and graphical abstracts. <br> With
 								article views, downloads, and other essential metrics displayed with every
 								article.</span>
@@ -429,9 +429,9 @@
 						</svg>
 
 						<div class="sub-text">
-							<span>Deposit Contents ASFIScholar:</span>
-							<span>Authors may post accepted articles ASFIScholar with link to the published article
-								on the journal website.</span>
+							<span>Deposit Contents in ASFIScholar:</span>
+							<span>Authors may post accepted articles in ASFIScholar with link to the published article
+							on the journal website.</span>
 						</div>
 					</div>
 
@@ -448,7 +448,7 @@
 						<div class="sub-text">
 							<span>Published Proceedings of ASFI Annual Conference:</span>
 							<span>All accepted oral and poster abstracts at the ASFI Annual Conference are published
-								ASFIRJ.</span>
+							in ASFIRJ.</span>
 						</div>
 					</div>
 
