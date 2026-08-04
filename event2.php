@@ -10,13 +10,13 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,itial-scale=1">
-	<meta name="description" content="Secure and reliablevestment project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
 	<meta name="author" content="Weperch LLC">
 <title> ASFI Research Journal - Events</title>
     <meta name="title" Content="ASFI Research Journal - Events">
 
-    <meta name="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
 
@@ -27,12 +27,12 @@
     <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Events">
     
     <meta itemprop="name" content="ASFI Research Journal - Events">
-    <meta itemprop="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFI Research Journal">
-    <meta property="og:description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
@@ -122,7 +122,7 @@ Beyond Boundaries: Breaking Collaborative Frontiers for Impactful Research and C
                          <p style="margin-top: 40px;">
 				The 3rd Annual Multidisciplinary Conference and Boot Camp, organized by the African Science Frontiers Initiatives (ASFI), is a groundbreaking opportunity for researchers, academics, and professionals across various fields to come together and engage dynamic discussions. This event is centered on collaborative frontiers for impactful research and career across a wide range of disciplines. <br> <br>
 
-This year's theme, <i>"Beyond Boundaries"</i>, is proudly presented by ASFI its 3rd Annual Virtual Multidisciplinary Conference & Boot Camp under the unifying banner of advancing Africa’s scientific collaboration,novation, and policyfluence.
+This year's theme, <i>"Beyond Boundaries"</i>, is proudly presented by ASFI in its 3rd Annual Virtual Multidisciplinary Conference & Boot Camp under the unifying banner of advancing Africa’s scientific collaboration, innovation, and policy influence.
   <br> <br>
 
   <p> <h3>Event Features:</h3>
@@ -135,8 +135,8 @@ This year's theme, <i>"Beyond Boundaries"</i>, is proudly presented by ASFI its 
     <li><b>Career-advancing networking:</b> Career-advancing networking sessions that connect participants with experts and peers.</li>
     <li><b>Prizes for excellent presentations:</b> Excellent presentations will be awarded prestigious prizes.</li>
     <li><b>Certificate of attendance:</b> All participants will receive certificates of attendance.</li>
-    <li><b>Boot Camp on various activities:</b> Hands-on activities and workshops designed to develop practical skills research andnovation.</li>
-    <li><b>Abstracts published ASFIRJ:</b> Accepted abstracts will be published the ASFI Research Journal.</li>
+    <li><b>Boot Camp on various activities:</b> Hands-on activities and workshops designed to develop practical skills in research and innovation.</li>
+    <li><b>Abstracts published in ASFIRJ:</b> Accepted abstracts will be published in the ASFI Research Journal.</li>
     <p>And much more…</p>
 </ul>
 

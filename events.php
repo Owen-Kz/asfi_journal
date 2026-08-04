@@ -10,13 +10,13 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,itial-scale=1">
-	<meta name="description" content="Secure and reliablevestment project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
 	<meta name="author" content="Weperch LLC">
 <title> ASFI Research Journal - Events</title>
     <meta name="title" Content="ASFI Research Journal - Events">
 
-    <meta name="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
 
@@ -27,12 +27,12 @@
     <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Events">
     
     <meta itemprop="name" content="ASFI Research Journal - Events">
-    <meta itemprop="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFI Research Journal">
-    <meta property="og:description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />

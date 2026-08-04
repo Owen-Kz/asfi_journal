@@ -10,13 +10,13 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,itial-scale=1">
-	<meta name="description" content="Secure and reliablevestment project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
 	<meta name="author" content="Weperch LLC">
 <title> ASFI Research Journal - Events</title>
     <meta name="title" Content="ASFI Research Journal - Events">
 
-    <meta name="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
 
@@ -27,12 +27,12 @@
     <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Events">
     
     <meta itemprop="name" content="ASFI Research Journal - Events">
-    <meta itemprop="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFI Research Journal">
-    <meta property="og:description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
@@ -115,7 +115,7 @@
                             <img width="60%" src="./images/event2.jpeg" alt="ASFI 5-10 Program 2026">
                         </div>
                         <p style="margin-top: 40px;">
-                            The ASFI 5-10 Program 2026 is designed to create clusters of next-generation research champions across African universities by training and mentoring 50 junior scholars each of Africa’s five regions. The focus is on research excellence,tegrity, and science patriotism throughout the year 2026.
+                            The ASFI 5-10 Program 2026 is designed to create clusters of next-generation research champions across African universities by training and mentoring 50 junior scholars in each of Africa’s five regions. The focus is on research excellence, integrity, and science patriotism throughout the year 2026.
                         </p>
 
                         <h3>Goals:</h3>
@@ -126,7 +126,7 @@
                         </ul>
 
                         <p>
-                            Selected candidates will be trained <b>7 ASFI courses</b> and mentored throughout 2026.  
+                            Selected candidates will be trained in <b>7 ASFI courses</b> and mentored throughout 2026.  
                             Candidates who complete the program will receive the  
                             <b>ASFI Consolidated Research Excellence Capacity Building Certificate</b>.
                         </p>
@@ -138,17 +138,17 @@
                             <li>Grant writing and research funding</li>
                             <li>Science leadership and mentoring</li>
                             <li>Career development and nurturing</li>
-                            <li>Researchtegrity, impact, & productivity</li>
+                            <li>Research integrity, impact, & productivity</li>
                             <li>Continental networking and collaboration</li>
                         </ul>
 
                         <h3>Important Information:</h3>
-                        <p><b>Note:</b> Onlystitutions can apply for this program, notdividuals. The program is <b>FREE</b>.</p>
+                        <p><b>Note:</b> Only institutions can apply for this program, not individuals. The program is <b>FREE</b>.</p>
 
                         <h3>Application Steps & Timeline:</h3>
                         <ol>
                             <li><b>Step 1:</b> Institutions apply – <b>15th September 2025</b></li>
-                            <li><b>Step 2:</b> Decision onstitution application – <b>15th October 2025</b></li>
+                            <li><b>Step 2:</b> Decision on institution application – <b>15th October 2025</b></li>
                             <li><b>Step 3:</b> Institution nominates 5 candidates – <b>15th November 2025</b></li>
                             <li><b>Step 4:</b> Program starts – <b>January 2026</b></li>
                         </ol>

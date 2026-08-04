@@ -10,13 +10,13 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,itial-scale=1">
-	<meta name="description" content="Secure and reliablevestment project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Secure and reliable investment project">
 	<meta name="author" content="Weperch LLC">
 <title> ASFI Research Journal - Call For Papers</title>
     <meta name="title" Content="ASFI Research Journal - Call For Papers">
 
-    <meta name="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta name="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta name="keywords" content="research,journal,africa,scholars,asfi, asfiresearchjournal, asfischolar">
     <link rel="shortcut icon" href="assets/images/logoIcon/favicon.png" type="image/x-icon">
 
@@ -27,12 +27,12 @@
     <meta name="apple-mobile-web-app-title" content="ASFI Research Journal - Call For Papers">
     
     <meta itemprop="name" content="ASFI Research Journal - Call For Papers">
-    <meta itemprop="description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta itemprop="description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta itemprop="image" content="assets/images/seo/65be1258275121706955352.png">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="ASFI Research Journal">
-    <meta property="og:description" content="ASFI Research Journal is anternational journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
+    <meta property="og:description" content="ASFI Research Journal is an international journal, accepting contributions from all countries of the world. ASFIRJ publishes original papers, expert reviews, systematic reviews and meta-analyses, position papers, guidelines, protocols, data, editorials, news and commentaries, research letters.">
     <meta property="og:image" content="assets/images/seo/65be1258275121706955352.png"/>
     <meta property="og:image:type" content="png"/>
     <meta property="og:image:width" content="1180" />
@@ -95,7 +95,7 @@
 			<h4><span>SPECIAL ISSUE: Collaborative Frontiers For Impactful Research and Career</span></h4>
 
 			<p>
-				The ASFI Research Journal (<a href="https://asfirj.org/" style="color: blueviolet;">ASFIRJ</a>) announces a special issue to be published its 2025 issue under the theme <b>“Beyond Boundaries”</b> <br> <br>
+				The ASFI Research Journal (<a href="https://asfirj.org/" style="color: blueviolet;">ASFIRJ</a>) announces a special issue to be published in its 2025 issue under the theme <b>“Beyond Boundaries”</b> <br> <br>
 
   <br> <br>
 
@@ -136,7 +136,7 @@
 						<i>Submission deadline: </i> <b>31st August 2025</b> <br>
 <i>Submission portal:</i> <b> <a style="color: blueviolet;" href="https://cutt.ly/mrUjbbhU">https://cutt.ly/mrUjbbhU</a>  </b> <br>
 <i>Abstract acceptance notification:</i> <b> 30th September 2025</b> <br>
-<i>Accepted abstractes will be published free ASFIRJ:</i> <b> (https://asfirj.org)</b> 
+<i>Accepted abstractes will be published free in ASFIRJ:</i> <b> (https://asfirj.org)</b> 
 
 
 
@@ -184,7 +184,7 @@ All papers accepted for this special issue will be published free of charge.
 				<div class="section-heading">
 					<h2>Download full text of the call here:</h2>
 					<p style="width: 700px; margin: 0 auto;">
-						Please click the following link to download the full text: <a href="./assets/files/ASFIRJ Special Issue - Women Science Africa2.pdf" target="_blank" download="ASFIRJ Special Issue - Women Science Africa2.pdf" style="color: blueviolet;">Download FULL TEXT </a>.</p>
+						Please click the following link to download the full text: <a href="./assets/files/ASFIRJ Special Issue - Women in Science in Africa2.pdf" target="_blank" download="ASFIRJ Special Issue - Women in Science in Africa2.pdf" style="color: blueviolet;">Download FULL TEXT </a>.</p>
 
 				</div>
 			</div> -->
@@ -197,7 +197,7 @@ All papers accepted for this special issue will be published free of charge.
 
                             <b>
 								Inquiries:</b><br>
-<p style="width: 700px; margin: 0 auto;">For moreformation about this call, please write to specialissues@asfirj.org. </p>
+<p style="width: 700px; margin: 0 auto;">For more information about this call, please write to specialissues@asfirj.org. </p>
 	
 				
 					</div>
