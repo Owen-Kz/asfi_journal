@@ -107,8 +107,10 @@
                     <a href="#5" onclick="setActive(event, 4)"><li class="">Reviewer’s Report</li></a>
                     <a href="#6" onclick="setActive(event, 5)"><li class="">Structuring the Reviewer’s Report</li></a>
                     <a href="#7" onclick="setActive(event, 6)"><li class="">Potential Questions to Consider when Reviewing a Manuscript</li></a>
-					<a href="#8" onclick="setActive(event, 6)"><li class="">Rating the Manuscript</li></a>
-					<a href="#9" onclick="setActive(event, 6)"><li class="">Giving Your Overall Recommendation</li></a>
+					<a href="#8" onclick="setActive(event, 7)"><li class="">Rating the Manuscript</li></a>
+					<a href="#9" onclick="setActive(event, 8)"><li class="">Giving Your Overall Recommendation</li></a>
+					<a href="#10" onclick="setActive(event, 9)"><li class="">ASFIRJ Policy on the Use of AI in Peer Review</li></a>
+
                 </ul>
 			 </div>
             </div>
@@ -232,6 +234,8 @@
 								<li><b>Reject:</b> The manuscript is considered to contain serious flaws and does not offer any original contribution to the topic area. </li>
 							</ul>
 						</p>
+					<h4>ASFIRJ Policy on the Use of AI in Peer Review</h4>
+					<p>ASFIRJ prohibits the use of generative AI or AI-assisted technologies in the peer review process, including the preparation of manuscript review reports. Reviewers must not upload submitted manuscripts, or any portion thereof, into generative AI tools (e.g., ChatGPT, Grammarly, or similar applications) during the review process. Such use may compromise the confidentiality of unpublished manuscripts and expose authors' intellectual property to third-party AI systems. As peer review is a confidential, independent, and human intellectual endeavor, reviewers are expected to conduct their scientific assessment and prepare their review reports without the assistance of generative AI or AI-assisted technologies.</p>
 
 
                 </div>
