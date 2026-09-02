@@ -38,6 +38,7 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
                 <a href="https://asfischolar.org/" target="_blank" rel="noopener noreferrer" class="hover:text-[#ffbf00] transition-colors text-sm">ASFIScholar</a>
                 <a href="https://africansciencefrontiers.com/about.php" target="_blank" rel="noopener noreferrer" class="hover:text-[#ffbf00] transition-colors text-sm">About ASFI</a>
                 <a href="https://asfirj.org/events.html" class="hover:text-[#ffbf00] transition-colors text-sm">Events</a>
+                <a href="<?php echo $base_url; ?>/contact.php" class="hover:text-[#ffbf00] transition-colors text-sm">Contact</a>
                 <a href="https://portal.asfirj.org/portal/login" class="hover:text-[#ffbf00] transition-colors text-sm">Login</a>
             </div>
         </div>
@@ -50,6 +51,7 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
                 <a href="https://asfischolar.org/" target="_blank" rel="noopener noreferrer" class="hover:text-[#ffbf00] transition-colors py-1 text-sm">ASFIScholar</a>
                 <a href="https://africansciencefrontiers.com/about.php" target="_blank" rel="noopener noreferrer" class="hover:text-[#ffbf00] transition-colors py-1 text-sm">About ASFI</a>
                 <a href="https://asfirj.org/events.html" class="hover:text-[#ffbf00] transition-colors py-1 text-sm">Events</a>
+                <a href="<?php echo $base_url; ?>/contact.php" class="hover:text-[#ffbf00] transition-colors py-1 text-sm">Contact</a>
                 <a href="https://portal.asfirj.org/portal/login" class="hover:text-[#ffbf00] transition-colors py-1 text-sm">Login</a>
             </div>
         </div>
@@ -75,10 +77,10 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
 
 <!-- Main Navigation -->
 <nav class="bg-white shadow-sm sticky top-0 z-40">
-    <div class="container max-w-7xl mx-auto px-4">
-        <div class="flex justify-between items-center py-4">
+    <div class="container max-w-7xl mx-auto px-2 xl:px-4">
+        <div class="flex justify-between items-center py-3 gap-2">
             <!-- Mobile menu button -->
-            <div class="lg:hidden">
+            <div class="lg:hidden flex-shrink-0">
                 <button 
                     type="button" 
                     class="text-gray-700 hover:text-[#80078b] focus:outline-none focus:text-[#80078b] text-xl"
@@ -89,13 +91,13 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
             </div>
 
             <!-- Desktop Navigation -->
-            <div class="hidden lg:flex lg:space-x-8">
-                <a href="<?php echo $base_url; ?>/" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors text-sm">Home</a>
+            <div class="hidden lg:flex items-center gap-3 xl:gap-4 2xl:gap-6 flex-1 flex-wrap justify-start">
+                <a href="<?php echo $base_url; ?>/" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors whitespace-nowrap">Home</a>
                 
                 <!-- About Dropdown -->
                 <div class="relative group">
-                    <a href="<?php echo $base_url; ?>/aboutus.php" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors flex items-center text-sm">
-                        About <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    <a href="<?php echo $base_url; ?>/aboutus.php" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors flex items-center whitespace-nowrap">
+                        About <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
                     </a>
                     <div class="absolute top-full left-0 bg-white min-w-[220px] shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 border border-gray-100">
                         <a href="<?php echo $base_url; ?>/aboutus.php#ASFI" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">African Science Frontiers Initiatives</a>
@@ -110,8 +112,8 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
                 
                 <!-- Browse Issues Dropdown -->
                 <div class="relative group">
-                    <a href="<?php echo $base_url; ?>/issues" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors flex items-center text-sm">
-                        Browse Issues <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    <a href="<?php echo $base_url; ?>/issues" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors flex items-center whitespace-nowrap">
+                        Browse Issues <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
                     </a>
                     <div class="absolute top-full left-0 bg-white min-w-[200px] shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 border border-gray-100">
                         <a href="<?php echo $base_url; ?>/issues" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Issues</a>
@@ -119,30 +121,58 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
                     </div>
                 </div>
                 
-                <a href="<?php echo $base_url; ?>/editors.php" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors text-sm">Meet The Editors</a>
+                <a href="<?php echo $base_url; ?>/editors.php" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors whitespace-nowrap">Meet The Editors</a>
                 
                 <!-- Authors / Reviewers Dropdown -->
                 <div class="relative group">
-                    <a href="#" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors flex items-center text-sm">
-                        Authors / Reviewers <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    <a href="#" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors flex items-center whitespace-nowrap">
+                        Authors / Reviewers <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
                     </a>
                     <div class="absolute top-full left-0 bg-white min-w-[200px] shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 border border-gray-100">
                         <a href="<?php echo $base_url; ?>/authors.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">For Authors</a>
                         <a href="<?php echo $base_url; ?>/reviewers.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b]">For Reviewers</a>
                     </div>
                 </div>
-                <a href="<?php echo $base_url; ?>/careercorner" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors text-sm">Career Corner</a>
-                <a href="<?php echo $base_url; ?>/special-issues" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors text-sm">Special Issues</a>
+                <!-- Ethics and Malpractice Statement Dropdown -->
+                <div class="relative group">
+                    <a href="<?php echo $base_url; ?>/ethics.php" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors flex items-center whitespace-nowrap">
+                        Ethics and Malpractice Statement <i class="fas fa-chevron-down ml-1 text-[10px]"></i>
+                    </a>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 xl:left-0 xl:translate-x-0 bg-white min-w-[340px] shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-1 border border-gray-100 max-h-[70vh] overflow-y-auto">
+                        <a href="<?php echo $base_url; ?>/ethics.php#commitment" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Our commitment to publication ethics</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#publisher" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Responsibilities of the Publisher</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#editor" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Responsibilities of the Editor-in-Chief and Editorial Team</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#authors" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Responsibilities of Authors</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#authorship" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Authorship and contributorship</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#originality" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Originality, plagiarism and duplicate publication</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#fabrication" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Fabrication, falsification and research misconduct</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#peer-review-ethics" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Peer-review ethics</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#conflicts" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Conflicts of interest</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#ethical-approval" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Ethical approval and research involving humans or animals</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#informed-consent" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Informed consent and patient/participant privacy</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#data-integrity" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Data integrity, transparency and reproducibility</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#ai" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Use of artificial intelligence and AI-assisted technologies</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#citation" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Citation ethics</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#editorial-independence" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Editorial independence</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#complaints" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Complaints and appeals</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#allegations" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Allegations of publication misconduct</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#corrections" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Corrections, retractions and expressions of concern</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#post-publication" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Post-publication concerns</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#whistleblowers" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Protection of whistleblowers and complainants</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#confidentiality" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Editorial and peer-review confidentiality</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#peer-review-malpractice" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Malpractice involving the peer-review process</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#editorial-misconduct" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Editorial misconduct</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#research-integrity" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b] border-b border-gray-100">Research integrity beyond publication</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#continuous-improvement" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#80078b]">Commitment to continuous improvement</a>
+                    </div>
+                </div>
+                <a href="<?php echo $base_url; ?>/special-issues" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors whitespace-nowrap">Special Issues</a>
                 
-                <a href="<?php echo $base_url; ?>/theses.php" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors text-sm">ASFIRJ Theses</a>
-
-
-                
-                <a href="<?php echo $base_url; ?>/contact.php" class="text-gray-700 hover:text-[#80078b] font-medium transition-colors text-sm">Contact</a>
+                <a href="<?php echo $base_url; ?>/theses.php" class="main-nav-link text-gray-700 hover:text-[#80078b] font-medium transition-colors whitespace-nowrap">ASFIRJ Theses</a>
             </div>
             
             <!-- Submit Manuscript Button -->
-            <a href="/portal" class="bg-[#80078b] text-white px-4 py-2 rounded-md font-medium hover:bg-[#6a0674] transition-colors whitespace-nowrap text-sm">
+            <a href="/portal" class="bg-[#80078b] text-white px-3 xl:px-4 py-2 rounded-md font-medium hover:bg-[#6a0674] transition-colors whitespace-nowrap flex-shrink-0 text-xs xl:text-sm">
                 Submit Manuscript
             </a>
         </div>
@@ -200,8 +230,47 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . $directoryName ;
                         <a href="<?php echo $base_url; ?>/reviewers.php" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">For Reviewers</a>
                     </div>
                 </div>
-                
-                <a href="<?php echo $base_url; ?>/contact.php" class="block px-3 py-2 text-gray-700 hover:text-[#80078b] font-medium text-sm">Contact Us</a>
+
+                <!-- Mobile Ethics and Malpractice Statement Dropdown -->
+                <div class="relative">
+                    <button 
+                        class="w-full text-left px-3 py-2 text-gray-700 hover:text-[#80078b] font-medium flex justify-between items-center text-sm mobile-dropdown-toggle"
+                        data-dropdown="ethics"
+                    >
+                        Ethics and Malpractice Statement <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div class="pl-4 mobile-dropdown-content hidden max-h-[50vh] overflow-y-auto" data-dropdown="ethics">
+                        <a href="<?php echo $base_url; ?>/ethics.php" class="block px-3 py-2 text-sm font-semibold text-[#80078b] hover:text-[#6a0674]">View Full Statement</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#commitment" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Our commitment to publication ethics</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#publisher" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Responsibilities of the Publisher</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#editor" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Responsibilities of the Editor-in-Chief</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#authors" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Responsibilities of Authors</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#authorship" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Authorship and contributorship</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#originality" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Originality, plagiarism and duplicate publication</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#fabrication" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Fabrication and research misconduct</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#peer-review-ethics" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Peer-review ethics</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#conflicts" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Conflicts of interest</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#ethical-approval" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Ethical approval</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#informed-consent" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Informed consent and privacy</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#data-integrity" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Data integrity and reproducibility</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#ai" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Use of AI and AI-assisted technologies</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#citation" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Citation ethics</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#editorial-independence" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Editorial independence</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#complaints" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Complaints and appeals</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#allegations" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Allegations of misconduct</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#corrections" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Corrections, retractions and expressions</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#post-publication" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Post-publication concerns</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#whistleblowers" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Protection of whistleblowers</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#confidentiality" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Editorial and peer-review confidentiality</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#peer-review-malpractice" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Malpractice in peer review</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#editorial-misconduct" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Editorial misconduct</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#research-integrity" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Research integrity beyond publication</a>
+                        <a href="<?php echo $base_url; ?>/ethics.php#continuous-improvement" class="block px-3 py-2 text-sm text-gray-600 hover:text-[#80078b]">Commitment to continuous improvement</a>
+                    </div>
+                </div>
+
+                <a href="<?php echo $base_url; ?>/special-issues" class="block px-3 py-2 text-gray-700 hover:text-[#80078b] font-medium text-sm">Special Issues</a>
+                <a href="<?php echo $base_url; ?>/theses.php" class="block px-3 py-2 text-gray-700 hover:text-[#80078b] font-medium text-sm">ASFIRJ Theses</a>
             </div>
         </div>
     </div>
@@ -333,6 +402,24 @@ nav.bg-white.scrolled {
 /* Mobile menu animations */
 #mainMobileMenu {
     transition: all 0.3s ease;
+}
+
+/* Desktop nav responsive fluid sizing */
+.main-nav-link {
+    font-size: clamp(10.5px, 0.85vw, 14px);
+    line-height: 1.2;
+}
+@media (min-width: 1024px) and (max-width: 1150px) {
+    .main-nav-link { font-size: 11px; }
+}
+@media (min-width: 1151px) and (max-width: 1280px) {
+    .main-nav-link { font-size: 12px; }
+}
+@media (min-width: 1281px) and (max-width: 1439px) {
+    .main-nav-link { font-size: 13px; }
+}
+@media (min-width: 1440px) {
+    .main-nav-link { font-size: 14px; }
 }
 
 /* Banner responsive */

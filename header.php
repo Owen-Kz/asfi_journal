@@ -67,10 +67,38 @@ $base_url = $scheme . '://' . $_SERVER['HTTP_HOST'] . '' ;
                                 <li><a href="<?php echo $base_url; ?>/reviewers.php" class='menu-item'>For Reviewers</a></li>
                             </ul>
                         </li>
-                        <li><a href="<?php echo $base_url; ?>/careercorner" class='menu-item'>Career Corner</a></li>
+                        <li class="dropdown">
+                            <a href="<?php echo $base_url; ?>/ethics.php" class="menu-item">Ethics and Malpractice Statement</a>
+                            <ul class="dropdown-menu" style="max-height: 70vh; overflow-y: auto; min-width: 320px;">
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#commitment" class='menu-item'>Our commitment to publication ethics</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#publisher" class='menu-item'>Responsibilities of the Publisher</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#editor" class='menu-item'>Responsibilities of the Editor-in-Chief</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#authors" class='menu-item'>Responsibilities of Authors</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#authorship" class='menu-item'>Authorship and contributorship</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#originality" class='menu-item'>Originality, plagiarism and duplicate publication</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#fabrication" class='menu-item'>Fabrication and research misconduct</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#peer-review-ethics" class='menu-item'>Peer-review ethics</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#conflicts" class='menu-item'>Conflicts of interest</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#ethical-approval" class='menu-item'>Ethical approval</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#informed-consent" class='menu-item'>Informed consent and privacy</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#data-integrity" class='menu-item'>Data integrity and reproducibility</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#ai" class='menu-item'>Use of AI and AI-assisted technologies</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#citation" class='menu-item'>Citation ethics</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#editorial-independence" class='menu-item'>Editorial independence</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#complaints" class='menu-item'>Complaints and appeals</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#allegations" class='menu-item'>Allegations of misconduct</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#corrections" class='menu-item'>Corrections, retractions and expressions</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#post-publication" class='menu-item'>Post-publication concerns</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#whistleblowers" class='menu-item'>Protection of whistleblowers</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#confidentiality" class='menu-item'>Editorial and peer-review confidentiality</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#peer-review-malpractice" class='menu-item'>Malpractice in peer review</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#editorial-misconduct" class='menu-item'>Editorial misconduct</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#research-integrity" class='menu-item'>Research integrity beyond publication</a></li>
+                                <li><a href="<?php echo $base_url; ?>/ethics.php#continuous-improvement" class='menu-item'>Commitment to continuous improvement</a></li>
+                            </ul>
+                        </li>
                         <li><a href="<?php echo $base_url; ?>/special-issues" class='menu-item'>Special Issues</a></li>
                         <li><a href="<?php echo $base_url; ?>/theses.php" class='menu-item'>ASFIRJ Theses</a></li>
-                        <li><a href="<?php echo $base_url; ?>/contact.php" class='menu-item'>Contact Us</a></li>
 
                     </ul>
                     <div class="header-right">
