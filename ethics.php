@@ -55,9 +55,14 @@
 	<style>
 		html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 		.ethics-toc a.active { background: #80078b; color: #fff; }
-		.ethics-content h2 { color: #250242; border-left: 4px solid #80078b; padding-left: 14px; }
-		.ethics-content ul { list-style: disc; padding-left: 1.35rem; }
-		.ethics-content ol { list-style: decimal; padding-left: 1.35rem; }
+		.ethics-content h2 { color: #250242; border-left: 4px solid #80078b; padding-left: 14px; margin-bottom: 0.9rem; line-height: 1.3; }
+		.ethics-content p { margin-bottom: 1rem; line-height: 1.85; }
+		.ethics-content p:last-child { margin-bottom: 0; }
+		.ethics-content ul, .ethics-content ol { list-style: disc; padding-left: 1.35rem; margin-bottom: 1rem; margin-top: 0.5rem; }
+		.ethics-content ol { list-style: decimal; }
+		.ethics-content ul li, .ethics-content ol li { margin-bottom: 0.35rem; line-height: 1.7; }
+		.ethics-content ul li:last-child, .ethics-content ol li:last-child { margin-bottom: 0; }
+		.ethics-content section { padding-bottom: 0.5rem; }
 		@media (max-width: 1024px) { .ethics-toc-sticky { position: static; } }
 	</style>
 </head>
